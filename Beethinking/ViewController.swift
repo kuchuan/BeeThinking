@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import FontAwesome_swift
+import RevealingSplashView
 
 class ViewController: UIViewController {
+    
+    var honeycombString:String = "00"
+    
     @IBOutlet weak var InputBox: UITextField!
     @IBOutlet weak var HoneycombView: UIView!
     @IBOutlet weak var HoneycombLabel00: UILabel!
@@ -22,14 +27,40 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let HoneycombBox = PolygonView.init(frame: CGRect(x:0, y:0, width:100, height:100))
-            HoneycombBox.polygonNumber = 6
-            HoneycombBox.fillColor = .orange
+        
+        //Initialize a revealing Splash with with the iconImage, the initial size and the background color
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splash")!,iconInitialSize: CGSize(width: 400, height: 400), backgroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha:1.0))
+        
+        revealingSplashView.animationType = .twitter
+        revealingSplashView.delay = 5.0
+        
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+        
+        //Starts animation
+        revealingSplashView.startAnimation(){
+//            print("Complerted")
+        }
+        
+//        // Do any additional setup after loading the view.
+//        let HoneycombBox = PolygonView.init(frame: CGRect(x:0, y:0, width:100, height:100))
+//            HoneycombBox.polygonNumber = 6
+//            HoneycombBox.fillColor = .orange
         
     }
+    @IBAction func didNextButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toList", sender: nil)
+    }
+    
+    
+    @IBAction func didClickGoToHoney(_ sender: UIButton) {
+        performSegue(withIdentifier: "toHoneyBottle", sender: nil)
+    }
+    
     @IBAction func InputTextbutton(_ sender: UIButton) {
-        HoneycombLabel00.text = InputBox.text
+        choseLavel(str: honeycombString, text: InputBox.text ?? "")
+        InputBox.text = ""
+    
     }
     @IBAction func ChangeLabelSize00(_ sender: UISlider) {
         let sliderNum = sender.value
@@ -84,6 +115,8 @@ class ViewController: UIViewController {
         //　ラベル枠の枠線太さと色
         HoneycombLabel00.layer.borderColor = UIColor.red.cgColor
         HoneycombLabel00.layer.borderWidth = 3
+        honeycombString = "00"
+        InputBox.text = HoneycombLabel00.text
         
         // ラベル枠を丸くする
 //        HoneycombLabel00.layer.masksToBounds = true
@@ -99,6 +132,8 @@ class ViewController: UIViewController {
         //　ラベル枠の枠線太さと色
         HoneycombLabel01.layer.borderColor = UIColor.blue.cgColor
         HoneycombLabel01.layer.borderWidth = 3
+        honeycombString = "01"
+        InputBox.text = HoneycombLabel01.text
 
     }
     
@@ -108,6 +143,8 @@ class ViewController: UIViewController {
         //　ラベル枠の枠線太さと色
         HoneycombLabel02.layer.borderColor = UIColor.blue.cgColor
         HoneycombLabel02.layer.borderWidth = 3
+        honeycombString = "02"
+        InputBox.text = HoneycombLabel02.text
     
     }
 
@@ -117,6 +154,8 @@ class ViewController: UIViewController {
         //　ラベル枠の枠線太さと色
         HoneycombLabel03.layer.borderColor = UIColor.blue.cgColor
         HoneycombLabel03.layer.borderWidth = 3
+        honeycombString = "03"
+        InputBox.text = HoneycombLabel03.text
         
     }
     
@@ -127,6 +166,8 @@ class ViewController: UIViewController {
         //　ラベル枠の枠線太さと色
         HoneycombLabel04.layer.borderColor = UIColor.blue.cgColor
         HoneycombLabel04.layer.borderWidth = 3
+        honeycombString = "04"
+        InputBox.text = HoneycombLabel04.text
     }
     
     @IBAction func touchLabel05(_ sender: UITapGestureRecognizer) {
@@ -135,6 +176,8 @@ class ViewController: UIViewController {
         //　ラベル枠の枠線太さと色
         HoneycombLabel05.layer.borderColor = UIColor.blue.cgColor
         HoneycombLabel05.layer.borderWidth = 3
+        honeycombString = "05"
+        InputBox.text = HoneycombLabel05.text
     }
     
     @IBAction func touchLabel06(_ sender: UITapGestureRecognizer) {
@@ -143,6 +186,8 @@ class ViewController: UIViewController {
         //　ラベル枠の枠線太さと色
         HoneycombLabel06.layer.borderColor = UIColor.blue.cgColor
         HoneycombLabel06.layer.borderWidth = 3
+        honeycombString = "06"
+        InputBox.text = HoneycombLabel06.text
     }
     
     
@@ -156,71 +201,87 @@ class ViewController: UIViewController {
         HoneycombLabel05.layer.borderColor = UIColor.clear.cgColor
         HoneycombLabel06.layer.borderColor = UIColor.clear.cgColor
     }
-    
+
+    func choseLavel(str:String, text:String){
+        
+        switch str {
+            case "00":
+                HoneycombLabel00.text = text
+            case "01":
+                HoneycombLabel01.text = text
+            case "02":
+                HoneycombLabel02.text = text
+            case "03":
+                HoneycombLabel03.text = text
+            case "04":
+                HoneycombLabel04.text = text
+            case "05":
+                HoneycombLabel05.text = text
+            case "06":
+                HoneycombLabel06.text = text
+        default :
+            HoneycombLabel00.text = text
+        }
+        
+    }
     
 }
 
 
 
-class PolygonView:UIView{
-    
-    //角の数
-    var polygonNumber:Int = 6 {
-        didSet{
-            self.setNeedsDisplay()
-        }
-    }
-    
-    //図形の色
-    var fillColor:UIColor = .black{
-        didSet{
-            self.setNeedsDisplay()
-        }
-    }
-    
-    override var frame: CGRect{
-        didSet{
-            self.setNeedsDisplay()
-        }
-    }
-    
-    override init(frame:CGRect){
-        super.init(frame:frame)
-        //色を塗らない部分を透過
-        self.isOpaque = false
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func draw(_ rect: CGRect) {
-        let r = min(rect.width/2, rect.height/2)
-        let c = CGPoint(x: rect.width/2, y: rect.height/2)
-        self.drawRegularPolygon(self.polygonNumber, radius: r, center: c)
-    }
-    
-    //図形を描く
-    func drawRegularPolygon(_ p: Int, radius: CGFloat, center: CGPoint) {
-        
-        guard let ctx = UIGraphicsGetCurrentContext() else { return }
-        ctx.clear(self.frame)
-        
-        var pt:[CGPoint]=[]
-        for i in 0 ..< p {
-            let rad: CGFloat = CGFloat(Double.pi * Double(i) * 2.0 / Double(p) + Double.pi / 2.0)
-            let point = CGPoint(x: center.x + radius * cos(rad), y: center.y - radius * sin(rad))
-            pt.append(point)
-        }
-        
-        ctx.setFillColor(self.fillColor.cgColor)
-        
-        ctx.move(to: pt[0])
-        
-        for p in pt{
-            ctx.addLine(to: p)
-        }
-        ctx.closePath()
-        ctx.fillPath()
-    }
-}
+//
+//class PolygonView:UIView{
+//    //角の数
+//    var polygonNumber:Int = 6 {
+//        didSet{
+//            self.setNeedsDisplay()
+//        }
+//    }
+//    //図形の色
+//    var fillColor:UIColor = .black{
+//        didSet{
+//            self.setNeedsDisplay()
+//        }
+//    }
+//    override var frame: CGRect{
+//        didSet{
+//            self.setNeedsDisplay()
+//        }
+//    }
+//    override init(frame:CGRect){
+//        super.init(frame:frame)
+//        //色を塗らない部分を透過
+//        self.isOpaque = false
+//    }
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    override func draw(_ rect: CGRect) {
+//        let r = min(rect.width/2, rect.height/2)
+//        let c = CGPoint(x: rect.width/2, y: rect.height/2)
+//        self.drawRegularPolygon(self.polygonNumber, radius: r, center: c)
+//    }
+//    //図形を描く
+//    func drawRegularPolygon(_ p: Int, radius: CGFloat, center: CGPoint) {
+//
+//        guard let ctx = UIGraphicsGetCurrentContext() else { return }
+//        ctx.clear(self.frame)
+//
+//        var pt:[CGPoint]=[]
+//        for i in 0 ..< p {
+//            let rad: CGFloat = CGFloat(Double.pi * Double(i) * 2.0 / Double(p) + Double.pi / 2.0)
+//            let point = CGPoint(x: center.x + radius * cos(rad), y: center.y - radius * sin(rad))
+//            pt.append(point)
+//        }
+//
+//        ctx.setFillColor(self.fillColor.cgColor)
+//
+//        ctx.move(to: pt[0])
+//
+//        for p in pt{
+//            ctx.addLine(to: p)
+//        }
+//        ctx.closePath()
+//        ctx.fillPath()
+//    }
+//}
