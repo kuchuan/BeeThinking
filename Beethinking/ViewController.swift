@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FontAwesome_swift
 import RevealingSplashView
 
 class ViewController: UIViewController {
@@ -48,20 +47,41 @@ class ViewController: UIViewController {
 //            HoneycombBox.fillColor = .orange
         
     }
-    @IBAction func didNextButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "toList", sender: nil)
+    
+    @IBAction func didClickToList(_ sender: UIButton) {
+        
+        let firstIdeas = [
+            HoneycombLabel00.text,
+            HoneycombLabel01.text,
+            HoneycombLabel02.text,
+            HoneycombLabel03.text,
+            HoneycombLabel04.text,
+            HoneycombLabel05.text,
+            HoneycombLabel06.text
+        ]
+        performSegue(withIdentifier: "toList", sender: firstIdeas)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toList" {
+            let nextVC = segue.destination as! SCViewController
+            nextVC.ideas = sender as! [String]
+        }
+    }
+    
+    @IBAction func didClickToMakeHoneycomb(_ sender: UIButton) {
+    }
+    
     
     
     @IBAction func didClickGoToHoney(_ sender: UIButton) {
-        performSegue(withIdentifier: "toHoneyBottle", sender: nil)
     }
+    
     
     @IBAction func InputTextbutton(_ sender: UIButton) {
         choseLavel(str: honeycombString, text: InputBox.text ?? "")
-        InputBox.text = ""
-    
     }
+    
     @IBAction func ChangeLabelSize00(_ sender: UISlider) {
         let sliderNum = sender.value
         let sizeOfLabel = 120 + CGFloat(sliderNum * 120)
@@ -200,6 +220,8 @@ class ViewController: UIViewController {
         HoneycombLabel04.layer.borderColor = UIColor.clear.cgColor
         HoneycombLabel05.layer.borderColor = UIColor.clear.cgColor
         HoneycombLabel06.layer.borderColor = UIColor.clear.cgColor
+        //ついでに入力欄の消去もする
+        InputBox.text = ""
     }
 
     func choseLavel(str:String, text:String){
