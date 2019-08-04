@@ -351,33 +351,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCV-e8-7Xo">
-                                <rect key="frame" x="28" y="790" width="60" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Bb3-T8-FCg"/>
-                                    <constraint firstAttribute="height" constant="60" id="mP2-KP-ZtR"/>
-                                </constraints>
-                                <state key="normal" image="left"/>
-                                <connections>
-                                    <action selector="left:" destination="Xb0-e1-RWd" eventType="touchUpInside" id="Z1S-Si-ejb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-61-v4s">
-                                <rect key="frame" x="326" y="790" width="60" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="R81-Vg-41w"/>
-                                    <constraint firstAttribute="height" constant="60" id="j6H-W1-xjL"/>
-                                </constraints>
-                                <state key="normal" image="right"/>
-                                <connections>
-                                    <action selector="right:" destination="Xb0-e1-RWd" eventType="touchUpInside" id="e9b-J2-PuQ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5B-Bc-kz8" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="57" y="203" width="300" height="400"/>
                                 <subviews>
@@ -424,9 +397,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-61-v4s">
+                                <rect key="frame" x="326" y="790" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="R81-Vg-41w"/>
+                                    <constraint firstAttribute="height" constant="60" id="j6H-W1-xjL"/>
+                                </constraints>
+                                <state key="normal" image="right"/>
+                                <connections>
+                                    <action selector="right:" destination="Xb0-e1-RWd" eventType="touchUpInside" id="e9b-J2-PuQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCV-e8-7Xo">
+                                <rect key="frame" x="28" y="790" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Bb3-T8-FCg"/>
+                                    <constraint firstAttribute="height" constant="60" id="mP2-KP-ZtR"/>
+                                </constraints>
+                                <state key="normal" image="left"/>
+                                <connections>
+                                    <action selector="left:" destination="Xb0-e1-RWd" eventType="touchUpInside" id="Z1S-Si-ejb"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldF-un-T6r">
-                                <rect key="frame" x="172" y="756" width="70" height="70"/>
-                                <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="172" y="762" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Uzs-Ug-EdX"/>
                                     <constraint firstAttribute="width" constant="70" id="f5P-Sc-pRg"/>
@@ -450,7 +447,7 @@
                             <constraint firstItem="mPF-55-nLh" firstAttribute="bottom" secondItem="QKr-61-v4s" secondAttribute="bottom" constant="12" id="UKB-1q-tRe"/>
                             <constraint firstItem="kfF-JU-9d3" firstAttribute="top" secondItem="mPF-55-nLh" secondAttribute="top" constant="18" id="ZEg-U5-b3Z"/>
                             <constraint firstItem="gCV-e8-7Xo" firstAttribute="leading" secondItem="mPF-55-nLh" secondAttribute="leading" constant="28" id="c7Z-Ox-QpX"/>
-                            <constraint firstItem="mPF-55-nLh" firstAttribute="bottom" secondItem="ldF-un-T6r" secondAttribute="bottom" constant="36" id="cqw-zh-ieq"/>
+                            <constraint firstItem="mPF-55-nLh" firstAttribute="bottom" secondItem="ldF-un-T6r" secondAttribute="bottom" constant="30" id="cqw-zh-ieq"/>
                             <constraint firstItem="ggs-Lm-uJd" firstAttribute="leading" secondItem="mPF-55-nLh" secondAttribute="leading" constant="18" id="iWS-Kz-L0s"/>
                             <constraint firstItem="mPF-55-nLh" firstAttribute="trailing" secondItem="QKr-61-v4s" secondAttribute="trailing" constant="28" id="niU-UW-ruY"/>
                             <constraint firstItem="kfF-JU-9d3" firstAttribute="leading" secondItem="ggs-Lm-uJd" secondAttribute="trailing" constant="24" id="ogv-Pb-Uws"/>
