@@ -157,7 +157,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-YY-hdN">
-                                <rect key="frame" x="333" y="124" width="45" height="70"/>
+                                <rect key="frame" x="345" y="124" width="45" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="WjI-bB-oxw"/>
                                     <constraint firstAttribute="width" constant="45" id="c3u-C5-aic"/>
@@ -245,7 +245,7 @@
                             <constraint firstItem="PDE-xe-hwo" firstAttribute="centerY" secondItem="vld-7F-rZY" secondAttribute="centerY" id="O5v-2N-FfR"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XGl-ce-Rb1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpp-1f-pc5" secondAttribute="bottom" constant="24" id="Yns-yI-SaX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rOR-YY-hdN" secondAttribute="trailing" constant="36" id="aXL-sK-8Uq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rOR-YY-hdN" secondAttribute="trailing" constant="24" id="aXL-sK-8Uq"/>
                             <constraint firstItem="32Y-xH-20J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="duj-ZK-A9d"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="top" secondItem="SXc-q2-QyW" secondAttribute="bottom" constant="8" id="f72-Rj-EYT"/>
                             <constraint firstItem="et7-ZR-Xqt" firstAttribute="top" secondItem="PDE-xe-hwo" secondAttribute="bottom" constant="24" id="gGJ-WN-uQl"/>

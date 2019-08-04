@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
         let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splash")!,iconInitialSize: CGSize(width: 400, height: 400), backgroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha:1.0))
         
-        revealingSplashView.animationType = .twitter
-        revealingSplashView.delay = 5.0
+        revealingSplashView.animationType = .popAndZoomOut
+        revealingSplashView.delay = 1.0
         
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
