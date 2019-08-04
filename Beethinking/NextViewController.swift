@@ -60,7 +60,7 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
 
         textView.textAlignment = .natural
         textView.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
-        textView.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1.0)
+        textView.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 200/255, alpha: 1.0)
         textView.font = UIFont(name: "HelveticaNeue-medium", size: CGFloat(30))
         
         textView.text = lists[index]
