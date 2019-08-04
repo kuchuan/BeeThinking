@@ -41,10 +41,14 @@ class ViewController: UIViewController {
 //            print("Complerted")
         }
         
-//        // Do any additional setup after loading the view.
-//        let HoneycombBox = PolygonView.init(frame: CGRect(x:0, y:0, width:100, height:100))
-//            HoneycombBox.polygonNumber = 6
-//            HoneycombBox.fillColor = .orange
+        
+//          //多角形
+//        let myView = MyView(frame: view.bounds)
+//        myView.backgroundColor = UIColor.white
+//        myView.alpha = 0.5
+//        HoneycombView.addSubview(myView)
+        
+
         
     }
     
@@ -250,61 +254,92 @@ class ViewController: UIViewController {
 }
 
 
-
-//
-//class PolygonView:UIView{
-//    //角の数
-//    var polygonNumber:Int = 6 {
-//        didSet{
-//            self.setNeedsDisplay()
-//        }
-//    }
-//    //図形の色
-//    var fillColor:UIColor = .black{
-//        didSet{
-//            self.setNeedsDisplay()
-//        }
-//    }
-//    override var frame: CGRect{
-//        didSet{
-//            self.setNeedsDisplay()
-//        }
-//    }
-//    override init(frame:CGRect){
-//        super.init(frame:frame)
-//        //色を塗らない部分を透過
-//        self.isOpaque = false
-//    }
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+//class MyView: UIView {
 //    override func draw(_ rect: CGRect) {
-//        let r = min(rect.width/2, rect.height/2)
-//        let c = CGPoint(x: rect.width/2, y: rect.height/2)
-//        self.drawRegularPolygon(self.polygonNumber, radius: r, center: c)
-//    }
-//    //図形を描く
-//    func drawRegularPolygon(_ p: Int, radius: CGFloat, center: CGPoint) {
+//        let path = UIBezierPath()
+//        var pointx = 207.0
+//        var pointy = 221.0
+//        var hexSize = 141.0
+//        path.move(to: CGPoint(x: CGFloat(pointx - hexSize / 2 ), y: CGFloat(pointy)))
+//        path.addLine(to: CGPoint(x: CGFloat(pointx - hexSize / 4), y: CGFloat(pointy + sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
+//        path.addLine(to: CGPoint(x: CGFloat(pointx + hexSize / 4), y: CGFloat(pointy + sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
+//        path.addLine(to: CGPoint(x: CGFloat(pointx + hexSize / 2), y: CGFloat(pointy)))
+//        path.addLine(to: CGPoint(x: CGFloat(pointx + hexSize / 4), y: CGFloat(pointy - sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
+//        path.addLine(to: CGPoint(x: CGFloat(pointx - hexSize / 4), y: CGFloat(pointy - sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
+//        UIColor.darkGray.setFill() // 色をセット
+//        path.fill()
 //
-//        guard let ctx = UIGraphicsGetCurrentContext() else { return }
-//        ctx.clear(self.frame)
-//
-//        var pt:[CGPoint]=[]
-//        for i in 0 ..< p {
-//            let rad: CGFloat = CGFloat(Double.pi * Double(i) * 2.0 / Double(p) + Double.pi / 2.0)
-//            let point = CGPoint(x: center.x + radius * cos(rad), y: center.y - radius * sin(rad))
-//            pt.append(point)
-//        }
-//
-//        ctx.setFillColor(self.fillColor.cgColor)
-//
-//        ctx.move(to: pt[0])
-//
-//        for p in pt{
-//            ctx.addLine(to: p)
-//        }
-//        ctx.closePath()
-//        ctx.fillPath()
+//        "MyText".draw(at: CGPoint(x: 100, y: 100), withAttributes: [
+//            NSAttributedString.Key.foregroundColor : UIColor.blue,
+//            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 50),
+//            ])
 //    }
 //}
 
+
+@IBDesignable
+
+class PolygonButton: UILabel {
+    
+    @IBInspectable public var numberOfCorner : Int = 4
+    @IBInspectable public var buttonColor : UIColor = UIColor.black
+    @IBInspectable public var rotation : Double = 0
+    
+    public let borderShape = CAShapeLayer()
+    
+    // Attributes Inspectorで設定した値を反映
+    override func draw(_ rect: CGRect) {
+        drawPolygon(numberOfCorner: numberOfCorner)
+    }
+    
+    private func drawPolygon(numberOfCorner: Int) {
+        let path = createPolygonPath(numberOfCorner: numberOfCorner)
+        
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        
+        self.layer.masksToBounds = true
+        self.layer.mask = mask
+        
+        borderShape.path = path.cgPath
+        borderShape.lineWidth = 1.0
+        borderShape.strokeColor = buttonColor.cgColor
+        borderShape.fillColor = buttonColor.cgColor
+        self.layer.insertSublayer(borderShape, at: 0)
+    }
+    
+    private func createPolygonPath(numberOfCorner:Int) -> UIBezierPath {
+        let path = UIBezierPath()
+        
+        let center_x = self.center.x - self.frame.origin.x
+        let center_y = self.center.y - self.frame.origin.y
+        
+        let rot = rotation * Double.pi / 180
+        
+        for i in 0..<numberOfCorner {
+            let rad = rot + Double.pi * Double(i) * 2.0 / Double(numberOfCorner) - Double.pi / 2
+            let drawPoint:CGPoint =
+                CGPoint(x: center_x + self.frame.width / 2 * CGFloat(cos(rad)) ,
+                        y: center_y - self.frame.height / 2 * CGFloat(sin(rad)) )
+            if i==0 {
+                path.move(to: drawPoint)
+            } else {
+                path.addLine(to: drawPoint)
+            }
+        }
+        path.close()
+        return path
+    }
+    
+    //余白部分のタッチは無効にする
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if !createPolygonPath(numberOfCorner:numberOfCorner).contains(point) {
+            // タッチ領域外
+            return nil
+        } else {
+//            print("タッチ")
+            return super.hitTest(point, with: event)
+        }
+    }
+    
+}
