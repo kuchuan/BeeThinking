@@ -14,16 +14,7 @@ class NextViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
     
-    let lists = [
-        "むか〜し、むかし",
-        "あるところに",
-        "おじさんと",
-        "おばあさんが",
-        "すんでおった",
-        "おじいさんは山へ柴刈りに",
-        "おばあさんはくらぶに",
-        "フィッシングをしに行ったそうじゃ",
-    ]
+    var lists: [String] = []
     
     
     override func viewDidLoad() {
@@ -32,9 +23,6 @@ class NextViewController: UIViewController {
         // Do any additional setup after loading the view.
         kolodaView.delegate = self
         kolodaView.dataSource = self
-        
-        
-        
         
     }
     

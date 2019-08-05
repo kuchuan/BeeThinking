@@ -26,9 +26,14 @@ class SCViewController: UIViewController {
     
 
     @IBAction func didClickToFlickView(_ sender: UIButton) {
-        performSegue(withIdentifier: "toFlickView", sender: nil)
+        performSegue(withIdentifier: "toFlickView", sender: ideas)
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFlickView" {
+            let nextVC = segue.destination as! NextViewController
+            nextVC.lists = sender as! [String]
+        }
+    }
 
 }
 
