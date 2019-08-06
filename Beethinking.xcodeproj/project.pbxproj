@@ -10,6 +10,7 @@
 		4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */; };
 		4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */; };
 		48939E2422F536640007C462 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48939E2322F536640007C462 /* SCViewController.swift */; };
+		48C6E20E22F9523A002D05B8 /* HexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6E20D22F9523A002D05B8 /* HexView.swift */; };
 		48CA187522F6D47900072B99 /* IdeaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA187422F6D47900072B99 /* IdeaData.swift */; };
 		48E921CB22D97507007EF7A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E921CA22D97507007EF7A0 /* AppDelegate.swift */; };
 		48E921CD22D97507007EF7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E921CC22D97507007EF7A0 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUIButton.swift; sourceTree = "<group>"; };
 		48939E2322F536640007C462 /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
+		48C6E20D22F9523A002D05B8 /* HexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexView.swift; sourceTree = "<group>"; };
 		48CA187422F6D47900072B99 /* IdeaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaData.swift; sourceTree = "<group>"; };
 		48E921C722D97507007EF7A0 /* Beethinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beethinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E921CA22D97507007EF7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		48C6E20C22F9514C002D05B8 /* SubClass */ = {
+			isa = PBXGroup;
+			children = (
+				4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */,
+				48C6E20D22F9523A002D05B8 /* HexView.swift */,
+			);
+			path = SubClass;
+			sourceTree = "<group>";
+		};
 		48CA187622F6D78200072B99 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +87,7 @@
 		48E921BE22D97507007EF7A0 = {
 			isa = PBXGroup;
 			children = (
-				4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */,
+				48C6E20C22F9514C002D05B8 /* SubClass */,
 				48CA187622F6D78200072B99 /* Objects */,
 				48E921C922D97507007EF7A0 /* Beethinking */,
 				48E921C822D97507007EF7A0 /* Products */,
@@ -136,6 +147,10 @@
 		48E921BF22D97507007EF7A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					tag1,
+				);
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "堀川浩二";
@@ -232,6 +247,7 @@
 				4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */,
 				48939E2422F536640007C462 /* SCViewController.swift in Sources */,
 				4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */,
+				48C6E20E22F9523A002D05B8 /* HexView.swift in Sources */,
 				48CA187522F6D47900072B99 /* IdeaData.swift in Sources */,
 				48E921CB22D97507007EF7A0 /* AppDelegate.swift in Sources */,
 			);

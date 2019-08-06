@@ -9,6 +9,8 @@
 import UIKit
 import RevealingSplashView
 
+@IBDesignable
+
 class ViewController: UIViewController {
     
     var honeycombString:String = "00"
@@ -22,6 +24,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var HoneycombLabel04: UILabel!
     @IBOutlet weak var HoneycombLabel05: UILabel!
     @IBOutlet weak var HoneycombLabel06: UILabel!
+    
+    @IBOutlet weak var HonycomButton: HexUIButton!
+    
+    
     
     
     override func viewDidLoad() {
@@ -41,13 +47,36 @@ class ViewController: UIViewController {
 //            print("Complerted")
         }
         
+        func DarwHexButton() {
+            
+            for i in 0..6{
+                
+                
+                
+                
+            }
+        }
         
-//          //多角形
-//        let myView = MyView(frame: view.bounds)
-//        myView.backgroundColor = UIColor.white
-//        myView.alpha = 0.5
-//        HoneycombView.addSubview(myView)
         
+        
+        
+        
+//        // 画面サイズを初期値として `MainView` クラスを `mainView` としてインスタンス化します。
+//        let mainView = HexView(frame: self.view.bounds)
+//
+//        // `MainView` に自動サイズ調整用に `autoresizingMask` を設定
+//        mainView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//
+//        // `mainView` オブジェクトを表示します。
+//        self.view.addSubview(mainView)
+        
+        
+        
+        
+        
+        HonycomButton.titleLabel?.numberOfLines = 6
+        HonycomButton.setTitle("タイトルの文字列です。すごく長いので改行して欲しいのですよ。", for: .normal)
+    
 
         
     }
@@ -253,93 +282,3 @@ class ViewController: UIViewController {
     
 }
 
-
-//class MyView: UIView {
-//    override func draw(_ rect: CGRect) {
-//        let path = UIBezierPath()
-//        var pointx = 207.0
-//        var pointy = 221.0
-//        var hexSize = 141.0
-//        path.move(to: CGPoint(x: CGFloat(pointx - hexSize / 2 ), y: CGFloat(pointy)))
-//        path.addLine(to: CGPoint(x: CGFloat(pointx - hexSize / 4), y: CGFloat(pointy + sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
-//        path.addLine(to: CGPoint(x: CGFloat(pointx + hexSize / 4), y: CGFloat(pointy + sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
-//        path.addLine(to: CGPoint(x: CGFloat(pointx + hexSize / 2), y: CGFloat(pointy)))
-//        path.addLine(to: CGPoint(x: CGFloat(pointx + hexSize / 4), y: CGFloat(pointy - sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
-//        path.addLine(to: CGPoint(x: CGFloat(pointx - hexSize / 4), y: CGFloat(pointy - sin(Double.pi / 180 * 60 ) * hexSize / 2 )))
-//        UIColor.darkGray.setFill() // 色をセット
-//        path.fill()
-//
-//        "MyText".draw(at: CGPoint(x: 100, y: 100), withAttributes: [
-//            NSAttributedString.Key.foregroundColor : UIColor.blue,
-//            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 50),
-//            ])
-//    }
-//}
-
-
-@IBDesignable
-
-class PolygonButton: UILabel {
-    
-    @IBInspectable public var numberOfCorner : Int = 4
-    @IBInspectable public var buttonColor : UIColor = UIColor.black
-    @IBInspectable public var rotation : Double = 0
-    
-    public let borderShape = CAShapeLayer()
-    
-    // Attributes Inspectorで設定した値を反映
-    override func draw(_ rect: CGRect) {
-        drawPolygon(numberOfCorner: numberOfCorner)
-    }
-    
-    private func drawPolygon(numberOfCorner: Int) {
-        let path = createPolygonPath(numberOfCorner: numberOfCorner)
-        
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        
-        self.layer.masksToBounds = true
-        self.layer.mask = mask
-        
-        borderShape.path = path.cgPath
-        borderShape.lineWidth = 1.0
-        borderShape.strokeColor = buttonColor.cgColor
-        borderShape.fillColor = buttonColor.cgColor
-        self.layer.insertSublayer(borderShape, at: 0)
-    }
-    
-    private func createPolygonPath(numberOfCorner:Int) -> UIBezierPath {
-        let path = UIBezierPath()
-        
-        let center_x = self.center.x - self.frame.origin.x
-        let center_y = self.center.y - self.frame.origin.y
-        
-        let rot = rotation * Double.pi / 180
-        
-        for i in 0..<numberOfCorner {
-            let rad = rot + Double.pi * Double(i) * 2.0 / Double(numberOfCorner) - Double.pi / 2
-            let drawPoint:CGPoint =
-                CGPoint(x: center_x + self.frame.width / 2 * CGFloat(cos(rad)) ,
-                        y: center_y - self.frame.height / 2 * CGFloat(sin(rad)) )
-            if i==0 {
-                path.move(to: drawPoint)
-            } else {
-                path.addLine(to: drawPoint)
-            }
-        }
-        path.close()
-        return path
-    }
-    
-    //余白部分のタッチは無効にする
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        if !createPolygonPath(numberOfCorner:numberOfCorner).contains(point) {
-            // タッチ領域外
-            return nil
-        } else {
-//            print("タッチ")
-            return super.hitTest(point, with: event)
-        }
-    }
-    
-}
