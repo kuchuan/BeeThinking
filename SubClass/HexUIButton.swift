@@ -16,9 +16,11 @@ class HexUIButton: UIButton {
         @IBInspectable public var numberOfCorner : Int = 4
         @IBInspectable public var buttonColor : UIColor = UIColor.gray
         @IBInspectable public var rotation : Double = 0
+
         
         public let borderShape = CAShapeLayer()
-        
+    
+    
         // Attributes Inspectorで設定した値を反映
         override func draw(_ rect: CGRect) {
             drawPolygon(numberOfCorner: numberOfCorner)
@@ -39,7 +41,8 @@ class HexUIButton: UIButton {
             borderShape.fillColor = buttonColor.cgColor
             self.layer.insertSublayer(borderShape, at: 0)
         }
-        
+    
+        //ポリゴンをコーナーの数で描画する
         private func createPolygonPath(numberOfCorner:Int) -> UIBezierPath {
             let path = UIBezierPath()
             
@@ -69,7 +72,7 @@ class HexUIButton: UIButton {
                 // タッチ領域外
                 return nil
             } else {
-                //            print("タッチ")
+                            print("タッチ")
                 return super.hitTest(point, with: event)
             }
         }
