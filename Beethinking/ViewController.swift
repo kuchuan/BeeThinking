@@ -47,15 +47,78 @@ class ViewController: UIViewController {
 //            print("Complerted")
         }
         
-        func DarwHexButton() {
+        
+        
+        func DarwHexButton(originx: Int, originy: Int, hexOfWidth: Int) {
             
-            for i in 0..6{
+            var positionx: Float = 0.0
+            var positiony: Float = 0.0
+            
+            for i in 0...6 {
+                //原点からポジションの割り出し
+                switch i {
+                    case 0:
+                        positionx = Float(originx)
+                        positiony = Float(originy)
+                    case 1:
+                        positionx = Float(originx)
+                        positiony = Float(originy - (126 * hexOfWidth / 140))
+                    case 2:
+                        positionx = Float(originx + (108 * hexOfWidth / 140))
+                        positiony = Float(originy - (63 * hexOfWidth / 140))
+                    case 3:
+                        positionx = Float(originx + (108 * hexOfWidth / 140))
+                        positiony = Float(originy + (63 * hexOfWidth / 140))
+                    case 4:
+                        positionx = Float(originx)
+                        positiony = Float(originy + (126 * hexOfWidth / 140))
+                    case 5:
+                        positionx = Float(originx - (108 * hexOfWidth / 140))
+                        positiony = Float(originy + (63 * hexOfWidth / 140))
+                    case 6:
+                        positionx = Float(originx - (108 * hexOfWidth / 140))
+                        positiony = Float(originy - (63 * hexOfWidth / 140))
+                    default:
+                        positionx = Float(originx)
+                        positiony = Float(originy)
+                }
+                
+                let hexButton = HexUIButton()
+                //サイズ
+                hexButton.frame = CGRect(x: CGFloat(positionx), y: CGFloat(positiony), width: CGFloat(hexOfWidth), height: CGFloat(hexOfWidth))
+                //タグ
+                hexButton.tag = i
+                //ボタンにタイトル挿入
+                hexButton.setTitle("hexButvuuuuuooovttoooooooooogivvvvovoooooooooooton\(i)", for: .normal)
+                hexButton.setTitleColor(.white, for: .normal)
+                hexButton.layer.borderWidth = 1
+                
+                //6角形の値を入力
+                hexButton.numberOfCorner = 6
+                //6角形の傾き
+                hexButton.rotation = 30
+                
+                //枠内のpadding
+                hexButton.titleEdgeInsets = UIEdgeInsets(top: 25.0, left: 25.0, bottom: 25.0, right: 25.0)
+                
+                //枠内の行数
+                hexButton.titleLabel?.numberOfLines = 5
+                
+                //ボタンだけどラベルのように扱いたいので
+                 hexButton.isEnabled = false
+                //buttonに処理を追加
+                // ボタンを押した時に実行するメソッドを指定
+//                hexButton.addTarget(self, action: #selector(hexButtonEvent(_:)), for: UIControlEvents.touchUpInside)
+
                 
                 
-                
+                HoneycombView.addSubview(hexButton)
                 
             }
         }
+        
+        //蜂の巣の描画（セントラル）
+        DarwHexButton(originx: 200, originy: 300, hexOfWidth: 140)
         
         
         
@@ -74,8 +137,8 @@ class ViewController: UIViewController {
         
         
         
-        HonycomButton.titleLabel?.numberOfLines = 6
-        HonycomButton.setTitle("タイトルの文字列です。すごく長いので改行して欲しいのですよ。", for: .normal)
+//        HonycomButton.titleLabel?.numberOfLines = 6
+//        HonycomButton.setTitle("タイトルの文字列です。すごく長いので改行して欲しいのですよ。", for: .normal)
     
 
         
