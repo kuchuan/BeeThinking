@@ -14,7 +14,7 @@ class HexUIButton: UIButton {
 
         
         @IBInspectable public var numberOfCorner : Int = 4
-        @IBInspectable public var buttonColor : UIColor = UIColor.gray
+        @IBInspectable public var buttonColor : UIColor = UIColor.lightGray
         @IBInspectable public var rotation : Double = 0
         public let borderShape = CAShapeLayer()
     
@@ -63,6 +63,7 @@ class HexUIButton: UIButton {
             path.close()
             return path
         }
+    
         
         //余白部分のタッチは無効にする
         override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
@@ -70,9 +71,17 @@ class HexUIButton: UIButton {
                 // タッチ領域外
                 return nil
             } else {
-                            print("タッチ")
-                return super.hitTest(point, with: event)
+                            print("タッチ\(tag)")
+                
+                if honeycombTagNum != self.tag {
+
+                    self.buttonColor = UIColor.purple
+                    self.backgroundColor = UIColor.blue
+                    honeycombTagNum = self.tag
+                
+                
+            }
+                 return super.hitTest(point, with: event)
             }
         }
-        
 }

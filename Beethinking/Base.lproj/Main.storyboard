@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" minimumZoomScale="2" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-q2-QyW">
-                                <rect key="frame" x="0.0" y="183" width="414" height="511"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" minimumZoomScale="2" maximumZoomScale="2" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-q2-QyW">
+                                <rect key="frame" x="0.0" y="183" width="414" height="503"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-9s-fQh" customClass="HexView" customModule="Beethinking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="1500" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="1200"/>
                                         <subviews>
                                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-lR-5Hz">
                                                 <rect key="frame" x="147" y="160" width="120" height="120"/>
@@ -36,145 +36,16 @@
                                                     <outletCollection property="gestureRecognizers" destination="KkQ-ld-zR5" appends="YES" id="6eS-H5-I2e"/>
                                                 </connections>
                                             </label>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="122" translatesAutoresizingMaskIntoConstraints="NO" id="O72-0D-Ga7">
-                                                <rect key="frame" x="147" y="38" width="120" height="120"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAw-MV-R6W" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                                <rect key="frame" x="87" y="54" width="143" height="52"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" button="YES" staticText="YES"/>
-                                                </accessibility>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="Button"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
                                                         <integer key="value" value="6"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="rotation">
-                                                        <real key="value" value="90"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="ZIS-eM-d9z" appends="YES" id="DIe-tR-teE"/>
-                                                </connections>
-                                            </label>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olo-8i-XbC">
-                                                <rect key="frame" x="269" y="106" width="120" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="1" height="0.0"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="uH2-In-TYg" appends="YES" id="MWs-sk-nhS"/>
-                                                </connections>
-                                            </label>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cl-PL-naK">
-                                                <rect key="frame" x="269" y="228" width="120" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="2BJ-7g-hO4" appends="YES" id="0a4-Tm-3vh"/>
-                                                </connections>
-                                            </label>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl8-S5-bGp">
-                                                <rect key="frame" x="147" y="282" width="120" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="1" height="0.0"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="oig-s0-0Yo" appends="YES" id="bhQ-cD-jI1"/>
-                                                </connections>
-                                            </label>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-Zn-Af8">
-                                                <rect key="frame" x="25" y="229" width="120" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="adV-uK-t4E" appends="YES" id="07d-KU-f1E"/>
-                                                </connections>
-                                            </label>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HL-H0-5yI">
-                                                <rect key="frame" x="25" y="107" width="120" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="RqI-bX-sfS" appends="YES" id="rJD-1b-r3x"/>
-                                                </connections>
-                                            </label>
-                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ea-LN-NPF" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
-                                                <rect key="frame" x="234" y="18" width="140" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" none="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" name="Osaka" family="Osaka" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                <inset key="titleEdgeInsets" minX="22" minY="22" maxX="22" maxY="22"/>
-                                                <size key="titleShadowOffset" width="11" height="10"/>
-                                                <state key="normal" title="寿限無じゅげむゴボウのすり切れ。偉い人には若欄のです。これ以上書くとどうかな？">
-                                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
-                                                        <integer key="value" value="6"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="rotation">
-                                                        <real key="value" value="30"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5r-ZR-Fo2" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
-                                                <rect key="frame" x="234" y="340" width="140" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" none="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" name="Osaka" family="Osaka" pointSize="14"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                <inset key="titleEdgeInsets" minX="22" minY="22" maxX="22" maxY="22"/>
-                                                <size key="titleShadowOffset" width="11" height="10"/>
-                                                <state key="normal" title="寿限無じゅげむゴボウのすり切れ。偉い人には若欄のです。これ以上書くとどうかな？">
-                                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
-                                                        <integer key="value" value="6"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="rotation">
                                                         <real key="value" value="30"/>
@@ -184,8 +55,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="1500" id="G1w-wC-eKt"/>
-                                            <constraint firstAttribute="height" constant="1500" id="bXo-lL-zhf"/>
+                                            <constraint firstAttribute="height" constant="1200" id="Whk-eY-hab"/>
+                                            <constraint firstAttribute="width" constant="1200" id="xK8-mO-wSy"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -195,10 +66,10 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="4lk-9s-fQh" secondAttribute="bottom" constant="25" id="Pmh-Gi-Hvp"/>
-                                    <constraint firstItem="4lk-9s-fQh" firstAttribute="trailing" secondItem="SXc-q2-QyW" secondAttribute="trailingMargin" id="ZDf-4L-Lmv"/>
-                                    <constraint firstItem="4lk-9s-fQh" firstAttribute="leading" secondItem="SXc-q2-QyW" secondAttribute="leading" id="bqw-z2-taL"/>
-                                    <constraint firstItem="4lk-9s-fQh" firstAttribute="top" secondItem="SXc-q2-QyW" secondAttribute="top" id="qs7-TT-Sxj"/>
+                                    <constraint firstAttribute="bottom" secondItem="4lk-9s-fQh" secondAttribute="bottom" id="2Uk-fW-duX"/>
+                                    <constraint firstItem="4lk-9s-fQh" firstAttribute="firstBaseline" secondItem="SXc-q2-QyW" secondAttribute="top" id="aVK-gk-Plh"/>
+                                    <constraint firstAttribute="trailing" secondItem="4lk-9s-fQh" secondAttribute="trailing" id="kJi-RV-1Vg"/>
+                                    <constraint firstItem="4lk-9s-fQh" firstAttribute="leading" secondItem="SXc-q2-QyW" secondAttribute="leading" id="peE-qf-JuS"/>
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-e1-d87">
@@ -240,12 +111,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="思いついたことを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vld-7F-rZY">
-                                <rect key="frame" x="24" y="702" width="298" height="29"/>
+                                <rect key="frame" x="20" y="698" width="298" height="37"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-1f-pc5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-1f-pc5">
                                 <rect key="frame" x="24" y="808" width="144" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -253,7 +124,6 @@
                                     <constraint firstAttribute="width" constant="144" id="xrj-P1-bOC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
                                 <state key="normal" title="ハチの巣を広げる">
                                     <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -299,13 +169,13 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="InputTextbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Fl-jW-VqZ"/>
+                                    <action selector="inputTextbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Fl-jW-VqZ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="et7-ZR-Xqt" firstAttribute="top" secondItem="vld-7F-rZY" secondAttribute="bottom" constant="24" id="1ai-ax-d15"/>
+                            <constraint firstItem="et7-ZR-Xqt" firstAttribute="top" secondItem="vld-7F-rZY" secondAttribute="bottom" constant="20" id="1ai-ax-d15"/>
                             <constraint firstItem="et7-ZR-Xqt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2FM-He-zqx"/>
                             <constraint firstItem="Qpp-1f-pc5" firstAttribute="top" secondItem="et7-ZR-Xqt" secondAttribute="bottom" constant="24" id="7Oc-cw-a7G"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7x4-lZ-okd"/>
@@ -316,15 +186,15 @@
                             <constraint firstItem="2gQ-e1-d87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="JiD-ur-7wT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDE-xe-hwo" secondAttribute="trailing" constant="24" id="LhT-yu-j4a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AFd-rg-Xlv" secondAttribute="trailing" constant="24" id="NAC-U8-oas"/>
-                            <constraint firstItem="vld-7F-rZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="NtN-bY-mXc"/>
+                            <constraint firstItem="vld-7F-rZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NtN-bY-mXc"/>
                             <constraint firstItem="PDE-xe-hwo" firstAttribute="centerY" secondItem="vld-7F-rZY" secondAttribute="centerY" id="O5v-2N-FfR"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XGl-ce-Rb1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpp-1f-pc5" secondAttribute="bottom" constant="24" id="Yns-yI-SaX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rOR-YY-hdN" secondAttribute="trailing" constant="24" id="aXL-sK-8Uq"/>
                             <constraint firstItem="32Y-xH-20J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="duj-ZK-A9d"/>
-                            <constraint firstItem="vld-7F-rZY" firstAttribute="top" secondItem="SXc-q2-QyW" secondAttribute="bottom" constant="8" id="f72-Rj-EYT"/>
+                            <constraint firstItem="vld-7F-rZY" firstAttribute="top" secondItem="SXc-q2-QyW" secondAttribute="bottom" constant="12" id="f72-Rj-EYT"/>
                             <constraint firstItem="et7-ZR-Xqt" firstAttribute="top" secondItem="PDE-xe-hwo" secondAttribute="bottom" constant="24" id="gGJ-WN-uQl"/>
-                            <constraint firstItem="PDE-xe-hwo" firstAttribute="leading" secondItem="vld-7F-rZY" secondAttribute="trailing" constant="8" id="nRD-Jb-EN3"/>
+                            <constraint firstItem="PDE-xe-hwo" firstAttribute="leading" secondItem="vld-7F-rZY" secondAttribute="trailing" constant="12" id="nRD-Jb-EN3"/>
                             <constraint firstItem="Qpp-1f-pc5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="pFh-6S-Q5K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AFd-rg-Xlv" secondAttribute="bottom" constant="24" id="uW5-Oh-P17"/>
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="wII-da-Yz6"/>
@@ -335,15 +205,10 @@
                     <navigationItem key="navigationItem" title="BeeThinking" id="V7t-Rk-gnW"/>
                     <connections>
                         <outlet property="HoneycombLabel00" destination="0eP-lR-5Hz" id="CVI-Pf-U5T"/>
-                        <outlet property="HoneycombLabel01" destination="O72-0D-Ga7" id="d4d-Ch-9EH"/>
-                        <outlet property="HoneycombLabel02" destination="olo-8i-XbC" id="stX-Dx-KuV"/>
-                        <outlet property="HoneycombLabel03" destination="0Cl-PL-naK" id="CHd-iQ-Ivg"/>
-                        <outlet property="HoneycombLabel04" destination="Jl8-S5-bGp" id="43q-Tf-Ehy"/>
-                        <outlet property="HoneycombLabel05" destination="KmK-Zn-Af8" id="rkZ-Hu-Kgd"/>
-                        <outlet property="HoneycombLabel06" destination="4HL-H0-5yI" id="GCU-hv-shu"/>
-                        <outlet property="HoneycombView" destination="4lk-9s-fQh" id="k67-0v-jeU"/>
-                        <outlet property="HonycomButton" destination="9Ea-LN-NPF" id="XYI-vQ-eAi"/>
                         <outlet property="InputBox" destination="vld-7F-rZY" id="czu-U7-fEg"/>
+                        <outlet property="honeycombLabel00" destination="0eP-lR-5Hz" id="OWc-kp-Jo5"/>
+                        <outlet property="honeycombView" destination="4lk-9s-fQh" id="k67-0v-jeU"/>
+                        <outlet property="scrollView" destination="SXc-q2-QyW" id="t6L-hR-KsL"/>
                         <segue destination="1Ts-RU-F89" kind="show" identifier="toList" id="Ut9-j0-ZbG"/>
                     </connections>
                 </viewController>
@@ -351,36 +216,6 @@
                 <tapGestureRecognizer id="KkQ-ld-zR5" userLabel="Tap Gesture 00">
                     <connections>
                         <action selector="touchLabel00:" destination="BYZ-38-t0r" id="oL9-cJ-zw1"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="ZIS-eM-d9z" userLabel="Tap Gesture 01">
-                    <connections>
-                        <action selector="touchLabel01:" destination="BYZ-38-t0r" id="IME-OX-kxN"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="uH2-In-TYg" userLabel="Tap Gesture 02">
-                    <connections>
-                        <action selector="touchLabel02:" destination="BYZ-38-t0r" id="odO-Cp-79v"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="2BJ-7g-hO4" userLabel="Tap Gesture 03">
-                    <connections>
-                        <action selector="touchLabel03:" destination="BYZ-38-t0r" id="XCO-Uw-nbf"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="oig-s0-0Yo" userLabel="Tap Gesture 04">
-                    <connections>
-                        <action selector="touchLabel04:" destination="BYZ-38-t0r" id="r9M-9z-6Sy"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="adV-uK-t4E" userLabel="Tap Gesture 05">
-                    <connections>
-                        <action selector="touchLabel05:" destination="BYZ-38-t0r" id="7sk-3X-Nm9"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="RqI-bX-sfS" userLabel="Tap Gesture 06">
-                    <connections>
-                        <action selector="touchLabel06:" destination="BYZ-38-t0r" id="YWF-oa-z9c"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -399,7 +234,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="Xqj-Mq-Vo4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="Xqj-Mq-Vo4">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xqj-Mq-Vo4" id="gQm-2a-n7m">

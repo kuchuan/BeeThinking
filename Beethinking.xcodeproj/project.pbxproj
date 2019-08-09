@@ -30,7 +30,7 @@
 		48CA187422F6D47900072B99 /* IdeaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaData.swift; sourceTree = "<group>"; };
 		48E921C722D97507007EF7A0 /* Beethinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beethinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E921CA22D97507007EF7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48E921CC22D97507007EF7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48E921CC22D97507007EF7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		48E921CF22D97507007EF7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48E921D422D97507007EF7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48E921D622D97507007EF7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +67,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		48400CCF22FD7FDE003E8E1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				48E921CC22D97507007EF7A0 /* ViewController.swift */,
+				48939E2322F536640007C462 /* SCViewController.swift */,
+				4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		48C6E20C22F9514C002D05B8 /* SubClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,8 +97,6 @@
 		48E921BE22D97507007EF7A0 = {
 			isa = PBXGroup;
 			children = (
-				48C6E20C22F9514C002D05B8 /* SubClass */,
-				48CA187622F6D78200072B99 /* Objects */,
 				48E921C922D97507007EF7A0 /* Beethinking */,
 				48E921C822D97507007EF7A0 /* Products */,
 				320E740A1C76349B0ADEAAF8 /* Pods */,
@@ -107,14 +115,14 @@
 		48E921C922D97507007EF7A0 /* Beethinking */ = {
 			isa = PBXGroup;
 			children = (
+				48C6E20C22F9514C002D05B8 /* SubClass */,
+				48CA187622F6D78200072B99 /* Objects */,
+				48400CCF22FD7FDE003E8E1E /* Controllers */,
 				48E921CA22D97507007EF7A0 /* AppDelegate.swift */,
-				48E921CC22D97507007EF7A0 /* ViewController.swift */,
 				48E921CE22D97507007EF7A0 /* Main.storyboard */,
-				48939E2322F536640007C462 /* SCViewController.swift */,
 				48E921DF22DAB49E007EF7A0 /* Assets.xcassets */,
 				48E921D322D97507007EF7A0 /* LaunchScreen.storyboard */,
 				48E921D622D97507007EF7A0 /* Info.plist */,
-				4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */,
 			);
 			path = Beethinking;
 			sourceTree = "<group>";
@@ -165,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "Beethinking" */;
+			buildConfigurationList = 48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "BeeThinking" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -432,7 +440,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "Beethinking" */ = {
+		48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "BeeThinking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48E921D722D97507007EF7A0 /* Debug */,
