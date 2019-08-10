@@ -126,6 +126,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 
                 
             }
+            
+            
+            
         }
 
 //----------------------------------------------------------------------
@@ -172,12 +175,30 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         }
         
-        //蜂の巣るフリーエリアの描画（6カ所）
+        //蜂の巣フリーエリアの描画（6カ所）
         
+        
+        //スクロールviewのスクロール設定
         scrollView.contentSize = honeycombView.frame.size
-        print(self.flexibleWidth)
-        scrollView.contentOffset = CGPoint(x: 415, y: 380)
+        print("画面の幅は\(self.view.bounds)")
+        print("蜂の巣画面の高さは\(scrollView.bounds)")
+        print("蜂の巣画面の高さは\(self.scrollView.center)")
+        print("蜂の巣画面のオリジナルY座標\(self.scrollView.frame.origin.y)")
+        //iPhoneの幅に合わせてスクロールビューのオフセットを変える
+        scrollView.contentOffset = CGPoint(x: CGFloat(414 + (415 - self.view.bounds.width) / 2 ) , y: CGFloat(340 - (415 - self.scrollView.frame.height) / 2))
+        print(scrollView.contentOffset)
+        
+        //スクロールビューのピンチイン・ピンチアウトズーミング
+        scrollView.minimumZoomScale = 0.2
+        scrollView.maximumZoomScale = 1.5
+        
         scrollView.delegate = self
+        
+        
+        //ズームする部品を返すメソッド
+        func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+            return self.honeycombView
+        }
         
         
 //----------------------------------------------------------------------
