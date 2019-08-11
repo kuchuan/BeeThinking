@@ -19,30 +19,98 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" minimumZoomScale="2" maximumZoomScale="2" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-q2-QyW">
-                                <rect key="frame" x="0.0" y="183" width="414" height="511"/>
+                                <rect key="frame" x="0.0" y="187" width="414" height="555"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-9s-fQh" customClass="HexView" customModule="Beethinking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="1200" height="1200"/>
                                         <subviews>
-                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-lR-5Hz">
-                                                <rect key="frame" x="147" y="160" width="120" height="120"/>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAw-MV-R6W" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                                <rect key="frame" x="244" y="26" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="0.0" height="1"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="KkQ-ld-zR5" appends="YES" id="6eS-H5-I2e"/>
-                                                </connections>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAw-MV-R6W" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
-                                                <rect key="frame" x="87" y="54" width="143" height="52"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                                <color key="backgroundColor" red="1" green="0.84232999190000002" blue="0.2337165205" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" none="YES"/>
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <state key="normal" title="説明">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                        <color key="value" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="0.97745281457901001" green="0.89323842760259209" blue="0.73590435540669397" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z74-O7-AT0" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                                <rect key="frame" x="244" y="108" width="90" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.84232999190000002" blue="0.2337165205" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" none="YES"/>
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <state key="normal" title="アイデア">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="0.9774528146" green="0.89323842760000005" blue="0.73590435539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFS-gw-Jf1" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                                <rect key="frame" x="315" y="67" width="90" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.84232999190000002" blue="0.2337165205" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" none="YES"/>
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <state key="normal" title="中心課題">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="0.9774528146" green="0.89323842760000005" blue="0.73590435539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxT-2O-4sZ" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                                <rect key="frame" x="315" y="149" width="90" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.84232999190000002" blue="0.2337165205" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" none="YES"/>
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                                <state key="normal" title="入力中">
+                                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="0.9774528146" green="0.89323842760000005" blue="0.73590435539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
                                                         <integer key="value" value="6"/>
@@ -54,6 +122,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1200" id="Whk-eY-hab"/>
                                             <constraint firstAttribute="width" constant="1200" id="xK8-mO-wSy"/>
@@ -63,8 +132,12 @@
                                                 <real key="value" value="-1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Qu0-af-igH" appends="YES" id="tY2-EH-EOY"/>
+                                        </connections>
                                     </view>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="4lk-9s-fQh" secondAttribute="bottom" id="2Uk-fW-duX"/>
                                     <constraint firstItem="4lk-9s-fQh" firstAttribute="firstBaseline" secondItem="SXc-q2-QyW" secondAttribute="top" id="aVK-gk-Plh"/>
@@ -72,8 +145,8 @@
                                     <constraint firstItem="4lk-9s-fQh" firstAttribute="leading" secondItem="SXc-q2-QyW" secondAttribute="leading" id="peE-qf-JuS"/>
                                 </constraints>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-e1-d87">
-                                <rect key="frame" x="18" y="106" width="60" height="60"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-e1-d87">
+                                <rect key="frame" x="36" y="196" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="D9u-2W-ggc"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="i0E-GN-vVi"/>
@@ -100,10 +173,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-YY-hdN">
-                                <rect key="frame" x="345" y="124" width="45" height="70"/>
+                                <rect key="frame" x="341" y="196" width="37" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="WjI-bB-oxw"/>
-                                    <constraint firstAttribute="width" constant="45" id="c3u-C5-aic"/>
+                                    <constraint firstAttribute="height" constant="60" id="WjI-bB-oxw"/>
+                                    <constraint firstAttribute="width" constant="37" id="c3u-C5-aic"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="蜂蜜"/>
                                 <connections>
@@ -111,19 +184,19 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="思いついたことを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vld-7F-rZY">
-                                <rect key="frame" x="20" y="706" width="298" height="29"/>
+                                <rect key="frame" x="20" y="754" width="298" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-1f-pc5">
-                                <rect key="frame" x="24" y="808" width="144" height="30"/>
+                                <rect key="frame" x="24" y="808" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Yms-R2-Tw6"/>
-                                    <constraint firstAttribute="width" constant="144" id="xrj-P1-bOC"/>
+                                    <constraint firstAttribute="width" constant="130" id="xrj-P1-bOC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="ハチの巣を広げる">
                                     <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -132,13 +205,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFd-rg-Xlv">
-                                <rect key="frame" x="246" y="808" width="144" height="30"/>
+                                <rect key="frame" x="260" y="808" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FsF-Wq-Sbm"/>
-                                    <constraint firstAttribute="width" constant="144" id="rwI-7f-9sq"/>
+                                    <constraint firstAttribute="width" constant="130" id="rwI-7f-9sq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="アイデアの蜜を採る">
                                     <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -146,19 +219,8 @@
                                     <action selector="didClickToList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bf9-Tt-Me2"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-0.75" maxValue="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="et7-ZR-Xqt">
-                                <rect key="frame" x="32" y="755" width="350" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="E0z-CS-42G"/>
-                                    <constraint firstAttribute="width" constant="346" id="FLU-Q5-aCw"/>
-                                </constraints>
-                                <viewLayoutGuide key="safeArea" id="3eO-gm-ZNN"/>
-                                <connections>
-                                    <action selector="ChangeLabelSize00:" destination="BYZ-38-t0r" eventType="valueChanged" id="fby-yg-mu2"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDE-xe-hwo">
-                                <rect key="frame" x="330" y="706" width="60" height="29"/>
+                                <rect key="frame" x="330" y="754.5" width="60" height="29"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="7H5-ZZ-Z6P"/>
@@ -175,49 +237,44 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="et7-ZR-Xqt" firstAttribute="top" secondItem="vld-7F-rZY" secondAttribute="bottom" constant="20" id="1ai-ax-d15"/>
-                            <constraint firstItem="et7-ZR-Xqt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2FM-He-zqx"/>
-                            <constraint firstItem="Qpp-1f-pc5" firstAttribute="top" secondItem="et7-ZR-Xqt" secondAttribute="bottom" constant="24" id="7Oc-cw-a7G"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7x4-lZ-okd"/>
-                            <constraint firstItem="SXc-q2-QyW" firstAttribute="top" secondItem="2gQ-e1-d87" secondAttribute="bottom" constant="17" id="BpR-T0-yzM"/>
                             <constraint firstItem="32Y-xH-20J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DqY-km-YnW"/>
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EF6-PI-8j6"/>
-                            <constraint firstItem="2gQ-e1-d87" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="Fgy-nf-4ce"/>
-                            <constraint firstItem="2gQ-e1-d87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="JiD-ur-7wT"/>
+                            <constraint firstItem="2gQ-e1-d87" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="108" id="Fgy-nf-4ce"/>
+                            <constraint firstItem="2gQ-e1-d87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="Kzh-ZM-8DB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDE-xe-hwo" secondAttribute="trailing" constant="24" id="LhT-yu-j4a"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AFd-rg-Xlv" secondAttribute="trailing" constant="24" id="NAC-U8-oas"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NtN-bY-mXc"/>
                             <constraint firstItem="PDE-xe-hwo" firstAttribute="centerY" secondItem="vld-7F-rZY" secondAttribute="centerY" id="O5v-2N-FfR"/>
+                            <constraint firstItem="Qpp-1f-pc5" firstAttribute="top" secondItem="vld-7F-rZY" secondAttribute="bottom" constant="24" id="RZe-ro-FVi"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XGl-ce-Rb1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpp-1f-pc5" secondAttribute="bottom" constant="24" id="Yns-yI-SaX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rOR-YY-hdN" secondAttribute="trailing" constant="24" id="aXL-sK-8Uq"/>
                             <constraint firstItem="32Y-xH-20J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="duj-ZK-A9d"/>
+                            <constraint firstItem="SXc-q2-QyW" firstAttribute="top" secondItem="32Y-xH-20J" secondAttribute="bottom" constant="36" id="eOa-Pj-3Gz"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="top" secondItem="SXc-q2-QyW" secondAttribute="bottom" constant="12" id="f72-Rj-EYT"/>
-                            <constraint firstItem="et7-ZR-Xqt" firstAttribute="top" secondItem="PDE-xe-hwo" secondAttribute="bottom" constant="20" id="gGJ-WN-uQl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rOR-YY-hdN" secondAttribute="trailing" constant="36" id="imm-Tg-hsF"/>
                             <constraint firstItem="PDE-xe-hwo" firstAttribute="leading" secondItem="vld-7F-rZY" secondAttribute="trailing" constant="12" id="nRD-Jb-EN3"/>
                             <constraint firstItem="Qpp-1f-pc5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="pFh-6S-Q5K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AFd-rg-Xlv" secondAttribute="trailing" constant="24" id="rvt-m2-Ccw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AFd-rg-Xlv" secondAttribute="bottom" constant="24" id="uW5-Oh-P17"/>
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="wII-da-Yz6"/>
-                            <constraint firstItem="rOR-YY-hdN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="z01-QO-9DG"/>
+                            <constraint firstItem="rOR-YY-hdN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="108" id="z01-QO-9DG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="BeeThinking" id="V7t-Rk-gnW"/>
                     <connections>
-                        <outlet property="HoneycombLabel00" destination="0eP-lR-5Hz" id="CVI-Pf-U5T"/>
                         <outlet property="InputBox" destination="vld-7F-rZY" id="czu-U7-fEg"/>
-                        <outlet property="honeycombLabel00" destination="0eP-lR-5Hz" id="OWc-kp-Jo5"/>
                         <outlet property="honeycombView" destination="4lk-9s-fQh" id="k67-0v-jeU"/>
                         <outlet property="scrollView" destination="SXc-q2-QyW" id="t6L-hR-KsL"/>
                         <segue destination="1Ts-RU-F89" kind="show" identifier="toList" id="Ut9-j0-ZbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="KkQ-ld-zR5" userLabel="Tap Gesture 00">
+                <pinchGestureRecognizer id="Qu0-af-igH">
                     <connections>
-                        <action selector="touchLabel00:" destination="BYZ-38-t0r" id="oL9-cJ-zw1"/>
+                        <action selector="didPinchHoneycombView:" destination="BYZ-38-t0r" id="iic-Sd-RXa"/>
                     </connections>
-                </tapGestureRecognizer>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="298.55072463768118" y="31.473214285714285"/>
         </scene>

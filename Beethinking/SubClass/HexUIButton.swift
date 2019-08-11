@@ -14,7 +14,7 @@ class HexUIButton: UIButton {
 
         
         @IBInspectable public var numberOfCorner : Int = 4
-        @IBInspectable public var buttonColor : UIColor = UIColor.lightGray
+        @IBInspectable public var buttonColor : UIColor = UIColor.init(red: 249/255, green: 228/255, blue: 188/255, alpha: 1.0)
         @IBInspectable public var rotation : Double = 0
         public let borderShape = CAShapeLayer()
     
@@ -75,8 +75,9 @@ class HexUIButton: UIButton {
                 
                 if honeycombTagNum != self.tag {
 
-                    self.buttonColor = UIColor.purple
-                    self.backgroundColor = UIColor.blue
+                    self.buttonColor = UIColor.init(red: 244/255, green: 193/255, blue: 0/255, alpha: 1.0)
+                    self.backgroundColor = UIColor.init(red: 244/255, green: 193/255, blue: 0/255, alpha: 1.0)
+                    self.setTitleColor(UIColor.black, for: .focused)
                     honeycombTagNum = self.tag
                 
                 

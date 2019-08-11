@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var honeycombString:String = "00"
     
+    var startTransform:CGAffineTransform!
+    
     @IBOutlet weak var InputBox: UITextField!
     
     @IBOutlet weak var honeycombView: UIView!
@@ -26,6 +28,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var honeycombLabel00: UILabel!
+    
+    
 
     
 //    @IBOutlet weak var honycomButton: HexUIButton!
@@ -50,6 +54,48 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 //            print("Complerted")
         }
         
+        
+        
+        func hexSetting(_ positionx: Float, _ positiony: Float, _ hexOfWidth: Int, _ drawAreaNum: Int, _ i: Int) {
+            let hexButton = HexUIButton()
+            //サイズ
+            hexButton.frame = CGRect(x: CGFloat(positionx), y: CGFloat(positiony),
+                                        width: CGFloat(hexOfWidth), height: CGFloat(hexOfWidth))
+            //タグ
+            hexButton.tag = drawAreaNum * 10 + i
+            if hexButton.tag == 0 {
+                hexButton.tag = 100
+            }
+            //ボタンにタイトル挿入
+            hexButton.setTitle("\(hexButton.tag)", for: .normal)
+            hexButton.setTitleColor(.white, for: .normal)
+            hexButton.layer.borderWidth = 1
+            
+            //6角形の値を入力
+            hexButton.numberOfCorner = 6
+            //6角形の傾き
+            hexButton.rotation = 30
+            
+            //枠内のpadding
+            hexButton.titleEdgeInsets = UIEdgeInsets(top: 25.0, left: 25.0, bottom: 25.0, right: 25.0)
+            
+            //枠内の行数
+            hexButton.titleLabel?.numberOfLines = 5
+            
+            //ボタンだけどラベルのように扱いたいので
+            hexButton.isEnabled = false
+            
+            //6番より大きなタグ番号の蜂の巣ははじめ不可視化して御行く
+            if hexButton.tag > 6 && hexButton.tag < 100{
+                hexButton.isHidden = true
+            }
+            //buttonに処理を追加
+            // ボタンを押した時に実行するメソッドを指定
+            //                hexButton.addTarget(self, action: #selector(hexButtonEvent(_:)), for: UIControlEvents.touchUpInside)
+            
+            
+            honeycombView.addSubview(hexButton)
+        }
         
         
         func darwHexButton(originx: Int, originy: Int, hexOfWidth: Int, drawAreaNum: Int) {
@@ -86,43 +132,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                         positiony = Float(originy)
                 }
                 
-                let hexButton = HexUIButton()
-                //サイズ
-                hexButton.frame = CGRect(x: CGFloat(positionx), y: CGFloat(positiony), width: CGFloat(hexOfWidth), height: CGFloat(hexOfWidth))
-                //タグ
-                hexButton.tag = drawAreaNum * 10 + i
-                if hexButton.tag == 0 {
-                    hexButton.tag = 100
-                }
-                //ボタンにタイトル挿入
-                hexButton.setTitle("\(hexButton.tag)", for: .normal)
-                hexButton.setTitleColor(.white, for: .normal)
-                hexButton.layer.borderWidth = 1
-                
-                //6角形の値を入力
-                hexButton.numberOfCorner = 6
-                //6角形の傾き
-                hexButton.rotation = 30
-                
-                //枠内のpadding
-                hexButton.titleEdgeInsets = UIEdgeInsets(top: 25.0, left: 25.0, bottom: 25.0, right: 25.0)
-                
-                //枠内の行数
-                hexButton.titleLabel?.numberOfLines = 5
-                
-                //ボタンだけどラベルのように扱いたいので
-                 hexButton.isEnabled = false
-                
-                //6番より大きなタグ番号の蜂の巣ははじめ不可視化して御行く
-                if hexButton.tag > 6 && hexButton.tag < 100{
-                    hexButton.isHidden = true
-                }
-                //buttonに処理を追加
-                // ボタンを押した時に実行するメソッドを指定
-//                hexButton.addTarget(self, action: #selector(hexButtonEvent(_:)), for: UIControlEvents.touchUpInside)
-
-                
-                honeycombView.addSubview(hexButton)
+                hexSetting(positionx, positiony, hexOfWidth, drawAreaNum, i)
                 
                 
             }
@@ -170,60 +180,55 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     centery = 0
             }
             
-        //蜂の巣の描画（外周periemeter）
-        darwHexButton(originx: centerx, originy: centery, hexOfWidth: 140, drawAreaNum: i)
-        
+            //蜂の巣の描画（外周periemeter）
+            darwHexButton(originx: centerx, originy: centery, hexOfWidth: 140, drawAreaNum: i)
+            
         }
         
         //蜂の巣フリーエリアの描画（6カ所）
-        
-        
+        hexSetting(658, 361, 140, 7, 1)
+        hexSetting(766, 550, 140, 7, 2)
+        hexSetting(658, 739, 140, 7, 3)
+        hexSetting(442, 739, 140, 7, 4)
+        hexSetting(334, 550, 140, 7, 5)
+        hexSetting(442, 361, 140, 7, 6)
+        self.view.viewWithTag(71)?.backgroundColor = UIColor.init(red: 5/255, green: 5/255, blue: 5/255, alpha: 1.0)
+//        self.view.viewWithTag(71)?.buttonColor = UIColor.init(red: 5/255, green: 5/255, blue: 5/255, alpha: 1.0)
+//        print("ボタンの情報\(self.view.viewWithTag(71)!)")
+
         //スクロールviewのスクロール設定
         scrollView.contentSize = honeycombView.frame.size
-        print("画面の幅は\(self.view.bounds)")
-        print("蜂の巣画面の高さは\(scrollView.bounds)")
-        print("蜂の巣画面の高さは\(self.scrollView.center)")
+        print("iPhone画面の高さ\(self.view.bounds.height)")
+        print("蜂の巣画面の高さは\(scrollView.bounds.height)")
+        print("蜂の巣画面のセンター\(self.scrollView.center)")
         print("蜂の巣画面のオリジナルY座標\(self.scrollView.frame.origin.y)")
         //iPhoneの幅に合わせてスクロールビューのオフセットを変える
-        scrollView.contentOffset = CGPoint(x: CGFloat(414 + (415 - self.view.bounds.width) / 2 ) , y: CGFloat(340 - (415 - self.scrollView.frame.height) / 2))
+        scrollView.contentOffset = CGPoint(x: CGFloat(414 + (415 - self.view.bounds.width) / 2 ),
+                                           y: CGFloat(680  - (self.view.bounds.height - 220 ) / 2 ))
+            
         print(scrollView.contentOffset)
         
-        //スクロールビューのピンチイン・ピンチアウトズーミング
-        scrollView.minimumZoomScale = 0.2
-        scrollView.maximumZoomScale = 1.5
         
         scrollView.delegate = self
         
         
-        //ズームする部品を返すメソッド
-        func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-            return self.honeycombView
-        }
-        
-        
-//----------------------------------------------------------------------
-        
-        
-        
-//        // 画面サイズを初期値として `MainView` クラスを `mainView` としてインスタンス化します。
-//        let mainView = HexView(frame: self.view.bounds)
-//
-//        // `MainView` に自動サイズ調整用に `autoresizingMask` を設定
-//        mainView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//
-//        // `mainView` オブジェクトを表示します。
-//        self.view.addSubview(mainView)
-        
-        
-        
-        
-        
-//        HonycomButton.titleLabel?.numberOfLines = 6
-//        HonycomButton.setTitle("タイトルの文字列です。すごく長いので改行して欲しいのですよ。", for: .normal)
-    
-
-        
     }
+    
+//----------------------------------------------------------------------
+    
+    
+    @IBAction func didPinchHoneycombView(_ sender: UIPinchGestureRecognizer) {
+        
+        if(sender.state == UIGestureRecognizer.State.began){
+            //ピンチ開始時のアフィン変換をクラス変数に保持する。
+            startTransform = honeycombView.transform
+            print(honeycombView.transform)
+        }
+        //ピンチ開始時のアフィン変換を引き継いでアフィン変換を行う。
+        honeycombView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+    }
+    
+    
     
     
     @IBAction func didClickToList(_ sender: UIButton) {
@@ -260,7 +265,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 //
 ////        UIScrollView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: scrollview.alpha = CGFloat(1.0), completion: nil)
 //
-        for i in 1...6  {
+        for i in 1...7  {
             for j in 0...6 {
                 if let  button = self.view.viewWithTag( i * 10 + j ) as? UIButton {
                     //不可視属性の指定を解除
@@ -277,70 +282,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     
     @IBAction func inputTextbutton(_ sender: UIButton) {
-        choseHoneycomb(str: honeycombString, text: InputBox.text ?? "")
         
         print(honeycombTagNum)
 
         if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
-            print("なないか")
+            print("登録ボタンが押されました")
             print(button.titleLabel?.text as Any)
             button.setTitle(InputBox.text, for: .normal)
-//            button.backgroundColor = UIColor.red
+            self.view.viewWithTag(2)?.tintColor = UIColor.red
         }
 
 
-    }
-    
-    @IBAction func ChangeLabelSize00(_ sender: UISlider) {
-        let sliderNum = sender.value
-        let sizeOfLabel = 120 + CGFloat(sliderNum * 120)
-        let sizeOfLabelFont = 16 + CGFloat(Int(sliderNum * 15))
-        let offsetOfLabel = CGFloat(Int((120 - sizeOfLabel) / 2))
-        
-        honeycombLabel00.text = "\(sliderNum)"
-        
-        //
-        //文字の大きさをスライダーで変える
-        honeycombLabel00.font = honeycombLabel00.font.withSize(sizeOfLabelFont)
-        //ラベルボックスの大きさを変える
-        honeycombLabel00.frame = CGRect(x:147 + offsetOfLabel, y:162 + offsetOfLabel, width:sizeOfLabel, height:sizeOfLabel )
-
-    }
-    
-    @IBAction func touchLabel00(_ sender: UITapGestureRecognizer) {
-        
-        resetBorderColor()
-//        HoneycombLabel00.frame = CGRect(x:147 + offsetOfLabel, y:162 + offsetOfLabel, width:sizeOfLabel, height:sizeOfLabel )
-        //　ラベル枠の枠線太さと色
-        honeycombLabel00.layer.borderColor = UIColor.red.cgColor
-        honeycombLabel00.layer.borderWidth = 3
-        honeycombString = "00"
-        InputBox.text = honeycombLabel00.text
-        
     }
     
    
     
-
     
-    
-    
-    func resetBorderColor(){
-        //　ラベル枠の枠線太さと色
-        honeycombLabel00.layer.borderColor = UIColor.clear.cgColor
-        //ついでに入力欄の消去もする
-        InputBox.text = ""
-    }
-
-    func choseHoneycomb(str:String, text:String){
-        
-        switch str {
-            case "00":
-                honeycombLabel00.text = text
-        default :
-            honeycombLabel00.text = text
-        }
-        
-    }
 }
-
