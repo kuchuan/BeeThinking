@@ -17,7 +17,6 @@ var honeycombTagNum: Int = 0
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
-    var honeycombString:String = "00"
     
     var startTransform:CGAffineTransform!
     
@@ -27,14 +26,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var honeycombLabel00: UILabel!
-    
-    
 
-    
-//    @IBOutlet weak var honycomButton: HexUIButton!
-    
-    
     
     
     override func viewDidLoad() {
@@ -68,7 +60,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             }
             //ボタンにタイトル挿入
             hexButton.setTitle("\(hexButton.tag)", for: .normal)
-            hexButton.setTitleColor(.white, for: .normal)
+            hexButton.setTitleColor(.black, for: .normal)
             hexButton.layer.borderWidth = 1
             
             //6角形の値を入力
@@ -147,10 +139,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         //蜂の巣の描画（外周periemeter）
         for i in 1...6 {
-            var x: Int = 550
-            var y: Int = 550
+            let x: Int = 550
+            let y: Int = 550
             
-            var centerx: Int = 0
+        var centerx: Int = 0
             var centery: Int = 0
             
             switch i {
@@ -198,15 +190,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
         //スクロールviewのスクロール設定
         scrollView.contentSize = honeycombView.frame.size
-        print("iPhone画面の高さ\(self.view.bounds.height)")
-        print("蜂の巣画面の高さは\(scrollView.bounds.height)")
-        print("蜂の巣画面のセンター\(self.scrollView.center)")
-        print("蜂の巣画面のオリジナルY座標\(self.scrollView.frame.origin.y)")
+//        //画面作成時の確認用
+//        print("iPhone画面の高さ\(self.view.bounds.height)")
+//        print("蜂の巣画面の高さは\(scrollView.bounds.height)")
+//        print("蜂の巣画面のセンター\(self.scrollView.center)")
+//        print("蜂の巣画面のオリジナルY座標\(self.scrollView.frame.origin.y)")
         //iPhoneの幅に合わせてスクロールビューのオフセットを変える
         scrollView.contentOffset = CGPoint(x: CGFloat(414 + (415 - self.view.bounds.width) / 2 ),
                                            y: CGFloat(680  - (self.view.bounds.height - 220 ) / 2 ))
-            
-        print(scrollView.contentOffset)
+//        //画面作成時の確認用
+//        print(scrollView.contentOffset)
         
         
         scrollView.delegate = self
@@ -233,15 +226,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didClickToList(_ sender: UIButton) {
         
-        let firstIdeas = [
-            honeycombLabel00.text,
-            honeycombLabel00.text,
-            honeycombLabel00.text,
-            honeycombLabel00.text,
-            honeycombLabel00.text,
-            honeycombLabel00.text,
-            honeycombLabel00.text
-        ]
+        let firstIdeas: [String] = []
         performSegue(withIdentifier: "toList", sender: firstIdeas)
     }
     
@@ -289,7 +274,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             print("登録ボタンが押されました")
             print(button.titleLabel?.text as Any)
             button.setTitle(InputBox.text, for: .normal)
-            self.view.viewWithTag(2)?.tintColor = UIColor.red
+            self.view.viewWithTag(honeycombTagNum)?.backgroundColor = UIColor.red
         }
 
 
