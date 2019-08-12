@@ -33,19 +33,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
         var ideas:[IdeaData] = []
     
-//        fileprivate func reloadHoneycombView() {
-//            //Realmに接続
-//            let realm = try! Realm()
-//
-//            //Todoの一覧を取得する(reversedは)
-//            ideas = realm.objects(IdeaData.self).reversed()
-//
-//            //画面の更新
-//            **************.reloadData()
-//        }
-    
-    
-
     
     
     override func viewDidLoad() {
@@ -239,6 +226,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         
         
+        reloadHoneycombView()
+        
     }
     
     // ボタンが押された時に呼ばれるメソッド
@@ -247,6 +236,45 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
 //----------------------------------------------------------------------
+    //初期データ読み込み
+    
+    fileprivate func reloadHoneycombView() {
+        //Realmに接続
+        let realm = try! Realm()
+
+        //直近の一覧を取得する(reversedは)
+        ideas = realm.objects(IdeaData.self).reversed()
+        //最も大きなattributeIdを取得してループですべてのtagNumberに当たって蜂の巣を埋めていく
+        let attributeNum = realm.objects(IdeaData.self).max(ofProperty: "attributeId") as Int?
+        
+        if attributeNum == nil {
+            generalAttributeId = 1
+            return
+        } else {
+            generalAttributeId = attributeNum!
+            //ループ
+            var num: Int = 0
+            for i in 0...7 {
+                for j in 0...6 {
+                    num = i * 10 + j
+                    if num == 0 {
+                        num = 100
+                    }
+                    
+                    let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == \(num)")
+                    
+                    if let  button = self.view.viewWithTag( num ) as? HexUIButton {
+                        
+                        button.setTitle(result.first?.sentence, for: UIControl.State.normal)
+                    }
+                }
+            }
+        }
+        //画面の更新
+//        **************.reloadData()
+    }
+    
+    
     //realm周り
     
     //realm新規登録
