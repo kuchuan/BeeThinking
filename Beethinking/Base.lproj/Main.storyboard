@@ -313,8 +313,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="BeeThinking" id="V7t-Rk-gnW"/>
                     <connections>
-                        <outlet property="InputBox" destination="vld-7F-rZY" id="czu-U7-fEg"/>
                         <outlet property="honeycombView" destination="4lk-9s-fQh" id="k67-0v-jeU"/>
+                        <outlet property="inputBox" destination="vld-7F-rZY" id="czu-U7-fEg"/>
                         <outlet property="scrollView" destination="SXc-q2-QyW" id="t6L-hR-KsL"/>
                         <segue destination="1Ts-RU-F89" kind="show" identifier="toList" id="Ut9-j0-ZbG"/>
                     </connections>

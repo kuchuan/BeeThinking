@@ -14,26 +14,11 @@ class IdeaData: Object {
     
     @objc dynamic var attributeId: Int = 0
     
+    @objc dynamic var tagNumber: Int = 0
+    
     @objc dynamic var sentence: String = ""
-    @objc dynamic var flick1: Int = 1
     
-    @objc dynamic var flick2: Int = 1
-    
-    @objc dynamic var flick3: Int = 1
-    
-    @objc dynamic var flick4: Int = 1
-    
-    @objc dynamic var flick5: Int = 1
-    
-    @objc dynamic var flick6: Int = 1
-    
-    @objc dynamic var flick7: Int = 1
-    
-    @objc dynamic var flick8: Int = 1
-    
-    @objc dynamic var flick9: Int = 1
-    
-    @objc dynamic var flick10: Int = 1
+    @objc dynamic var flickOpacity: Float = 1.0
     
     @objc dynamic var date: Date = Date()
 }

@@ -8,6 +8,8 @@
 
 import UIKit
 import RevealingSplashView
+import RealmSwift
+
 
 
 //Honeycombのタグ番号を格納するグローバル変数を作成
@@ -20,11 +22,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var startTransform:CGAffineTransform!
     
-    @IBOutlet weak var InputBox: UITextField!
+    @IBOutlet weak var inputBox: UITextField!
     
     @IBOutlet weak var honeycombView: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+        var ideas:[IdeaData] = []
+    
+//        fileprivate func reloadHoneycombView() {
+//            //Realmに接続
+//            let realm = try! Realm()
+//
+//            //Todoの一覧を取得する(reversedは)
+//            ideas = realm.objects(IdeaData.self).reversed()
+//
+//            //画面の更新
+//            **************.reloadData()
+//        }
     
     
 
@@ -46,6 +62,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         revealingSplashView.startAnimation(){
 //            print("Complerted")
         }
+        
+        //Realmの情報管理用
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        // RealmからItemを全件取得する
+        let realm = try! Realm()
+        ideas = realm.objects(IdeaData.self).reversed()
         
         
         
@@ -140,6 +163,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             
             
         }
+        
 
 //----------------------------------------------------------------------
         //蜂の巣の描画（セントラル）
@@ -219,6 +243,48 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @objc func buttonEvent(_ sender: UIButton) {
         print("ボタンの情報: \(sender)")
     }
+    
+//----------------------------------------------------------------------
+    //realm周り
+    
+    //realm新規登録
+    fileprivate func createNewIdea(_ text: String, _ tag: Int) {
+        //Realmに接続
+        let realm = try! Realm()
+        //空文字でなければ、データを登録する
+        let idea = IdeaData()
+        
+        //最大のIDを取得
+        let id = getMaxId()
+        idea.id = id
+        if tag == 100 {
+            idea.attributeId = id
+        } else {
+            //中心課題のIDを入れる必要がある
+            idea.attributeId = 0
+        }
+        idea.tagNumber = tag
+        idea.sentence = text
+        idea.flickOpacity = 1.0
+        idea.date = Date()
+        
+        //作成したideaを登録する
+        try! realm.write {
+            realm.add(idea)
+        }
+    }
+    
+    fileprivate func updateIdea(_ text: String, _ tag: Int) {
+        
+        let idea = IdeaData()
+        //更新
+        let realm = try! Realm()
+        
+        try! realm.write {
+            idea.sentence = text
+        }
+    }
+  
     
 //----------------------------------------------------------------------
     
@@ -321,18 +387,53 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func inputTextbutton(_ sender: UIButton) {
         
-//        print(honeycombTagNum)
+        //realmに登録
+        //空文字かチェックする（guard let構文ここから）
+        guard let text = inputBox.text else {
+            //text.Field.textがnilの場合ボタンがクリックされたときの処理を中断
+            return//以降の処理は実行されない
+        }//（guard let構文ここまで）
+        
+        if text.isEmpty {
+            //textField.textが空文字の場合ボタンがクリックされたときの処理を中断
+            return //以降のボタンの処理は実行されない
+        }
+        
+        //ideasの配列の中身が空の場合
+//        if ideas == nil {
+            //新規ideaを追加
+            createNewIdea(text, honeycombTagNum)
+//        }
+//        else {
+//            updateIdea(text, num)
+//        }
 
+        //画面への書き込み
         if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
 //            print("登録ボタンが押されました")
 //            print(button.currentTitle)
-            button.setTitle(InputBox.text, for: .normal)
+            button.setTitle(inputBox.text, for: .normal)
             self.view.viewWithTag(honeycombTagNum)?.backgroundColor = UIColor.red
         }
 
 
     }
-    
+    //最大のIDを取得するメソッド
+    func getMaxId() -> Int {
+        //Realmに接続
+        let realm = try! Realm()
+        
+        // Todoのシートから最大のIDを取得する(asはInt型に変える?はnilを許容する）
+        let id = realm.objects(IdeaData.self).max(ofProperty: "id") as Int?
+        
+        if id == nil {
+            //最大IDがnil存在しない場合は、1を返す
+            return 1
+        } else {
+            return id! + 1
+        }
+        
+    }
    
     
     
