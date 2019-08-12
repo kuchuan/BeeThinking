@@ -14,6 +14,8 @@ import RealmSwift
 
 //Honeycombのタグ番号を格納するグローバル変数を作成
 var honeycombTagNum: Int = 0
+//同じ中心課題のｆグループをidで管理
+var generalAttributeId: Int = 0
 
 
 
@@ -259,9 +261,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         idea.id = id
         if tag == 100 {
             idea.attributeId = id
+            generalAttributeId = id
         } else {
             //中心課題のIDを入れる必要がある
-            idea.attributeId = 0
+            idea.attributeId = generalAttributeId
         }
         idea.tagNumber = tag
         idea.sentence = text
@@ -274,11 +277,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    //アイデアのアップデート
     fileprivate func updateIdea(_ text: String, _ tag: Int) {
         
-        let idea = IdeaData()
+        var idea = IdeaData()
         //更新
         let realm = try! Realm()
+        //当該のデータを探す
+        let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == \(tag)")
+        
+        idea = result.first!
         
         try! realm.write {
             idea.sentence = text
@@ -400,13 +408,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
         //ideasの配列の中身が空の場合
-//        if ideas == nil {
+        let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
+        if button.currentTitle == nil || button.currentTitle == "" {
             //新規ideaを追加
             createNewIdea(text, honeycombTagNum)
-//        }
-//        else {
-//            updateIdea(text, num)
-//        }
+        } else {
+            updateIdea(text, honeycombTagNum)
+        }
 
         //画面への書き込み
         if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
