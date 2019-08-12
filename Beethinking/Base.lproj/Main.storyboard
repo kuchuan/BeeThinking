@@ -176,11 +176,6 @@
                                             <constraint firstAttribute="height" constant="1200" id="Whk-eY-hab"/>
                                             <constraint firstAttribute="width" constant="1200" id="xK8-mO-wSy"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="-1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="Qu0-af-igH" appends="YES" id="tY2-EH-EOY"/>
                                         </connections>

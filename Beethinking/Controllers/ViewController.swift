@@ -266,6 +266,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     if let  button = self.view.viewWithTag( num ) as? HexUIButton {
                         
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
+                    } else {
+                        print("\(num)はnil")
                     }
                 }
             }
@@ -357,11 +359,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
-        
-        
-        
         performSegue(withIdentifier: "toList", sender: firstIdeas)
     }
+   
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toList" {
