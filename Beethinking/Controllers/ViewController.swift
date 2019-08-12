@@ -26,6 +26,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    
 
     
     
@@ -59,7 +60,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 hexButton.tag = 100
             }
             //ボタンにタイトル挿入
-            hexButton.setTitle("\(hexButton.tag)", for: .normal)
+            hexButton.setTitle("", for: .normal)
             hexButton.setTitleColor(.black, for: .normal)
             hexButton.layer.borderWidth = 1
             
@@ -77,17 +78,24 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             //ボタンだけどラベルのように扱いたいので
             hexButton.isEnabled = false
             
-            //6番より大きなタグ番号の蜂の巣ははじめ不可視化して御行く
+//            hexButton.setTitleColor(UIColor.red, for: UIControl.State.highlighted) //聞かない
+            
+            //6番より大きなタグ番号の蜂の巣はあらかじめ不可視化しておく
             if hexButton.tag > 6 && hexButton.tag < 100{
                 hexButton.isHidden = true
             }
             //buttonに処理を追加
             // ボタンを押した時に実行するメソッドを指定
-            //                hexButton.addTarget(self, action: #selector(hexButtonEvent(_:)), for: UIControlEvents.touchUpInside)
+//            hexButton.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControl.Event.touchUpInside)
             
             
             honeycombView.addSubview(hexButton)
         }
+        
+        
+        
+        
+
         
         
         func darwHexButton(originx: Int, originy: Int, hexOfWidth: Int, drawAreaNum: Int) {
@@ -207,6 +215,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    // ボタンが押された時に呼ばれるメソッド
+    @objc func buttonEvent(_ sender: UIButton) {
+        print("ボタンの情報: \(sender)")
+    }
+    
 //----------------------------------------------------------------------
     
     
@@ -215,7 +228,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if(sender.state == UIGestureRecognizer.State.began){
             //ピンチ開始時のアフィン変換をクラス変数に保持する。
             startTransform = honeycombView.transform
-            print(honeycombView.transform)
+//            print(honeycombView.transform)
         }
         //ピンチ開始時のアフィン変換を引き継いでアフィン変換を行う。
         honeycombView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
@@ -226,7 +239,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didClickToList(_ sender: UIButton) {
         
-        let firstIdeas: [String] = []
+        var firstIdeas: [String] = []
+        
+        for i in 0...7 {
+            for j in 0...6 {
+                //初期値の設定
+                var num: Int = i * 10 + j
+                if num == 0 { num = 100 }
+                //1から76までと100の蜂の巣を
+                if let  button = self.view.viewWithTag( num ) as? HexUIButton {
+                    let text = button.currentTitle
+                    if  text != "" {
+                        firstIdeas.append(text!)
+                    }
+                }
+            }
+        }
+        
+        
+        
         performSegue(withIdentifier: "toList", sender: firstIdeas)
     }
     
@@ -239,8 +270,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didClickToMakeHoneycomb(_ sender: UIButton) {
         
-//        let scrollview = UIScrollView()
-//        scrollview.alpha = 0
+        var arrayStrings: [String] = []
+        
+//        let honeycomebView = UIView()
+//        honeycomebView.alpha = 0
 //
 //        let scaleTransform = CGAffineTransform(scaleX: 0.2, y: 0.2)
 //
@@ -248,16 +281,36 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 //
 //        let newTransform = scaleTransform.concatenating(rotationTransform)
 //
-////        UIScrollView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut, animations: scrollview.alpha = CGFloat(1.0), completion: nil)
-//
-        for i in 1...7  {
+//        honeycomebView.animateted(withDuration: 1.0, delay: 0, options: .curveEaseInOut,
+//                             animations: scrollView.alpha = CGFloat(1.0), completion: nil)
+
+        for i in 0...7  {
             for j in 0...6 {
-                if let  button = self.view.viewWithTag( i * 10 + j ) as? UIButton {
+                
+                //初期値の設定
+                var num: Int = i * 10 + j
+                if num == 0 { num = 100 }
+                
+                //1から76までと100の蜂の巣を可視化
+                if let  button = self.view.viewWithTag( num ) as? HexUIButton {
+                    if num <= 6 {
+                        arrayStrings.append(button.currentTitle!)
+                    }
+                    if num % 10 == 0 && num <= 60 {
+//                        print(num)
+                        button.setTitle("\(arrayStrings[num / 10 - 1])", for: .normal)
+                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                    }
                     //不可視属性の指定を解除
                    button.isHidden = false
+//                    print(button.currentTitle!)
                 }
             }
         }
+//        for value in arrayStrings {
+//            print(value)
+//        }
     }
     
     
@@ -268,11 +321,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func inputTextbutton(_ sender: UIButton) {
         
-        print(honeycombTagNum)
+//        print(honeycombTagNum)
 
         if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
-            print("登録ボタンが押されました")
-            print(button.titleLabel?.text as Any)
+//            print("登録ボタンが押されました")
+//            print(button.currentTitle)
             button.setTitle(InputBox.text, for: .normal)
             self.view.viewWithTag(honeycombTagNum)?.backgroundColor = UIColor.red
         }
