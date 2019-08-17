@@ -11,8 +11,10 @@ import RealmSwift
 class IdeaData: Object {
     
     @objc dynamic var id: Int = 0
-    
+    //中心課題のグループ識別ID
     @objc dynamic var attributeId: Int = 0
+    //周辺課題のグループ識別ID
+    @objc dynamic var groupAttributeId = 0
     
     @objc dynamic var tagNumber: Int = 0
     

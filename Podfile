@@ -12,6 +12,7 @@ target 'Beethinking' do
 	pod 'FontAwesome.swift'
 	pod 'RevealingSplashView'
 	pod 'RealmSwift'
+  	pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
   # Pods for Beethinking
 

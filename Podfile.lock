@@ -11,6 +11,7 @@ PODS:
     - Realm (= 3.17.3)
   - RevealingSplashView (0.6.0)
   - SCLAlertView (0.8)
+  - Spring (1.0.6)
 
 DEPENDENCIES:
   - FontAwesome.swift
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - RealmSwift
   - RevealingSplashView
   - SCLAlertView
+  - Spring (from `https://github.com/MengTo/Spring.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -31,6 +33,15 @@ SPEC REPOS:
     - RevealingSplashView
     - SCLAlertView
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
   FontAwesome.swift: 6f55c8ed22a30ab6a8ca94033473161f678dcd4b
   IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
@@ -40,7 +51,8 @@ SPEC CHECKSUMS:
   RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
 
-PODFILE CHECKSUM: 5802709e02336694749663ac13294131fecde86c
+PODFILE CHECKSUM: a07f3399a79b6e3d914e3d320070fbc34fbb6257
 
 COCOAPODS: 1.7.5

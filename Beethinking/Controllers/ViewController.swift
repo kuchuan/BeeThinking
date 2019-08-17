@@ -19,6 +19,8 @@ var generalAttributeId: Int = 0
 
 
 
+
+
 class ViewController: UIViewController, UIScrollViewDelegate {
     
     
@@ -30,9 +32,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
-        var ideas:[IdeaData] = []
-    
+            var ideas:[IdeaData] = []
     
     
     override func viewDidLoad() {
@@ -51,6 +51,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         revealingSplashView.startAnimation(){
 //            print("Complerted")
         }
+        
+        
         
         //Realmの情報管理用
         print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -232,7 +234,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     // ボタンが押された時に呼ばれるメソッド
     @objc func buttonEvent(_ sender: UIButton) {
-        print("ボタンの情報: \(sender)")
+        print("vc237:ボタンの情報: \(sender)")
     }
     
 //----------------------------------------------------------------------
@@ -267,7 +269,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                         
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
                     } else {
-                        print("\(num)はnil")
+                        print("vc272:\(num)はnil")
                     }
                 }
             }
@@ -297,6 +299,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             idea.attributeId = generalAttributeId
         }
         idea.tagNumber = tag
+        idea.groupAttributeId = tag % 10
         idea.sentence = text
         idea.flickOpacity = 1.0
         idea.date = Date()
@@ -343,34 +346,34 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didClickToList(_ sender: UIButton) {
         
-        var firstIdeas: [String] = []
-        
-        for i in 0...7 {
-            for j in 0...6 {
-                //初期値の設定
-                var num: Int = i * 10 + j
-                if num == 0 { num = 100 }
-                //1から76までと100の蜂の巣を
-                if let  button = self.view.viewWithTag( num ) as? HexUIButton {
-                    let text = button.currentTitle
-                    if  text != "" {
-                        firstIdeas.append(text!)
-                    }
-                }
-            }
-        }
-        performSegue(withIdentifier: "toList", sender: firstIdeas)
+//        var firstIdeas: [String] = []
+//
+//        for i in 0...7 {
+//            for j in 0...6 {
+//                //初期値の設定
+//                var num: Int = i * 10 + j
+//                if num == 0 { num = 100 }
+//                //1から76までと100の蜂の巣を
+//                if let  button = self.view.viewWithTag( num ) as? HexUIButton {
+//                    let text = button.currentTitle
+//                    if  text != "" {
+//                        firstIdeas.append(text!)
+//                    }
+//                }
+//            }
+//        }
+        performSegue(withIdentifier: "toList", sender: nil)
     }
    
     
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toList" {
-            let nextVC = segue.destination as! SCViewController
-            nextVC.ideas = sender as! [String]
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toList" {
+//            let nextVC = segue.destination as! SCViewController
+//            nextVC.ideas = sender as! [String]
+//        }
+//    }
     
     @IBAction func didClickToMakeHoneycomb(_ sender: UIButton) {
         

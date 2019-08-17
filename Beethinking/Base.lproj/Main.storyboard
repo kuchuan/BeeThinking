@@ -49,7 +49,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z74-O7-AT0" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
-                                                <rect key="frame" x="244" y="107" width="90" height="90"/>
+                                                <rect key="frame" x="244" y="187" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.84232999190000002" blue="0.2337165205" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <accessibility key="accessibilityConfiguration">
@@ -73,7 +73,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwv-Ex-huD" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
-                                                <rect key="frame" x="174" y="67" width="90" height="90"/>
+                                                <rect key="frame" x="174" y="227" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.84232999190000002" blue="0.2337165205" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <accessibility key="accessibilityConfiguration">
@@ -134,7 +134,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                        <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="0.91869354248046875" green="0.90844732522964478" blue="0.052187353372573853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
                                                         <integer key="value" value="6"/>
@@ -189,12 +189,50 @@
                                     <constraint firstItem="4lk-9s-fQh" firstAttribute="leading" secondItem="SXc-q2-QyW" secondAttribute="leading" id="peE-qf-JuS"/>
                                 </constraints>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-e1-d87">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-e1-d87" customClass="SpringImageView" customModule="Spring">
                                 <rect key="frame" x="36" y="194" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="D9u-2W-ggc"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="i0E-GN-vVi"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="wobble"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="damping">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="velocity">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="repeatCount">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="x">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="y">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotate">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-xH-20J">
                                 <rect key="frame" x="97" y="96" width="220" height="55"/>
@@ -331,12 +369,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-m7-fMD">
-                                <rect key="frame" x="0.0" y="183" width="414" height="467"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-m7-fMD">
+                                <rect key="frame" x="0.0" y="182" width="414" height="570"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="9l7-X9-nt3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="Fce-F9-5in"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" id="Xqj-Mq-Vo4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Xqj-Mq-Vo4">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xqj-Mq-Vo4" id="gQm-2a-n7m">
@@ -354,7 +395,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-ff-XnT">
-                                <rect key="frame" x="112" y="106" width="254" height="60"/>
+                                <rect key="frame" x="92" y="106" width="254" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="AF9-4z-rJU"/>
@@ -362,15 +403,18 @@
                                 </constraints>
                                 <string key="text">アイデアを一覧してみましょう
 ここでの編集は最低限にとどめて
-次の『取捨選択』を活用しましょう</string>
+『取捨選択』を活用しましょう</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-cl-kLJ">
-                                <rect key="frame" x="123" y="666" width="169" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-cl-kLJ">
+                                <rect key="frame" x="140.5" y="776" width="133" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="DvF-2I-uGX"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZBQ-Fi-9QH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Button" image="flickbutton"/>
+                                <state key="normal" image="flickbutton"/>
                                 <connections>
                                     <action selector="didClickToFlickView:" destination="1Ts-RU-F89" eventType="touchUpInside" id="Oac-MV-8Ah"/>
                                 </connections>
@@ -379,9 +423,16 @@
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="em1-kZ-aBv" firstAttribute="top" secondItem="x6m-ld-NlP" secondAttribute="top" constant="12" id="52B-yg-9if"/>
-                            <constraint firstItem="wsx-ff-XnT" firstAttribute="leading" secondItem="em1-kZ-aBv" secondAttribute="trailing" constant="24" id="leF-mE-FAh"/>
+                            <constraint firstItem="x6m-ld-NlP" firstAttribute="bottom" secondItem="9H2-cl-kLJ" secondAttribute="bottom" constant="36" id="Qgu-JS-UiE"/>
+                            <constraint firstItem="9H2-cl-kLJ" firstAttribute="centerX" secondItem="Pms-fd-ecj" secondAttribute="centerX" id="YII-Hc-frN"/>
+                            <constraint firstItem="Qsn-m7-fMD" firstAttribute="leading" secondItem="x6m-ld-NlP" secondAttribute="leading" id="bMI-5Y-vUW"/>
+                            <constraint firstItem="Qsn-m7-fMD" firstAttribute="trailing" secondItem="x6m-ld-NlP" secondAttribute="trailing" id="igR-zH-25c"/>
+                            <constraint firstItem="wsx-ff-XnT" firstAttribute="leading" secondItem="em1-kZ-aBv" secondAttribute="trailing" constant="4" id="leF-mE-FAh"/>
+                            <constraint firstItem="Qsn-m7-fMD" firstAttribute="top" secondItem="em1-kZ-aBv" secondAttribute="bottom" constant="12" id="nj2-k4-YEp"/>
                             <constraint firstItem="em1-kZ-aBv" firstAttribute="leading" secondItem="x6m-ld-NlP" secondAttribute="leading" constant="18" id="puh-ON-bs1"/>
                             <constraint firstItem="wsx-ff-XnT" firstAttribute="top" secondItem="x6m-ld-NlP" secondAttribute="top" constant="18" id="rFh-Ih-OA1"/>
+                            <constraint firstItem="9H2-cl-kLJ" firstAttribute="top" secondItem="Qsn-m7-fMD" secondAttribute="bottom" constant="24" id="rbe-Lf-mpj"/>
+                            <constraint firstItem="Qsn-m7-fMD" firstAttribute="leading" secondItem="Pms-fd-ecj" secondAttribute="leading" id="zYA-vL-F9n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x6m-ld-NlP"/>
                     </view>
@@ -435,16 +486,16 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfF-JU-9d3">
-                                <rect key="frame" x="112" y="106" width="254" height="83"/>
+                                <rect key="frame" x="92" y="106" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="84i-tb-Rna"/>
                                     <constraint firstAttribute="height" constant="83" id="9kJ-YU-aYf"/>
                                 </constraints>
-                                <string key="text">アイデアの取捨選択をします。
+                                <string key="text">アイデアの取捨選択をします
 右スワイプで『取』
 左スワイプで『捨』
-テンポ良く二者択一をしましょう</string>
+テンポ良く選びましょう</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -501,7 +552,7 @@
                             <constraint firstItem="mPF-55-nLh" firstAttribute="bottom" secondItem="ldF-un-T6r" secondAttribute="bottom" constant="30" id="cqw-zh-ieq"/>
                             <constraint firstItem="ggs-Lm-uJd" firstAttribute="leading" secondItem="mPF-55-nLh" secondAttribute="leading" constant="18" id="iWS-Kz-L0s"/>
                             <constraint firstItem="mPF-55-nLh" firstAttribute="trailing" secondItem="QKr-61-v4s" secondAttribute="trailing" constant="28" id="niU-UW-ruY"/>
-                            <constraint firstItem="kfF-JU-9d3" firstAttribute="leading" secondItem="ggs-Lm-uJd" secondAttribute="trailing" constant="24" id="ogv-Pb-Uws"/>
+                            <constraint firstItem="kfF-JU-9d3" firstAttribute="leading" secondItem="ggs-Lm-uJd" secondAttribute="trailing" constant="4" id="ogv-Pb-Uws"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mPF-55-nLh"/>
                     </view>
