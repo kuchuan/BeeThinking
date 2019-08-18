@@ -76,7 +76,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             //ボタンにタイトル挿入
             hexButton.setTitle("", for: .normal)
             hexButton.setTitleColor(.black, for: .normal)
-            hexButton.layer.borderWidth = 1
+            hexButton.layer.borderWidth = 00
             
             //6角形の値を入力
             hexButton.numberOfCorner = 6
@@ -401,7 +401,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 //1から76までと100の蜂の巣を可視化
                 if let  button = self.view.viewWithTag( num ) as? HexUIButton {
                     if num <= 6 {
-                        arrayStrings.append(button.currentTitle!)
+                            arrayStrings.append(button.currentTitle!)
+                            print("ここ")
                     }
                     if num % 10 == 0 && num <= 60 {
 //                        print(num)
@@ -411,7 +412,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     }
                     //不可視属性の指定を解除
                    button.isHidden = false
-//                    print(button.currentTitle!)
+                   print(button.currentTitle!)
                 }
             }
         }
@@ -448,14 +449,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         } else {
             updateIdea(text, honeycombTagNum)
         }
+        
+        inputBox.text = ""
 
-        //画面への書き込み
-        if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
-//            print("登録ボタンが押されました")
-//            print(button.currentTitle)
-            button.setTitle(inputBox.text, for: .normal)
-            self.view.viewWithTag(honeycombTagNum)?.backgroundColor = UIColor.red
-        }
+//        //画面への書き込み
+//        if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
+////            print("登録ボタンが押されました")
+////            print(button.currentTitle)
+//            button.setTitle(inputBox.text, for: .normal)
+//            self.view.viewWithTag(honeycombTagNum)?.backgroundColor = UIColor.red
+//        }
 
 
     }
