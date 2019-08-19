@@ -71,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				48E921CC22D97507007EF7A0 /* ViewController.swift */,
-				4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */,
 				48939E2322F536640007C462 /* SCViewController.swift */,
+				4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "BeeThinking" */;
+			buildConfigurationList = 48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "Beethinking" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -440,7 +440,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "BeeThinking" */ = {
+		48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "Beethinking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48E921D722D97507007EF7A0 /* Debug */,

@@ -100,17 +100,15 @@ class NextViewController: UIViewController {
     @IBAction func back(_ sender: UIButton) {
         kolodaView.revertAction()
         
-        print(kolodaView.countOfCards)
-        print(kolodaView.currentCardIndex)
-//        print(kolodaViewForCardAtIndex)
+//        //（凍結）カードを戻したときに透明度の数値を削除する･･･めくりが削除についてこないのでエラーが出る
+//        if swipeResults.count > 0 {
+//            swipeResults.removeLast()
+//        } else {
+//            print(swipeResults.count)
+//        }
+        print("\(#line):スワイプ結果\(swipeResults)")
+        print("\(#line):カード\(kolodaView.currentCardIndex)/\(kolodaView.countOfCards)")
         
-        //カードを戻したときに透明度の数値を削除する
-        if swipeResults.count > 0 {
-            swipeResults.removeLast()
-        } else {
-            print(swipeResults.count)
-        }
-        print("NV109:カード戻し\(swipeResults)")
     }
     
 }
@@ -126,6 +124,9 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
         cardView.font = UIFont(name: "HelveticaNeue-medium", size: CGFloat(30))
         
         cardView.text = lists[index]
+        
+//        print("\(#line):\(kolodaView.countOfCards)")
+//        print("\(#line):\(kolodaView.currentCardIndex)")
         
 //        print("NV114:\(lists[index])")
 //        print("NV115:\(ideas[index].flickOpacity),\(tmpOpcty),\(ideas[index].sentence)")
@@ -153,7 +154,7 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
     
     // カードを全て消費したときの処理を定義する
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        print("Finish cards.")
+        print("\(#line):Finish cards.")
 //        print("NV152:\(swipeResults)")
         
         let realm = try! Realm()
@@ -179,6 +180,18 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         
 //        print("140行\(ideas[index].sentence)",direction, nvTagNumber, "透明度\(ideas[index].flickOpacity)")
+//        print("\(#line):\(kolodaView.countOfCards)")
+//        print("\(#line):\(kolodaView.currentCardIndex)")
+        
+        //カードとIndexが一致しているか確認（revertActionを高速で行うと処理の取りこぼしが出るため）
+        let difference = swipeResults.count - index
+        
+        if difference > 0 {
+            for _ in 1 ... difference {
+                swipeResults.removeLast()
+            }
+        }
+
         
         //flickによる透明度の設定
         var tmpFlickOpacity = round(tmpOpcty[index] * 100) / 100
@@ -203,10 +216,26 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
             swipeResults.append(round(tmpFlickOpacity * 100) / 100)
 
         
-        print("NV208:swipeResults\(swipeResults)")
+//        print("\(#line):\(swipeResults)")
+//        print("\(#line):現在のカード\(kolodaView.currentCardIndex)/\(kolodaView.countOfCards) & スワイプインデックス:\(index)")
+//        print("\n")
 //        nvTagNumber = tmpTagArry[index] //一つ次のものが代入される
 
     }
+    
+    
+    //デバッグ用
+//    func print(debug: Any = "",
+//               function: String = #function,
+//               file: String = #file,
+//               line: Int = #line) {
+//        var filename = file
+//        if let match = filename.range(of: "[^/]*$", options: .regularExpression) {
+//            filename = filename.substring(with: match)
+//        }
+//        Swift.print("Log:\(filename):L\(line):\(function) \(debug)")
+//    }
+
     
     
 

@@ -275,7 +275,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
                     } else {
-                        print("vc272:\(num)はnil")
+                        print("vc278:\(num)はnil")
                     }
                 }
             }

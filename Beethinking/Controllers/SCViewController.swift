@@ -26,7 +26,7 @@ class SCViewController: UIViewController {
     
         //IdeaDataの一覧をletで取得する(reversedは)
 //        ideas = realm.objects(IdeaData.self).reversed()
-        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "groupAttributeId", ascending: true).reversed().reversed()
+        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: true).reversed().reversed()
 
 //print("SCV31:\(ideas)")
         
@@ -78,7 +78,6 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         
         let idea = ideas[indexPath.row]
         
-// print("SCV81:\(indexPath.row)")
         
         cell.textLabel?.text = idea.sentence
         
@@ -88,13 +87,8 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    //矢印付きののセルがクリックされたときの処理
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        //クリックされたTodoを取得する
-//        let idea = ideas[indexPath.row]
-//
-//    }
+
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         //Realmから対象のTodoを削除
