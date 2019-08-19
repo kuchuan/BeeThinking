@@ -28,7 +28,7 @@ class SCViewController: UIViewController {
 //        ideas = realm.objects(IdeaData.self).reversed()
         ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "groupAttributeId", ascending: true).reversed().reversed()
 
-        print("SCV31:\(ideas)")
+//print("SCV31:\(ideas)")
         
         //画面の更新
         tableView.reloadData()
@@ -78,7 +78,7 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         
         let idea = ideas[indexPath.row]
         
-        print("SCV81:\(indexPath.row)")
+// print("SCV81:\(indexPath.row)")
         
         cell.textLabel?.text = idea.sentence
         

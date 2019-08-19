@@ -19,8 +19,6 @@ var generalAttributeId: Int = 0
 
 
 
-
-
 class ViewController: UIViewController, UIScrollViewDelegate {
     
     
@@ -53,14 +51,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
         
+        //画面が表示されるたびに実行
+        func viewWillAppear(_ animated: Bool) {
+            reloadHoneycombView()
+        }
         
-        //Realmの情報管理用
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        // RealmからItemを全件取得する
-        let realm = try! Realm()
-        ideas = realm.objects(IdeaData.self).reversed()
-        
+//---------------------------------------------------------
+//Honeycom描画
         
         
         func hexSetting(_ positionx: Float, _ positiony: Float, _ hexOfWidth: Int, _ drawAreaNum: Int, _ i: Int) {
@@ -107,10 +105,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
         
-        
-        
 
-        
         
         func darwHexButton(originx: Int, originy: Int, hexOfWidth: Int, drawAreaNum: Int) {
             
@@ -230,6 +225,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         reloadHoneycombView()
         
+        
+        
+        //Realmの情報管理用
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+
+        
+        
+        
     }
     
     // ボタンが押された時に呼ばれるメソッド
@@ -238,8 +242,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
 //----------------------------------------------------------------------
+
     //初期データ読み込み
     
+    //画面の更新
     fileprivate func reloadHoneycombView() {
         //Realmに接続
         let realm = try! Realm()
@@ -266,7 +272,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == \(num)")
                     
                     if let  button = self.view.viewWithTag( num ) as? HexUIButton {
-                        
+    
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
                     } else {
                         print("vc272:\(num)はnil")
@@ -274,8 +280,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
-        //画面の更新
-//        **************.reloadData()
     }
     
     
@@ -346,34 +350,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didClickToList(_ sender: UIButton) {
         
-//        var firstIdeas: [String] = []
-//
-//        for i in 0...7 {
-//            for j in 0...6 {
-//                //初期値の設定
-//                var num: Int = i * 10 + j
-//                if num == 0 { num = 100 }
-//                //1から76までと100の蜂の巣を
-//                if let  button = self.view.viewWithTag( num ) as? HexUIButton {
-//                    let text = button.currentTitle
-//                    if  text != "" {
-//                        firstIdeas.append(text!)
-//                    }
-//                }
-//            }
-//        }
         performSegue(withIdentifier: "toList", sender: nil)
     }
    
-    
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toList" {
-//            let nextVC = segue.destination as! SCViewController
-//            nextVC.ideas = sender as! [String]
-//        }
-//    }
     
     @IBAction func didClickToMakeHoneycomb(_ sender: UIButton) {
         
@@ -401,24 +380,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 //1から76までと100の蜂の巣を可視化
                 if let  button = self.view.viewWithTag( num ) as? HexUIButton {
                     if num <= 6 {
-                            arrayStrings.append(button.currentTitle!)
-                            print("ここ")
+                            arrayStrings.append(button.currentTitle!) 
                     }
+                    
+//                    蜂の巣の拡張
                     if num % 10 == 0 && num <= 60 {
 //                        print(num)
                         button.setTitle("\(arrayStrings[num / 10 - 1])", for: .normal)
-                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+//                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+//                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
                     }
                     //不可視属性の指定を解除
                    button.isHidden = false
-                   print(button.currentTitle!)
                 }
             }
         }
-//        for value in arrayStrings {
-//            print(value)
-//        }
+        setHoneycombColor()
     }
     
     
@@ -451,6 +428,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
         inputBox.text = ""
+        
+        setHoneycombColor()
+        
+        reloadHoneycombView()
 
 //        //画面への書き込み
 //        if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
@@ -479,6 +460,63 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
    
+    func setHoneycombColor() {
+        
+        let realm = try! Realm()
+        let ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: true).reversed()
+        
+        var button: HexUIButton
+        var setHoneyBottle: Int = 0
+        
+        for idea in ideas {
+            if idea.sentence .isEmpty {
+                button = self.view.viewWithTag(idea.tagNumber) as! HexUIButton
+                button.setTitle("", for: .normal)
+                switch idea.tagNumber {
+                case 100 :
+                    button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
+                case 1,2,3,4,5,6 :
+                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                case 10,20,30,40,50,60 :
+                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                case 71...76:
+                    button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
+                default:
+                    button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
+                }
+                
+            } else {
+                button = self.view.viewWithTag(idea.tagNumber) as! HexUIButton
+                button.setTitle(idea.sentence, for: .normal)
+                //蜂蜜ボトルの％用
+                setHoneyBottle = setHoneyBottle + 1
+                switch idea.tagNumber {
+                case 100 :
+                    button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
+                case 1,2,3,4,5,6 :
+                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                case 10,20,30,40,50,60 :
+                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                case 71...76:
+                    button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
+                default:
+                    button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                    button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                }
+        
+            }
+        }
+        
+    }
     
     
 }

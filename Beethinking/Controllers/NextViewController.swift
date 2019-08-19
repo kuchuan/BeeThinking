@@ -84,7 +84,7 @@ class NextViewController: UIViewController {
         self.kolodaView.reloadData()
         
 //        print("NV80\(lists)")  //透明度の確認用
-        print("NV81:\ntmpTagArry\(tmpTagArry)\ntmpOpcty\(tmpOpcty)")  //透明度の確認用
+//        print("NV81:\ntmpTagArry\(tmpTagArry)\ntmpOpcty\(tmpOpcty)")  //透明度の確認用
         
     }
     
@@ -99,6 +99,10 @@ class NextViewController: UIViewController {
     
     @IBAction func back(_ sender: UIButton) {
         kolodaView.revertAction()
+        
+        print(kolodaView.countOfCards)
+        print(kolodaView.currentCardIndex)
+//        print(kolodaViewForCardAtIndex)
         
         //カードを戻したときに透明度の数値を削除する
         if swipeResults.count > 0 {
@@ -146,10 +150,11 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
         return [.left, .right]
     }
     
+    
     // カードを全て消費したときの処理を定義する
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("Finish cards.")
-        print("NV152:\(swipeResults)")
+//        print("NV152:\(swipeResults)")
         
         let realm = try! Realm()
 
@@ -202,6 +207,7 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
 //        nvTagNumber = tmpTagArry[index] //一つ次のものが代入される
 
     }
+    
     
 
     

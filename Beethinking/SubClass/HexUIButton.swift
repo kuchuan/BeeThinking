@@ -73,12 +73,13 @@ class HexUIButton: UIButton {
                 
             } else {
 //                            print("タッチ\(tag)")
-                honeycombColorInitialSetting()
+                
+                
                 
                 if honeycombTagNum != self.tag {
 
-                    self.buttonColor = UIColor.init(red: 244/255, green: 193/255, blue: 0/255, alpha: 1.0)
-                    self.backgroundColor = UIColor.init(red: 244/255, green: 193/255, blue: 0/255, alpha: 1.0)
+                    self.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+                    self.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
                     self.setTitleColor(UIColor.black, for: .normal)
                     honeycombTagNum = self.tag
                 
@@ -88,36 +89,4 @@ class HexUIButton: UIButton {
             }
         }
     
-    func honeycombColorInitialSetting() {
-        
-        //すべての蜂の巣のループ
-        for i in 0...7  {
-            for j in 0...6 {
-                //初期値の設定
-                var num: Int = i * 10 + j
-                if num == 0 { num = 100 }
-//        print(num)
-                if let  button = self.viewWithTag( num ) as? HexUIButton {
-                    switch num {
-                    case 100 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
-                    case 1,2,3,4,5,6 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                    case 10,20,30,40,50,60 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                    case 71...76:
-                        button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
-                    default:
-                        button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
-                    }
-                }
-            }
-        }
-        return
-    }
 }
