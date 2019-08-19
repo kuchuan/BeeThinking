@@ -380,15 +380,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 //1から76までと100の蜂の巣を可視化
                 if let  button = self.view.viewWithTag( num ) as? HexUIButton {
                     if num <= 6 {
-                            arrayStrings.append(button.currentTitle!) 
+                        
+                        let text: String? = button.currentTitle
+                        
+                        if let titleText = text {
+                            arrayStrings.append(titleText)
+                        } else {
+                            arrayStrings.append("")
+                        }
+                        
                     }
-                    
-//                    蜂の巣の拡張
+
+                    //蜂の巣の拡張（中心にある蜂の巣から周辺へアイデアを広げる
                     if num % 10 == 0 && num <= 60 {
-//                        print(num)
-                        button.setTitle("\(arrayStrings[num / 10 - 1])", for: .normal)
-//                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-//                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                        print(num)
+
+                            button.setTitle("\(arrayStrings[num / 10 - 1])", for: .normal)
+                            //  button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                            //  button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+
                     }
                     //不可視属性の指定を解除
                    button.isHidden = false
