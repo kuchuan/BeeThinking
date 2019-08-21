@@ -63,30 +63,114 @@ class HexUIButton: UIButton {
             path.close()
             return path
         }
-    
+       
         
         //余白部分のタッチは無効にする
         override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
             if !createPolygonPath(numberOfCorner:numberOfCorner).contains(point) {
                 // タッチ領域外
                 return nil
-                
+
             } else {
 //                            print("タッチ\(tag)")
-                
-                
-                
+
+
                 if honeycombTagNum != self.tag {
+
+                    honeycombPreviousTagNum = honeycombTagNum
 
                     self.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
                     self.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
                     self.setTitleColor(UIColor.black, for: .normal)
+
                     honeycombTagNum = self.tag
-                
+
+                    print("Hex\(#line):前のボタン\(honeycombPreviousTagNum)と今の薄い色のボタン\(honeycombTagNum)")
+
                 }
-                
+
                  return super.hitTest(point, with: event)
             }
         }
     
 }
+
+
+//（覚え書き）
+////    // UIButtonのインスタンスを作成する
+////    let hexLavel = UIButton(type: UIButtonType.system)
+////
+////    // ボタンを押した時に実行するメソッドを指定
+////    hexButton.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControlEvents.touchUpInside)
+////
+////    // ラベルを設定する
+////    hexButton.setTitle("ボタンのテキスト", for: UIControlState.normal)
+//
+//override init(frame: CGRect) {
+//    //ボタンのタイトル
+//    hexButton.setTitle("hexButton", for: .normal)
+//    
+//    //ボタンのテキストカラー
+//    hexButton.setTitleColor(.gray, for: .normal)
+//    
+//    //タップ時のテキスト
+//    hexButton.setTitle("tapButtonTitle", for: .highlighted)
+//    
+//    //タップ時のテキストカラーの定義
+//    hexButton.setTitleColor(UIColor.red, for: .highlighted)
+//    
+//    //ボタンのフレームサイズ
+//    //        hexButton.frame = CGRectMake(0, 0, 200, 30)
+//    hexLabel.frame = CGRect(x: 0, y: 0, width: 140, height: 140)
+//    
+//    //ボタンの場所
+//    hexLabel.layer.position = CGPoint(x: 0, y: 0)
+//    
+//    //ボタンの背景書
+//    hexLabel.backgroundColor = UIColor.clear
+//    
+//    //ボタンの角丸
+//    hexLabel.layer.cornerRadius = 0
+//    
+//    //ボタンの枠線定義
+//    hexLabel.layer.borderWidth = 0
+//    
+//    //ボタンの枠のり色定義
+//    hexLabel.layer.borderColor =  UIColor.red.cgColor
+//    
+//    //ボタンタップ時に実行するメソッド
+//    hexButton.addTarget(self, action: Selector("touchUpButton:"), for: .touchUpInside)
+//    
+//    //ボタンの挙動を表示
+//    func  touchUpButton() {
+//        print("Button Touch Up!")
+//    }
+//    
+//    //ボタンのタグ（ボタンを特定するために使用する）
+//    hexLabel.tag = 1
+//    
+//    //文字に対する余白の設定content
+//    hexButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+//    //文字に対する余白の設定Edge
+//    hexButton.titleEdgeInsets = UIEdgeInsets(top: 22.0, left: 22.0, bottom: 22.0, right: 22.0)
+//    
+//    //お文字のサイズに関して広さの変更
+//    hexButton.titleLabel?.font = UIFont.systemFont(ofSize: 20.0)
+//    hexButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//    
+//    //ボタンの有効・無効
+//    hexLabel.isEnabled = true
+//    
+//    //ボタンの表示・非表示
+//    hexLabel.isHidden = true
+//    
+//    //ボタンタイトルのマルチライン（ボタンの無効時･･･ラベルと同じになるらしい）
+//    hexButton.titleLabel?.numberOfLines = 6
+//    
+//}
+//
+//required init?(coder aDecoder: NSCoder) {
+//    fatalError("init(coder:) has not been implemented")
+//}
+//// viewに追加する
+//self.view.addSubview(button)

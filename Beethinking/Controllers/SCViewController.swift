@@ -26,9 +26,11 @@ class SCViewController: UIViewController {
     
         //IdeaDataの一覧をletで取得する(reversedは)
 //        ideas = realm.objects(IdeaData.self).reversed()
-        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: true).reversed().reversed()
+//        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+        ideas = realm.objects(IdeaData.self).filter("tagNumber >= 0 AND tagNumber <= 99").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+        ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100").first!, at: 0)
 
-//print("SCV31:\(ideas)")
+        print("SCV\(#line):\(ideas)")
         
         //画面の更新
         tableView.reloadData()
@@ -75,6 +77,9 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        //セクションの記述
+//        let sectitonDate = table
         
         let idea = ideas[indexPath.row]
         

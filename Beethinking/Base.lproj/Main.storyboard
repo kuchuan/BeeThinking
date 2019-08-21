@@ -21,8 +21,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" minimumZoomScale="2" maximumZoomScale="2" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-q2-QyW">
                                 <rect key="frame" x="0.0" y="187" width="414" height="555"/>
                                 <subviews>
-                                    <view opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-9s-fQh" customClass="HexView" customModule="Beethinking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="1200"/>
+                                    <view opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-9s-fQh" customClass="HexView" customModule="Beethinking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="1300"/>
                                         <subviews>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAw-MV-R6W" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
                                                 <rect key="frame" x="34" y="67" width="90" height="90"/>
@@ -170,10 +170,14 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" link="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <rect key="contentStretch" x="0.20000000000000001" y="0.20000000000000001" width="1" height="1"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1200" id="Whk-eY-hab"/>
+                                            <constraint firstAttribute="height" constant="1300" id="Whk-eY-hab"/>
                                             <constraint firstAttribute="width" constant="1200" id="xK8-mO-wSy"/>
                                         </constraints>
                                         <connections>
@@ -183,57 +187,12 @@
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="4lk-9s-fQh" secondAttribute="bottom" id="2Uk-fW-duX"/>
+                                    <constraint firstAttribute="bottom" secondItem="4lk-9s-fQh" secondAttribute="bottom" constant="20" symbolic="YES" id="2Uk-fW-duX"/>
                                     <constraint firstItem="4lk-9s-fQh" firstAttribute="firstBaseline" secondItem="SXc-q2-QyW" secondAttribute="top" id="aVK-gk-Plh"/>
                                     <constraint firstAttribute="trailing" secondItem="4lk-9s-fQh" secondAttribute="trailing" id="kJi-RV-1Vg"/>
                                     <constraint firstItem="4lk-9s-fQh" firstAttribute="leading" secondItem="SXc-q2-QyW" secondAttribute="leading" id="peE-qf-JuS"/>
                                 </constraints>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-e1-d87" customClass="SpringImageView" customModule="Spring">
-                                <rect key="frame" x="36" y="194" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="D9u-2W-ggc"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="i0E-GN-vVi"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="wobble"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="damping">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="velocity">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="repeatCount">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="x">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="y">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleY">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rotate">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-xH-20J">
                                 <rect key="frame" x="97" y="96" width="220" height="55"/>
                                 <constraints>
@@ -244,6 +203,40 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfm-fE-KzR" userLabel="BeeThinkingButton" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="327" y="194" width="63" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="App-aP-6dP"/>
+                                    <constraint firstAttribute="height" constant="63" id="zyi-QR-Vor"/>
+                                </constraints>
+                                <state key="normal" image="BeeThinking"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="wobble"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="damping">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="velocity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="repeatCount">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didClickBee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qd4-ci-rGU"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたのアイデア広げます" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFt-Ai-W7X">
                                 <rect key="frame" x="115" y="149" width="184" height="20"/>
                                 <constraints>
@@ -255,12 +248,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-YY-hdN">
-                                <rect key="frame" x="341" y="196" width="37" height="60"/>
+                                <rect key="frame" x="26" y="196" width="37" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WjI-bB-oxw"/>
                                     <constraint firstAttribute="width" constant="37" id="c3u-C5-aic"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="蜂蜜"/>
+                                <state key="normal" image="蜂蜜"/>
                                 <connections>
                                     <action selector="didClickGoToHoney:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YOi-Hr-28V"/>
                                 </connections>
@@ -271,7 +264,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-1f-pc5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-1f-pc5">
                                 <rect key="frame" x="24" y="808" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -280,7 +273,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="ハチの巣を広げる">
-                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="didClickToMakeHoneycomb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Q4-ZP-g9Y"/>
@@ -320,11 +313,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Sfm-fE-KzR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="2Fr-mf-X68"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7x4-lZ-okd"/>
                             <constraint firstItem="32Y-xH-20J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DqY-km-YnW"/>
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EF6-PI-8j6"/>
-                            <constraint firstItem="2gQ-e1-d87" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="Fgy-nf-4ce"/>
-                            <constraint firstItem="2gQ-e1-d87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="Kzh-ZM-8DB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDE-xe-hwo" secondAttribute="trailing" constant="24" id="LhT-yu-j4a"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NtN-bY-mXc"/>
                             <constraint firstItem="PDE-xe-hwo" firstAttribute="centerY" secondItem="vld-7F-rZY" secondAttribute="centerY" id="O5v-2N-FfR"/>
@@ -334,11 +326,12 @@
                             <constraint firstItem="32Y-xH-20J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="duj-ZK-A9d"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="top" secondItem="32Y-xH-20J" secondAttribute="bottom" constant="36" id="eOa-Pj-3Gz"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="top" secondItem="SXc-q2-QyW" secondAttribute="bottom" constant="12" id="f72-Rj-EYT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rOR-YY-hdN" secondAttribute="trailing" constant="36" id="imm-Tg-hsF"/>
                             <constraint firstItem="PDE-xe-hwo" firstAttribute="leading" secondItem="vld-7F-rZY" secondAttribute="trailing" constant="12" id="nRD-Jb-EN3"/>
                             <constraint firstItem="Qpp-1f-pc5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="pFh-6S-Q5K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AFd-rg-Xlv" secondAttribute="trailing" constant="24" id="rvt-m2-Ccw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AFd-rg-Xlv" secondAttribute="bottom" constant="24" id="uW5-Oh-P17"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sfm-fE-KzR" secondAttribute="trailing" constant="24" id="vut-yo-Bkb"/>
+                            <constraint firstItem="rOR-YY-hdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="wBT-UH-uQf"/>
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="wII-da-Yz6"/>
                             <constraint firstItem="rOR-YY-hdN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="108" id="z01-QO-9DG"/>
                         </constraints>

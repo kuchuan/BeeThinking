@@ -35,7 +35,7 @@ class NextViewController: UIViewController {
         kolodaView.dataSource = self
         
         let realm = try! Realm()
-        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: true).reversed().reversed()
+        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: false).reversed()
         
         var results: [String] = []
 

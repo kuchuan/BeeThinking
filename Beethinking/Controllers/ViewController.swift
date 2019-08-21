@@ -9,18 +9,31 @@
 import UIKit
 import RevealingSplashView
 import RealmSwift
+import AVFoundation
 
 
 
 //Honeycombのタグ番号を格納するグローバル変数を作成
-var honeycombTagNum: Int = 0
+var honeycombTagNum: Int = 100
+var honeycombPreviousTagNum: Int = 100 {
+    willSet {
+        print("honeycombPreviousTagNum willSet:\(honeycombPreviousTagNum) -> \(honeycombTagNum)")
+    }
+    didSet {
+        print("honeycombTagNum didSet :\(honeycombPreviousTagNum) -> \(honeycombTagNum)")
+    }
+}
+    
 //同じ中心課題のｆグループをidで管理
 var generalAttributeId: Int = 0
 
 
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDelegate {
     
+    
+    //カセットデッキ的ややつ
+    var player: AVAudioPlayer!
     
     var startTransform:CGAffineTransform!
     
@@ -31,6 +44,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
             var ideas:[IdeaData] = []
+    
+    // ボタンが押された時に呼ばれるメソッド
+    @objc func hexButtonEvent(_ sender: HexUIButton) {
+        print("vc\(#line):ボタンの情報:")
+    }
+
+
     
     
     override func viewDidLoad() {
@@ -53,14 +73,40 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         //画面が表示されるたびに実行
         func viewWillAppear(_ animated: Bool) {
+            print("リロード")
             reloadHoneycombView()
         }
+        
+//---------------------------------------------------------
+        //再生する音楽ファイルのパス作成
+        let audioPath = Bundle.main.path(forResource: "BeeThinking", ofType: "mp3")!
+        
+        //URLにする必要があるので･･･
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        
+        //音楽ファイルを元に、プレイユアー作成
+        //以下だとエラーが出る。Do catchで作ると
+        //        player = AVAudioPlayer(contentsOf:？ audioUrl)
+        //
+        do {
+            player = try AVAudioPlayer(contentsOf: audioUrl)
+            
+            //無限ループ
+            player.numberOfLoops = -1 //ループ再生
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        //再生
+        player.delegate = self //おまじない
+        player.prepareToPlay() //再生の準備
         
         
 //---------------------------------------------------------
 //Honeycom描画
         
-        
+        //セッティング
         func hexSetting(_ positionx: Float, _ positiony: Float, _ hexOfWidth: Int, _ drawAreaNum: Int, _ i: Int) {
             let hexButton = HexUIButton()
             //サイズ
@@ -74,7 +120,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             //ボタンにタイトル挿入
             hexButton.setTitle("", for: .normal)
             hexButton.setTitleColor(.black, for: .normal)
-            hexButton.layer.borderWidth = 00
+            hexButton.layer.borderWidth = 0
             
             //6角形の値を入力
             hexButton.numberOfCorner = 6
@@ -90,16 +136,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             //ボタンだけどラベルのように扱いたいので
             hexButton.isEnabled = false
             
-//            hexButton.setTitleColor(UIColor.red, for: UIControl.State.highlighted) //聞かない
-            
             //6番より大きなタグ番号の蜂の巣はあらかじめ不可視化しておく
             if hexButton.tag > 6 && hexButton.tag < 100{
                 hexButton.isHidden = true
             }
             //buttonに処理を追加
             // ボタンを押した時に実行するメソッドを指定
-//            hexButton.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControl.Event.touchUpInside)
-            
+//            hexButton.addTarget(self, action: #selector(ViewController.hexButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+            hexButton.addTarget(ViewController(), action: #selector(hexButtonEvent(_:)), for: .touchUpInside)
             
             honeycombView.addSubview(hexButton)
         }
@@ -229,18 +273,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         //Realmの情報管理用
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
 
         
-        
-        
     }
+
     
-    // ボタンが押された時に呼ばれるメソッド
-    @objc func buttonEvent(_ sender: UIButton) {
-        print("vc237:ボタンの情報: \(sender)")
-    }
     
+//----------------------------------------------------------------------
 //----------------------------------------------------------------------
 
     //初期データ読み込み
@@ -275,11 +314,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
                     } else {
-                        print("vc278:\(num)はnil")
+//                        print("vc\(#line):\(num)はnil")
                     }
                 }
             }
         }
+        setHoneycombColor()
     }
     
     
@@ -413,6 +453,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func didClickGoToHoney(_ sender: UIButton) {
     }
     
+    @IBAction func didClickBee(_ sender: UIButton) {
+        if  player.isPlaying {
+            player.pause()
+//            didClickButton.setTitle("一時停止", for: .normal)
+        } else {
+            player.play()
+//            didClickButton.setTitle("再生中", for: .normal)
+//            //            print("\(self.fileName) sound was played")
+        }
+    }
+    
     
     @IBAction func inputTextbutton(_ sender: UIButton) {
         
@@ -470,7 +521,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
    
-    func setHoneycombColor() {
+    fileprivate func setHoneycombColor() {
         
         let realm = try! Realm()
         let ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: true).reversed()
@@ -527,6 +578,5 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
     }
-    
     
 }
