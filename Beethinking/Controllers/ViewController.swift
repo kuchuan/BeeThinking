@@ -49,9 +49,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     @objc func hexButtonEvent(_ sender: HexUIButton) {
         print("vc\(#line):ボタンの情報:")
     }
-
-
     
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +69,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 //            print("Complerted")
         }
         
-        
+    
         //画面が表示されるたびに実行
         func viewWillAppear(_ animated: Bool) {
             print("リロード")
@@ -103,6 +102,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         player.prepareToPlay() //再生の準備
         
         
+//---------------------------------------------------------
+        // タップジェスチャーを作成します。
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(singleTap(_:)))
+        
+        // シングルタップで反応するように設定します。
+        singleTapGesture.numberOfTapsRequired = 1
+        
+        // ビューにジェスチャーを設定します。
+        view.addGestureRecognizer(singleTapGesture)
+        
+
 //---------------------------------------------------------
 //Honeycom描画
         
@@ -533,22 +543,24 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             if idea.sentence .isEmpty {
                 button = self.view.viewWithTag(idea.tagNumber) as! HexUIButton
                 button.setTitle("", for: .normal)
-                switch idea.tagNumber {
-                case 100 :
-                    button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
-                case 1,2,3,4,5,6 :
-                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                case 10,20,30,40,50,60 :
-                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                case 71...76:
-                    button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
-                default:
-                    button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
+                if idea.tagNumber != honeycombTagNum {
+                    switch idea.tagNumber {
+                    case 100 :
+                        button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
+                    case 1,2,3,4,5,6 :
+                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                    case 10,20,30,40,50,60 :
+                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
+                    case 71...76:
+                        button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
+                    default:
+                        button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
+                    }
                 }
                 
             } else {
@@ -556,27 +568,47 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                 button.setTitle(idea.sentence, for: .normal)
                 //蜂蜜ボトルの％用
                 setHoneyBottle = setHoneyBottle + 1
-                switch idea.tagNumber {
-                case 100 :
-                    button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
-                case 1,2,3,4,5,6 :
-                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                case 10,20,30,40,50,60 :
-                    button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                case 71...76:
-                    button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
-                default:
-                    button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
-                    button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                if idea.tagNumber != honeycombTagNum {
+                    switch idea.tagNumber {
+                    case 100 :
+                        button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
+                    case 1,2,3,4,5,6 :
+                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                    case 10,20,30,40,50,60 :
+                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                    case 71...76:
+                        button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
+                    default:
+                        button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                        button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                    }
                 }
-        
             }
         }
         
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in:  self.view)
+            Swift.print("\(#line):ロケーション\(location)")
+        }
+    }
+    @objc func singleTap(_ gesture: UITapGestureRecognizer) {
+        // シングルタップされた時の処理を記述してください。
+        Swift.print("\(#line):タップ")
+        setHoneycombColor()
+        
+        var button: HexUIButton
+        
+        button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
+        button.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+        button.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+        button.setTitleColor(UIColor.black, for: .normal)
+
     }
     
 }

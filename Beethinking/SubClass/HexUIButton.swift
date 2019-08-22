@@ -79,9 +79,9 @@ class HexUIButton: UIButton {
 
                     honeycombPreviousTagNum = honeycombTagNum
 
-                    self.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-                    self.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-                    self.setTitleColor(UIColor.black, for: .normal)
+//                    self.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+//                    self.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+//                    self.setTitleColor(UIColor.black, for: .normal)
 
                     honeycombTagNum = self.tag
 
