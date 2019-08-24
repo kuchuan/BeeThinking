@@ -24,13 +24,10 @@ class SCViewController: UIViewController {
         //Realmに接続
         let realm = try! Realm()
     
-        //IdeaDataの一覧をletで取得する(reversedは)
-//        ideas = realm.objects(IdeaData.self).reversed()
-//        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: false).reversed()
         ideas = realm.objects(IdeaData.self).filter("tagNumber >= 0 AND tagNumber <= 99").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
         ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100").first!, at: 0)
 
-        print("SCV\(#line):\(ideas)")
+//        print("SCV\(#line):\(ideas)")
         
         //画面の更新
         tableView.reloadData()
