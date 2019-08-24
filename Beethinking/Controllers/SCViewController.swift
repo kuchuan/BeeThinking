@@ -45,7 +45,6 @@ class SCViewController: UIViewController {
         tableView.dataSource = self
         
         
-        
     }
 
     
@@ -106,6 +105,8 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         ideas.remove(at: indexPath.row)
         //画面から対象のideaを削除
         tableView.deleteRows(at: [indexPath], with: .fade)
+        
+
         
     }
     

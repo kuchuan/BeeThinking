@@ -15,26 +15,32 @@ import AVFoundation
 
 //Honeycombのタグ番号を格納するグローバル変数を作成
 var honeycombTagNum: Int = 100
-var honeycombPreviousTagNum: Int = 100 {
+var honeycombPreviousTagNum: Int = 100
+//同じ中心課題のグループをidで管理
+var generalAttributeId: Int = 0
+//中央課題と周辺課題のお互いを自動でセットする（初期値はする:true）
+var autoSetOfDuplicate: Bool = true
+
+var deleatIdea: Int = 100 {
     willSet {
-        print("honeycombPreviousTagNum willSet:\(honeycombPreviousTagNum) -> \(honeycombTagNum)")
+        print("監視中")
     }
     didSet {
-        print("honeycombTagNum didSet :\(honeycombPreviousTagNum) -> \(honeycombTagNum)")
+        print("監視中")
     }
 }
-    
-//同じ中心課題のｆグループをidで管理
-var generalAttributeId: Int = 0
+
 
 
 
 class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDelegate {
     
     
-    //カセットデッキ的ややつ
+    
+    //カセットデッキ的なやつ
     var player: AVAudioPlayer!
     
+    //Zoomの現在倍率を格納する変数
     var startTransform:CGAffineTransform!
     
     @IBOutlet weak var inputBox: UITextField!
@@ -43,12 +49,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-            var ideas:[IdeaData] = []
-    
-    // ボタンが押された時に呼ばれるメソッド
-    @objc func hexButtonEvent(_ sender: HexUIButton) {
-        print("vc\(#line):ボタンの情報:")
-    }
+    var ideas:[IdeaData] = []
+
     
    
     
@@ -69,10 +71,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 //            print("Complerted")
         }
         
-    
+
         //画面が表示されるたびに実行
         func viewWillAppear(_ animated: Bool) {
-            print("リロード")
+            print("\(#line)リロード")
             reloadHoneycombView()
         }
         
@@ -85,8 +87,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         //音楽ファイルを元に、プレイユアー作成
         //以下だとエラーが出る。Do catchで作ると
-        //        player = AVAudioPlayer(contentsOf:？ audioUrl)
-        //
         do {
             player = try AVAudioPlayer(contentsOf: audioUrl)
             
@@ -108,6 +108,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         // シングルタップで反応するように設定します。
         singleTapGesture.numberOfTapsRequired = 1
+        
         
         // ビューにジェスチャーを設定します。
         view.addGestureRecognizer(singleTapGesture)
@@ -150,10 +151,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             if hexButton.tag > 6 && hexButton.tag < 100{
                 hexButton.isHidden = true
             }
-            //buttonに処理を追加
-            // ボタンを押した時に実行するメソッドを指定
-//            hexButton.addTarget(self, action: #selector(ViewController.hexButtonEvent(_:)), for: UIControl.Event.touchUpInside)
-            hexButton.addTarget(ViewController(), action: #selector(hexButtonEvent(_:)), for: .touchUpInside)
+            //buttonに処理を追加・・・ができなかったので、画面タップに反応することにした
             
             honeycombView.addSubview(hexButton)
         }
@@ -207,12 +205,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 
 //----------------------------------------------------------------------
         //蜂の巣の描画（セントラル）
-        darwHexButton(originx: 550, originy: 550, hexOfWidth: 140, drawAreaNum: 0)
+        darwHexButton(originx: 950, originy: 950, hexOfWidth: 140, drawAreaNum: 0)
         
         //蜂の巣の描画（外周periemeter）
         for i in 1...6 {
-            let x: Int = 550
-            let y: Int = 550
+            let x: Int = 950
+            let y: Int = 950
             
         var centerx: Int = 0
             var centery: Int = 0
@@ -250,15 +248,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         }
         
         //蜂の巣フリーエリアの描画（6カ所）
-        hexSetting(658, 361, 140, 7, 1)
-        hexSetting(766, 550, 140, 7, 2)
-        hexSetting(658, 739, 140, 7, 3)
-        hexSetting(442, 739, 140, 7, 4)
-        hexSetting(334, 550, 140, 7, 5)
-        hexSetting(442, 361, 140, 7, 6)
-        self.view.viewWithTag(71)?.backgroundColor = UIColor.init(red: 5/255, green: 5/255, blue: 5/255, alpha: 1.0)
-//        self.view.viewWithTag(71)?.buttonColor = UIColor.init(red: 5/255, green: 5/255, blue: 5/255, alpha: 1.0)
-//        print("ボタンの情報\(self.view.viewWithTag(71)!)")
+        hexSetting(1058, 761, 140, 7, 1)
+        hexSetting(1166, 950, 140, 7, 2)
+        hexSetting(1058, 1139, 140, 7, 3)
+        hexSetting(842, 1139, 140, 7, 4)
+        hexSetting(734, 950, 140, 7, 5)
+        hexSetting(842, 761, 140, 7, 6)
 
         //スクロールviewのスクロール設定
         scrollView.contentSize = honeycombView.frame.size
@@ -268,10 +263,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 //        print("蜂の巣画面のセンター\(self.scrollView.center)")
 //        print("蜂の巣画面のオリジナルY座標\(self.scrollView.frame.origin.y)")
         //iPhoneの幅に合わせてスクロールビューのオフセットを変える
-        scrollView.contentOffset = CGPoint(x: CGFloat(414 + (415 - self.view.bounds.width) / 2 ),
-                                           y: CGFloat(680  - (self.view.bounds.height - 220 ) / 2 ))
-//        //画面作成時の確認用
-//        print(scrollView.contentOffset)
+        scrollView.contentOffset = CGPoint(x: CGFloat(814 + (415 - self.view.bounds.width) / 2 ),
+                                           y: CGFloat(1080  - (self.view.bounds.height - 220 ) / 2 ))
+
+
+        //画面作成時の確認用
+        print("\(#line),\(scrollView.contentOffset)")
         
         
         scrollView.delegate = self
@@ -320,9 +317,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                     
                     let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == \(num)")
                     
-                    if let  button = self.view.viewWithTag( num ) as? HexUIButton {
-    
+                    if let button = self.view.viewWithTag( num ) as? HexUIButton {
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
+                        if num % 10 == 0 {
+//                            print("\(#line):周りの蜂の巣\(num)")
+//                            button.setTitle("\(arrayStrings[num / 10 - 1])", for: .normal)
+                        }
                     } else {
 //                        print("vc\(#line):\(num)はnil")
                     }
@@ -335,54 +335,28 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     //realm周り
     
-    //realm新規登録
+    //realmへのアイデアデータ新規登録
     fileprivate func createNewIdea(_ text: String, _ tag: Int) {
-        //Realmに接続
-        let realm = try! Realm()
-        //空文字でなければ、データを登録する
-        let idea = IdeaData()
         
-        //最大のIDを取得
-        let id = getMaxId()
-        idea.id = id
-        if tag == 100 {
-            idea.attributeId = id
-            generalAttributeId = id
-        } else {
-            //中心課題のIDを入れる必要がある
-            idea.attributeId = generalAttributeId
-        }
-        idea.tagNumber = tag
-        idea.groupAttributeId = tag % 10
-        idea.sentence = text
-        idea.flickOpacity = 1.0
-        idea.date = Date()
-        
-        //作成したideaを登録する
-        try! realm.write {
-            realm.add(idea)
-        }
+        let setIdea = CreateIdea()
+        let res = setIdea.createIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
+//        print ("\(#line)createIdea",res)
+
     }
+
     
-    //アイデアのアップデート
-    fileprivate func updateIdea(_ text: String, _ tag: Int) {
+    //realmへのアイデアデータのアップデート
+    fileprivate func updateOldIdea(_ text: String, _ tag: Int) {
         
-        var idea = IdeaData()
-        //更新
-        let realm = try! Realm()
-        //当該のデータを探す
-        let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == \(tag)")
+        let setIdea = UpdateIdea()
+        let res = setIdea.updateIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
+//        print ("\(#line)updateIdea",res)
         
-        idea = result.first!
-        
-        try! realm.write {
-            idea.sentence = text
-        }
     }
+
   
     
 //----------------------------------------------------------------------
-    
     
     @IBAction func didPinchHoneycombView(_ sender: UIPinchGestureRecognizer) {
         
@@ -407,18 +381,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     @IBAction func didClickToMakeHoneycomb(_ sender: UIButton) {
         
         var arrayStrings: [String] = []
-        
-//        let honeycomebView = UIView()
-//        honeycomebView.alpha = 0
-//
-//        let scaleTransform = CGAffineTransform(scaleX: 0.2, y: 0.2)
-//
-//        let rotationTransform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
-//
-//        let newTransform = scaleTransform.concatenating(rotationTransform)
-//
-//        honeycomebView.animateted(withDuration: 1.0, delay: 0, options: .curveEaseInOut,
-//                             animations: scrollView.alpha = CGFloat(1.0), completion: nil)
 
         for i in 0...7  {
             for j in 0...6 {
@@ -439,16 +401,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                             arrayStrings.append("")
                         }
                         
-                    }
-
-                    //蜂の巣の拡張（中心にある蜂の巣から周辺へアイデアを広げる
-                    if num % 10 == 0 && num <= 60 {
-                        print(num)
-
-                            button.setTitle("\(arrayStrings[num / 10 - 1])", for: .normal)
-                            //  button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                            //  button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-
                     }
                     //不可視属性の指定を解除
                    button.isHidden = false
@@ -474,10 +426,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         }
     }
     
-    
-    @IBAction func inputTextbutton(_ sender: UIButton) {
+    @IBAction func inputTextButoon(_ sender: UIButton) {
         
-        //realmに登録
+        print("\(#line)OH!honeycombTagNum:\(honeycombTagNum)")
+        
         //空文字かチェックする（guard let構文ここから）
         guard let text = inputBox.text else {
             //text.Field.textがnilの場合ボタンがクリックされたときの処理を中断
@@ -489,125 +441,115 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             return //以降のボタンの処理は実行されない
         }
         
-        //ideasの配列の中身が空の場合
+        
+        
         let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
+        //ideasの配列の中身が空の場合
         if button.currentTitle == nil || button.currentTitle == "" {
             //新規ideaを追加
             createNewIdea(text, honeycombTagNum)
+            
         } else {
-            updateIdea(text, honeycombTagNum)
+            updateOldIdea(text, honeycombTagNum)
+
         }
         
         inputBox.text = ""
         
-        setHoneycombColor()
-        
         reloadHoneycombView()
 
-//        //画面への書き込み
-//        if let button = self.view.viewWithTag(honeycombTagNum) as? UIButton {
-////            print("登録ボタンが押されました")
-////            print(button.currentTitle)
-//            button.setTitle(inputBox.text, for: .normal)
-//            self.view.viewWithTag(honeycombTagNum)?.backgroundColor = UIColor.red
+    }
+    
+    
+//    //最大のIDを取得するメソッド
+//    func getMaxId() -> Int {
+//        //Realmに接続
+//        let realm = try! Realm()
+//
+//        // Todoのシートから最大のIDを取得する(asはInt型に変える?はnilを許容する）
+//        let id = realm.objects(IdeaData.self).max(ofProperty: "id") as Int?
+//
+//        if id == nil {
+//            //最大IDがnil存在しない場合は、1を返す
+//            return 1
+//        } else {
+//            return id! + 1
 //        }
-
-
-    }
-    //最大のIDを取得するメソッド
-    func getMaxId() -> Int {
-        //Realmに接続
-        let realm = try! Realm()
-        
-        // Todoのシートから最大のIDを取得する(asはInt型に変える?はnilを許容する）
-        let id = realm.objects(IdeaData.self).max(ofProperty: "id") as Int?
-        
-        if id == nil {
-            //最大IDがnil存在しない場合は、1を返す
-            return 1
-        } else {
-            return id! + 1
-        }
-        
-    }
+//
+//    }
    
+
     fileprivate func setHoneycombColor() {
-        
-        let realm = try! Realm()
-        let ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: true).reversed()
-        
-        var button: HexUIButton
         var setHoneyBottle: Int = 0
-        
-        for idea in ideas {
-            if idea.sentence .isEmpty {
-                button = self.view.viewWithTag(idea.tagNumber) as! HexUIButton
-                button.setTitle("", for: .normal)
-                if idea.tagNumber != honeycombTagNum {
-                    switch idea.tagNumber {
-                    case 100 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.2)
-                    case 1,2,3,4,5,6 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                    case 10,20,30,40,50,60 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.2)
-                    case 71...76:
-                        button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.2)
-                    default:
-                        button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.2)
-                    }
+
+        //ループ
+        var num: Int = 0
+        for i in 0...7 {
+            for j in 0...6 {
+                num = i * 10 + j
+                if num == 0 {
+                    num = 100
                 }
-                
-            } else {
-                button = self.view.viewWithTag(idea.tagNumber) as! HexUIButton
-                button.setTitle(idea.sentence, for: .normal)
-                //蜂蜜ボトルの％用
-                setHoneyBottle = setHoneyBottle + 1
-                if idea.tagNumber != honeycombTagNum {
-                    switch idea.tagNumber {
-                    case 100 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
-                    case 1,2,3,4,5,6 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                    case 10,20,30,40,50,60 :
-                        button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
-                    case 71...76:
-                        button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
-                    default:
-                        button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
-                        button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                if let button = self.view.viewWithTag( num ) as? HexUIButton {
+                    if button.titleLabel?.text == nil {
+                    switch num {
+                        case 100 :
+                            button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.4)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.4)
+                        case 1,2,3,4,5,6 :
+                            button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.4)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.4)
+                        case 10,20,30,40,50,60 :
+                            button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.4)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 0.4)
+                        case 71...76:
+                            button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.4)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 0.4)
+                        default:
+                            button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.4)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.4)
+                        }
+                    } else {
+                        setHoneyBottle = setHoneyBottle + 1
+                        switch num {
+                        case 100 :
+                            button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 1.0)
+                        case 1,2,3,4,5,6 :
+                            button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                        case 10,20,30,40,50,60 :
+                            button.buttonColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 207/255, blue: 47/255, alpha: 1.0)
+                        case 71...76:
+                            button.buttonColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 245/255, blue: 180/255, alpha: 1.0)
+                        default:
+                            button.buttonColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                            button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 1.0)
+                        }
                     }
+                } else {
+//                 print("vc\(#line):Button\(num)はnil")
                 }
             }
         }
         
+//        print("\(#line)ハチミツの容量:\(setHoneyBottle)")
+        
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in:  self.view)
-            Swift.print("\(#line):ロケーション\(location)")
-        }
-    }
+
     @objc func singleTap(_ gesture: UITapGestureRecognizer) {
-        // シングルタップされた時の処理を記述してください。
-        Swift.print("\(#line):タップ")
+        // シングルタップされた時の処理
         setHoneycombColor()
+
+        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
         
-        var button: HexUIButton
-        
-        button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
-        button.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-        button.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-        button.setTitleColor(UIColor.black, for: .normal)
+        if let button = self.view.viewWithTag(honeycombTagNum) as? HexUIButton {
+            button.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+            button.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+            button.setTitleColor(UIColor.black, for: .normal)
+        }
 
     }
     

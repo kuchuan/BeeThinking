@@ -72,20 +72,15 @@ class HexUIButton: UIButton {
                 return nil
 
             } else {
-//                            print("タッチ\(tag)")
 
-
+                //　Hexbuttonでボタンを作るとhoneycombTagNumが不正になるので気をつけるように！
                 if honeycombTagNum != self.tag {
 
                     honeycombPreviousTagNum = honeycombTagNum
 
-//                    self.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-//                    self.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-//                    self.setTitleColor(UIColor.black, for: .normal)
-
                     honeycombTagNum = self.tag
 
-                    print("Hex\(#line):前のボタン\(honeycombPreviousTagNum)と今の薄い色のボタン\(honeycombTagNum)")
+//                    print("HexUIButton\(#line):前のボタン\(honeycombPreviousTagNum)と今の薄い色のボタン\(honeycombTagNum)")
 
                 }
 

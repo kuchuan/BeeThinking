@@ -17,6 +17,8 @@
 		48E921D022D97507007EF7A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E921CE22D97507007EF7A0 /* Main.storyboard */; };
 		48E921D522D97507007EF7A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E921D322D97507007EF7A0 /* LaunchScreen.storyboard */; };
 		48E921E022DAB49F007EF7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E921DF22DAB49E007EF7A0 /* Assets.xcassets */; };
+		48F7B4552310CEBA00287D46 /* CreateIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7B4542310CEBA00287D46 /* CreateIdea.swift */; };
+		48F7B4572310D0CF00287D46 /* UpdateIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7B4562310D0CF00287D46 /* UpdateIdea.swift */; };
 		48FDA0E9230C488D00B32D27 /* BeeThinking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 48FDA0E8230C488D00B32D27 /* BeeThinking.mp3 */; };
 		55613BA173CD12D9FB1F7102 /* Pods_Beethinking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C174D659B137CD429773D30 /* Pods_Beethinking.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		48E921D422D97507007EF7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48E921D622D97507007EF7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48E921DF22DAB49E007EF7A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48F7B4542310CEBA00287D46 /* CreateIdea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdea.swift; sourceTree = "<group>"; };
+		48F7B4562310D0CF00287D46 /* UpdateIdea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateIdea.swift; sourceTree = "<group>"; };
 		48FDA0E8230C488D00B32D27 /* BeeThinking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BeeThinking.mp3; sourceTree = "<group>"; };
 		F62E42E6A2016F8A05045BC5 /* Pods-Beethinking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beethinking.release.xcconfig"; path = "Target Support Files/Pods-Beethinking/Pods-Beethinking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +88,8 @@
 			children = (
 				4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */,
 				48C6E20D22F9523A002D05B8 /* HexUILabel.swift */,
+				48F7B4542310CEBA00287D46 /* CreateIdea.swift */,
+				48F7B4562310D0CF00287D46 /* UpdateIdea.swift */,
 			);
 			path = SubClass;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			files = (
 				48E921CD22D97507007EF7A0 /* ViewController.swift in Sources */,
 				4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */,
+				48F7B4552310CEBA00287D46 /* CreateIdea.swift in Sources */,
 				48939E2422F536640007C462 /* SCViewController.swift in Sources */,
+				48F7B4572310D0CF00287D46 /* UpdateIdea.swift in Sources */,
 				4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */,
 				48C6E20E22F9523A002D05B8 /* HexUILabel.swift in Sources */,
 				48CA187522F6D47900072B99 /* IdeaData.swift in Sources */,
@@ -415,7 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.Beethinking;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.beethinking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,7 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.Beethinking;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.beethinking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
