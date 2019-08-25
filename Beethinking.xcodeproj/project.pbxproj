@@ -12,6 +12,7 @@
 		48939E2422F536640007C462 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48939E2322F536640007C462 /* SCViewController.swift */; };
 		48C6E20E22F9523A002D05B8 /* HexUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6E20D22F9523A002D05B8 /* HexUILabel.swift */; };
 		48CA187522F6D47900072B99 /* IdeaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA187422F6D47900072B99 /* IdeaData.swift */; };
+		48D53B47231242B900D96903 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D53B46231242B900D96903 /* SettingViewController.swift */; };
 		48E921CB22D97507007EF7A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E921CA22D97507007EF7A0 /* AppDelegate.swift */; };
 		48E921CD22D97507007EF7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E921CC22D97507007EF7A0 /* ViewController.swift */; };
 		48E921D022D97507007EF7A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E921CE22D97507007EF7A0 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		48939E2322F536640007C462 /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
 		48C6E20D22F9523A002D05B8 /* HexUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUILabel.swift; sourceTree = "<group>"; };
 		48CA187422F6D47900072B99 /* IdeaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaData.swift; sourceTree = "<group>"; };
+		48D53B46231242B900D96903 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		48E921C722D97507007EF7A0 /* Beethinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beethinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E921CA22D97507007EF7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E921CC22D97507007EF7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -86,6 +88,7 @@
 				48E921CC22D97507007EF7A0 /* ViewController.swift */,
 				48939E2322F536640007C462 /* SCViewController.swift */,
 				4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */,
+				48D53B46231242B900D96903 /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				48F7B4552310CEBA00287D46 /* CreateIdea.swift in Sources */,
 				48939E2422F536640007C462 /* SCViewController.swift in Sources */,
 				48F7B4572310D0CF00287D46 /* UpdateIdea.swift in Sources */,
+				48D53B47231242B900D96903 /* SettingViewController.swift in Sources */,
 				4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */,
 				48C6E20E22F9523A002D05B8 /* HexUILabel.swift in Sources */,
 				48CA187522F6D47900072B99 /* IdeaData.swift in Sources */,

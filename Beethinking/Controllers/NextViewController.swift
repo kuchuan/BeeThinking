@@ -39,7 +39,7 @@ class NextViewController: UIViewController {
         
         var results: [String] = []
 
-        //いったんタグナンバー順位に整列してタグ100番（センターHoneycomb：中心命題を最初に移動させる
+        //いったんタグナンバー順位に整列してタグ100番（センターHoneycomb：中心課題を最初に移動させる
         //センターHoneycombのタグ番号を0番に設定できないために上記の方法をとった
         for idea in ideas {
             let tagNumber = idea.tagNumber as Int
@@ -83,8 +83,8 @@ class NextViewController: UIViewController {
         
         self.kolodaView.reloadData()
         
-//        print("NV80\(lists)")  //透明度の確認用
-//        print("NV81:\ntmpTagArry\(tmpTagArry)\ntmpOpcty\(tmpOpcty)")  //透明度の確認用
+        //        print("\(#line)\(lists)")  //透明度の確認用
+//        print("\(#line):\ntmpTagArry\(tmpTagArry)\ntmpOpcty\(tmpOpcty)")  //透明度の確認用
         
     }
     
@@ -100,14 +100,8 @@ class NextViewController: UIViewController {
     @IBAction func back(_ sender: UIButton) {
         kolodaView.revertAction()
         
-//        //（凍結）カードを戻したときに透明度の数値を削除する･･･めくりが削除についてこないのでエラーが出る
-//        if swipeResults.count > 0 {
-//            swipeResults.removeLast()
-//        } else {
-//            print(swipeResults.count)
-//        }
-        print("\(#line):スワイプ結果\(swipeResults)")
-        print("\(#line):カード\(kolodaView.currentCardIndex)/\(kolodaView.countOfCards)")
+//        print("\(#line):スワイプ結果\(swipeResults)")
+//        print("\(#line):カード\(kolodaView.currentCardIndex)/\(kolodaView.countOfCards)")
         
     }
     
@@ -125,12 +119,6 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
         
         cardView.text = lists[index]
         
-//        print("\(#line):\(kolodaView.countOfCards)")
-//        print("\(#line):\(kolodaView.currentCardIndex)")
-        
-//        print("NV114:\(lists[index])")
-//        print("NV115:\(ideas[index].flickOpacity),\(tmpOpcty),\(ideas[index].sentence)")
-//        print("NV116行\(ideas[index].sentence)")  //バラバラに表示される
         
         let imageView = UIImageView()
         imageView.addSubview(cardView)
@@ -155,7 +143,6 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
     // カードを全て消費したときの処理を定義する
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("\(#line):Finish cards.")
-//        print("NV152:\(swipeResults)")
         
         let realm = try! Realm()
 
@@ -168,8 +155,6 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
             }
             i = i + 1
         }
-//        print(lists[index])
-        
         //シャッフル
 //        loadView = loadView.shuffled()
         //リスタート
@@ -178,10 +163,6 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
     
     //左右どちらに選ばれたかを検出
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        
-//        print("140行\(ideas[index].sentence)",direction, nvTagNumber, "透明度\(ideas[index].flickOpacity)")
-//        print("\(#line):\(kolodaView.countOfCards)")
-//        print("\(#line):\(kolodaView.currentCardIndex)")
         
         //カードとIndexが一致しているか確認（revertActionを高速で行うと処理の取りこぼしが出るため）
         let difference = swipeResults.count - index
@@ -203,14 +184,14 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
             } else {
                 tmpFlickOpacity = 1.0
             }
-//            print("右な",tmpFlickOpacity)
+
         } else {
             if tmpFlickOpacity >= 0.2 {
                 tmpFlickOpacity = tmpFlickOpacity - 0.1
             } else {
                 tmpFlickOpacity = 0.1
             }
-//            print("左な",tmpFlickOpacity)
+
         }
 
             swipeResults.append(round(tmpFlickOpacity * 100) / 100)

@@ -22,21 +22,19 @@ var generalAttributeId: Int = 0
 //中央課題と周辺課題のお互いを自動でセットする（初期値はする:true）
 var autoSetOfDuplicate: Bool = true
 
-var deleatIdea: Int = 100 {
-    willSet {
-        print("監視中")
-    }
-    didSet {
-        print("監視中")
-    }
-}
+//var deleatIdea: Int = 100 {
+//    willSet {
+//        print("監視中")
+//    }
+//    didSet {
+//        print("監視中")
+//    }
+//}
 
 
 
 
 class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDelegate {
-    
-    
     
     //カセットデッキ的なやつ
     var player: AVAudioPlayer!
@@ -50,10 +48,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var bottle: UIButton!
+    
     var ideas:[IdeaData] = []
 
     
-   
+    //画面が表示されるたびに実行
+    override func viewWillAppear(_ animated: Bool) {
+//        print("\(#line)リロード")
+        reloadHoneycombView()
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,13 +75,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         //Starts animation
         revealingSplashView.startAnimation(){
 //            print("Complerted")
-        }
-        
-
-        //画面が表示されるたびに実行
-        func viewWillAppear(_ animated: Bool) {
-            print("\(#line)リロード")
-            reloadHoneycombView()
         }
         
 //---------------------------------------------------------
@@ -435,6 +433,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     
     @IBAction func didClickGoToHoney(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "toSetting", sender: nil)
+        
     }
     
     @IBAction func didClickBee(_ sender: UIButton) {
@@ -450,9 +451,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     @IBAction func inputTextButoon(_ sender: UIButton) {
         
-        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
-        
-        print(view.viewWithTag(10)?.isHidden as Any)
+//        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
+//
+//        print(view.viewWithTag(10)?.isHidden as Any)
         
         
         //空文字かチェックする（guard let構文ここから）
@@ -576,6 +577,32 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         }
         
 //        print("\(#line)ハチミツの容量:\(setHoneyBottle)")
+        //アイデアの量でbottleのハチミツが変化するギミック
+        var imageName: String = ""
+        let percentOfBottle = Int(floor(Double(setHoneyBottle) / 55 * 100))
+        
+        switch percentOfBottle {
+        case 100 :
+            imageName = "bottle100.png"
+        case 86...99 :
+            imageName = "bottle86.png"
+        case 72...85 :
+            imageName = "bottle72.png"
+        case 60...71 :
+            imageName = "bottle60.png"
+        case 48...59 :
+            imageName = "bottle48.png"
+        case 36...47 :
+            imageName = "bottle36.png"
+        case 24...35 :
+            imageName = "bottle24.png"
+        case 1...23 :
+            imageName = "bottle12.png"
+        default:
+            imageName = "bottle0.png"
+        }
+        let image = UIImage(named: imageName) as UIImage?
+        self.bottle.setImage(image, for: .normal)
         
     }
 

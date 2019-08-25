@@ -92,7 +92,7 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        //Realmから対象のTodoを削除
+        //Realmから対象のデータを削除
         let idea = ideas[indexPath.row]
         let realm = try! Realm()
         try! realm.write {
@@ -103,7 +103,7 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         //画面から対象のideaを削除
         tableView.deleteRows(at: [indexPath], with: .fade)
         
-
+        
         
     }
     

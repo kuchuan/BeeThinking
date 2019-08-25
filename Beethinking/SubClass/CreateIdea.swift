@@ -59,7 +59,7 @@ class CreateIdea {
             idea.attributeId = generalAttributeId
         }
         idea.tagNumber = tag
-        idea.groupAttributeId = (tmpTag / 10) //グループを0から7（8）まで・・・Int型だけど・・・？
+        idea.groupAttributeId = Int(floor(Double(tmpTag) / 10)) 
         idea.sentence = text
         idea.flickOpacity = 1.0
         idea.date = Date()
