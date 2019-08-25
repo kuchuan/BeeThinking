@@ -10,6 +10,7 @@ import UIKit
 import RevealingSplashView
 import RealmSwift
 import AVFoundation
+import SCLAlertView
 
 
 
@@ -195,10 +196,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                 
                 hexSetting(positionx, positiony, hexOfWidth, drawAreaNum, i)
                 
-                
             }
-            
-            
+
             
         }
         
@@ -267,15 +266,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                                            y: CGFloat(1080  - (self.view.bounds.height - 220 ) / 2 ))
 
 
-        //画面作成時の確認用
-        print("\(#line),\(scrollView.contentOffset)")
-        
+//        //画面作成時の確認用
+//        print("\(#line),\(scrollView.contentOffset)")
         
         scrollView.delegate = self
         
-        
         reloadHoneycombView()
-        
         
         
         //Realmの情報管理用
@@ -374,7 +370,33 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     @IBAction func didClickToList(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "toList", sender: nil)
+        //Realmに接続
+        let realm = try! Realm()
+        
+        //中央の蜂の巣にデータがあるか確認
+        let result = realm.objects(IdeaData.self)
+            .filter("attributeId == \(generalAttributeId) AND tagNumber == \(100)")
+        
+        if result.first != nil {
+            
+            //データがあれば画面遷移
+            performSegue(withIdentifier: "toList", sender: nil)
+            
+        } else {
+            
+            //データがない場合にはインフォメーションを出す
+            SCLAlertView().showWarning(
+                "一覧表示ができません", // タイトル
+                subTitle: "蜂の巣の中央に\n『中心課題』を\n入力してください", // サブタイトル
+                closeButtonTitle: "OK", // クローズボタンのタイトル
+    //            timeout: 2, // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
+                colorStyle: 0xFFCF2F, // ボタン、シンボルの色
+                colorTextButton: 0x000000, // ボタンの文字列の色
+    //            circleIconImage: UIImage?, //アイコンimage
+                animationStyle: .bottomToTop // スタイル（Success)指定
+            )
+        }
+
     }
    
     
@@ -428,7 +450,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     @IBAction func inputTextButoon(_ sender: UIButton) {
         
-        print("\(#line)OH!honeycombTagNum:\(honeycombTagNum)")
+        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
+        
+        print(view.viewWithTag(10)?.isHidden as Any)
+        
         
         //空文字かチェックする（guard let構文ここから）
         guard let text = inputBox.text else {
@@ -442,19 +467,34 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         }
         
         
-        
-        let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
-        //ideasの配列の中身が空の場合
-        if button.currentTitle == nil || button.currentTitle == "" {
-            //新規ideaを追加
-            createNewIdea(text, honeycombTagNum)
+        if (honeycombTagNum > 6 && honeycombTagNum < 100) && view.viewWithTag(10)!.isHidden == true {
+            
+            SCLAlertView().showWarning(
+                "登録できません", // タイトル
+                subTitle: "蜂の巣を\n選択してください", // サブタイトル
+                closeButtonTitle: "OK", // クローズボタンのタイトル
+                //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
+                colorStyle: 0xFFCF2F, // ボタン、シンボルの色
+                colorTextButton: 0x000000, // ボタンの文字列の色
+                //            circleIconImage: UIImage?, //アイコンimage
+                animationStyle: .bottomToTop // スタイル（Success)指定
+            )
             
         } else {
-            updateOldIdea(text, honeycombTagNum)
-
+            
+            let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
+            //ideasの配列の中身が空の場合
+            if button.currentTitle == nil || button.currentTitle == "" {
+                //新規ideaを追加
+                createNewIdea(text, honeycombTagNum)
+                
+            } else {
+                updateOldIdea(text, honeycombTagNum)
+                
+            }
+            inputBox.text = ""
+           
         }
-        
-        inputBox.text = ""
         
         reloadHoneycombView()
 
