@@ -17,14 +17,29 @@ class SettingViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTextTapToAboutBeeThinking(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toAboutBeeThinking", sender: nil)
     }
-    */
-
+    @IBAction func didTapToAboutBeeThinking(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toAboutBeeThinking", sender: nil)
+    }
+    
+    
+    @IBAction func didTextTapToAboutBeeSeries(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
+    }
+    @IBAction func didTapToAboutBeeSeries(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
+    }
+    
+    
+    @IBAction func didTextTapToAgreement(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toAgreement", sender: nil)
+    }
+    @IBAction func didTapToAgreement(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toAgreement", sender: nil)
+    }
+    
+    
+    
 }

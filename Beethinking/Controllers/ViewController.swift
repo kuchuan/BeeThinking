@@ -334,17 +334,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         let setIdea = CreateIdea()
         let res = setIdea.createIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
-//        print ("\(#line)createIdea",res)
+        print ("\(#line)createIdea",res)
 
     }
 
-    
     //realmへのアイデアデータのアップデート
     fileprivate func updateOldIdea(_ text: String, _ tag: Int) {
         
         let setIdea = UpdateIdea()
         let res = setIdea.updateIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
-//        print ("\(#line)updateIdea",res)
+        print ("\(#line)updateIdea",res)
         
     }
 
@@ -452,10 +451,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     @IBAction func inputTextButoon(_ sender: UIButton) {
         
 //        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
-//
 //        print(view.viewWithTag(10)?.isHidden as Any)
-        
-        
+
         //空文字かチェックする（guard let構文ここから）
         guard let text = inputBox.text else {
             //text.Field.textがnilの場合ボタンがクリックされたときの処理を中断
@@ -466,7 +463,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             //textField.textが空文字の場合ボタンがクリックされたときの処理を中断
             return //以降のボタンの処理は実行されない
         }
-        
         
         if (honeycombTagNum > 6 && honeycombTagNum < 100) && view.viewWithTag(10)!.isHidden == true {
             
@@ -500,25 +496,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         reloadHoneycombView()
 
     }
-    
-    
-//    //最大のIDを取得するメソッド
-//    func getMaxId() -> Int {
-//        //Realmに接続
-//        let realm = try! Realm()
-//
-//        // Todoのシートから最大のIDを取得する(asはInt型に変える?はnilを許容する）
-//        let id = realm.objects(IdeaData.self).max(ofProperty: "id") as Int?
-//
-//        if id == nil {
-//            //最大IDがnil存在しない場合は、1を返す
-//            return 1
-//        } else {
-//            return id! + 1
-//        }
-//
-//    }
-   
+  
 
     fileprivate func setHoneycombColor() {
         var setHoneyBottle: Int = 0
@@ -601,6 +579,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         default:
             imageName = "bottle0.png"
         }
+        
         let image = UIImage(named: imageName) as UIImage?
         self.bottle.setImage(image, for: .normal)
         
