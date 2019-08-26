@@ -429,10 +429,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E5a-GI-aNg">
-                                <rect key="frame" x="20" y="108" width="374" height="166.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E5a-GI-aNg">
+                                <rect key="frame" x="20" y="103" width="374" height="166"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="Gqr-Yk-AqU"/>
+                                    <constraint firstAttribute="width" constant="374" id="zJ4-d9-ZqG"/>
+                                </constraints>
                                 <string key="text">・BeeSeriesは、問題の発見から解決までをサポートするソリューションです。個々のアプレケーションとして使用するだけでなく、連携をして機能するようデザインされています。
 ・会社や学校・教育機関など、さまざまな場でご利用いただけます。
 ・問題解決だけなく、みなさんの創意ある利用法を見つけていただけることを願っています。
@@ -440,12 +443,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="lrb-Xd-dJl">
-                                <rect key="frame" x="20" y="270" width="374" height="395"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="lrb-Xd-dJl">
+                                <rect key="frame" x="7" y="281" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="WkW-LB-4lt"/>
+                                    <constraint firstAttribute="width" constant="400" id="X5m-t2-UuX"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NWn-XN-hA9" firstAttribute="trailing" secondItem="lrb-Xd-dJl" secondAttribute="trailing" constant="7" id="1gQ-gP-G6C"/>
+                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="leading" secondItem="NWn-XN-hA9" secondAttribute="leading" constant="7" id="5Eo-oy-vlJ"/>
+                            <constraint firstItem="E5a-GI-aNg" firstAttribute="centerX" secondItem="OcW-jH-Vf3" secondAttribute="centerX" id="av1-Hg-0W0"/>
+                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="top" secondItem="E5a-GI-aNg" secondAttribute="bottom" constant="12" id="qRB-AX-UYQ"/>
+                            <constraint firstItem="E5a-GI-aNg" firstAttribute="top" secondItem="NWn-XN-hA9" secondAttribute="top" constant="15" id="sFd-uU-A8K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NWn-XN-hA9"/>
                     </view>
                     <navigationItem key="navigationItem" title="BeeSeries" id="4Ag-hl-mwZ"/>
@@ -461,14 +474,188 @@
                     <view key="view" contentMode="scaleToFill" id="fgF-Z0-amf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-3f-zuR">
+                                <rect key="frame" x="20" y="93" width="374" height="6248"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6248" id="lcD-5p-Kf2"/>
+                                    <constraint firstAttribute="width" constant="374" id="u83-Ed-4mp"/>
+                                </constraints>
+                                <mutableString key="text">■　本サービス利用規約
+本利用規約（以下「本規約」といいます）には、くーちょわん情報工房（以下「当社」といいます）の提供する「BeeThinking」という名称のアップリケーション・ソフトウェア（以下「本ソフトウェア」といいます）及び、それに付随するサービス（以下「本サービス」といい、本ソフトウェアと総称して「本サービス等」といいます）のご利用にあたり、」利用差の皆様に遵守していただかなくてはならない事項及び、当社と利用者の皆様との間の権利義務関係が定められております。本サービス等をご利用になる方は、本規約に同意する前に、必ず全文お読み下さいますようお願い致します。
+
+第1条　本サービス等の利用
+
+1． 利用者は、本サービス等を利用するにあたり、本規約及び本サービス等で連携する他の事業者（Apple Store、Google Play等の当社が連携するウェブ上のマーケット事業者、facebook等のSNS事業者を含みますがこれらに限られません。以下、これらを総称して「外部事業者」といいます。）の定める規約等を遵守しなければなりません。
+2．利用者が本規約に同意のうえ、本サービス等の利用を申し込んだ時点で、当社と利用者の間にサービス利用契約（以下「本利用契約」といいます。）が成立し、利用者は本サービス等を本規約に従い、利用することができるようになります。本サービス等の利用は原則として広告表示が行われるソフトウェアの場合は原則として無料ですが、当社が別途定めるソフトウェア又は機能（以下「有料サービス」といい、有料サービスを利用する利用者を「有料利用者」といいます。）は有料となります。
+3．本サービス等を利用するために必要な、スマートフォンその他の機器、通信回線その他の通信環境等の準備及び維持は、利用者の費用と責任において行うものとします。
+4．また利用者は、自己の本サービス等の利用環境に応じて、セキュリティ対策を自らの責任において講じるものとします。
+
+
+第2条（利用料金）
+
+1.　有料サービス利用の対価（以下「利用料金」といいます。）は、当社が別途定める額とします。利用料金の詳細については当社ホームページ(http://www.kuchuan.jp/)にてご確認ください。
+2.　有料利用者は、前項の利用料金を、当社が別途定める方法で支払うものとします（利用料金の支払いに手数料等を要する場合には、当該有料利用者の負担とします。）。なお、お支払いいただいた利用料金について、当社は領収書等を発行いたしませんので、予めご了承ください。
+3.　当社は、当社の判断で利用料金の変更を行うことができるものとします。なお、利用料金変更の手続については、第13条を準用するものとします。
+
+
+第3条　禁止事項
+
+利用者は、本サービス等の利用にあたり、以下のいずれかに該当する行為をしてはなりません。
+
+1．本サービス等の利用者としての地位を第三者に譲渡又は貸与すること。
+2．本ソフトウェアに含まれるプログラムに対する修正、及び逆コンパイル、逆アセンブル等のリバースエンジニアリングを行うこと。
+3．当社の知的財産権その他の権利又は利益を侵害する行為（かかる侵害を直接又は間接に惹起する行為を含みます）。
+4．外部事業者の定める規約等に違反する行為。又は、外部事業者の知的財産権その他の権利又は利益を侵害する行為（かかる侵害を直接又は間接に惹起する行為を含みます）。
+5．当社による本サービス等の運営及び提供を妨害するおそれのある行為。
+6．本ソフトウェアに含まれるデジタルコンテンツを個人的かつ非営利用途の範囲を超えて利用すること。
+7．アイコンやテーマ、壁紙などのデジタルコンテンツを本ソフトウェアから取り出すこと。
+8．その他、当社が不適切と判断する行為。
+
+
+第4条　当社の免責及び不保証
+
+1． 当社は、本サービス等を利用し、又は利用できないことに関連して利用者に損害が発生した場合でも、当社に故意又は重過失がある場合を除き、一切責任を負わないものとします。なお、消費者契約法の適用その他の理由により当社が損害賠償責任を負う場合においても、当社の賠償責任は現実に生じた直接かつ通常の損害に限り、かつ、その賠償額は、当該損害の発生時までに利用者が当社に支払った利用料金の総額を上限とます。
+2． 当社は、本ソフトウェアに含まれるプログラムに関する技術保守、機能改善等のいかなる技術的提供の義務も負わないものとします。
+3． 当社は、本ソフトウェアの完全性及び確実性を保証するものではありません。動作必要条件を満たす場合でも、使用者の使用環境においては動作しないことがあります。
+4． 当社は、本サービスを通じて提供する情報等について、その完全性、正確性及び確実性を保証するものではありません。
+5．当社は、本サービスにおいて提供されるデータ等の保管、保存、バックアップ等については保証するものではありません。本サービス等において提供されるデータについては、利用者は自らの責任で同一のデータをバックアップとして必要に応じて保存ください。
+6． 本サービスを通じて提供される保存機能について、不正な操作によるデータの損壊については、当社は、正確性、完全性、有用性等いかなる保証も致しません。
+7．本サービス等は、外部事業者と連携することがありますが、当社は、かかる連携を保証するものではなく、外部事業者と連携できなかった場合でも、当社は一切の責任を負いません。
+8．利用者は外部事業者の規約等を自己の費用と責任で遵守するものとし、利用者と当該外部事業者との間で紛争等が生じた場合でも、当社は当該紛争等について一切の責任を負いません。
+9．当社は、本サービス等の保守もしくは障害の対策等が必要な場合、又は運用上・技術上やむを得ないと当社が判断した場合、事前に利用者に通知することなく、本サービス等の提供又は本サービス等の機能の全部もしくは一部を停止又は終了する場合があります。また、当社の故意又は重過失がある場合を除き、かかる当社の措置により利用者が損害（データの消失、外部事業者のサイトから有料で購入した商品の消失等の損害を含みますが、これらに限られません。）を被ったことについて、当社は一切の責任を負いません。
+
+
+第5条　権利帰属
+
+1． 本サービス等に関する所有権、知的財産権その他の一切の権利は、全て当社に帰属します。本サービス等を通じて提供する情報の著作権、商標権等の知的財産権は、当社又は当社に権利を許諾した第三者に帰属します。
+2． また、外部事業者のサイトを通じて購入した第三者の商品等の権利帰属については、本規約に加えて当該第三者又は外部事業者の規約等に従うものとします。
+3．本サービス等を通じて利用者が入力した情報に関する著作権、商標権等の知的財産権は、各利用者に帰属します。なお、各利用者は、当該情報に関する知的財産権に関して、当社において無償、無期限かつ無条件で複製、翻案その他の二次利用をする権利を許諾するものとします。
+
+
+第6条　ダウンロード等についての注意事項
+
+利用者は、本サービス等の利用開始に際し又は本サービス等の利用中に、外部事業者のプラットフォームからのダウンロードその他の方法により本ソフトウェアを利用者のコンピューター等にインストールする場合には、利用者が保有するデータの消滅若しくは改変又は機器の故障、損傷等が生じないよう十分な注意を払うものとし、当社は利用者に発生したかかる損害について一切責任を負わないものとします。
+
+
+第7条　紛争処理及び損害賠償
+
+1． 利用者は、本規約に違反することにより、又は、本サービス等の利用に関連して当社に損害を与えた場合、当社に対しその損害を賠償しなければなりません。
+2． 利用者が、本サービス等に関連して、外部事業者その他の第三者からクレームを受け又はそれらの者との間で紛争を生じた場合には、直ちにその内容を当社に通知するとともに、当社の故意又は重過失がある場合を除き、利用者の費用と責任において当該クレーム又は紛争を処理し、当社からの要請に基づき、その経過及び結果を当社に報告するものとします。
+3． 利用者による本サービス等の利用に関連して、当社が、外部事業者その他の第三者から権利侵害その他の理由により何らかの請求を受けた場合は、利用者は当該請求に基づき当社が当該第三者に支払を余儀なくされた金額を賠償しなければなりません。
+第8条　当社による情報の取得及び利用
+
+1． 当社は、後記「情報の取得及び利用について」において定める目的のために、情報を取得し、利用することができるものとし、利用者はこれに同意するものとします。なお、取得する情報の取扱いの詳細については、後記「情報の取得及び利用について」をご確認下さい。
+2． 前項に定める他、当社はサービス向上を目的として、利用者の利用状況を、個人を識別できない情報として取得する場合があります。
+3． 本サービスには、ユーザー情報の入力が必要となるサービスを提供する予定がございますが、入力した情報が当社に通知されることを承諾していただいたうえで、利用者の判断と責任においてご利用下さい。
+4． 本サービス等における利用者の個人情報の取り扱いにつきましては、本規約で定める他、当社ホームページ(https://www.kuchuan.jp/) にて公開される個人情報保護方針に基づくものとします。
+
+
+第9条　解除等
+
+1.　当社は、利用者が以下の各号のいずれかの事由に該当すると判断した場合には、事前に通知又は催告することなく、本サービス等の提供を停止するとともに、本利用契約を解除することができるものとします。
+(1) 利用者が本規約のいずれかの条項又は法令に違反した場合
+(2) 利用者が支払停止若しくは支払不能となり、又は破産手続開始、民事再生手続開始、会社更生手続開始、特別清算開始若しくはこれらに類する手続の開始申立てがあった場合
+(3) 公租公課の滞納処分を受けた場合
+(4) 前二号の他、任意整理の通知を発する等、前各号に準ずる信用状態に重大な不安が生じたと判断される場合、もしくは将来において生じると判断される場合
+(5) 公的機関又は専門家（国、地方公共団体、特定電気通信役務提供者の損害賠償責任の制限及び発信者情報の開示に関する法律のガイドラインに規定された信頼性確認団体、インターネット、ホットライン、弁護士等）から、利用者が入力したデータその他の情報について、違法性、公序良俗違反又は他人の権利を侵害する等の指摘、意見などがあった場合
+2.　第１項各号のいずれかの事由に該当すると当社が判断した場合、利用者は、当社に対して負っている債務の一切について当然に期限の利益を失い、直ちに当社に対して全ての債務の支払いを行わなければならないものとします。
+3．当社は、第1項の提供停止又は契約解除によって利用者に生じた損害について、一切の責任を負いません。
+
+
+第10条　反社会的勢力の排除
+
+当社は、反社会的勢力等による本サービスの利用を禁止します。当社は、利用者がこれらのものに該当すると判断した場合、事前に利用者に通知することなく、本サービスの提供を停止するとともに、本利用契約を解除することができるものとします。当社は、この提供停止及び契約解除によって利用者に生じた損害について、一切の責任を負いません。
+
+
+第11条　通知
+
+1.　本サービス等に関する問い合わせその他利用者から当社に対する連絡又は通知は、当社の定める方法により行うものとします。
+2.　当社から利用者に対する連絡又は通知は、当社ホームページ(http://www.kuchuan.jp/)での告知、登録されている利用者のメールアドレスに電子メールを送信する方法その他当社が適当と判断する方法により行うものとします。
+3.　当社からの前項の通知は、以下の各号の時点からその効力が発生するものとします。
+(1) 当社ホームページでの告知・公表：当社が当社ホームページ上に表示した時点
+(2) 電子メールの送信：当社が当該電子メールを発信した時点
+(3) 当社が適当と判断する方法：当該適当な方法による通知を発信した時点
+4.　当社が前二項の方法により連絡又は通知を行った場合、当該連絡又は通知を利用者が現に受領したか否かを問わず、その効力が発生するものとします。
+5.　本条の規定は、本規約に別段の定めがある場合を除き、本規約に定める全ての通知に適用されるものとします。
+
+
+第12条　有効期間
+
+本利用契約は、第1条第2項で契約が成立した日に効力を生じ、本利用契約が当社により解除された日、又は本サービスの提供が終了した日まで、当社と利用者との間で有効に存続するものとします。
+
+
+第13条　本規約の変更
+
+当社は、本規約及び本サービス等の内容を随時変更できるものとします。これらの内容の変更については、当社ホームページ(http://www.kuchuan.jp/) にて公開し、当該変更内容の公開後、利用者が本サービス等を利用した場合又は当社の定める合理的な期間が経過した場合には、利用者は、本規約の変更に同意したものとみなします。
+
+
+第14条　分離可能性
+
+本規約のいずれかの条項又はその一部が、消費者契約法の適用その他の理由により無効又は執行不能と判断された場合であっても、本規約の残りの規定及び一部が無効又は執行不能と判断された残りの部分は、継続して完全に効力を有するものとします。また、無効又は執行不能と判断された規定若しくは部分についても、当該規定若しくは部分の趣旨に最も近い有効な規定を無効な規定若しくは部分と置き換えて適用し、又は当該規定若しくは部分の趣旨に最も近い有効な規定となるよう合理的な解釈を加えて適用するものとします。
+
+
+第15条　その他
+
+1． 本規約の効力、履行および解釈に関しては日本国法が適用されるものとします。
+2． 本規約に関し、利用者と当社との間で疑義又は争いが生じた場合には、誠意を持って協議し解決することとしますが、それでもなお解決しない場合には、「大阪地方裁判所」を第一審の専属的合意管轄裁判所とします。
+
+
+第16条　情報の取得について
+
+1.　『個人情報』について
+本アプリケーションにと連携するサービスを利用するために、ユーザー登録を実施する利用者の方々に、個人情報を登録して頂いております。登録情報に含まれる個人情報は、
+・メールアドレス（必須）
+・生年月日（任意）
+となっております。これらの個人情報は、サービス利用に於ける登録、認証及び利用者からのお問い合わせ対応を利用目的として取得しており、その他の用途で活用はしておりません。また第三者への提供も実施しておりません。
+
+2.　『利用情報』について
+本ソフトウェアを利用した場合、当社は利用者の皆様から主として下記利用情報を取得します。但し、これらの取得される情報には、利用者個人を識別することができる情報（氏名、メールアドレス、クレジットカード情報等）は含まれておりません。詳細は以下の通りです。
+　取得される主な情報の項目： 
+(1) Google Play Advertising IDもしくは IDFA
+(2) ユーザーエージェント、IPアドレス、アクセス日時
+(3) サービス利用状況（設定情報、利用頻度、各画面のアクセス履歴、通信品質、連携サービス利用状況、使用言語、及び居住国、統計情報）
+　取得方法：
+　インターネットを通じて当社に提供され、当社のサーバーにて保存します
+　当社内での利用目的：
+(1) 取得した利用情報の属性の集計、分析、統計資料作成のため
+(2) 本サービスにおける機能をご利用頂くため
+(3) 本サービスにおける広告表示のため
+(4) マーケティング及びプロモーション、ターゲティング広告の配信
+　取得を停止するための手続き：
+　利用者は、当社が位置情報を取得することを希望されない場合は、本ソフトウェアを内蔵するスマートフォンアプリの設定画面から、当社への情報の提供を全て停止することができます。但し、お使いの端末に設定機能がない場合は取得を一括して停止することができない場合があります。
+
+3.　利用情報の第三者提供
+当社はパートナー等の第三者（外国にある第三者を含みます）に対して前項の利用情報のうち下記の各情報を提供させていただきます。
+(1) Google Play Advertising IDもしくは IDFA
+(2) ユーザーエージェント、IPアドレス、アクセス日時
+(2) サービス利用状況（設定情報、通信品質、使用言語、及び居住国、統計情報）
+
+当社が利用する主な外部サービス利用例については当社webページにて記載しておりますので、ご参照ください。
+くーちょわん情報工房
+https://www.kuchaun.jp/
+
+Copyright KUCHUAN Infomation Studio
+
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eOz-3f-zuR" firstAttribute="top" secondItem="n7N-7K-Wlq" secondAttribute="top" constant="5" id="0e8-Qk-Xr2"/>
+                            <constraint firstItem="eOz-3f-zuR" firstAttribute="leading" secondItem="n7N-7K-Wlq" secondAttribute="leading" constant="20" id="HAJ-qG-whd"/>
+                            <constraint firstItem="n7N-7K-Wlq" firstAttribute="trailing" secondItem="eOz-3f-zuR" secondAttribute="trailing" constant="20" id="IdZ-XS-SbQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n7N-7K-Wlq"/>
                     </view>
                     <navigationItem key="navigationItem" title="利用規約" id="eE2-L4-4qc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MZ-co-XaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2161" y="-2046"/>
+            <point key="canvasLocation" x="-2162.3188405797105" y="-2046.4285714285713"/>
         </scene>
         <!--情報-->
         <scene sceneID="pv4-cb-Yjd">
@@ -478,42 +665,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="アセット 3" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-Si-xn3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アセット 3" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-Si-xn3">
                                 <rect key="frame" x="87" y="122" width="240" height="146"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="CiY-k9-h8M"/>
+                                    <constraint firstAttribute="width" constant="240" id="S8W-tp-kRv"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-d2-a5o">
-                                <rect key="frame" x="38" y="277" width="337" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-d2-a5o">
+                                <rect key="frame" x="90" y="277" width="234" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Idea spred tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-EL-wzr">
-                                <rect key="frame" x="96" y="343" width="221" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea spred tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-EL-wzr">
+                                <rect key="frame" x="150" y="343" width="114" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
-                                <rect key="frame" x="166" y="433" width="83" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
+                                <rect key="frame" x="165.5" y="388" width="83" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-8N-NPU">
-                                <rect key="frame" x="78" y="529" width="272" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-8N-NPU">
+                                <rect key="frame" x="71" y="573.5" width="272" height="33.5"/>
                                 <string key="text">Developed by
  KUCHUAN Education &amp; Infomation Studio</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-FJ-QrH">
+                                <rect key="frame" x="111.5" y="481.5" width="191" height="41"/>
+                                <string key="text">"Honeycomb Song"
+『はにかむでうたおう』</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words and Music by : Dean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEt-lh-cDt">
+                                <rect key="frame" x="135.5" y="465.5" width="143" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BGM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0si-9h-26F">
+                                <rect key="frame" x="188" y="437.5" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pO6-EL-wzr" firstAttribute="top" secondItem="J7H-Si-xn3" secondAttribute="bottom" constant="75" id="4fX-Qg-mX3"/>
+                            <constraint firstItem="8kP-JW-ukx" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="8Xb-KU-ijL"/>
+                            <constraint firstItem="0si-9h-26F" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="9x6-mb-siI"/>
+                            <constraint firstItem="xEt-lh-cDt" firstAttribute="top" secondItem="0si-9h-26F" secondAttribute="bottom" constant="7" id="BGw-nz-7Uq"/>
+                            <constraint firstItem="DDa-d2-a5o" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="OO5-RY-3Vr"/>
+                            <constraint firstItem="xEt-lh-cDt" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="QLi-k0-Kqk"/>
+                            <constraint firstItem="0si-9h-26F" firstAttribute="top" secondItem="8kP-JW-ukx" secondAttribute="bottom" constant="29" id="aIa-HN-uhZ"/>
+                            <constraint firstItem="J7H-Si-xn3" firstAttribute="leading" secondItem="WCQ-W5-JS4" secondAttribute="leading" constant="87" id="eiw-if-Iu4"/>
+                            <constraint firstItem="8kP-JW-ukx" firstAttribute="top" secondItem="pO6-EL-wzr" secondAttribute="bottom" constant="24" id="evz-xd-D65"/>
+                            <constraint firstItem="EXc-FJ-QrH" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="g1n-B7-RbN"/>
+                            <constraint firstItem="WCQ-W5-JS4" firstAttribute="trailing" secondItem="J7H-Si-xn3" secondAttribute="trailing" constant="87" id="iYf-bd-QXz"/>
+                            <constraint firstItem="pO6-EL-wzr" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="pPe-1Q-Kk9"/>
+                            <constraint firstItem="J7H-Si-xn3" firstAttribute="top" secondItem="WCQ-W5-JS4" secondAttribute="top" constant="34" id="rXb-Mp-4MH"/>
+                            <constraint firstItem="EXc-FJ-QrH" firstAttribute="top" secondItem="xEt-lh-cDt" secondAttribute="bottom" constant="2" id="tVb-Ff-ZHP"/>
+                            <constraint firstItem="ALF-8N-NPU" firstAttribute="top" secondItem="EXc-FJ-QrH" secondAttribute="bottom" constant="51" id="yW2-Ft-9ht"/>
+                            <constraint firstItem="ALF-8N-NPU" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="ycU-5Q-QOP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WCQ-W5-JS4"/>
                     </view>
                     <navigationItem key="navigationItem" title="情報" id="BUg-yp-tiM"/>
@@ -544,21 +768,25 @@
                                     <constraint firstAttribute="width" constant="254" id="hd3-kS-lAm"/>
                                     <constraint firstAttribute="height" constant="83" id="yJq-I2-yOi"/>
                                 </constraints>
-                                <string key="text">アイデアの取捨選択をします
-右スワイプで『取』
-左スワイプで『捨』</string>
+                                <string key="text">BeeThinkingの設定をします
+広告付無料版は、
+一部機能を省略しています</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z3-uD-rPs">
                                 <rect key="frame" x="0.0" y="192" width="414" height="704"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-rk-XfC">
+                                    <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-rk-XfC">
                                         <rect key="frame" x="21" y="8" width="60" height="60"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="FRt-AP-rJB"/>
                                             <constraint firstAttribute="width" constant="60" id="kAh-sH-ktx"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="LZB-EX-8tb" appends="YES" id="vus-7I-Yem"/>
+                                        </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-sQ-9FV">
                                         <rect key="frame" x="21" y="144" width="60" height="60"/>
@@ -602,7 +830,7 @@
                                             <outletCollection property="gestureRecognizers" destination="8kG-V1-Chk" appends="YES" id="QJa-FN-Xb7"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="wTf-Z7-8Zf">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="wTf-Z7-8Zf">
                                         <rect key="frame" x="21" y="484" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Coi-Ld-BvO"/>
@@ -614,11 +842,15 @@
                                             <constraint firstAttribute="height" constant="60" id="XMu-ah-OR8"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="新規に作成する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-Ut-rbS">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="新規に作成する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-Ut-rbS">
                                         <rect key="frame" x="89" y="28" width="125" height="21"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="iVC-5d-hPX" appends="YES" id="upV-0x-pSj"/>
+                                        </connections>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="編集内容を保存する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-gX-w0C">
                                         <rect key="frame" x="89" y="96" width="154" height="20"/>
@@ -669,7 +901,7 @@
                                             <outletCollection property="gestureRecognizers" destination="lSe-cn-dCJ" appends="YES" id="Ahz-6s-Bjw"/>
                                         </connections>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q＆A・お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Gq-MLF">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q＆A・お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Gq-MLF">
                                         <rect key="frame" x="89" y="504" width="154" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -720,7 +952,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97457736730575562" green="0.83887398242950439" blue="0.52542775869369507" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ata-Rc-hhM" firstAttribute="top" secondItem="0jt-Br-755" secondAttribute="top" constant="18" id="3Pz-Hu-gq0"/>
                             <constraint firstItem="9z3-uD-rPs" firstAttribute="centerX" secondItem="Ye6-Qa-iBV" secondAttribute="centerX" id="5BW-jw-O97"/>
@@ -772,6 +1004,16 @@
                 <tapGestureRecognizer id="lSe-cn-dCJ" userLabel="toAgreementTapText">
                     <connections>
                         <action selector="didTextTapToAgreement:" destination="D7z-cp-zCm" id="zH8-zc-fcO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="LZB-EX-8tb" userLabel="didTapIconCreateNew">
+                    <connections>
+                        <action selector="didTapIconCreateNew:" destination="D7z-cp-zCm" id="cWB-Sh-dvZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="iVC-5d-hPX" userLabel="didTapTextCreateNew">
+                    <connections>
+                        <action selector="didTapTextCreateNew:" destination="D7z-cp-zCm" id="1Tl-Oy-F7Q"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
