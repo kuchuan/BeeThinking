@@ -24,8 +24,8 @@ class SCViewController: UIViewController {
         //Realmに接続
         let realm = try! Realm()
     
-        ideas = realm.objects(IdeaData.self).filter("tagNumber >= 0 AND tagNumber <= 99").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
-        ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100").first!, at: 0)
+        ideas = realm.objects(IdeaData.self).filter("tagNumber >= 0 AND tagNumber <= 99").filter("AttributeId == 'generalAttributeId'").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+        ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100  AND AttributeId == 'generalAttributeId'").first!, at: 0)
 
 //        print("SCV\(#line):\(ideas)")
         

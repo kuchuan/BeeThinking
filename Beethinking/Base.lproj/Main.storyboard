@@ -657,6 +657,111 @@ Copyright KUCHUAN Infomation Studio
             </objects>
             <point key="canvasLocation" x="-2162.3188405797105" y="-2046.4285714285713"/>
         </scene>
+        <!--新規作成・データ削除-->
+        <scene sceneID="CNu-Hg-vtK">
+            <objects>
+                <viewController id="XwK-8B-0pN" customClass="DeleatDateViewController" customModule="Beethinking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6eJ-PF-Fbm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="TxN-9j-UC7">
+                                <rect key="frame" x="20" y="102" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="E7X-ze-rxw" appends="YES" id="HOK-eI-VT5"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新規作成（通常はこちら）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRv-9B-FeB">
+                                <rect key="frame" x="88" y="122" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aAr-lN-49B" appends="YES" id="qab-9k-cRf"/>
+                                </connections>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-14" translatesAutoresizingMaskIntoConstraints="NO" id="bWt-CB-VlO">
+                                <rect key="frame" x="20" y="200" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lRH-z0-cxc" appends="YES" id="DdK-L1-76l"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-13" translatesAutoresizingMaskIntoConstraints="NO" id="8nm-Jl-zLe">
+                                <rect key="frame" x="20" y="298" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i6V-kc-2II" appends="YES" id="rFR-QF-dgb"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中央課題を残して周りを削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-a0-zQg">
+                                <rect key="frame" x="88" y="220" width="226" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qDX-ek-YvQ" appends="YES" id="ivC-VM-4L5"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="データベースを初期化する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cij-O9-YeD">
+                                <rect key="frame" x="88" y="318" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bQM-Kc-QZM" appends="YES" id="xs1-vQ-fbI"/>
+                                </connections>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="cRK-1d-EAK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="新規作成・データ削除" id="fBf-Or-Ia6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFf-Ha-UGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="E7X-ze-rxw" userLabel="didTapIconCreateNew">
+                    <connections>
+                        <action selector="didTapIconCreateNew:" destination="XwK-8B-0pN" id="pC4-2d-QqU"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aAr-lN-49B" userLabel="didTapTextCreateNew">
+                    <connections>
+                        <action selector="didTapTextCreateNew:" destination="XwK-8B-0pN" id="16T-uo-hLv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="lRH-z0-cxc" userLabel="didTapIconRemoveAround">
+                    <connections>
+                        <action selector="didTapIconRemoveAround:" destination="XwK-8B-0pN" id="SIc-ug-aQo"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qDX-ek-YvQ" userLabel="didTapTextRemoveAround">
+                    <connections>
+                        <action selector="didTapTextRemovewAround:" destination="XwK-8B-0pN" id="5T9-XD-lPd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="i6V-kc-2II" userLabel="didTapIconDeleatDataBase">
+                    <connections>
+                        <action selector="didTapIconDeleatDataBase:" destination="XwK-8B-0pN" id="8WB-d6-hZV"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bQM-Kc-QZM" userLabel="didTapTextDeleatDataBase">
+                    <connections>
+                        <action selector="didTapTextDeleatDataBase:" destination="XwK-8B-0pN" id="Z5S-AS-X2Q"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-914.49275362318849" y="-2037.0535714285713"/>
+        </scene>
         <!--情報-->
         <scene sceneID="pv4-cb-Yjd">
             <objects>
@@ -842,8 +947,8 @@ Copyright KUCHUAN Infomation Studio
                                             <constraint firstAttribute="height" constant="60" id="XMu-ah-OR8"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="新規に作成する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-Ut-rbS">
-                                        <rect key="frame" x="89" y="28" width="125" height="21"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="新規作成・データ削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-Ut-rbS">
+                                        <rect key="frame" x="89" y="28" width="180" height="21"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -973,6 +1078,7 @@ Copyright KUCHUAN Infomation Studio
                         <segue destination="k0Y-u5-B20" kind="show" identifier="toAboutBeeThinking" id="qf0-As-nDr"/>
                         <segue destination="l3M-8H-BTc" kind="show" identifier="toAboutBeeSeries" id="tbQ-OW-fKM"/>
                         <segue destination="gk7-u7-Ja9" kind="show" identifier="toAgreement" id="fA3-rg-oH7"/>
+                        <segue destination="XwK-8B-0pN" kind="show" identifier="toDeleatData" id="7pD-Tm-ajd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmk-gn-ffL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1006,18 +1112,18 @@ Copyright KUCHUAN Infomation Studio
                         <action selector="didTextTapToAgreement:" destination="D7z-cp-zCm" id="zH8-zc-fcO"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="LZB-EX-8tb" userLabel="didTapIconCreateNew">
+                <tapGestureRecognizer id="LZB-EX-8tb" userLabel="toTapIconCreateNew">
                     <connections>
-                        <action selector="didTapIconCreateNew:" destination="D7z-cp-zCm" id="cWB-Sh-dvZ"/>
+                        <action selector="didTapIconToDeleatData:" destination="D7z-cp-zCm" id="cWB-Sh-dvZ"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="iVC-5d-hPX" userLabel="didTapTextCreateNew">
+                <tapGestureRecognizer id="iVC-5d-hPX" userLabel="toTapTextCreateNew">
                     <connections>
-                        <action selector="didTapTextCreateNew:" destination="D7z-cp-zCm" id="1Tl-Oy-F7Q"/>
+                        <action selector="didTapTextToDeleatDate:" destination="D7z-cp-zCm" id="1Tl-Oy-F7Q"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="408.69565217391306" y="-1042.6339285714284"/>
+            <point key="canvasLocation" x="299" y="-679"/>
         </scene>
         <!--List View-->
         <scene sceneID="Vds-70-4kg">
@@ -1249,6 +1355,8 @@ Copyright KUCHUAN Infomation Studio
         <image name="flickbutton" width="382" height="136"/>
         <image name="icon-10" width="180" height="180"/>
         <image name="icon-11" width="180" height="180"/>
+        <image name="icon-13" width="180" height="180"/>
+        <image name="icon-14" width="180" height="180"/>
         <image name="icon-2" width="180" height="180"/>
         <image name="icon-3" width="180" height="180"/>
         <image name="icon-4" width="180" height="180"/>

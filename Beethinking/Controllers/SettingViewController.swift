@@ -19,37 +19,14 @@ class SettingViewController: UIViewController {
     }
     
     
-    @IBAction func didTapTextCreateNew(_ sender: UITapGestureRecognizer) {
-        allDeleatData()
+    @IBAction func didTapTextToDeleatDate(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toDeleatData", sender: nil)
     }
-    @IBAction func didTapIconCreateNew(_ sender: UITapGestureRecognizer) {
-        allDeleatData()
-    }
-    
-    func allDeleatData() {
-        
-        let alertView = SCLAlertView()
-        alertView.addButton("はい") {
-                    // (1)Realmインスタンスの生成
-                    let realm = try! Realm()
-                    // (2)全データの削除
-                    try! realm.write {
-                        realm.deleteAll()
-                    }
-        }
-        alertView.showInfo(
-            "すべてのデータが\n削除されます", // タイトル
-            subTitle: "ほんとうに削除しますか", // サブタイトル
-            closeButtonTitle: "いいえ", // クローズボタンのタイトル
-            //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
-            colorStyle: 0xFF2600, // ボタン、シンボルの色
-            colorTextButton: 0x000000, // ボタンの文字列の色
-            //            circleIconImage: UIImage?, //アイコンimage
-            animationStyle:.bottomToTop // スタイル（Success)指定
-        )
+    @IBAction func didTapIconToDeleatData(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toDeleatData", sender: nil)
     }
     
-
+   
     @IBAction func didTextTapToAboutBeeThinking(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toAboutBeeThinking", sender: nil)
     }

@@ -16,6 +16,7 @@
 		48DF709C2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF709B2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift */; };
 		48DF70A02312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF709F2312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift */; };
 		48DF70A22312F54900BE2B6D /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF70A12312F54900BE2B6D /* AgreementViewController.swift */; };
+		48DF70A62313ABAA00BE2B6D /* DeleatDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF70A52313ABAA00BE2B6D /* DeleatDateViewController.swift */; };
 		48E921CB22D97507007EF7A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E921CA22D97507007EF7A0 /* AppDelegate.swift */; };
 		48E921CD22D97507007EF7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E921CC22D97507007EF7A0 /* ViewController.swift */; };
 		48E921D022D97507007EF7A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E921CE22D97507007EF7A0 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		48DF709B2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBeeThinkingViewController.swift; sourceTree = "<group>"; };
 		48DF709F2312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBeeSeriesViewController.swift; sourceTree = "<group>"; };
 		48DF70A12312F54900BE2B6D /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		48DF70A52313ABAA00BE2B6D /* DeleatDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleatDateViewController.swift; sourceTree = "<group>"; };
 		48E921C722D97507007EF7A0 /* Beethinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beethinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E921CA22D97507007EF7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E921CC22D97507007EF7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -91,6 +93,7 @@
 		48400CCF22FD7FDE003E8E1E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				48DF70A52313ABAA00BE2B6D /* DeleatDateViewController.swift */,
 				48DF70A12312F54900BE2B6D /* AgreementViewController.swift */,
 				48E921CC22D97507007EF7A0 /* ViewController.swift */,
 				48939E2322F536640007C462 /* SCViewController.swift */,
@@ -291,6 +294,7 @@
 				4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */,
 				48F7B4552310CEBA00287D46 /* CreateIdea.swift in Sources */,
 				48939E2422F536640007C462 /* SCViewController.swift in Sources */,
+				48DF70A62313ABAA00BE2B6D /* DeleatDateViewController.swift in Sources */,
 				48F7B4572310D0CF00287D46 /* UpdateIdea.swift in Sources */,
 				48D53B47231242B900D96903 /* SettingViewController.swift in Sources */,
 				48DF70A02312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift in Sources */,
