@@ -17,6 +17,7 @@ import SCLAlertView
 //Honeycombのタグ番号を格納するグローバル変数を作成
 var honeycombTagNum: Int = 100
 var honeycombPreviousTagNum: Int = 100
+
 //同じ中心課題のグループをidで管理
 var generalAttributeId: Int = 0
 

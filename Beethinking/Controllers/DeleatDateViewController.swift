@@ -51,7 +51,6 @@ class DeleatDateViewController: UIViewController {
     }
     
     
-   
     
     
     func createNewDate() {

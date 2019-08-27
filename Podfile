@@ -9,10 +9,10 @@ target 'Beethinking' do
 	pod "Koloda"
 
 	pod 'IQKeyboardManagerSwift'
-	pod 'FontAwesome.swift'
+
 	pod 'RevealingSplashView'
 	pod 'RealmSwift'
-  	pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
   # Pods for Beethinking
 
