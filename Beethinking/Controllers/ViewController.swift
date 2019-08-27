@@ -19,8 +19,11 @@ var honeycombTagNum: Int = 100
 var honeycombPreviousTagNum: Int = 100
 //同じ中心課題のグループをidで管理
 var generalAttributeId: Int = 0
-//中央課題と周辺課題のお互いを自動でセットする（初期値はする:true）
+
+//中央課題と周辺課題のお互いを同時に書き込めるがどうか（初期値はする:true）
 var autoSetOfDuplicate: Bool = true
+//データが別の画面でリセットされたかどうかの判定を行う（予約）
+var dataResetToggle: Bool = false
 
 //var deleatIdea: Int = 100 {
 //    willSet {
@@ -118,6 +121,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         //セッティング
         func hexSetting(_ positionx: Float, _ positiony: Float, _ hexOfWidth: Int, _ drawAreaNum: Int, _ i: Int) {
+         
+            
             let hexButton = HexUIButton()
             //サイズ
             hexButton.frame = CGRect(x: CGFloat(positionx), y: CGFloat(positiony),
@@ -153,6 +158,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             //buttonに処理を追加・・・ができなかったので、画面タップに反応することにした
             
             honeycombView.addSubview(hexButton)
+        
         }
         
         
@@ -269,7 +275,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         scrollView.delegate = self
         
-        reloadHoneycombView()
+//        reloadHoneycombView()
         
         
         //Realmの情報管理用
@@ -297,9 +303,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         if attributeNum == nil {
             generalAttributeId = 1
-            return
         } else {
             generalAttributeId = attributeNum!
+        }
             //ループ
             var num: Int = 0
             for i in 0...7 {
@@ -311,18 +317,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                     
                     let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == \(num)")
                     
+                    //ボタンが作られているかどうかの判定
                     if let button = self.view.viewWithTag( num ) as? HexUIButton {
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
-                        if num % 10 == 0 {
-//                            print("\(#line):周りの蜂の巣\(num)")
-//                            button.setTitle("\(arrayStrings[num / 10 - 1])", for: .normal)
-                        }
+//                        print("\(#line):蜂の巣\(num)\(String(describing: button.currentTitle)) & \(String(describing: result.first?.sentence))")
                     } else {
-//                        print("vc\(#line):\(num)はnil")
+                        //存在しない蜂の巣の番号を踏んだときに発動
+                        print("vc\(#line):\(num)はnil")
                     }
                 }
             }
-        }
         setHoneycombColor()
     }
     
@@ -481,14 +485,21 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             
             let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
             //ideasの配列の中身が空の場合
-            if button.currentTitle == nil || button.currentTitle == "" {
+            if button.currentTitle == nil {
                 //新規ideaを追加
                 createNewIdea(text, honeycombTagNum)
                 
+            } else if button.currentTitle == "" && dataResetToggle == true {
+                //DeleteDataViewで新規作成されたものに対してのトラップ
+                updateOldIdea(text, honeycombTagNum)
+                dataResetToggle = false
+                
             } else {
+                //ideaの更新
                 updateOldIdea(text, honeycombTagNum)
                 
             }
+            
             inputBox.text = ""
            
         }
@@ -510,7 +521,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                     num = 100
                 }
                 if let button = self.view.viewWithTag( num ) as? HexUIButton {
-                    if button.titleLabel?.text == nil {
+                    if button.titleLabel?.text == nil || button.titleLabel!.text!.isEmpty == true {
+//                        print("\(#line)nilか？\(num):\(button.titleLabel・?.text)")
                     switch num {
                         case 100 :
                             button.buttonColor = UIColor.init(red: 255/255, green: 167/255, blue: 47/255, alpha: 0.4)
@@ -529,6 +541,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                             button.backgroundColor = UIColor.init(red: 255/255, green: 229/255, blue: 186/255, alpha: 0.4)
                         }
                     } else {
+//                            print("\(#line)nilでない\(num):\(button.titleLabel?.text)")
                         setHoneyBottle = setHoneyBottle + 1
                         switch num {
                         case 100 :

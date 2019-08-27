@@ -19,11 +19,11 @@ class SettingViewController: UIViewController {
     }
     
     
-    @IBAction func didTapTextToDeleatDate(_ sender: UITapGestureRecognizer) {
-        performSegue(withIdentifier: "toDeleatData", sender: nil)
+    @IBAction func didTapTextToDeleteDate(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toDeleteData", sender: nil)
     }
-    @IBAction func didTapIconToDeleatData(_ sender: UITapGestureRecognizer) {
-        performSegue(withIdentifier: "toDeleatData", sender: nil)
+    @IBAction func didTapIconToDeleteData(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toDeleteData", sender: nil)
     }
     
    

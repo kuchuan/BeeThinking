@@ -35,7 +35,8 @@ class NextViewController: UIViewController {
         kolodaView.dataSource = self
         
         let realm = try! Realm()
-        ideas = realm.objects(IdeaData.self).sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+        ideas = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 99").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+        ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100  AND attributeId == \(generalAttributeId)").first!, at: 0)
         
         var results: [String] = []
 
