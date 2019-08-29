@@ -65,7 +65,7 @@ class DeleatDateViewController: UIViewController {
                 self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
             }
         alertView.showInfo(
-            "新しい問題に\n取り組みましょう", // タイトル
+            "新しい問題に\n取り組みます", // タイトル
             subTitle: "よろしいですか", // サブタイトル
             closeButtonTitle: "いいえ", // クローズボタンのタイトル
             //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
@@ -104,8 +104,8 @@ class DeleatDateViewController: UIViewController {
             self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
         }
         alertView.showInfo(
-            "現在の中心課題を\nコピーして新規作成", // タイトル
-            subTitle: "ほんとうに削除しますか", // サブタイトル
+            "現在の\n中心課題をコピーして\n新規作成します", // タイトル
+            subTitle: "「周辺課題」と「アイデア」は\n削除しますか", // サブタイトル
             closeButtonTitle: "いいえ", // クローズボタンのタイトル
             //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
             colorStyle: 0xFFCF2F, // ボタン、シンボルの色

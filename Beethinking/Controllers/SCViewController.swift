@@ -23,24 +23,22 @@ class SCViewController: UIViewController {
     fileprivate func reloadTableView() {
         //Realmに接続
         let realm = try! Realm()
-    
+        
         ideas = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 99").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
         ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100  AND attributeId == \(generalAttributeId)").first!, at: 0)
-
-//        print("SCV\(#line):\(ideas)")
         
+        //        print("SCV\(#line):\(ideas)")
         //画面の更新
         tableView.reloadData()
     }
     
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        
         
     }
 
@@ -64,6 +62,8 @@ class SCViewController: UIViewController {
 
 }
 
+
+
 extension SCViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -77,35 +77,29 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         //セクションの記述
 //        let sectitonDate = table
         
-        let idea = ideas[indexPath.row]
+        let result = ideas[indexPath.row]
         
+        cell.textLabel?.text = result.sentence
         
-        cell.textLabel?.text = idea.sentence
-        
-        
+        //矢印で削除
         cell.accessoryType = .disclosureIndicator
         
         return cell
     }
     
-
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         //Realmから対象のデータを削除
-        let idea = ideas[indexPath.row]
+        let result = ideas[indexPath.row]
         let realm = try! Realm()
         try! realm.write {
-            realm.delete(idea)
+            realm.delete(result)
         }
         //配列ideasから対象のideaを削除
         ideas.remove(at: indexPath.row)
         //画面から対象のideaを削除
         tableView.deleteRows(at: [indexPath], with: .fade)
         
-        
-        
     }
-    
     
 }

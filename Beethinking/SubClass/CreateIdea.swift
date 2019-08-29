@@ -87,13 +87,13 @@ class CreateIdea {
                 if result.isEmpty {
                     
                     let res = self.createIdea(text: text, tag: tmpTag, autoSpredSwich: false)
-                    print(#line, "アイデア新規作成",res,idea.sentence)
+//                    print(#line, "アイデア新規作成",res,idea.sentence)
                     
                 } else {
                 
                     let setIdeas = UpdateIdea()
                     let res = setIdeas.updateIdea(text: text, tag: tmpTag, autoSpredSwich: false)
-                    print(#line, "アイデア上書き",res,idea.sentence)
+//                    print(#line, "アイデア上書き",res,idea.sentence)
                 }
             
             }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48524769231736430027E683 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48524768231736430027E683 /* UserSettingViewController.swift */; };
+		4852476B231757E30027E683 /* DateManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852476A231757E30027E683 /* DateManagementViewController.swift */; };
 		4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */; };
 		4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */; };
 		48939E2422F536640007C462 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48939E2322F536640007C462 /* SCViewController.swift */; };
@@ -32,6 +34,8 @@
 		0D329216D92BC082284EA0F6 /* Pods-Beethinking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beethinking.debug.xcconfig"; path = "Target Support Files/Pods-Beethinking/Pods-Beethinking.debug.xcconfig"; sourceTree = "<group>"; };
 		3C174D659B137CD429773D30 /* Pods_Beethinking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beethinking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481CA7FE23119048009BBA57 /* BeeThinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BeeThinking.xcodeproj; path = ../../Beethinking_with_tin/BeeThinking.xcodeproj; sourceTree = "<group>"; };
+		48524768231736430027E683 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		4852476A231757E30027E683 /* DateManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManagementViewController.swift; sourceTree = "<group>"; };
 		4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUIButton.swift; sourceTree = "<group>"; };
 		48939E2322F536640007C462 /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		48400CCF22FD7FDE003E8E1E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				48524768231736430027E683 /* UserSettingViewController.swift */,
 				48DF70A52313ABAA00BE2B6D /* DeleatDateViewController.swift */,
 				48DF70A12312F54900BE2B6D /* AgreementViewController.swift */,
 				48E921CC22D97507007EF7A0 /* ViewController.swift */,
@@ -101,6 +106,7 @@
 				48D53B46231242B900D96903 /* SettingViewController.swift */,
 				48DF709B2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift */,
 				48DF709F2312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift */,
+				4852476A231757E30027E683 /* DateManagementViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 				48E921C422D97507007EF7A0 /* Frameworks */,
 				48E921C522D97507007EF7A0 /* Resources */,
 				139545FBA9DF984744C4ED80 /* [CP] Embed Pods Frameworks */,
+				483351692316133B0024720E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -282,6 +289,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		483351692316133B0024720E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -299,8 +323,10 @@
 				48D53B47231242B900D96903 /* SettingViewController.swift in Sources */,
 				48DF70A02312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift in Sources */,
 				4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */,
+				48524769231736430027E683 /* UserSettingViewController.swift in Sources */,
 				48DF709C2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift in Sources */,
 				48C6E20E22F9523A002D05B8 /* HexUILabel.swift in Sources */,
+				4852476B231757E30027E683 /* DateManagementViewController.swift in Sources */,
 				48CA187522F6D47900072B99 /* IdeaData.swift in Sources */,
 				48E921CB22D97507007EF7A0 /* AppDelegate.swift in Sources */,
 			);

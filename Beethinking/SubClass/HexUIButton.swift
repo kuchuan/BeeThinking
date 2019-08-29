@@ -16,6 +16,7 @@ class HexUIButton: UIButton {
         @IBInspectable public var numberOfCorner : Int = 4
         @IBInspectable public var buttonColor : UIColor = UIColor.init(red: 249/255, green: 228/255, blue: 188/255, alpha: 1.0)
         @IBInspectable public var rotation : Double = 0
+        @IBInspectable public var numberOfLines : Int = 1
         public let borderShape = CAShapeLayer()
     
     

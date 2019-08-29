@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" minimumZoomScale="2" maximumZoomScale="2" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-q2-QyW">
-                                <rect key="frame" x="0.0" y="143" width="414" height="599"/>
+                                <rect key="frame" x="0.0" y="187" width="414" height="555"/>
                                 <subviews>
                                     <view opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-9s-fQh" customClass="HexView" customModule="Beethinking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="2000" height="2100"/>
@@ -261,7 +261,7 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-xH-20J">
-                                <rect key="frame" x="97" y="52" width="220" height="55"/>
+                                <rect key="frame" x="97" y="96" width="220" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Nw0-VR-qLc"/>
                                     <constraint firstAttribute="width" constant="220" id="r06-d3-ifK"/>
@@ -271,7 +271,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfm-fE-KzR" userLabel="BeeThinkingButton" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="327" y="150" width="63" height="63"/>
+                                <rect key="frame" x="327" y="194" width="63" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="App-aP-6dP"/>
                                     <constraint firstAttribute="height" constant="63" id="zyi-QR-Vor"/>
@@ -305,7 +305,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたのアイデア広げます" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFt-Ai-W7X">
-                                <rect key="frame" x="115" y="105" width="184" height="20"/>
+                                <rect key="frame" x="115" y="149" width="184" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Sco-Re-VwJ"/>
                                     <constraint firstAttribute="width" constant="184" id="l72-r6-ApD"/>
@@ -315,7 +315,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-YY-hdN">
-                                <rect key="frame" x="26" y="126" width="60" height="90"/>
+                                <rect key="frame" x="26" y="170" width="60" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Eun-pQ-9Dc"/>
                                     <constraint firstAttribute="height" constant="90" id="HXk-LJ-fmZ"/>
@@ -430,13 +430,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="lrb-Xd-dJl">
-                                <rect key="frame" x="7" y="44" width="400" height="300"/>
+                                <rect key="frame" x="7" y="88" width="400" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Psa-Sk-rPt"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsVerticalScrollIndicator="NO" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5a-GI-aNg">
-                                <rect key="frame" x="12" y="344" width="390" height="518"/>
+                                <rect key="frame" x="12" y="388" width="390" height="425"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">・BeeSeriesは、問題の発見から解決までをサポートするソリューションです。個々のアプリケーションとして使用するだけでなく、連携をして機能するようデザインされています。
 ・会社や学校・教育機関など、さまざまな場でご利用いただけます。
@@ -448,17 +448,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="centerX" secondItem="OcW-jH-Vf3" secondAttribute="centerX" id="1ex-WC-Wvs"/>
                             <constraint firstItem="NWn-XN-hA9" firstAttribute="trailing" secondItem="lrb-Xd-dJl" secondAttribute="trailing" constant="7" id="7RN-Tu-5SR"/>
                             <constraint firstItem="NWn-XN-hA9" firstAttribute="trailing" secondItem="E5a-GI-aNg" secondAttribute="trailing" constant="12" id="BTR-BN-GxF"/>
                             <constraint firstItem="E5a-GI-aNg" firstAttribute="leading" secondItem="NWn-XN-hA9" secondAttribute="leading" constant="12" id="Bwu-gS-fPr"/>
-                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="leading" secondItem="NWn-XN-hA9" secondAttribute="leading" constant="8" id="Mbn-v4-cv8"/>
                             <constraint firstItem="E5a-GI-aNg" firstAttribute="leading" secondItem="NWn-XN-hA9" secondAttribute="leading" constant="12" id="U4h-Tf-gA8"/>
                             <constraint firstItem="E5a-GI-aNg" firstAttribute="top" secondItem="lrb-Xd-dJl" secondAttribute="bottom" id="XZV-7L-fGU"/>
                             <constraint firstItem="lrb-Xd-dJl" firstAttribute="top" secondItem="NWn-XN-hA9" secondAttribute="top" id="YE5-M1-xWf"/>
-                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="leading" secondItem="NWn-XN-hA9" secondAttribute="leading" constant="7" id="ZwQ-kX-y2c"/>
                             <constraint firstItem="NWn-XN-hA9" firstAttribute="bottom" secondItem="E5a-GI-aNg" secondAttribute="bottom" id="bSi-aq-Ref"/>
                             <constraint firstItem="lrb-Xd-dJl" firstAttribute="top" secondItem="NWn-XN-hA9" secondAttribute="top" id="bic-73-QdS"/>
                             <constraint firstItem="E5a-GI-aNg" firstAttribute="centerX" secondItem="OcW-jH-Vf3" secondAttribute="centerX" id="p9g-se-Ic2"/>
+                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="top" secondItem="NWn-XN-hA9" secondAttribute="top" id="uuc-ag-X5c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NWn-XN-hA9"/>
                     </view>
@@ -466,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9z5-Xf-jYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2160.8695652173915" y="-1305.1339285714284"/>
+            <point key="canvasLocation" x="-3301" y="-1276"/>
         </scene>
         <!--利用規約-->
         <scene sceneID="gSg-QN-ykt">
@@ -477,7 +477,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="768" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-3f-zuR">
-                                <rect key="frame" x="20" y="64" width="374" height="768"/>
+                                <rect key="frame" x="20" y="108" width="374" height="675"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
@@ -663,6 +663,87 @@ Copyright KUCHUAN Infomation Studio
             </objects>
             <point key="canvasLocation" x="-3301.449275362319" y="-1996.2053571428571"/>
         </scene>
+        <!--ユーザー設定-->
+        <scene sceneID="WkH-Hc-2V2">
+            <objects>
+                <viewController id="Mlv-Pg-6m5" customClass="UserSettingViewController" customModule="Beethinking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F4D-Il-gNX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-17" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-Ri-EXB">
+                                <rect key="frame" x="20" y="100" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-13" translatesAutoresizingMaskIntoConstraints="NO" id="NDu-Py-vRO">
+                                <rect key="frame" x="20" y="300" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cTS-QK-EsQ" appends="YES" id="e41-85-X3g"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中央・周辺への自動書き込み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytu-rI-RIO">
+                                <rect key="frame" x="88" y="105" width="226" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="データベースを初期化する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uF-IM-Vtm">
+                                <rect key="frame" x="88" y="320" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hFx-L6-RFR" appends="YES" id="cp0-HS-t6c"/>
+                                </connections>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txI-Et-BBb">
+                                <rect key="frame" x="88" y="144" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="1" green="0.5" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="didClickCanged:" destination="Mlv-Pg-6m5" eventType="valueChanged" id="pdl-Xf-8oW"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-9G-jxF">
+                                <rect key="frame" x="158" y="130" width="156" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">1番地〜6番地の中央エリアの内容・アイデアと、10番地、20番地、30番地、40番地、50番地、60番地の内容・アイデアを自動で相互に書き込みます。（通常はON）
+違う内容を入力する場合はOFFにしてください。
+
+</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="4tw-pK-ApA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ユーザー設定" id="hvf-wU-0Po"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="fromUserSettingToMain" id="TgJ-UQ-1I4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpA-pH-T6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cTS-QK-EsQ" userLabel="didTapIconDeleteDateBase">
+                    <connections>
+                        <action selector="didTapDeleteDateBase:" destination="Mlv-Pg-6m5" id="SKs-Q4-L8z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="hFx-L6-RFR" userLabel="didTapTextDeleteDateBase">
+                    <connections>
+                        <action selector="didTapTextDeleteDateBase:" destination="Mlv-Pg-6m5" id="SZp-Wd-0cz"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1410.144927536232" y="-1252.2321428571429"/>
+        </scene>
         <!--新規作成・データ削除-->
         <scene sceneID="CNu-Hg-vtK">
             <objects>
@@ -672,7 +753,7 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="TxN-9j-UC7">
-                                <rect key="frame" x="20" y="102" width="60" height="60"/>
+                                <rect key="frame" x="20" y="100" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -680,7 +761,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </imageView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新規作成（通常はこちら）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRv-9B-FeB">
-                                <rect key="frame" x="88" y="122" width="196" height="21"/>
+                                <rect key="frame" x="88" y="120" width="196" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -699,7 +780,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-13" translatesAutoresizingMaskIntoConstraints="NO" id="8nm-Jl-zLe">
-                                <rect key="frame" x="20" y="298" width="60" height="60"/>
+                                <rect key="frame" x="20" y="400" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -707,7 +788,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </imageView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中央課題を残して周りを削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-a0-zQg">
-                                <rect key="frame" x="88" y="220" width="226" height="21"/>
+                                <rect key="frame" x="88" y="219" width="226" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -718,7 +799,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="データベースを初期化する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cij-O9-YeD">
-                                <rect key="frame" x="88" y="318" width="208" height="21"/>
+                                <rect key="frame" x="88" y="417" width="208" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -769,7 +850,7 @@ Copyright KUCHUAN Infomation Studio
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-914.49275362318849" y="-2037.0535714285713"/>
+            <point key="canvasLocation" x="-1410" y="-436"/>
         </scene>
         <!--情報-->
         <scene sceneID="pv4-cb-Yjd">
@@ -780,14 +861,14 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アセット 3" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-Si-xn3">
-                                <rect key="frame" x="87" y="68" width="240" height="146"/>
+                                <rect key="frame" x="87" y="112" width="240" height="146"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="146" id="CiY-k9-h8M"/>
                                     <constraint firstAttribute="width" constant="240" id="S8W-tp-kRv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-d2-a5o">
-                                <rect key="frame" x="90" y="226" width="234" height="60"/>
+                                <rect key="frame" x="90" y="270" width="234" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jTf-ki-nf3"/>
                                 </constraints>
@@ -796,19 +877,19 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea spred tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-EL-wzr">
-                                <rect key="frame" x="150" y="286" width="114" height="21"/>
+                                <rect key="frame" x="150" y="330" width="114" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
-                                <rect key="frame" x="165.5" y="319" width="83" height="20.5"/>
+                                <rect key="frame" x="165.5" y="363" width="83" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-8N-NPU">
-                                <rect key="frame" x="112" y="484.5" width="190.5" height="33.5"/>
+                                <rect key="frame" x="112" y="528.5" width="190.5" height="33.5"/>
                                 <string key="text">Developed by
  KUCHUAN Infomation Studio</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -816,7 +897,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-FJ-QrH">
-                                <rect key="frame" x="111.5" y="419.5" width="191" height="41"/>
+                                <rect key="frame" x="111.5" y="463.5" width="191" height="41"/>
                                 <string key="text">"Honeycomb Song"
 『はにかむでうたおう』</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -824,13 +905,13 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words and Music by : Dean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEt-lh-cDt">
-                                <rect key="frame" x="135.5" y="403.5" width="143" height="14"/>
+                                <rect key="frame" x="135.5" y="447.5" width="143" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BGM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0si-9h-26F">
-                                <rect key="frame" x="188" y="375.5" width="38" height="21"/>
+                                <rect key="frame" x="188" y="419.5" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -862,7 +943,40 @@ Copyright KUCHUAN Infomation Studio
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VF4-w0-OGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2155.072463768116" y="-577.23214285714278"/>
+            <point key="canvasLocation" x="-3301" y="-534"/>
+        </scene>
+        <!--データの管理-->
+        <scene sceneID="t5P-eP-Ytw">
+            <objects>
+                <viewController id="48U-vg-p4V" customClass="DateManagementViewController" customModule="Beethinking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nwM-tO-4iR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTv-a4-tcb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="646"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="DataNameCell" editingAccessoryType="disclosureIndicator" id="7Od-ts-NIS">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Od-ts-NIS" id="BeU-p1-rCW">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="3Xy-tp-4xx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="データの管理" id="Cfp-NM-6QS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06g-Qk-Eqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.9710144927537" y="-1996.2053571428571"/>
         </scene>
         <!--設定-->
         <scene sceneID="B8t-DG-m4C">
@@ -873,14 +987,14 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="mAC-7w-B2h">
-                                <rect key="frame" x="14" y="62" width="70" height="70"/>
+                                <rect key="frame" x="14" y="106" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="AcI-8b-Fl2"/>
                                     <constraint firstAttribute="height" constant="70" id="CbR-d4-WKB"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ata-Rc-hhM">
-                                <rect key="frame" x="88" y="62" width="254" height="83"/>
+                                <rect key="frame" x="88" y="106" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="hd3-kS-lAm"/>
@@ -893,7 +1007,7 @@ BeeThinking無料版(with AD)は、
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z3-uD-rPs">
-                                <rect key="frame" x="0.0" y="148" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="192" width="414" height="704"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-rk-XfC">
                                         <rect key="frame" x="21" y="8" width="60" height="60"/>
@@ -932,11 +1046,15 @@ BeeThinking無料版(with AD)は、
                                             <outletCollection property="gestureRecognizers" destination="Cn2-eQ-vKe" appends="YES" id="Mn2-xx-2zh"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-7" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-zq-yWE">
+                                    <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-7" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-zq-yWE">
                                         <rect key="frame" x="21" y="348" width="60" height="60"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="ibH-Yw-Qff"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="I74-Ks-iWl" appends="YES" id="1rF-pN-uYu"/>
+                                        </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-5" translatesAutoresizingMaskIntoConstraints="NO" id="a2q-6S-l3J">
                                         <rect key="frame" x="21" y="416" width="60" height="60"/>
@@ -954,14 +1072,18 @@ BeeThinking無料版(with AD)は、
                                             <constraint firstAttribute="height" constant="60" id="Coi-Ld-BvO"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-11" translatesAutoresizingMaskIntoConstraints="NO" id="Y5R-0c-1ZN">
+                                    <imageView clipsSubviews="YES" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-12" translatesAutoresizingMaskIntoConstraints="NO" id="Y5R-0c-1ZN">
                                         <rect key="frame" x="21" y="76" width="60" height="60"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="XMu-ah-OR8"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3MQ-ka-FQJ" appends="YES" id="jYa-Um-apZ"/>
+                                        </connections>
                                     </imageView>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="新規作成・データ削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-Ut-rbS">
-                                        <rect key="frame" x="89" y="28" width="180" height="21"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新規作成・データ削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-Ut-rbS">
+                                        <rect key="frame" x="89" y="28" width="180" height="20"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="LoV-qV-FG5"/>
@@ -973,20 +1095,24 @@ BeeThinking無料版(with AD)は、
                                             <outletCollection property="gestureRecognizers" destination="iVC-5d-hPX" appends="YES" id="upV-0x-pSj"/>
                                         </connections>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="編集内容を保存する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-gX-w0C">
-                                        <rect key="frame" x="89" y="96" width="154" height="20"/>
+                                    <label opaque="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="データを読み込む・管理する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-gX-w0C">
+                                        <rect key="frame" x="89" y="96" width="213" height="20"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="r3y-PR-D7m" appends="YES" id="cWH-X0-IAs"/>
+                                        </connections>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蜂の巣ボードをPDFで出力する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoW-Pd-dHY">
-                                        <rect key="frame" x="89" y="166" width="226" height="16"/>
+                                        <rect key="frame" x="89" y="162" width="226" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeThinkingについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyy-GW-tFX">
-                                        <rect key="frame" x="89" y="229" width="154" height="26"/>
+                                        <rect key="frame" x="89" y="233" width="213" height="18"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -996,7 +1122,7 @@ BeeThinking無料版(with AD)は、
                                         </connections>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeSeriesについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rC-X9-Kc3">
-                                        <rect key="frame" x="89" y="303" width="139" height="14"/>
+                                        <rect key="frame" x="89" y="299" width="139" height="22"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -1005,14 +1131,18 @@ BeeThinking無料版(with AD)は、
                                             <outletCollection property="gestureRecognizers" destination="etS-qK-0bS" appends="YES" id="VFU-bi-KeR"/>
                                         </connections>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blk-RZ-djZ">
-                                        <rect key="frame" x="89" y="365" width="98" height="26"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blk-RZ-djZ">
+                                        <rect key="frame" x="89" y="369" width="98" height="18"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ZU3-UK-hSJ" appends="YES" id="HEA-Sd-0DR"/>
+                                        </connections>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0d-YH-gc3">
-                                        <rect key="frame" x="89" y="439" width="66" height="14"/>
+                                        <rect key="frame" x="89" y="435" width="66" height="22"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -1022,7 +1152,7 @@ BeeThinking無料版(with AD)は、
                                         </connections>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q＆A・お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Gq-MLF">
-                                        <rect key="frame" x="89" y="501" width="154" height="26"/>
+                                        <rect key="frame" x="89" y="505" width="154" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1034,13 +1164,12 @@ BeeThinking無料版(with AD)は、
                                     <constraint firstItem="vCO-zq-yWE" firstAttribute="trailing" secondItem="a2q-6S-l3J" secondAttribute="trailing" id="1Kx-uv-6Uk"/>
                                     <constraint firstItem="jAk-rk-XfC" firstAttribute="leading" secondItem="9z3-uD-rPs" secondAttribute="leading" constant="21" id="1PW-4h-cZX"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="trailing" secondItem="zwT-ia-EaD" secondAttribute="trailing" id="2fJ-Iv-d8r"/>
-                                    <constraint firstItem="KoW-Pd-dHY" firstAttribute="top" secondItem="Vxq-gX-w0C" secondAttribute="bottom" constant="49" id="2gf-Qh-LkN"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="leading" secondItem="zwT-ia-EaD" secondAttribute="leading" id="2sb-BC-z5D"/>
+                                    <constraint firstItem="Vxq-gX-w0C" firstAttribute="top" secondItem="5TH-Ut-rbS" secondAttribute="bottom" constant="48" id="31W-tm-qTe"/>
                                     <constraint firstItem="jAk-rk-XfC" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="topMargin" id="7sT-gj-hsf"/>
                                     <constraint firstItem="0rC-X9-Kc3" firstAttribute="centerY" secondItem="5n3-Oq-j0F" secondAttribute="centerY" id="8pS-1T-vJe"/>
                                     <constraint firstItem="zwT-ia-EaD" firstAttribute="leading" secondItem="5n3-Oq-j0F" secondAttribute="leading" id="9aG-bZ-k9o"/>
                                     <constraint firstItem="5n3-Oq-j0F" firstAttribute="top" secondItem="zwT-ia-EaD" secondAttribute="bottom" constant="8" symbolic="YES" id="BXI-W8-2mv"/>
-                                    <constraint firstItem="Vxq-gX-w0C" firstAttribute="top" secondItem="5TH-Ut-rbS" secondAttribute="bottom" constant="47" id="Ceb-IA-VGL"/>
                                     <constraint firstItem="KoW-Pd-dHY" firstAttribute="centerY" secondItem="Sal-sQ-9FV" secondAttribute="centerY" id="CsT-mz-0Hh"/>
                                     <constraint firstItem="blk-RZ-djZ" firstAttribute="top" secondItem="0rC-X9-Kc3" secondAttribute="bottom" constant="48" id="Cx7-o8-8ed"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="top" constant="28" id="E1s-EV-7FA"/>
@@ -1079,6 +1208,7 @@ BeeThinking無料版(with AD)は、
                                     <constraint firstItem="5n3-Oq-j0F" firstAttribute="trailing" secondItem="vCO-zq-yWE" secondAttribute="trailing" id="x94-eK-bps"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="KoW-Pd-dHY" secondAttribute="leading" id="xMx-hb-1Bw"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="top" secondItem="jAk-rk-XfC" secondAttribute="bottom" constant="8" symbolic="YES" id="yqO-ZB-HVK"/>
+                                    <constraint firstItem="KoW-Pd-dHY" firstAttribute="top" secondItem="Vxq-gX-w0C" secondAttribute="bottom" constant="46" id="zbk-mv-aHF"/>
                                     <constraint firstItem="0rC-X9-Kc3" firstAttribute="top" secondItem="wyy-GW-tFX" secondAttribute="bottom" constant="48" id="zc1-Hx-Xje"/>
                                 </constraints>
                             </scrollView>
@@ -1105,6 +1235,8 @@ BeeThinking無料版(with AD)は、
                         <segue destination="l3M-8H-BTc" kind="show" identifier="toAboutBeeSeries" id="tbQ-OW-fKM"/>
                         <segue destination="gk7-u7-Ja9" kind="show" identifier="toAgreement" id="fA3-rg-oH7"/>
                         <segue destination="XwK-8B-0pN" kind="show" identifier="toDeleteData" id="7pD-Tm-ajd"/>
+                        <segue destination="Mlv-Pg-6m5" kind="show" identifier="toUserSetting" id="Nv4-B4-quk"/>
+                        <segue destination="48U-vg-p4V" kind="show" identifier="toDataManegement" id="etR-VR-Ruh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmk-gn-ffL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1148,8 +1280,20 @@ BeeThinking無料版(with AD)は、
                         <action selector="didTapTextToDeleteDate:" destination="D7z-cp-zCm" id="1Tl-Oy-F7Q"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="I74-Ks-iWl" userLabel="toUserSettingTapIcon">
+                    <connections>
+                        <action selector="didTapToUserSetting:" destination="D7z-cp-zCm" id="jjr-7W-OEo"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZU3-UK-hSJ" userLabel="toUserSettingTapText">
+                    <connections>
+                        <action selector="didTapTextToUserSetting:" destination="D7z-cp-zCm" id="g68-v7-Ndx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3MQ-ka-FQJ" userLabel="toDataManagementTapIcon"/>
+                <tapGestureRecognizer id="r3y-PR-D7m" userLabel="toDataManagementTapText"/>
             </objects>
-            <point key="canvasLocation" x="298.55072463768118" y="-1214.0625"/>
+            <point key="canvasLocation" x="1059" y="-1252"/>
         </scene>
         <!--List View-->
         <scene sceneID="Vds-70-4kg">
@@ -1160,11 +1304,10 @@ BeeThinking無料版(with AD)は、
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-m7-fMD">
-                                <rect key="frame" x="0.0" y="138" width="414" height="614"/>
+                                <rect key="frame" x="0.0" y="182" width="414" height="570"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="9l7-X9-nt3"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="Fce-F9-5in"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Xqj-Mq-Vo4">
@@ -1178,14 +1321,14 @@ BeeThinking無料版(with AD)は、
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="em1-kZ-aBv">
-                                <rect key="frame" x="18" y="56" width="70" height="70"/>
+                                <rect key="frame" x="18" y="100" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="SqO-Ri-b4N"/>
                                     <constraint firstAttribute="height" constant="70" id="zKO-vM-Oz6"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-ff-XnT">
-                                <rect key="frame" x="92" y="62" width="254" height="60"/>
+                                <rect key="frame" x="92" y="106" width="254" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="AF9-4z-rJU"/>
@@ -1234,7 +1377,7 @@ BeeThinking無料版(with AD)は、
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbF-hc-939" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302.898550724638" y="-1414.2857142857142"/>
+            <point key="canvasLocation" x="2312" y="31"/>
         </scene>
         <!--Card View-->
         <scene sceneID="JTf-qP-9hn">
@@ -1245,15 +1388,125 @@ BeeThinking無料版(with AD)は、
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5B-Bc-kz8" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="57" y="159" width="300" height="400"/>
+                                <rect key="frame" x="57" y="203" width="300" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おわり" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gE-Yq-ive">
-                                        <rect key="frame" x="20" y="44" width="260" height="32"/>
+                                        <rect key="frame" x="20" y="24" width="260" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="jEu-Bx-yIj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1.05" translatesAutoresizingMaskIntoConstraints="NO" id="bPW-fy-WO7">
+                                        <rect key="frame" x="28" y="137" width="244" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="4Ru-ix-ggp"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="starsSider:" destination="Xb0-e1-RWd" eventType="valueChanged" id="C5S-Tl-gEQ"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️の数以上を選択する" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nho-4l-bzv">
+                                        <rect key="frame" x="86.5" y="74" width="127.5" height="14.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="127.5" id="NCa-ON-7fl"/>
+                                            <constraint firstAttribute="height" constant="14.5" id="Ydg-bp-Daw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOY-uz-BzE" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="213" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="MwB-wt-mX8"/>
+                                            <constraint firstAttribute="height" constant="90" id="fnk-Qd-MZL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="もう一度">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="1" green="0.81176470590000005" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didClickAgein:" destination="Xb0-e1-RWd" eventType="touchUpInside" id="whn-qo-Thu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZw-8K-Kgb" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                        <rect key="frame" x="180" y="213" width="90" height="90"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="IoA-iS-3oP"/>
+                                            <constraint firstAttribute="width" constant="90" id="fXR-Vr-E2f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="★5に変更">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="1" green="0.81176470590000005" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfLines">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didClickSetFiveStar:" destination="Xb0-e1-RWd" eventType="touchUpInside" id="gP9-hu-rfX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7t-8h-X3l" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="171" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="Gev-HQ-cYH"/>
+                                            <constraint firstAttribute="height" constant="90" id="jfz-9r-As6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="シェアする">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="1" green="0.81176470590000005" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didClickShareMenu:" destination="Xb0-e1-RWd" eventType="touchUpInside" id="b0v-8J-eCK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="すべてを選択する" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51f-ni-4s8">
+                                        <rect key="frame" x="30" y="101" width="240" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Qmh-nM-eu7"/>
+                                            <constraint firstAttribute="width" constant="240" id="vD0-xl-zD7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.5" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1262,22 +1515,35 @@ BeeThinking無料版(with AD)は、
                                     <accessibilityTraits key="traits" none="YES"/>
                                 </accessibility>
                                 <constraints>
+                                    <constraint firstItem="F7t-8h-X3l" firstAttribute="top" secondItem="bPW-fy-WO7" secondAttribute="bottom" constant="4" id="5QW-Yx-Txw"/>
+                                    <constraint firstItem="hZw-8K-Kgb" firstAttribute="top" secondItem="bPW-fy-WO7" secondAttribute="bottom" constant="46" id="8du-mh-Is4"/>
+                                    <constraint firstAttribute="trailing" secondItem="hZw-8K-Kgb" secondAttribute="trailing" constant="30" id="BM0-Cx-L3G"/>
                                     <constraint firstAttribute="width" constant="300" id="CY4-5O-Cwm"/>
+                                    <constraint firstItem="YOY-uz-BzE" firstAttribute="top" secondItem="bPW-fy-WO7" secondAttribute="bottom" constant="46" id="F6G-Vk-Tmh"/>
+                                    <constraint firstItem="YOY-uz-BzE" firstAttribute="leading" secondItem="V5B-Bc-kz8" secondAttribute="leading" constant="30" id="M4F-Tz-0az"/>
+                                    <constraint firstItem="F7t-8h-X3l" firstAttribute="centerX" secondItem="5gE-Yq-ive" secondAttribute="centerX" id="OHF-1a-YfP"/>
+                                    <constraint firstItem="51f-ni-4s8" firstAttribute="top" secondItem="nho-4l-bzv" secondAttribute="bottom" constant="12.5" id="TVC-Ex-Lvh"/>
+                                    <constraint firstItem="bPW-fy-WO7" firstAttribute="top" secondItem="51f-ni-4s8" secondAttribute="bottom" constant="12" id="U69-4A-ndA"/>
                                     <constraint firstItem="5gE-Yq-ive" firstAttribute="leading" secondItem="V5B-Bc-kz8" secondAttribute="leading" constant="20" symbolic="YES" id="ctC-5J-lcd"/>
                                     <constraint firstAttribute="height" constant="400" id="cwy-fU-fN1"/>
-                                    <constraint firstItem="5gE-Yq-ive" firstAttribute="top" secondItem="V5B-Bc-kz8" secondAttribute="top" constant="44" id="dLf-f9-sa9"/>
+                                    <constraint firstItem="5gE-Yq-ive" firstAttribute="top" secondItem="V5B-Bc-kz8" secondAttribute="top" constant="24" id="dLf-f9-sa9"/>
+                                    <constraint firstItem="nho-4l-bzv" firstAttribute="top" secondItem="5gE-Yq-ive" secondAttribute="bottom" constant="18" id="gqF-bp-ZLh"/>
                                     <constraint firstAttribute="trailing" secondItem="5gE-Yq-ive" secondAttribute="trailing" constant="20" symbolic="YES" id="i3Z-3r-bRu"/>
+                                    <constraint firstItem="F7t-8h-X3l" firstAttribute="centerX" secondItem="V5B-Bc-kz8" secondAttribute="centerX" id="i54-6W-ll8"/>
+                                    <constraint firstItem="51f-ni-4s8" firstAttribute="centerX" secondItem="5gE-Yq-ive" secondAttribute="centerX" id="igT-b5-Dsj"/>
+                                    <constraint firstItem="bPW-fy-WO7" firstAttribute="centerX" secondItem="V5B-Bc-kz8" secondAttribute="centerX" id="lnD-an-uUz"/>
+                                    <constraint firstItem="nho-4l-bzv" firstAttribute="centerX" secondItem="5gE-Yq-ive" secondAttribute="centerX" id="yVM-ny-RcG"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-Lm-uJd">
-                                <rect key="frame" x="18" y="62" width="70" height="70"/>
+                                <rect key="frame" x="18" y="106" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="700-pt-w3j"/>
                                     <constraint firstAttribute="height" constant="70" id="bRA-vz-bWD"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfF-JU-9d3">
-                                <rect key="frame" x="92" y="62" width="254" height="83"/>
+                                <rect key="frame" x="92" y="106" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="84i-tb-Rna"/>
@@ -1333,7 +1599,6 @@ BeeThinking無料版(with AD)は、
                         <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="V5B-Bc-kz8" firstAttribute="top" secondItem="kfF-JU-9d3" secondAttribute="bottom" constant="14" id="4nd-Ri-D2k"/>
-                            <constraint firstItem="V5B-Bc-kz8" firstAttribute="centerX" secondItem="BLt-cw-OhT" secondAttribute="centerX" id="D9E-8x-giB"/>
                             <constraint firstItem="ggs-Lm-uJd" firstAttribute="top" secondItem="mPF-55-nLh" secondAttribute="top" constant="18" id="MDh-Vq-uVf"/>
                             <constraint firstItem="mPF-55-nLh" firstAttribute="bottom" secondItem="gCV-e8-7Xo" secondAttribute="bottom" constant="12" id="Mdp-5V-qbm"/>
                             <constraint firstItem="ldF-un-T6r" firstAttribute="centerX" secondItem="BLt-cw-OhT" secondAttribute="centerX" id="P40-g5-6zZ"/>
@@ -1344,17 +1609,19 @@ BeeThinking無料版(with AD)は、
                             <constraint firstItem="ggs-Lm-uJd" firstAttribute="leading" secondItem="mPF-55-nLh" secondAttribute="leading" constant="18" id="iWS-Kz-L0s"/>
                             <constraint firstItem="mPF-55-nLh" firstAttribute="trailing" secondItem="QKr-61-v4s" secondAttribute="trailing" constant="28" id="niU-UW-ruY"/>
                             <constraint firstItem="kfF-JU-9d3" firstAttribute="leading" secondItem="ggs-Lm-uJd" secondAttribute="trailing" constant="4" id="ogv-Pb-Uws"/>
+                            <constraint firstItem="V5B-Bc-kz8" firstAttribute="centerX" secondItem="BLt-cw-OhT" secondAttribute="centerX" id="tAg-I5-k2S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mPF-55-nLh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Card View" id="oLO-LO-1jA"/>
                     <connections>
                         <outlet property="kolodaView" destination="V5B-Bc-kz8" id="QEl-t4-QSg"/>
+                        <outlet property="viewCountStar" destination="51f-ni-4s8" id="Fvb-FX-OjA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76v-uI-QnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302.898550724638" y="-679.01785714285711"/>
+            <point key="canvasLocation" x="2311.594202898551" y="913.39285714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CYb-eC-KR8">
@@ -1372,7 +1639,7 @@ BeeThinking無料版(with AD)は、
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7k-Tb-m1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1055" y="21"/>
+            <point key="canvasLocation" x="-1438" y="271"/>
         </scene>
     </scenes>
     <resources>
@@ -1380,9 +1647,10 @@ BeeThinking無料版(with AD)は、
         <image name="bottle0" width="180" height="270"/>
         <image name="flickbutton" width="382" height="136"/>
         <image name="icon-10" width="180" height="180"/>
-        <image name="icon-11" width="180" height="180"/>
+        <image name="icon-12" width="180" height="180"/>
         <image name="icon-13" width="180" height="180"/>
         <image name="icon-14" width="180" height="180"/>
+        <image name="icon-17" width="180" height="180"/>
         <image name="icon-2" width="180" height="180"/>
         <image name="icon-3" width="180" height="180"/>
         <image name="icon-4" width="180" height="180"/>
@@ -1396,7 +1664,6 @@ BeeThinking無料版(with AD)は、
         <image name="アセット 3" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UIo-qx-i9X"/>
-        <segue reference="aDw-Il-uWO"/>
+        <segue reference="fCG-G3-fe0"/>
     </inferredMetricsTieBreakers>
 </document>

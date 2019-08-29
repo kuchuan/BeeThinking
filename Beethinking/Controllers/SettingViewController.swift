@@ -42,6 +42,13 @@ class SettingViewController: UIViewController {
         performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
     }
     
+    @IBAction func didTapTextToUserSetting(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toUserSetting", sender: nil)
+    }
+    @IBAction func didTapToUserSetting(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toUserSetting", sender: nil)
+    }
+    
     
     @IBAction func didTextTapToAgreement(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toAgreement", sender: nil)
