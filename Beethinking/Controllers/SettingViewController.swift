@@ -16,6 +16,7 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = false
     }
     
     
@@ -25,6 +26,15 @@ class SettingViewController: UIViewController {
     @IBAction func didTapIconToDeleteData(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toDeleteData", sender: nil)
     }
+    
+    
+    @IBAction func didTapTextToDataManagemant(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toDataManegement", sender: nil)
+    }
+    @IBAction func didTapIconDataManagemnt(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toDataManegement", sender: nil)
+    }
+    
     
    
     @IBAction func didTextTapToAboutBeeThinking(_ sender: UITapGestureRecognizer) {
@@ -41,6 +51,7 @@ class SettingViewController: UIViewController {
     @IBAction func didTapToAboutBeeSeries(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
     }
+    
     
     @IBAction func didTapTextToUserSetting(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toUserSetting", sender: nil)

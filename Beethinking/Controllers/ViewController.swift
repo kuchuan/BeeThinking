@@ -14,17 +14,23 @@ import SCLAlertView
 
 
 
+//初期化関連変数(userDefault)
+var initialSetGeneralAttributeIdToggle: Bool = true
+var initialSetGeneralAttributeIdValue: Int = 0
+var initialAutoSetOfDuplicateToggle: Bool = true
+
 //Honeycombのタグ番号を格納するグローバル変数を作成
 var honeycombTagNum: Int = 100
 var honeycombPreviousTagNum: Int = 100
-
 //同じ中心課題のグループをidで管理
 var generalAttributeId: Int = 0
-
 //中央課題と周辺課題のお互いを同時に書き込めるがどうか（初期値はする:true）
 var autoSetOfDuplicate: Bool = true
-//データが別の画面でリセットされたかどうかの判定を行う（予約）
-var dataResetToggle: Bool = false
+
+
+//データが別の画面でリセットされたかどうかの判定を行う（from DataManaementView,）
+var dataResetToggleFromDeleteData: Bool = false
+var dataResetToggleFromDateManagement: Bool = false
 
 //var deleatIdea: Int = 100 {
 //    willSet {
@@ -61,6 +67,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     override func viewWillAppear(_ animated: Bool) {
 //        print("\(#line)リロード")
         reloadHoneycombView()
+        self.navigationItem.hidesBackButton = true
     }
 
     
@@ -81,6 +88,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 //            print("Complerted")
         }
         
+        
+//---------------------------------------------------------
+        
+        let userDefault = UserDefaults.standard
+        if userDefault.bool(forKey: "initialSetGeneralAttributeIdToggle") {
+            generalAttributeId = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
+        }
+        
+        if userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle") {
+            autoSetOfDuplicate = true
+        } else {
+            autoSetOfDuplicate = false
+        }
+
 //---------------------------------------------------------
         //再生する音楽ファイルのパス作成
         let audioPath = Bundle.main.path(forResource: "BeeThinking", ofType: "mp3")!
@@ -302,10 +323,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         //最も大きなattributeIdを取得してループですべてのtagNumberに当たって蜂の巣を埋めていく
         let attributeNum = realm.objects(IdeaData.self).max(ofProperty: "attributeId") as Int?
         
-        if attributeNum == nil {
-            generalAttributeId = 1
+        
+        if dataResetToggleFromDateManagement {
+            // tureの時、別の画面から送られてきたgeneralAttributeIdの値をそのまま利用
+            dataResetToggleFromDateManagement = false
         } else {
-            generalAttributeId = attributeNum!
+            if attributeNum == nil {
+                generalAttributeId = 1
+            } else {
+//                generalAttributeId = attributeNum!
+            }
         }
             //ループ
             var num: Int = 0
@@ -329,6 +356,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                 }
             }
         setHoneycombColor()
+
+        // UserDefaultsを準備して、変数UserDefaultに入れる
+        let userDefault = UserDefaults.standard
+        //userDefault.set(保存する値, forKey: "保存する値")
+        userDefault.set(initialSetGeneralAttributeIdToggle, forKey: "initialSetGeneralAttributeIdToggle")
+        userDefault.set(generalAttributeId, forKey: "initialSetGeneralAttributeIdValue")
+        userDefault.set(autoSetOfDuplicate, forKey: "initialAutoSetOfDuplicateToggle")
+        
     }
     
     
@@ -490,10 +525,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                 //新規ideaを追加
                 createNewIdea(text, honeycombTagNum)
                 
-            } else if button.currentTitle == "" && dataResetToggle == true {
+            } else if button.currentTitle == "" && dataResetToggleFromDeleteData == true {
                 //DeleteDataViewで新規作成されたものに対してのトラップ
                 updateOldIdea(text, honeycombTagNum)
-                dataResetToggle = false
+                dataResetToggleFromDeleteData = false
                 
             } else {
                 //ideaの更新

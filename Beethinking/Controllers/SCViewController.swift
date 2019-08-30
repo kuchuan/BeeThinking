@@ -40,6 +40,8 @@ class SCViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        self.navigationItem.hidesBackButton = false
+        
     }
 
     

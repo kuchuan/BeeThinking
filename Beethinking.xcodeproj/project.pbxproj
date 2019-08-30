@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48524769231736430027E683 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48524768231736430027E683 /* UserSettingViewController.swift */; };
-		4852476B231757E30027E683 /* DateManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852476A231757E30027E683 /* DateManagementViewController.swift */; };
+		4852476B231757E30027E683 /* DataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852476A231757E30027E683 /* DataManagementViewController.swift */; };
 		4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */; };
 		4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */; };
 		48939E2422F536640007C462 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48939E2322F536640007C462 /* SCViewController.swift */; };
@@ -35,7 +35,7 @@
 		3C174D659B137CD429773D30 /* Pods_Beethinking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beethinking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481CA7FE23119048009BBA57 /* BeeThinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BeeThinking.xcodeproj; path = ../../Beethinking_with_tin/BeeThinking.xcodeproj; sourceTree = "<group>"; };
 		48524768231736430027E683 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
-		4852476A231757E30027E683 /* DateManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManagementViewController.swift; sourceTree = "<group>"; };
+		4852476A231757E30027E683 /* DataManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementViewController.swift; sourceTree = "<group>"; };
 		4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUIButton.swift; sourceTree = "<group>"; };
 		48939E2322F536640007C462 /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				48D53B46231242B900D96903 /* SettingViewController.swift */,
 				48DF709B2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift */,
 				48DF709F2312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift */,
-				4852476A231757E30027E683 /* DateManagementViewController.swift */,
+				4852476A231757E30027E683 /* DataManagementViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 				48524769231736430027E683 /* UserSettingViewController.swift in Sources */,
 				48DF709C2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift in Sources */,
 				48C6E20E22F9523A002D05B8 /* HexUILabel.swift in Sources */,
-				4852476B231757E30027E683 /* DateManagementViewController.swift in Sources */,
+				4852476B231757E30027E683 /* DataManagementViewController.swift in Sources */,
 				48CA187522F6D47900072B99 /* IdeaData.swift in Sources */,
 				48E921CB22D97507007EF7A0 /* AppDelegate.swift in Sources */,
 			);

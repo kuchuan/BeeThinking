@@ -60,7 +60,7 @@ class DeleatDateViewController: UIViewController {
                 let result = CreateIdea().createIdea(text: "", tag: 100, autoSpredSwich: false)
                 
                 //データをリセットすることのトグルを設定してviewcontlloerに送る（senderでいいんじゃないの・・・わからんけど）
-                dataResetToggle = true
+                dataResetToggleFromDeleteData = true
                 
                 self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
             }
@@ -99,7 +99,7 @@ class DeleatDateViewController: UIViewController {
 //            }
             honeycombTagNum = 100
             
-            dataResetToggle = true
+            dataResetToggleFromDeleteData = true
             
             self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
         }

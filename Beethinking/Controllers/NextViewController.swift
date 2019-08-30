@@ -92,54 +92,7 @@ class NextViewController: UIViewController {
     }
 
     
-    fileprivate func settingDateFiveStar(tmpSlideOpacity: Float) {
-        
-        //選択されたデータを5スターに変更する
-        let realm = try! Realm()
-        
-        //1.05以上は「中心課題と周辺課題」を選択し、それ以外は透過度で選択する
-        if tmpSlideOpacity > 1.05 {
-            ideas = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 6").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
-        } else {
-            ideas = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 99").filter("flickOpacity >= \(tmpSlideOpacity)").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
-        }
-        
-        ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100  AND attributeId == \(generalAttributeId)").first!, at: 0)
-        
-        var results: [String] = []
-        
-        //いったんタグナンバー順位に整列してタグ100番（センターHoneycomb：中心課題を最初に移動させる
-        for idea in ideas {
-            let tagNumber = idea.tagNumber as Int
-            let sentence = idea.sentence
-            var flickOpacity = idea.flickOpacity as Float
-            
-            flickOpacity = 1.0
-            
-            let star: String = "⭐️⭐️⭐️⭐️⭐️"
-     
-            
-            if tagNumber == 100 {
-                let result = "[中心課題]:\n\(star)\n\n\(sentence)"
-                results.insert(result, at: 0)
-                tmpTagArry.insert(tagNumber, at: 0)
-                tmpOpcty.insert(flickOpacity, at: 0)
-            } else {
-                let result = "[\(tagNumber)番地]:\n\(star)\n\n\(sentence)"
-                results.append(result)
-                tmpTagArry.append(tagNumber)
-                tmpOpcty.append(flickOpacity)
-            }
-
-        }
-        //変数listsを書き換える
-        self.lists = results
-    }
-    
-    
-    
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -235,6 +188,55 @@ class NextViewController: UIViewController {
         
     }
     
+    fileprivate func settingDateFiveStar(tmpSlideOpacity: Float) {
+        
+        //選択されたデータを5スターに変更する
+        let realm = try! Realm()
+        
+        //1.05以上は「中心課題と周辺課題」を選択し、それ以外は透過度で選択する
+        if tmpSlideOpacity > 1.05 {
+            ideas = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 6").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+        } else {
+            ideas = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 99").filter("flickOpacity >= \(tmpSlideOpacity)").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+        }
+        
+        ideas.insert(realm.objects(IdeaData.self).filter("tagNumber == 100  AND attributeId == \(generalAttributeId)").first!, at: 0)
+        
+        var results: [String] = []
+        
+        //いったんタグナンバー順位に整列してタグ100番（センターHoneycomb：中心課題を最初に移動させる
+        for idea in ideas {
+            let tagNumber = idea.tagNumber as Int
+            let sentence = idea.sentence
+            var flickOpacity = idea.flickOpacity as Float
+            
+            flickOpacity = 1.0
+            
+            try! realm.write {
+                idea.flickOpacity = 1.0
+            }
+            
+            let star: String = "⭐️⭐️⭐️⭐️⭐️"
+            
+            
+            if tagNumber == 100 {
+                let result = "[中心課題]:\n\(star)\n\n\(sentence)"
+                results.insert(result, at: 0)
+                tmpTagArry.insert(tagNumber, at: 0)
+                tmpOpcty.insert(flickOpacity, at: 0)
+            } else {
+                let result = "[\(tagNumber)番地]:\n\(star)\n\n\(sentence)"
+                results.append(result)
+                tmpTagArry.append(tagNumber)
+                tmpOpcty.append(flickOpacity)
+            }
+            
+        }
+        //変数listsを書き換える
+        self.lists = results
+    }
+    
+    
     
     
     func countStar(number: Float) -> String{
@@ -301,16 +303,16 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
     
     // カードを全て消費したときの処理を定義する
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-//        print("\(#line):Finish cards.\(tmpTagArry.count)")
+        print("\(#line):Finish cards.\(tmpTagArry.count)")
         
         let realm = try! Realm()
 
         var i: Int = 0
         for tmpTag in tmpTagArry {
-            let tresult = realm.objects(IdeaData.self).filter("tagNumber == \(tmpTag)").first
+            let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId)  AND tagNumber == \(tmpTag)").first
             
             try! realm.write {
-                tresult?.flickOpacity = round(swipeResults[i] * 100 ) / 100
+                result?.flickOpacity = round(swipeResults[i] * 100 ) / 100
             }
             i = i + 1
         }

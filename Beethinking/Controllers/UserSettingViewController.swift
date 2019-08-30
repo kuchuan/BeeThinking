@@ -11,19 +11,56 @@ import RealmSwift
 import SCLAlertView
 
 class UserSettingViewController: UIViewController {
+    
+    
+    @IBOutlet weak var changeInitial: UISwitch!
+    @IBOutlet weak var changHoneycomb: UISwitch!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if initialSetGeneralAttributeIdToggle == true {
+            changHoneycomb.isOn = true
+        } else {
+            changHoneycomb.isOn = false
+        }
+        
+        if initialAutoSetOfDuplicateToggle == true {
+            changeInitial.isOn = true
+        } else {
+            changeInitial.isOn = false
+        }
+        
+        
     }
+    
+    @IBAction func didClickChangedInitial(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            autoSetOfDuplicate = true
+            initialSetGeneralAttributeIdToggle = true
+        } else {
+            autoSetOfDuplicate = false
+            initialSetGeneralAttributeIdToggle = false
+        }
+        
+    }
+    
+
+    
+    
     @IBAction func didClickCanged(_ sender: UISwitch) {
         //        label.text = "スイッチがクリックされたよ"
         //        print(sender.isOn)
         if sender.isOn {
             autoSetOfDuplicate = true
+            initialAutoSetOfDuplicateToggle = true
         } else {
             autoSetOfDuplicate = false
+            initialAutoSetOfDuplicateToggle = false
         }
     
     }
