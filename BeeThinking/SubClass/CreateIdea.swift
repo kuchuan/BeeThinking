@@ -97,7 +97,7 @@ class CreateIdea {
                 }
             
             }
-            print (#line,generalAttributeId)
+            print (#line,"CreateClass",generalAttributeId)
             
             
         }

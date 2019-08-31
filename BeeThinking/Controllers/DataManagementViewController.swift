@@ -16,7 +16,7 @@ class DataManagementViewController: UIViewController {
     
     var ideas:[IdeaData] = []
     
-    var tmpPeneralAttributeId: Int = 0
+    var tmpGeneralAttributeId: Int = 0
     
     
     fileprivate func reloadTableView() {
@@ -47,7 +47,7 @@ class DataManagementViewController: UIViewController {
     
     @IBAction func didTapLoardbutton(_ sender: UITapGestureRecognizer) {
         
-        generalAttributeId = tmpPeneralAttributeId
+        generalAttributeId = tmpGeneralAttributeId
         dataResetToggleFromDateManagement = true
         
         performSegue(withIdentifier: "fromDateManagemntToMain", sender: nil)
@@ -104,8 +104,9 @@ extension DataManagementViewController: UITableViewDelegate, UITableViewDataSour
         let number = ideas[indexPath.row]
 //        print(number.attributeId)
         
-        tmpPeneralAttributeId = number.attributeId
-        print(generalAttributeId,tmpPeneralAttributeId)
+        tmpGeneralAttributeId = number.attributeId
+        
+print("DataMnge",#line,"Gen:tmpGen",generalAttributeId,tmpGeneralAttributeId)
         
 //        performSegue(withIdentifier: "fromDateManagemntToMain", sender: number)
     }

@@ -97,21 +97,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         let userDefault = UserDefaults.standard
         
-        if userDefault.bool(forKey: "initialSetGeneralAttributeIdToggle") {
-            initialSetGeneralAttributeIdToggle = true
-            generalAttributeId = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
-        } else {
-            initialSetGeneralAttributeIdToggle = false
+        initialSetGeneralAttributeIdToggle = userDefault.bool(forKey: "initialSetGeneralAttributeIdToggle")
+        initialAutoSetOfDuplicateToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
+        
+        if initialSetGeneralAttributeIdToggle {
             generalAttributeId = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
         }
 
-        if userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle") {
-            autoSetOfDuplicate = true
-            initialAutoSetOfDuplicateToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
-        } else {
-            autoSetOfDuplicate = false
-            initialAutoSetOfDuplicateToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
-        }
+print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
 
 //---------------------------------------------------------
         //再生する音楽ファイルのパス作成
@@ -329,29 +322,82 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     fileprivate func reloadHoneycombView() {
         //Realmに接続
         let realm = try! Realm()
-
-        //直近の一覧を取得する(reversedは)
-        ideas = realm.objects(IdeaData.self).reversed()
-        
-        
-        //最も大きなattributeIdを取得
+     
+        // （準備）最も大きなattributeIdを取得
         var attributeNum = realm.objects(IdeaData.self).max(ofProperty: "attributeId") as Int?
         
-        if dataResetToggleFirst && !initialSetGeneralAttributeIdToggle {
-            attributeNum = nil
+print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",generalAttributeId)
+        
+        
+        // (initialAutoSetOfDuplicateToggle == true かつ　dataResetToggleFirst == true) または、（dataResetToggleFromDateManagement == true）なら、
+        // 検索するattributeNum　は　generalAttributeId（代入ずみ）
+        if (initialAutoSetOfDuplicateToggle == true && dataResetToggleFirst == true) || (dataResetToggleFromDateManagement == true) {
+            attributeNum = generalAttributeId
+            
+            //　処理終了後に　dataResetToggleFirst = False, dataResetToggleFromDateManagement = False に変更
             dataResetToggleFirst = false
+            dataResetToggleFromDateManagement = false
         }
         
-        if attributeNum != nil {
+
+        // (initialAutoSetOfDuplicateToggle == flase　かつ　dataResetToggleFirst == true) または、(dataResetToggleFromDeleteData == true) なら,
+        // 検索する　attributeNum　は　データ新規作成時の「Id」になる
+        if (initialAutoSetOfDuplicateToggle == false && dataResetToggleFirst == true) || (dataResetToggleFromDeleteData == true) {
             
-            //初期実行かデータ変更のトグルのtrue表示があればグローバル変数のgeneralAttributeIdの値を利用する
-            //両方Falseなら先のattributeNumの最大値で探す
-            if dataResetToggleFromDateManagement {
-                // tureの時、別の画面から送られてきたgeneralAttributeIdの値をそのまま利用
-                attributeNum = generalAttributeId
-                dataResetToggleFromDateManagement = false
+            // ダイアログを発動し　中心課題の入力を促す・・・ない場合は「中心課題未入力」と入力する
+            
+            let alert = SCLAlertView()
+            let txt = alert.addTextField("中心課題を入力")
+            alert.addButton("登録") {
+                var inputText: String = ""
+                if txt.text == nil {
+                    inputText = "中心課題が未入力です"
+                } else {
+                    inputText = String(txt.text!)
+                }
+                self.createNewIdea(inputText, 100)
             }
-                
+            alert.showEdit(
+                "中心課題が空欄です\nはじめに課題を\n入力しましょう", // タイトル
+                subTitle: "よろしいですか", // サブタイトル
+                closeButtonTitle: "あとから", // クローズボタンのタイトル
+                //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
+                colorStyle: 0xFF2600, // ボタン、シンボルの色
+                colorTextButton: 0x000000, // ボタンの文字列の色
+                //            circleIconImage: UIImage?, //アイコンimage
+                animationStyle:.bottomToTop // スタイル（Success)指定
+            )
+            
+ print (#line,"モーダルの後",generalAttributeId)
+            
+            // 入力された中心課題のIdをgeneralAttributIdに入力する
+
+        
+        
+        //　ループでgeneralAttributeIdと同じデータベースの値を拾って、蜂の巣にすべて埋めていく
+    
+            
+//        if dataResetToggleFirst && !initialSetGeneralAttributeIdToggle {
+//
+//            //　起動時と初期値読込トグルがOFFの場合はデータの表示がなく、新規入力状態になる
+//            generalAttributeId = 0
+//            dataResetToggleFirst = false
+//        } else {
+//            //
+//            generalAttributeId = attributeNum!
+//        }
+//
+//
+//        if attributeNum != nil {
+//
+//            //初期実行かデータ変更のトグルのtrue表示があればグローバル変数のgeneralAttributeIdの値を利用する
+//            //両方Falseなら先のattributeNumの最大値で探す
+//            if dataResetToggleFromDateManagement {
+//                // tureの時、別の画面から送られてきたgeneralAttributeIdの値をそのまま利用
+//                attributeNum = generalAttributeId
+//                dataResetToggleFromDateManagement = false
+//            }
+            
                 //ループですべてのtagNumberに当たって蜂の巣を埋めていく
                 var num: Int = 0
                 for i in 0...7 {
@@ -377,7 +423,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         setHoneycombColor()
         
-        print(#line,generalAttributeId)
+        print("VC",#line,"generalAttributeId",generalAttributeId)
 
 //        // UserDefaultsを準備して、変数UserDefaultに入れる
 //        let userDefault = UserDefaults.standard
@@ -553,12 +599,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                 
             } else if button.currentTitle == "" && dataResetToggleFromDeleteData == true {
                 //DeleteDataViewで新規作成されたものに対してのトラップ
-                updateOldIdea(text, honeycombTagNum)
+                createNewIdea(text, honeycombTagNum)
                 dataResetToggleFromDeleteData = false
                 
             } else if button.currentTitle! == "" && dataResetToggleFromDeleteData == false {
                 //新規ideaを追加
-                createNewIdea(text, honeycombTagNum)
+                updateOldIdea(text, honeycombTagNum)
                 
             } else {
                 //ideaの更新

@@ -86,6 +86,7 @@ class UpdateIdea {
                 
             }
         }
+         print (#line,"UpDateClass",generalAttributeId)
         //　autoSetOfDuplicateがture（）
         return (tag, tmpTag)
     }
