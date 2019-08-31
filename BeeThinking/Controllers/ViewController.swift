@@ -70,7 +70,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     //画面が表示されるたびに実行
     override func viewWillAppear(_ animated: Bool) {
 //        print("\(#line)リロード")
-        reloadHoneycombView()
+//        reloadHoneycombView()
         self.navigationItem.hidesBackButton = true
     }
 
@@ -307,6 +307,8 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
         
         //Realmの情報管理用
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        reloadHoneycombView()
 
         
     }
@@ -326,111 +328,64 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
         // （準備）最も大きなattributeIdを取得
         var attributeNum = realm.objects(IdeaData.self).max(ofProperty: "attributeId") as Int?
         
-print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",generalAttributeId)
-        
-        
-        // (initialAutoSetOfDuplicateToggle == true かつ　dataResetToggleFirst == true) または、（dataResetToggleFromDateManagement == true）なら、
-        // 検索するattributeNum　は　generalAttributeId（代入ずみ）
-        if (initialAutoSetOfDuplicateToggle == true && dataResetToggleFirst == true) || (dataResetToggleFromDateManagement == true) {
-            attributeNum = generalAttributeId
+        var tmpGeneralAttributeId: Int = 0
+        //データがない場合（はじめめて起動する・データベースが削除された後）
+        // attributeNum == nil
+        if attributeNum == nil {
             
-            //　処理終了後に　dataResetToggleFirst = False, dataResetToggleFromDateManagement = False に変更
-            dataResetToggleFirst = false
-            dataResetToggleFromDateManagement = false
+            attributeNum = 1
+            tmpGeneralAttributeId = 1
+            
+        } else {
+            
+        tmpGeneralAttributeId = attributeNum!
+        // データがある
+            //　初期値を読み込む
+            if initialSetGeneralAttributeIdToggle && dataResetToggleFirst {
+                tmpGeneralAttributeId = initialSetGeneralAttributeIdValue
+                attributeNum = initialSetGeneralAttributeIdValue
+                dataResetToggleFirst = false
+                
+            } else if dataResetToggleFromDateManagement {
+                //　データ管理でデータを読み込む
+                tmpGeneralAttributeId = generalAttributeId
+                attributeNum = generalAttributeId
+                dataResetToggleFromDateManagement = false
+                
+            } else {
+                //　初期値を読み込まない
+                let idNumber = CreateIdea()
+                tmpGeneralAttributeId = idNumber.getMaxId() + 1
+                attributeNum = idNumber.getMaxId() + 1
+            }
+        
+            generalAttributeId = tmpGeneralAttributeId
+            
+            //ループですべてのtagNumberに当たって蜂の巣を埋めていく
+            var num: Int = 0
+            for i in 0...7 {
+                for j in 0...6 {
+                    num = i * 10 + j
+                    if num == 0 {
+                        num = 100
+                    }
+                    
+                    var result = realm.objects(IdeaData.self).filter("attributeId == \(attributeNum!) AND tagNumber == \(num)") as HexUIButton!
+                    if let button = result.viewWithTag( num ) {
+                        button.setTitle(result.sentence)
+                    }
+                    
+                }
+            }
+            
         }
         
-
-        // (initialAutoSetOfDuplicateToggle == flase　かつ　dataResetToggleFirst == true) または、(dataResetToggleFromDeleteData == true) なら,
-        // 検索する　attributeNum　は　データ新規作成時の「Id」になる
-        if (initialAutoSetOfDuplicateToggle == false && dataResetToggleFirst == true) || (dataResetToggleFromDeleteData == true) {
-            
-            // ダイアログを発動し　中心課題の入力を促す・・・ない場合は「中心課題未入力」と入力する
-            
-            let alert = SCLAlertView()
-            let txt = alert.addTextField("中心課題を入力")
-            alert.addButton("登録") {
-                var inputText: String = ""
-                if txt.text == nil {
-                    inputText = "中心課題が未入力です"
-                } else {
-                    inputText = String(txt.text!)
-                }
-                self.createNewIdea(inputText, 100)
-            }
-            alert.showEdit(
-                "中心課題が空欄です\nはじめに課題を\n入力しましょう", // タイトル
-                subTitle: "よろしいですか", // サブタイトル
-                closeButtonTitle: "あとから", // クローズボタンのタイトル
-                //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
-                colorStyle: 0xFF2600, // ボタン、シンボルの色
-                colorTextButton: 0x000000, // ボタンの文字列の色
-                //            circleIconImage: UIImage?, //アイコンimage
-                animationStyle:.bottomToTop // スタイル（Success)指定
-            )
-            
- print (#line,"モーダルの後",generalAttributeId)
-            
-            // 入力された中心課題のIdをgeneralAttributIdに入力する
+        
+print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",generalAttributeId)
 
         
-        
-        //　ループでgeneralAttributeIdと同じデータベースの値を拾って、蜂の巣にすべて埋めていく
-    
-            
-//        if dataResetToggleFirst && !initialSetGeneralAttributeIdToggle {
-//
-//            //　起動時と初期値読込トグルがOFFの場合はデータの表示がなく、新規入力状態になる
-//            generalAttributeId = 0
-//            dataResetToggleFirst = false
-//        } else {
-//            //
-//            generalAttributeId = attributeNum!
-//        }
-//
-//
-//        if attributeNum != nil {
-//
-//            //初期実行かデータ変更のトグルのtrue表示があればグローバル変数のgeneralAttributeIdの値を利用する
-//            //両方Falseなら先のattributeNumの最大値で探す
-//            if dataResetToggleFromDateManagement {
-//                // tureの時、別の画面から送られてきたgeneralAttributeIdの値をそのまま利用
-//                attributeNum = generalAttributeId
-//                dataResetToggleFromDateManagement = false
-//            }
-            
-                //ループですべてのtagNumberに当たって蜂の巣を埋めていく
-                var num: Int = 0
-                for i in 0...7 {
-                    for j in 0...6 {
-                        num = i * 10 + j
-                        if num == 0 {
-                            num = 100
-                        }
-                        
-                        let result = realm.objects(IdeaData.self).filter("attributeId == \(attributeNum!) AND tagNumber == \(num)")
-                        
-                        //ボタンが作られているかどうかの判定
-                        if let button = self.view.viewWithTag( num ) as? HexUIButton {
-                            button.setTitle(result.first?.sentence, for: UIControl.State.normal)
-    //                        print("\(#line):蜂の巣\(num)\(String(describing: button.currentTitle)) & \(String(describing: result.first?.sentence))")
-                        } else {
-                            //存在しない蜂の巣の番号を踏んだときに発動
-                            print("vc\(#line):\(num)はnil")
-                        }
-                    }
-                }
-            }
-        
-        setHoneycombColor()
-        
-        print("VC",#line,"generalAttributeId",generalAttributeId)
+         setHoneycombColor()
 
-//        // UserDefaultsを準備して、変数UserDefaultに入れる
-//        let userDefault = UserDefaults.standard
-//        //userDefault.set(保存する値, forKey: "保存する値")
-//        userDefault.set(initialSetGeneralAttributeIdToggle, forKey: "initialSetGeneralAttributeIdToggle")
-//        userDefault.set(generalAttributeId, forKey: "initialSetGeneralAttributeIdValue")
-//        userDefault.set(autoSetOfDuplicate, forKey: "initialAutoSetOfDuplicateToggle")
         
     }
     
@@ -442,7 +397,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
         
         let setIdea = CreateIdea()
         let res = setIdea.createIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
-        print ("\(#line)createIdea",res)
+        print ("VC\(#line)createIdea",res)
 
     }
 
@@ -451,7 +406,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
         
         let setIdea = UpdateIdea()
         let res = setIdea.updateIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
-        print ("\(#line)updateIdea",res)
+        print ("VC\(#line)updateIdea",res)
         
     }
 
@@ -591,7 +546,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
             
             let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
             
-            print(button.currentTitle as Any)
+            print("VC",#line,button.currentTitle as Any)
             //ideasの配列の中身が空の場合
             if button.currentTitle == nil {
                 //新規ideaを追加
@@ -600,12 +555,16 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
             } else if button.currentTitle == "" && dataResetToggleFromDeleteData == true {
                 //DeleteDataViewで新規作成されたものに対してのトラップ
                 createNewIdea(text, honeycombTagNum)
-                dataResetToggleFromDeleteData = false
+//                dataResetToggleFromDeleteData = false
                 
             } else if button.currentTitle! == "" && dataResetToggleFromDeleteData == false {
                 //新規ideaを追加
-                updateOldIdea(text, honeycombTagNum)
+                createNewIdea(text, honeycombTagNum)
                 
+            } else if button.currentTitle! == "" && dataResetToggleFromDateManagement == true {
+                
+            } else if button.currentTitle! == "" && dataResetToggleFromDateManagement == false {
+            
             } else {
                 //ideaの更新
                 updateOldIdea(text, honeycombTagNum)
@@ -614,6 +573,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
             inputBox.text = ""
            
         }
+        
         
         reloadHoneycombView()
 

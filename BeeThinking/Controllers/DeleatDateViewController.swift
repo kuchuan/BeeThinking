@@ -57,7 +57,7 @@ class DeleatDateViewController: UIViewController {
         
         let alertView = SCLAlertView()
             alertView.addButton("はい") {
-                let result = CreateIdea().createIdea(text: "", tag: 100, autoSpredSwich: false)
+//                let result = CreateIdea().createIdea(t・ext: "", tag: 100, autoSpredSwich: false)
                 
                 //データをリセットすることのトグルを設定してviewcontlloerに送る（senderでいいんじゃないの・・・わからんけど）
                 dataResetToggleFromDeleteData = true
@@ -129,6 +129,8 @@ class DeleatDateViewController: UIViewController {
             }
             
             honeycombTagNum = 100
+            
+            dataResetToggleFromDeleteData = true
             
             self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
         }
