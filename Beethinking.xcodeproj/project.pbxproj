@@ -133,7 +133,7 @@
 		48E921BE22D97507007EF7A0 = {
 			isa = PBXGroup;
 			children = (
-				48E921C922D97507007EF7A0 /* Beethinking */,
+				48E921C922D97507007EF7A0 /* BeeThinking */,
 				48E921C822D97507007EF7A0 /* Products */,
 				320E740A1C76349B0ADEAAF8 /* Pods */,
 				42E838B435740209A5143E12 /* Frameworks */,
@@ -148,7 +148,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		48E921C922D97507007EF7A0 /* Beethinking */ = {
+		48E921C922D97507007EF7A0 /* BeeThinking */ = {
 			isa = PBXGroup;
 			children = (
 				48C6E20C22F9514C002D05B8 /* SubClass */,
@@ -161,7 +161,7 @@
 				48E921D622D97507007EF7A0 /* Info.plist */,
 				48FDA0E8230C488D00B32D27 /* BeeThinking.mp3 */,
 			);
-			path = Beethinking;
+			path = BeeThinking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

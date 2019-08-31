@@ -23,15 +23,15 @@ class UserSettingViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         if initialSetGeneralAttributeIdToggle == true {
-            changHoneycomb.isOn = true
-        } else {
-            changHoneycomb.isOn = false
-        }
-        
-        if initialAutoSetOfDuplicateToggle == true {
             changeInitial.isOn = true
         } else {
             changeInitial.isOn = false
+        }
+        
+        if initialAutoSetOfDuplicateToggle == true {
+            changHoneycomb.isOn = true
+        } else {
+            changHoneycomb.isOn = false
         }
         
         
@@ -39,13 +39,18 @@ class UserSettingViewController: UIViewController {
     
     @IBAction func didClickChangedInitial(_ sender: UISwitch) {
         
+        //トグルスイッチが書き換わるとtrue、falseが初期化用のuserdefaultに書き込まれる
         if sender.isOn {
-            autoSetOfDuplicate = true
             initialSetGeneralAttributeIdToggle = true
         } else {
-            autoSetOfDuplicate = false
             initialSetGeneralAttributeIdToggle = false
         }
+        // UserDefaultsを準備して、変数UserDefaultに入れる
+        let userDefault = UserDefaults.standard
+        //userDefault.set(保存する値, forKey: "保存する値")
+        userDefault.set(initialSetGeneralAttributeIdToggle, forKey: "initialSetGeneralAttributeIdToggle")
+        userDefault.set(generalAttributeId, forKey: "initialSetGeneralAttributeIdValue")
+        userDefault.set(autoSetOfDuplicate, forKey: "initialAutoSetOfDuplicateToggle")
         
     }
     
@@ -62,6 +67,12 @@ class UserSettingViewController: UIViewController {
             autoSetOfDuplicate = false
             initialAutoSetOfDuplicateToggle = false
         }
+        // UserDefaultsを準備して、変数UserDefaultに入れる
+        let userDefault = UserDefaults.standard
+        //userDefault.set(保存する値, forKey: "保存する値")
+        userDefault.set(initialSetGeneralAttributeIdToggle, forKey: "initialSetGeneralAttributeIdToggle")
+        userDefault.set(generalAttributeId, forKey: "initialSetGeneralAttributeIdValue")
+        userDefault.set(autoSetOfDuplicate, forKey: "initialAutoSetOfDuplicateToggle")
     
     }
     

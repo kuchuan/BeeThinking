@@ -175,7 +175,37 @@ class NextViewController: UIViewController {
 //        }
  
         //1．シェアするデータの配列を作成
-        let date = ["Now I'm learning iOS. This is example post"] as [Any]
+        var sentence: String = ""
+        var rateNumber: Float = 0.0
+        var rangeText: String = ""
+        if viewCountStar.text! != "すべてを選択する" && viewCountStar.text! != "中心課題と周辺課題のみ" {
+            rangeText = "（選択範囲）" + viewCountStar.text! + "以上\n"
+        } else {
+            rangeText = "（選択範囲）" + viewCountStar.text! + "\n"
+        }
+        var passge: String = "BeeThinking《 アイデア拡張 》\n" + rangeText
+        
+        for idea in ideas {
+
+            rateNumber = idea.flickOpacity
+            rateNumber = round(rateNumber * 10) / 10 * 5
+            let num = idea.tagNumber
+            switch num{
+            case 100:
+                sentence = "中心課題:" + idea.sentence
+            case 1...7:
+                sentence = "- 周辺課題⭐️\(String(rateNumber)):" + idea.sentence
+            default:
+                if idea.tagNumber % 10 != 0 {
+                    sentence = "- （⭐️\(String(rateNumber))）" + idea.sentence
+                } else {
+                    sentence = "周辺課題:" + idea.sentence
+                }
+            }
+            passge = passge + "\n" + sentence
+        }
+        
+        let date = ["\(passge)"] as [Any]
         //2．シェア画面作成
 
         //activityItems:シェアしたいデータを設定

@@ -97,10 +97,7 @@ class CreateIdea {
                 }
             
             }
-            
-            
-            
-            
+            print (#line,generalAttributeId)
             
             
         }

@@ -22,13 +22,17 @@ var initialAutoSetOfDuplicateToggle: Bool = true
 //Honeycombのタグ番号を格納するグローバル変数を作成
 var honeycombTagNum: Int = 100
 var honeycombPreviousTagNum: Int = 100
+
 //同じ中心課題のグループをidで管理
 var generalAttributeId: Int = 0
+
+
 //中央課題と周辺課題のお互いを同時に書き込めるがどうか（初期値はする:true）
 var autoSetOfDuplicate: Bool = true
 
 
 //データが別の画面でリセットされたかどうかの判定を行う（from DataManaementView,）
+var dataResetToggleFirst: Bool = true
 var dataResetToggleFromDeleteData: Bool = false
 var dataResetToggleFromDateManagement: Bool = false
 
@@ -92,14 +96,21 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 //---------------------------------------------------------
         
         let userDefault = UserDefaults.standard
+        
         if userDefault.bool(forKey: "initialSetGeneralAttributeIdToggle") {
+            initialSetGeneralAttributeIdToggle = true
+            generalAttributeId = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
+        } else {
+            initialSetGeneralAttributeIdToggle = false
             generalAttributeId = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
         }
-        
+
         if userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle") {
             autoSetOfDuplicate = true
+            initialAutoSetOfDuplicateToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
         } else {
             autoSetOfDuplicate = false
+            initialAutoSetOfDuplicateToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
         }
 
 //---------------------------------------------------------
@@ -127,12 +138,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         
 //---------------------------------------------------------
+        
+        //view全体にタップの反応ができるように設定（蜂の巣選択時のため）
         // タップジェスチャーを作成します。
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(singleTap(_:)))
         
         // シングルタップで反応するように設定します。
         singleTapGesture.numberOfTapsRequired = 1
-        
         
         // ビューにジェスチャーを設定します。
         view.addGestureRecognizer(singleTapGesture)
@@ -320,49 +332,59 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 
         //直近の一覧を取得する(reversedは)
         ideas = realm.objects(IdeaData.self).reversed()
-        //最も大きなattributeIdを取得してループですべてのtagNumberに当たって蜂の巣を埋めていく
-        let attributeNum = realm.objects(IdeaData.self).max(ofProperty: "attributeId") as Int?
         
         
-        if dataResetToggleFromDateManagement {
-            // tureの時、別の画面から送られてきたgeneralAttributeIdの値をそのまま利用
-            dataResetToggleFromDateManagement = false
-        } else {
-            if attributeNum == nil {
-                generalAttributeId = 1
-            } else {
-//                generalAttributeId = attributeNum!
-            }
+        //最も大きなattributeIdを取得
+        var attributeNum = realm.objects(IdeaData.self).max(ofProperty: "attributeId") as Int?
+        
+        if dataResetToggleFirst && !initialSetGeneralAttributeIdToggle {
+            attributeNum = nil
+            dataResetToggleFirst = false
         }
-            //ループ
-            var num: Int = 0
-            for i in 0...7 {
-                for j in 0...6 {
-                    num = i * 10 + j
-                    if num == 0 {
-                        num = 100
-                    }
-                    
-                    let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == \(num)")
-                    
-                    //ボタンが作られているかどうかの判定
-                    if let button = self.view.viewWithTag( num ) as? HexUIButton {
-                        button.setTitle(result.first?.sentence, for: UIControl.State.normal)
-//                        print("\(#line):蜂の巣\(num)\(String(describing: button.currentTitle)) & \(String(describing: result.first?.sentence))")
-                    } else {
-                        //存在しない蜂の巣の番号を踏んだときに発動
-                        print("vc\(#line):\(num)はnil")
+        
+        if attributeNum != nil {
+            
+            //初期実行かデータ変更のトグルのtrue表示があればグローバル変数のgeneralAttributeIdの値を利用する
+            //両方Falseなら先のattributeNumの最大値で探す
+            if dataResetToggleFromDateManagement {
+                // tureの時、別の画面から送られてきたgeneralAttributeIdの値をそのまま利用
+                attributeNum = generalAttributeId
+                dataResetToggleFromDateManagement = false
+            }
+                
+                //ループですべてのtagNumberに当たって蜂の巣を埋めていく
+                var num: Int = 0
+                for i in 0...7 {
+                    for j in 0...6 {
+                        num = i * 10 + j
+                        if num == 0 {
+                            num = 100
+                        }
+                        
+                        let result = realm.objects(IdeaData.self).filter("attributeId == \(attributeNum!) AND tagNumber == \(num)")
+                        
+                        //ボタンが作られているかどうかの判定
+                        if let button = self.view.viewWithTag( num ) as? HexUIButton {
+                            button.setTitle(result.first?.sentence, for: UIControl.State.normal)
+    //                        print("\(#line):蜂の巣\(num)\(String(describing: button.currentTitle)) & \(String(describing: result.first?.sentence))")
+                        } else {
+                            //存在しない蜂の巣の番号を踏んだときに発動
+                            print("vc\(#line):\(num)はnil")
+                        }
                     }
                 }
             }
+        
         setHoneycombColor()
+        
+        print(#line,generalAttributeId)
 
-        // UserDefaultsを準備して、変数UserDefaultに入れる
-        let userDefault = UserDefaults.standard
-        //userDefault.set(保存する値, forKey: "保存する値")
-        userDefault.set(initialSetGeneralAttributeIdToggle, forKey: "initialSetGeneralAttributeIdToggle")
-        userDefault.set(generalAttributeId, forKey: "initialSetGeneralAttributeIdValue")
-        userDefault.set(autoSetOfDuplicate, forKey: "initialAutoSetOfDuplicateToggle")
+//        // UserDefaultsを準備して、変数UserDefaultに入れる
+//        let userDefault = UserDefaults.standard
+//        //userDefault.set(保存する値, forKey: "保存する値")
+//        userDefault.set(initialSetGeneralAttributeIdToggle, forKey: "initialSetGeneralAttributeIdToggle")
+//        userDefault.set(generalAttributeId, forKey: "initialSetGeneralAttributeIdValue")
+//        userDefault.set(autoSetOfDuplicate, forKey: "initialAutoSetOfDuplicateToggle")
         
     }
     
@@ -389,7 +411,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 
   
     
-//----------------------------------------------------------------------
+
     
     @IBAction func didPinchHoneycombView(_ sender: UIPinchGestureRecognizer) {
         
@@ -413,6 +435,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         //中央の蜂の巣にデータがあるか確認
         let result = realm.objects(IdeaData.self)
             .filter("attributeId == \(generalAttributeId) AND tagNumber == \(100)")
+        
+        print(#line,generalAttributeId)
         
         if result.first != nil {
             
@@ -520,6 +544,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         } else {
             
             let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
+            
+            print(button.currentTitle as Any)
             //ideasの配列の中身が空の場合
             if button.currentTitle == nil {
                 //新規ideaを追加
@@ -530,10 +556,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                 updateOldIdea(text, honeycombTagNum)
                 dataResetToggleFromDeleteData = false
                 
+            } else if button.currentTitle! == "" && dataResetToggleFromDeleteData == false {
+                //新規ideaを追加
+                createNewIdea(text, honeycombTagNum)
+                
             } else {
                 //ideaの更新
                 updateOldIdea(text, honeycombTagNum)
-                
             }
             
             inputBox.text = ""
@@ -602,8 +631,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                 }
             }
         }
-        
-//        print("\(#line)ハチミツの容量:\(setHoneyBottle)")
+//        print("\(#line)ハチミツの容量:\(setHoneyBottle)"
         //アイデアの量でbottleのハチミツが変化するギミック
         var imageName: String = ""
         let percentOfBottle = Int(floor(Double(setHoneyBottle) / 55 * 100))
