@@ -333,7 +333,7 @@ extension NextViewController: KolodaViewDelegate, KolodaViewDataSource {
     
     // カードを全て消費したときの処理を定義する
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        print("\(#line):Finish cards.\(tmpTagArry.count)")
+//        print("\(#line):Finish cards.\(tmpTagArry.count)")
         
         let realm = try! Realm()
 

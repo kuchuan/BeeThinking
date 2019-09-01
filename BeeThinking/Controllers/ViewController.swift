@@ -446,7 +446,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         let setIdea = CreateIdea()
         let res = setIdea.createIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
-        print ("VC\(#line)createIdea",res)
+//        print ("VC\(#line)createIdea",res)
 
     }
 
@@ -607,7 +607,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             
             let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
             
-            print("VC",#line,button.currentTitle as Any)
+//            print("VC",#line,button.currentTitle as Any)
             //ideasの配列の中身が空の場合
             if button.currentTitle == nil {
                 //新規ideaを追加
