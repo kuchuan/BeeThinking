@@ -80,39 +80,45 @@ class DeleatDateViewController: UIViewController {
     
     
     func aroundDeleteData()  {
-        let alertView = SCLAlertView()
-        alertView.addButton("はい") {
-            // (1)Realmインスタンスの生成
-            let realm = try! Realm()
-            
-            // 中心課題のデータを読み込んで渡す
+        
+        //　中心課題にデータのゆ有無を下調べ
+        // (1)Realmインスタンスの生成
+        let realm = try! Realm()
+        
+        
+        // 中心課題のデータを読み込んで渡す
+        if realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == 100") == nil {
+            print("deleteData\(#line)：中心課題がありません")
+            return
+        } else {
             let centerHoneycomb = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == 100").reversed()
-            
-            let result = CreateIdea().createIdea(text: "\(centerHoneycomb.first!.sentence)", tag: 100, autoSpredSwich: false)
-            
-//            //（2）中心課題以外のクエリーを作成
-//            let result = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 99").sorted(byKeyPath: "tagNumber", ascending: false).reversed()
-//
-//            // (3)当該データの削除
-//            try! realm.write {
-//                realm.delete(result) //デリーと
-//            }
-            honeycombTagNum = 100
-            
-            dataResetToggleFromDeleteData = true
-            
-            self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
+
+        
+                let alertView = SCLAlertView()
+                alertView.addButton("はい") {
+
+                    
+                    let result = CreateIdea().createIdea(text: "\(centerHoneycomb.first!.sentence)", tag: 100, autoSpredSwich: false)
+                    
+                    print(result)
+                        honeycombTagNum = 100
+                    
+                        //dataResetToggleFromDeleteData = true　//自動で中心課題がコピーされてデータに書き込まれるので、ここは不要になりました
+                    
+                        self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
+                    }
+                    alertView.showInfo(
+                        "現在の\n中心課題をコピーして\n新規作成します", // タイトル
+                        subTitle: "よろしいですか", // サブタイトル
+                        closeButtonTitle: "いいえ", // クローズボタンのタイトル
+                        //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
+                        colorStyle: 0xFFCF2F, // ボタン、シンボルの色
+                        colorTextButton: 0x000000, // ボタンの文字列の色
+                        //            circleIconImage: UIImage?, //アイコンimage
+                        animationStyle:.bottomToTop // スタイル（Success)指定
+                    )
         }
-        alertView.showInfo(
-            "現在の\n中心課題をコピーして\n新規作成します", // タイトル
-            subTitle: "「周辺課題」と「アイデア」は\n削除しますか", // サブタイトル
-            closeButtonTitle: "いいえ", // クローズボタンのタイトル
-            //                timeout: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
-            colorStyle: 0xFFCF2F, // ボタン、シンボルの色
-            colorTextButton: 0x000000, // ボタンの文字列の色
-            //            circleIconImage: UIImage?, //アイコンimage
-            animationStyle:.bottomToTop // スタイル（Success)指定
-        )
+        
     }
     
     

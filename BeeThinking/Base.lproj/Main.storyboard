@@ -508,7 +508,7 @@
                                     <constraint firstAttribute="width" constant="374" id="u83-Ed-4mp"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="y7l-NZ-oZj"/>
-                                <mutableString key="text">■　本サービス利用規約
+                                <string key="text">■　本サービス利用規約
 本利用規約（以下「本規約」といいます）には、くーちょわん情報工房（以下「当社」といいます）の提供する「BeeThinking」という名称のアップリケーション・ソフトウェア（以下「本ソフトウェア」といいます）及び、それに付随するサービス（以下「本サービス」といい、本ソフトウェアと総称して「本サービス等」といいます）のご利用にあたり、」利用差の皆様に遵守していただかなくてはならない事項及び、当社と利用者の皆様との間の権利義務関係が定められております。本サービス等をご利用になる方は、本規約に同意する前に、必ず全文お読み下さいますようお願い致します。
 
 第1条　本サービス等の利用
@@ -664,7 +664,7 @@ http://www.kuchaun.jp/
 
 Copyright KUCHUAN Infomation Studio
 
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
@@ -1842,6 +1842,7 @@ Copyright KUCHUAN Infomation Studio
         <image name="アセット 3" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3qV-x4-hOv"/>
+        <segue reference="UIo-qx-i9X"/>
+        <segue reference="aDw-Il-uWO"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -70,7 +70,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     //画面が表示されるたびに実行
     override func viewWillAppear(_ animated: Bool) {
 //        print("\(#line)リロード")
-//        reloadHoneycombView()
+        reloadHoneycombView()
         self.navigationItem.hidesBackButton = true
     }
 
@@ -101,7 +101,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         initialAutoSetOfDuplicateToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
         
         if initialSetGeneralAttributeIdToggle {
-            generalAttributeId = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
+            initialSetGeneralAttributeIdValue = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
         }
 
 print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
@@ -160,7 +160,7 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
                 hexButton.tag = 100
             }
             //ボタンにタイトル挿入
-            hexButton.setTitle("", for: .normal)
+            hexButton.setTitle(nil, for: .normal)
             hexButton.setTitleColor(.black, for: .normal)
             hexButton.layer.borderWidth = 0
             
@@ -308,7 +308,7 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
         //Realmの情報管理用
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        reloadHoneycombView()
+
 
         
     }
@@ -352,11 +352,27 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
                 attributeNum = generalAttributeId
                 dataResetToggleFromDateManagement = false
                 
+            } else if dataResetToggleFromDeleteData {
+                //　新規作成で次のattributeに移動する
+                clearHoneycomb(inputContent: nil)
+                tmpGeneralAttributeId = generalAttributeId + 1
+                attributeNum = generalAttributeId + 1
+                dataResetToggleFromDeleteData = false
+                
+            } else if dataResetToggleFirst {
+                //　初期値を読みこまない　かつ　再起動
+                clearHoneycomb(inputContent: nil)
+                tmpGeneralAttributeId = generalAttributeId
+                attributeNum = generalAttributeId
+                dataResetToggleFirst = false
+                
             } else {
                 //　初期値を読み込まない
-                let idNumber = CreateIdea()
-                tmpGeneralAttributeId = idNumber.getMaxId() + 1
-                attributeNum = idNumber.getMaxId() + 1
+//                let idNumber = CreateIdea()
+                tmpGeneralAttributeId = generalAttributeId
+                attributeNum = generalAttributeId
+//                tmpGeneralAttributeId = idNumber.getMaxId() + 1
+//                attributeNum = idNumber.getMaxId() + 1
             }
         
             generalAttributeId = tmpGeneralAttributeId
@@ -370,9 +386,15 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
                         num = 100
                     }
                     
-                    var result = realm.objects(IdeaData.self).filter("attributeId == \(attributeNum!) AND tagNumber == \(num)") as HexUIButton!
-                    if let button = result.viewWithTag( num ) {
-                        button.setTitle(result.sentence)
+                    let result = realm.objects(IdeaData.self).filter("attributeId == \(attributeNum!) AND tagNumber == \(num)")
+                    
+                    //ボタンが作られているかどうかの判定
+                    if let button = self.view.viewWithTag( num ) as? HexUIButton {
+                        button.setTitle(result.first?.sentence, for: UIControl.State.normal)
+                        print("\(#line):蜂の巣\(num)\(String(describing: button.currentTitle)) & \(String(describing: result.first?.sentence))")
+                    } else {
+                        //存在しない蜂の巣の番号を踏んだときに発動
+                        print("vc\(#line):\(num)はnil")
                     }
                     
                 }
@@ -383,11 +405,38 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
         
 print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",generalAttributeId)
 
+        // UserDefaultsを準備して、変数UserDefaultに入れる
+        let userDefault = UserDefaults.standard
+        userDefault.set(generalAttributeId, forKey: "initialSetGeneralAttributeIdValue")
         
-         setHoneycombColor()
+        setHoneycombColor()
 
         
     }
+    
+    func clearHoneycomb(inputContent text: String?)  {
+        
+        //　蜂の巣のクリア
+        var num: Int = 0
+        for i in 0...7 {
+            for j in 0...6 {
+                num = i * 10 + j
+                if num == 0 {
+                    num = 100
+                }
+                //ボタンが作られているかどうかの判定
+                if let button = self.view.viewWithTag( num ) as? HexUIButton {
+                    button.setTitle(text, for: UIControl.State.normal)
+                } else {
+                    //存在しない蜂の巣の番号を踏んだときに発動
+                    print("vc\(#line):\(num)はnil")
+                }
+                
+            }
+        }
+        return
+    }
+    
     
     
     //realm周り
@@ -514,9 +563,6 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
     }
     
     @IBAction func inputTextButoon(_ sender: UIButton) {
-        
-//        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
-//        print(view.viewWithTag(10)?.isHidden as Any)
 
         //空文字かチェックする（guard let構文ここから）
         guard let text = inputBox.text else {
@@ -528,6 +574,12 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
             //textField.textが空文字の場合ボタンがクリックされたときの処理を中断
             return //以降のボタンの処理は実行されない
         }
+        let button = view.viewWithTag(100) as! UIButton
+        if  button.titleLabel?.text == nil || button.titleLabel?.text == "" {
+            SCLAlertView().showNotice("中心課題を先に\n入力していください", subTitle: "OKで続行", closeButtonTitle: "OK" )
+            createNewIdea("Group:\(generalAttributeId)\n中心課題\n未入力", 100)
+        }
+        
         
         if (honeycombTagNum > 6 && honeycombTagNum < 100) && view.viewWithTag(10)!.isHidden == true {
             
@@ -576,6 +628,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
         
         
         reloadHoneycombView()
+        
 
     }
   
