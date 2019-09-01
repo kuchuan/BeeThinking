@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SCLAlertView
 
 class DataManagementViewController: UIViewController {
 
@@ -132,6 +133,23 @@ print("DataMnge",#line,"Gen:tmpGen",generalAttributeId,tmpGeneralAttributeId)
         ideas.remove(at: indexPath.row)
         //画面から対象のideaを削除
         tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        if ideas.count == 0 {
+//            print("DateManagement\(#line)最後のデータ")
+            
+            
+            SCLAlertView().showWarning(
+                "データをすべて\n消去しました", // タイトル
+                subTitle: "最初の画面に戻ります", // サブタイトル
+                closeButtonTitle: "OK", // クローズボタンのタイトル
+//                duration: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
+                colorStyle: 0xFFCF2F, // ボタン、シンボルの色
+                colorTextButton: 0x000000, // ボタンの文字列の色
+                //            circleIconImage: UIImage?, //アイコンimage
+                animationStyle: .bottomToTop // スタイル（Success)指定
+            )
+            performSegue(withIdentifier: "fromDateManagemntToMain", sender: nil)
+        }
         
     }
     

@@ -59,9 +59,15 @@ class DeleatDateViewController: UIViewController {
             alertView.addButton("はい") {
 //                let result = CreateIdea().createIdea(t・ext: "", tag: 100, autoSpredSwich: false)
                 
-                //データをリセットすることのトグルを設定してviewcontlloerに送る（senderでいいんじゃないの・・・わからんけど）
-                dataResetToggleFromDeleteData = true
+                let realm = try! Realm()
                 
+                let count = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId)")
+                
+                if count.count != 0 {
+                    //データをリセットすることのトグルを設定してviewcontlloerに送る（senderでいいんじゃないの・・・わからんけど）
+                    dataResetToggleFromDeleteData = true
+                }
+//
                 self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
             }
         alertView.showInfo(
@@ -87,8 +93,19 @@ class DeleatDateViewController: UIViewController {
         
         
         // 中心課題のデータを読み込んで渡す
-        if realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == 100") == nil {
-            print("deleteData\(#line)：中心課題がありません")
+        if realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == 100").isEmpty {
+//            print("deleteData\(#line)：中心課題がありません")
+            SCLAlertView().showWarning(
+                "中心課題が\n入力されていません", // タイトル
+                subTitle: "最初の画面に戻ります", // サブタイトル
+                closeButtonTitle: "OK", // クローズボタンのタイトル
+                //                duration: 2 , // **秒ごに、自動的に閉じる（OKでも閉じることはできる）
+                colorStyle: 0xFFCF2F, // ボタン、シンボルの色
+                colorTextButton: 0x000000, // ボタンの文字列の色
+                //            circleIconImage: UIImage?, //アイコンimage
+                animationStyle: .bottomToTop // スタイル（Success)指定
+            )
+            self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
             return
         } else {
             let centerHoneycomb = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber == 100").reversed()
@@ -136,7 +153,7 @@ class DeleatDateViewController: UIViewController {
             
             honeycombTagNum = 100
             
-            dataResetToggleFromDeleteData = true
+//            dataResetToggleFromDeleteData = true　//　全消去なので必要なしと。
             
             self.performSegue(withIdentifier: "fromDeleteToMain", sender: nil)
         }

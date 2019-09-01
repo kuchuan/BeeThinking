@@ -104,7 +104,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             initialSetGeneralAttributeIdValue = userDefault.integer(forKey: "initialSetGeneralAttributeIdValue")
         }
 
-print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
+//        print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
 
 //---------------------------------------------------------
         //再生する音楽ファイルのパス作成
@@ -391,7 +391,7 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
                     //ボタンが作られているかどうかの判定
                     if let button = self.view.viewWithTag( num ) as? HexUIButton {
                         button.setTitle(result.first?.sentence, for: UIControl.State.normal)
-                        print("\(#line):蜂の巣\(num)\(String(describing: button.currentTitle)) & \(String(describing: result.first?.sentence))")
+//                        print("\(#line):蜂の巣\(num)\(String(describing: button.currentTitle)) & \(String(describing: result.first?.sentence))")
                     } else {
                         //存在しない蜂の巣の番号を踏んだときに発動
                         print("vc\(#line):\(num)はnil")
@@ -403,7 +403,7 @@ print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
         }
         
         
-print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",generalAttributeId)
+//        print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",generalAttributeId)
 
         // UserDefaultsを準備して、変数UserDefaultに入れる
         let userDefault = UserDefaults.standard
@@ -455,7 +455,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
         
         let setIdea = UpdateIdea()
         let res = setIdea.updateIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
-        print ("VC\(#line)updateIdea",res)
+//        print ("VC\(#line)updateIdea",res)
         
     }
 
@@ -486,7 +486,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
         let result = realm.objects(IdeaData.self)
             .filter("attributeId == \(generalAttributeId) AND tagNumber == \(100)")
         
-        print(#line,generalAttributeId)
+//        print(#line,generalAttributeId)
         
         if result.first != nil {
             
@@ -574,11 +574,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
             //textField.textが空文字の場合ボタンがクリックされたときの処理を中断
             return //以降のボタンの処理は実行されない
         }
-        let button = view.viewWithTag(100) as! UIButton
-        if  button.titleLabel?.text == nil || button.titleLabel?.text == "" {
-            SCLAlertView().showNotice("中心課題を先に\n入力していください", subTitle: "OKで続行", closeButtonTitle: "OK" )
-            createNewIdea("Group:\(generalAttributeId)\n中心課題\n未入力", 100)
-        }
+
         
         
         if (honeycombTagNum > 6 && honeycombTagNum < 100) && view.viewWithTag(10)!.isHidden == true {
@@ -595,6 +591,19 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
             )
             
         } else {
+            
+            if honeycombTagNum != 100 {
+                let buttonCenter = view.viewWithTag(100) as! UIButton
+                if  buttonCenter.titleLabel?.text == nil || buttonCenter.titleLabel?.text == "" {
+                    SCLAlertView().showNotice("中心課題を先に\n入力していください",
+                        subTitle: "OKで続行",
+                        closeButtonTitle: "OK",
+                        colorStyle: 0xFFCF2F, // ボタン、シンボルの色
+                        colorTextButton: 0x000000 // ボタンの文字列の色
+                    )
+                    createNewIdea("Group:\(generalAttributeId)\n中心課題\n未入力", 100)
+                }
+            }
             
             let button = self.view.viewWithTag(honeycombTagNum) as! HexUIButton
             
@@ -614,8 +623,10 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
                 createNewIdea(text, honeycombTagNum)
                 
             } else if button.currentTitle! == "" && dataResetToggleFromDateManagement == true {
+                print("例外")
                 
             } else if button.currentTitle! == "" && dataResetToggleFromDateManagement == false {
+                print("例外")
             
             } else {
                 //ideaの更新
@@ -625,8 +636,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
             inputBox.text = ""
            
         }
-        
-        
+
         reloadHoneycombView()
         
 
@@ -725,7 +735,7 @@ print("VC",#line,"attributeNum",attributeNum as Any,"generalAttributeId",general
         // シングルタップされた時の処理
         setHoneycombColor()
 
-        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
+//        print("\(#line)honeycombTagNum:\(honeycombTagNum)")
         
         if let button = self.view.viewWithTag(honeycombTagNum) as? HexUIButton {
             button.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
