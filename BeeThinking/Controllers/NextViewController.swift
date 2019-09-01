@@ -210,7 +210,19 @@ class NextViewController: UIViewController {
 
         //activityItems:シェアしたいデータを設定
         let controller = UIActivityViewController(activityItems: date, applicationActivities: nil)
-
+        
+        
+        controller.popoverPresentationController?.sourceView = self.view
+        let screenSize = UIScreen.main.bounds
+        // ここで表示位置を調整
+        // xは画面中央、yは画面下部になる様に指定
+        controller.popoverPresentationController?.sourceRect = CGRect(x: screenSize.size.width/2, y: screenSize.size.height, width: 0, height: 0)
+        
+//        self.present(controller, animated: true, completion: nil)
+        
+        
+        
+        
         //3．シェア画面を表示
         present(controller, animated: true, completion: nil)
             //
