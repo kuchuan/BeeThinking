@@ -461,7 +461,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsVerticalScrollIndicator="NO" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5a-GI-aNg">
                                 <rect key="frame" x="12" y="344" width="390" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">・BeeSeriesは、問題の発見から解決までをサポートするソリューションです。個々のアプリケーションとして使用するだけでなく、連携をして機能するようデザインされています。
+                                <string key="text">・BeeSeriesは、問題の発見から解決までをサポートするソリューションです。
+・個々のアプリケーションとして使用するだけでなく、連携をして機能するようデザインされています。
 ・会社や学校・教育機関など、さまざまな場でご利用いただけます。
 ・問題解決だけなく、みなさんの創意ある利用法を見つけていただけることを願っています。
 </string>
@@ -1842,7 +1843,6 @@ Copyright KUCHUAN Infomation Studio
         <image name="アセット 3" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UIo-qx-i9X"/>
-        <segue reference="aDw-Il-uWO"/>
+        <segue reference="TgJ-UQ-1I4"/>
     </inferredMetricsTieBreakers>
 </document>
