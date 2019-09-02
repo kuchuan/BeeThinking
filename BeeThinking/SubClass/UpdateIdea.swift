@@ -77,16 +77,16 @@ class UpdateIdea {
                 if result.isEmpty {
                     //作成したideaを相手先に登録する（相手データがない場合：新規）
                     res = setIdea.createIdea(text: text, tag: tmpTag, autoSpredSwich: false)
-                    print(#line, "アイデア新規作成", res, idea.sentence)
+//                    print(#line, "アイデア新規作成", res, idea.sentence)
                 } else {
                     //作成したideaを相手先に登録する（相手データがある場合：上書き）
                     res = self.updateIdea(text: text, tag: tmpTag, autoSpredSwich: false)
-                    print(#line, "アイデア上書き", res, idea.sentence)
+//                    print(#line, "アイデア上書き", res, idea.sentence)
                 }
                 
             }
         }
-         print (#line,"UpDateClass",generalAttributeId)
+//         print (#line,"UpDateClass",generalAttributeId)
         //　autoSetOfDuplicateがture（）
         return (tag, tmpTag)
     }
