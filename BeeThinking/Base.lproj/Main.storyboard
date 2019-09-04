@@ -444,54 +444,6 @@
             </objects>
             <point key="canvasLocation" x="298.55072463768118" y="31.473214285714285"/>
         </scene>
-        <!--BeeSeries-->
-        <scene sceneID="2gZ-xW-xNs">
-            <objects>
-                <viewController id="l3M-8H-BTc" customClass="AboutBeeSeriesViewController" customModule="Beethinking" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OcW-jH-Vf3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="lrb-Xd-dJl">
-                                <rect key="frame" x="7" y="44" width="400" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Psa-Sk-rPt"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsVerticalScrollIndicator="NO" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5a-GI-aNg">
-                                <rect key="frame" x="12" y="344" width="390" height="518"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">・BeeSeriesは、問題の発見から解決までをサポートするソリューションです。
-・個々のアプリケーションとして使用するだけでなく、連携をして機能するようデザインされています。
-・会社や学校・教育機関など、さまざまな場でご利用いただけます。
-・問題解決だけなく、みなさんの創意ある利用法を見つけていただけることを願っています。
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="centerX" secondItem="OcW-jH-Vf3" secondAttribute="centerX" id="1ex-WC-Wvs"/>
-                            <constraint firstItem="NWn-XN-hA9" firstAttribute="trailing" secondItem="lrb-Xd-dJl" secondAttribute="trailing" constant="7" id="7RN-Tu-5SR"/>
-                            <constraint firstItem="NWn-XN-hA9" firstAttribute="trailing" secondItem="E5a-GI-aNg" secondAttribute="trailing" constant="12" id="BTR-BN-GxF"/>
-                            <constraint firstItem="E5a-GI-aNg" firstAttribute="leading" secondItem="NWn-XN-hA9" secondAttribute="leading" constant="12" id="Bwu-gS-fPr"/>
-                            <constraint firstItem="E5a-GI-aNg" firstAttribute="leading" secondItem="NWn-XN-hA9" secondAttribute="leading" constant="12" id="U4h-Tf-gA8"/>
-                            <constraint firstItem="E5a-GI-aNg" firstAttribute="top" secondItem="lrb-Xd-dJl" secondAttribute="bottom" id="XZV-7L-fGU"/>
-                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="top" secondItem="NWn-XN-hA9" secondAttribute="top" id="YE5-M1-xWf"/>
-                            <constraint firstItem="NWn-XN-hA9" firstAttribute="bottom" secondItem="E5a-GI-aNg" secondAttribute="bottom" id="bSi-aq-Ref"/>
-                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="top" secondItem="NWn-XN-hA9" secondAttribute="top" id="bic-73-QdS"/>
-                            <constraint firstItem="E5a-GI-aNg" firstAttribute="centerX" secondItem="OcW-jH-Vf3" secondAttribute="centerX" id="p9g-se-Ic2"/>
-                            <constraint firstItem="lrb-Xd-dJl" firstAttribute="top" secondItem="NWn-XN-hA9" secondAttribute="top" id="uuc-ag-X5c"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="NWn-XN-hA9"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="BeeSeries" id="4Ag-hl-mwZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9z5-Xf-jYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3301" y="-1276"/>
-        </scene>
         <!--利用規約-->
         <scene sceneID="gSg-QN-ykt">
             <objects>
@@ -522,7 +474,7 @@
 
 第2条（利用料金）
 
-1.　有料サービス利用の対価（以下「利用料金」といいます。）は、当社が別途定める額とします。利用料金の詳細については当社ホームページ(http://www.kuchuan.jp/)にてご確認ください。
+1.　有料サービス利用の対価（以下「利用料金」といいます。）は、当社が別途定める額とします。利用料金の詳細については当社ホームページ(http://kuchuan-studio.com/)にてご確認ください。
 2.　有料利用者は、前項の利用料金を、当社が別途定める方法で支払うものとします（利用料金の支払いに手数料等を要する場合には、当該有料利用者の負担とします。）。なお、お支払いいただいた利用料金について、当社は領収書等を発行いたしませんので、予めご了承ください。
 3.　当社は、当社の判断で利用料金の変更を行うことができるものとします。なお、利用料金変更の手続については、第13条を準用するものとします。
 
@@ -576,7 +528,7 @@
 1． 当社は、後記「情報の取得及び利用について」において定める目的のために、情報を取得し、利用することができるものとし、利用者はこれに同意するものとします。なお、取得する情報の取扱いの詳細については、後記「情報の取得及び利用について」をご確認下さい。
 2． 前項に定める他、当社はサービス向上を目的として、利用者の利用状況を、個人を識別できない情報として取得する場合があります。
 3． 本サービスには、ユーザー情報の入力が必要となるサービスを提供する予定がございますが、入力した情報が当社に通知されることを承諾していただいたうえで、利用者の判断と責任においてご利用下さい。
-4． 本サービス等における利用者の個人情報の取り扱いにつきましては、本規約で定める他、当社ホームページ(https://www.kuchuan.jp/) にて公開される個人情報保護方針に基づくものとします。
+4． 本サービス等における利用者の個人情報の取り扱いにつきましては、本規約で定める他、当社ホームページ(http://kuchuan-studio.com/) にて公開される個人情報保護方針に基づくものとします。
 
 
 第9条　解除等
@@ -661,6 +613,7 @@
 
 当社が利用する主な外部サービス利用例については当社webページにて記載しておりますので、ご参照ください。
 くーちょわん情報工房
+http://kuchuan-studio.com/
 http://www.kuchaun.jp/
 
 Copyright KUCHUAN Infomation Studio
@@ -676,7 +629,6 @@ Copyright KUCHUAN Infomation Studio
                             <constraint firstItem="eOz-3f-zuR" firstAttribute="leading" secondItem="fgF-Z0-amf" secondAttribute="leadingMargin" id="IYA-ce-KeA"/>
                             <constraint firstItem="dxf-Fn-uj0" firstAttribute="bottom" secondItem="eOz-3f-zuR" secondAttribute="bottom" constant="30" id="R6A-hp-XuR"/>
                             <constraint firstItem="eOz-3f-zuR" firstAttribute="leading" secondItem="dxf-Fn-uj0" secondAttribute="leading" constant="20" id="V9J-Qj-0ll"/>
-                            <constraint firstItem="eOz-3f-zuR" firstAttribute="centerY" secondItem="fgF-Z0-amf" secondAttribute="centerY" id="nGf-AM-A85"/>
                             <constraint firstItem="eOz-3f-zuR" firstAttribute="top" secondItem="dxf-Fn-uj0" secondAttribute="top" constant="20" id="viT-1K-Mcg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dxf-Fn-uj0"/>
@@ -686,6 +638,93 @@ Copyright KUCHUAN Infomation Studio
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MZ-co-XaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3301.449275362319" y="-1996.2053571428571"/>
+        </scene>
+        <!--Q & A-->
+        <scene sceneID="1gi-06-ZW4">
+            <objects>
+                <viewController id="VsQ-bR-zEd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tHx-eC-HWS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-xO-pWB">
+                                <rect key="frame" x="14" y="62" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="nTO-C5-VMj"/>
+                                    <constraint firstAttribute="height" constant="70" id="uaA-uQ-cgP"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j8J-tt-S9C">
+                                <rect key="frame" x="88" y="62" width="254" height="83"/>
+                                <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="0RY-BH-WvC"/>
+                                    <constraint firstAttribute="width" constant="254" id="fQG-cF-xi7"/>
+                                </constraints>
+                                <string key="text">Q &amp; A
+BeeThinkingのお問い合わせ</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-6e-xms">
+                                <rect key="frame" x="0.0" y="145" width="414" height="751"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="OLT-03-naQ">
+                                        <rect key="frame" x="21" y="8" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="69I-bS-Bzs"/>
+                                            <constraint firstAttribute="height" constant="60" id="Q41-Y1-DlO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q＆A・お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVj-q1-MWy">
+                                        <rect key="frame" x="89" y="28" width="154" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://kuchuan-studio.com/beeseries/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOC-Df-XGu">
+                                        <rect key="frame" x="34" y="66" width="244" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="244" id="XxM-Ll-yOB"/>
+                                            <constraint firstAttribute="height" constant="17" id="Yjn-L2-RR1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IOC-Df-XGu" firstAttribute="leading" secondItem="fHk-6e-xms" secondAttribute="leading" constant="34" id="4Oz-XI-9SE"/>
+                                    <constraint firstItem="jVj-q1-MWy" firstAttribute="centerY" secondItem="OLT-03-naQ" secondAttribute="centerY" id="9E6-BJ-crU"/>
+                                    <constraint firstItem="jVj-q1-MWy" firstAttribute="leading" secondItem="OLT-03-naQ" secondAttribute="trailing" constant="8" symbolic="YES" id="FxI-zo-EZ8"/>
+                                    <constraint firstItem="OLT-03-naQ" firstAttribute="leading" secondItem="fHk-6e-xms" secondAttribute="leading" constant="21" id="GOW-h1-nY1"/>
+                                    <constraint firstItem="IOC-Df-XGu" firstAttribute="top" secondItem="jVj-q1-MWy" secondAttribute="bottom" constant="18" id="U4O-5m-1gX"/>
+                                    <constraint firstAttribute="bottom" secondItem="jVj-q1-MWy" secondAttribute="bottom" constant="694" id="b3y-Vz-xIF"/>
+                                    <constraint firstItem="jVj-q1-MWy" firstAttribute="centerY" secondItem="OLT-03-naQ" secondAttribute="centerY" id="kIc-K5-ypZ"/>
+                                    <constraint firstItem="OLT-03-naQ" firstAttribute="top" secondItem="fHk-6e-xms" secondAttribute="top" constant="8" id="rfk-62-KgS"/>
+                                    <constraint firstAttribute="trailing" secondItem="jVj-q1-MWy" secondAttribute="trailing" constant="171" id="wEb-N5-WIG"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fHk-6e-xms" firstAttribute="trailing" secondItem="Ecu-S6-tx2" secondAttribute="trailing" id="2pr-cT-JvI"/>
+                            <constraint firstItem="wMD-xO-pWB" firstAttribute="leading" secondItem="Ecu-S6-tx2" secondAttribute="leading" constant="14" id="HAw-a5-xQ5"/>
+                            <constraint firstItem="fHk-6e-xms" firstAttribute="centerX" secondItem="tHx-eC-HWS" secondAttribute="centerX" id="Seh-zt-WM2"/>
+                            <constraint firstItem="j8J-tt-S9C" firstAttribute="top" secondItem="Ecu-S6-tx2" secondAttribute="top" constant="18" id="VHy-PK-PFZ"/>
+                            <constraint firstItem="j8J-tt-S9C" firstAttribute="leading" secondItem="wMD-xO-pWB" secondAttribute="trailing" constant="4" id="XwZ-33-lUj"/>
+                            <constraint firstItem="wMD-xO-pWB" firstAttribute="top" secondItem="Ecu-S6-tx2" secondAttribute="top" constant="18" id="bg1-98-OCa"/>
+                            <constraint firstAttribute="bottom" secondItem="fHk-6e-xms" secondAttribute="bottom" id="jQi-Ob-2Kt"/>
+                            <constraint firstItem="fHk-6e-xms" firstAttribute="top" secondItem="j8J-tt-S9C" secondAttribute="bottom" id="jvt-xI-ceM"/>
+                            <constraint firstItem="fHk-6e-xms" firstAttribute="leading" secondItem="Ecu-S6-tx2" secondAttribute="leading" id="t3Z-R1-xcs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ecu-S6-tx2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Q &amp; A" id="9hm-13-0VQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9la-e6-5YR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3301" y="-1256"/>
         </scene>
         <!--ユーザー設定-->
         <scene sceneID="WkH-Hc-2V2">
@@ -760,7 +799,7 @@ Copyright KUCHUAN Infomation Studio
                                     <constraint firstAttribute="height" constant="121" id="Kp6-Ml-67L"/>
                                     <constraint firstAttribute="width" constant="192" id="RfG-2w-Sjz"/>
                                 </constraints>
-                                <string key="text">1番地〜6番地の中央エリアの内容・アイデアと、10番地、20番地、30番地、40番地、50番地、60番地の内容・アイデアを自動で相互に書き込みます。（通常はON）
+                                <string key="text">1番地〜6番地の中央エリアの内容と、10番地、20番地、30番地、40番地、50番地、60番地の内容を自動で相互に書き込みます。（通常はON）
 違う内容を入力する場合はOFFにしてください。
 
 </string>
@@ -886,7 +925,7 @@ Copyright KUCHUAN Infomation Studio
                                     <outletCollection property="gestureRecognizers" destination="i6V-kc-2II" appends="YES" id="rFR-QF-dgb"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中央課題を残して周りを削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-a0-zQg">
+                            <label opaque="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中心課題を残して周りを削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-a0-zQg">
                                 <rect key="frame" x="88" y="219" width="226" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -975,8 +1014,8 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea spred tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-EL-wzr">
-                                <rect key="frame" x="150" y="286" width="114" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expand your ideas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-EL-wzr">
+                                <rect key="frame" x="136.5" y="286" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1168,9 +1207,9 @@ Copyright KUCHUAN Infomation Studio
                                     <constraint firstAttribute="width" constant="254" id="hd3-kS-lAm"/>
                                     <constraint firstAttribute="height" constant="83" id="yJq-I2-yOi"/>
                                 </constraints>
-                                <string key="text">BeeThinkingの設定をします
-無料版のBeeThinkingAdは、
-一部機能を省略しています</string>
+                                <string key="text">BeeThinkingの
+データ管理をします
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1194,7 +1233,7 @@ Copyright KUCHUAN Infomation Studio
                                             <constraint firstAttribute="height" constant="60" id="oNi-do-fk6"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-9" translatesAutoresizingMaskIntoConstraints="NO" id="zwT-ia-EaD">
+                                    <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-4" translatesAutoresizingMaskIntoConstraints="NO" id="zwT-ia-EaD">
                                         <rect key="frame" x="21" y="212" width="60" height="60"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -1204,41 +1243,32 @@ Copyright KUCHUAN Infomation Studio
                                             <outletCollection property="gestureRecognizers" destination="s0i-At-ziG" appends="YES" id="zoi-Vi-ViK"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-4" translatesAutoresizingMaskIntoConstraints="NO" id="5n3-Oq-j0F">
-                                        <rect key="frame" x="21" y="280" width="60" height="60"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="OtS-Pb-TfA"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Cn2-eQ-vKe" appends="YES" id="Mn2-xx-2zh"/>
-                                        </connections>
-                                    </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-7" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-zq-yWE">
-                                        <rect key="frame" x="21" y="348" width="60" height="60"/>
+                                        <rect key="frame" x="21" y="272" width="60" height="60"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="ibH-Yw-Qff"/>
+                                            <constraint firstAttribute="height" constant="60" id="Vez-cu-USE"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="I74-Ks-iWl" appends="YES" id="1rF-pN-uYu"/>
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-5" translatesAutoresizingMaskIntoConstraints="NO" id="a2q-6S-l3J">
-                                        <rect key="frame" x="21" y="416" width="60" height="60"/>
+                                        <rect key="frame" x="21" y="339" width="60" height="59"/>
                                         <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="BZH-hJ-jvA"/>
-                                        </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="8kG-V1-Chk" appends="YES" id="QJa-FN-Xb7"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="wTf-Z7-8Zf">
-                                        <rect key="frame" x="21" y="484" width="60" height="60"/>
+                                    <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="wTf-Z7-8Zf">
+                                        <rect key="frame" x="21" y="404" width="60" height="60"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Coi-Ld-BvO"/>
+                                            <constraint firstAttribute="height" constant="60" id="dyg-4M-LNV"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="aLn-un-i2i" appends="YES" id="YGB-Ga-suP"/>
+                                        </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-12" translatesAutoresizingMaskIntoConstraints="NO" id="Y5R-0c-1ZN">
                                         <rect key="frame" x="21" y="76" width="60" height="60"/>
@@ -1289,19 +1319,12 @@ Copyright KUCHUAN Infomation Studio
                                             <outletCollection property="gestureRecognizers" destination="8wE-2K-xcp" appends="YES" id="S7W-Wl-uhI"/>
                                         </connections>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeSeriesについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rC-X9-Kc3">
-                                        <rect key="frame" x="89" y="299" width="139" height="22"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="etS-qK-0bS" appends="YES" id="VFU-bi-KeR"/>
-                                        </connections>
-                                    </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blk-RZ-djZ">
-                                        <rect key="frame" x="89" y="369" width="98" height="18"/>
+                                        <rect key="frame" x="89" y="301" width="98" height="20"/>
                                         <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="upW-1c-WfC"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1310,8 +1333,11 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0d-YH-gc3">
-                                        <rect key="frame" x="89" y="435" width="66" height="22"/>
+                                        <rect key="frame" x="89" y="358" width="66" height="21"/>
                                         <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Dcs-Kx-WJ3"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1319,65 +1345,73 @@ Copyright KUCHUAN Infomation Studio
                                             <outletCollection property="gestureRecognizers" destination="lSe-cn-dCJ" appends="YES" id="Ahz-6s-Bjw"/>
                                         </connections>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q＆A・お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Gq-MLF">
-                                        <rect key="frame" x="89" y="505" width="154" height="18"/>
+                                    <label opaque="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q＆A・お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Gq-MLF">
+                                        <rect key="frame" x="89" y="429" width="154" height="20"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="qqZ-ob-HA1" appends="YES" id="U8d-Sl-vga"/>
+                                        </connections>
                                     </label>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Vxq-gX-w0C" firstAttribute="trailing" secondItem="wyy-GW-tFX" secondAttribute="trailing" id="0wL-4N-RTe"/>
-                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="trailing" secondItem="a2q-6S-l3J" secondAttribute="trailing" id="1Kx-uv-6Uk"/>
                                     <constraint firstItem="jAk-rk-XfC" firstAttribute="leading" secondItem="9z3-uD-rPs" secondAttribute="leading" constant="21" id="1PW-4h-cZX"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="trailing" secondItem="zwT-ia-EaD" secondAttribute="trailing" id="2fJ-Iv-d8r"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="leading" secondItem="zwT-ia-EaD" secondAttribute="leading" id="2sb-BC-z5D"/>
                                     <constraint firstItem="Vxq-gX-w0C" firstAttribute="top" secondItem="5TH-Ut-rbS" secondAttribute="bottom" constant="48" id="31W-tm-qTe"/>
                                     <constraint firstItem="jAk-rk-XfC" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="topMargin" id="7sT-gj-hsf"/>
-                                    <constraint firstItem="0rC-X9-Kc3" firstAttribute="centerY" secondItem="5n3-Oq-j0F" secondAttribute="centerY" id="8pS-1T-vJe"/>
-                                    <constraint firstItem="zwT-ia-EaD" firstAttribute="leading" secondItem="5n3-Oq-j0F" secondAttribute="leading" id="9aG-bZ-k9o"/>
-                                    <constraint firstItem="5n3-Oq-j0F" firstAttribute="top" secondItem="zwT-ia-EaD" secondAttribute="bottom" constant="8" symbolic="YES" id="BXI-W8-2mv"/>
+                                    <constraint firstItem="blk-RZ-djZ" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="8iU-Wa-gTc"/>
+                                    <constraint firstItem="wTf-Z7-8Zf" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="9OB-63-cez"/>
+                                    <constraint firstItem="Sal-sQ-9FV" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="Ar4-Zc-nAC"/>
                                     <constraint firstItem="KoW-Pd-dHY" firstAttribute="centerY" secondItem="Sal-sQ-9FV" secondAttribute="centerY" id="CsT-mz-0Hh"/>
-                                    <constraint firstItem="blk-RZ-djZ" firstAttribute="top" secondItem="0rC-X9-Kc3" secondAttribute="bottom" constant="48" id="Cx7-o8-8ed"/>
+                                    <constraint firstItem="Z0d-YH-gc3" firstAttribute="leading" secondItem="RLE-Gq-MLF" secondAttribute="leading" id="DCx-xM-u6D"/>
+                                    <constraint firstItem="blk-RZ-djZ" firstAttribute="leading" secondItem="Z0d-YH-gc3" secondAttribute="leading" id="Dpy-eg-Ghh"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="top" constant="28" id="E1s-EV-7FA"/>
-                                    <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="Z0d-YH-gc3" secondAttribute="leading" id="ELU-FF-a2o"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="top" secondItem="Y5R-0c-1ZN" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehr-aI-FTS"/>
-                                    <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="0rC-X9-Kc3" secondAttribute="leading" id="G0E-UF-0JG"/>
+                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="top" secondItem="vCO-zq-yWE" secondAttribute="bottom" constant="7" id="FSO-wK-R24"/>
                                     <constraint firstItem="jAk-rk-XfC" firstAttribute="trailing" secondItem="Y5R-0c-1ZN" secondAttribute="trailing" id="Gdc-un-8cu"/>
-                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="leading" secondItem="a2q-6S-l3J" secondAttribute="leading" id="IXs-zn-kYC"/>
+                                    <constraint firstItem="Z0d-YH-gc3" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="HaY-PH-w24"/>
+                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="leading" secondItem="wTf-Z7-8Zf" secondAttribute="leading" id="HrF-ad-XFE"/>
+                                    <constraint firstItem="wyy-GW-tFX" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="InU-uX-c1a"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="Vxq-gX-w0C" secondAttribute="leading" id="KjS-5M-C3c"/>
+                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="Krp-NB-8Oc"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="wyy-GW-tFX" secondAttribute="leading" id="LgF-Ko-ESU"/>
-                                    <constraint firstItem="5n3-Oq-j0F" firstAttribute="leading" secondItem="vCO-zq-yWE" secondAttribute="leading" id="MR6-FC-etc"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="trailing" secondItem="Sal-sQ-9FV" secondAttribute="trailing" id="MWW-4d-xuL"/>
-                                    <constraint firstItem="RLE-Gq-MLF" firstAttribute="top" secondItem="Z0d-YH-gc3" secondAttribute="bottom" constant="48" id="N96-bt-xYx"/>
-                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="top" secondItem="vCO-zq-yWE" secondAttribute="bottom" constant="8" symbolic="YES" id="PXj-e2-KRi"/>
-                                    <constraint firstItem="RLE-Gq-MLF" firstAttribute="centerY" secondItem="wTf-Z7-8Zf" secondAttribute="centerY" id="SHd-hz-QS8"/>
+                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="top" secondItem="zwT-ia-EaD" secondAttribute="bottom" id="Nr1-Pb-Sct"/>
+                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="centerY" secondItem="Z0d-YH-gc3" secondAttribute="centerY" id="QVq-Xh-lik"/>
+                                    <constraint firstItem="Y5R-0c-1ZN" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="STs-qo-iRg"/>
                                     <constraint firstItem="zwT-ia-EaD" firstAttribute="top" secondItem="Sal-sQ-9FV" secondAttribute="bottom" constant="8" symbolic="YES" id="UMK-xs-QgT"/>
+                                    <constraint firstItem="RLE-Gq-MLF" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="Vj1-XD-nTJ"/>
+                                    <constraint firstItem="zwT-ia-EaD" firstAttribute="leading" secondItem="vCO-zq-yWE" secondAttribute="leading" id="W7Y-8I-Jkq"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="centerY" secondItem="jAk-rk-XfC" secondAttribute="centerY" id="ZRz-tE-V9c"/>
-                                    <constraint firstItem="wTf-Z7-8Zf" firstAttribute="top" secondItem="a2q-6S-l3J" secondAttribute="bottom" constant="8" symbolic="YES" id="aMd-El-S2d"/>
+                                    <constraint firstItem="RLE-Gq-MLF" firstAttribute="top" secondItem="Z0d-YH-gc3" secondAttribute="bottom" constant="50" id="bTc-DA-akP"/>
                                     <constraint firstAttribute="trailing" secondItem="jAk-rk-XfC" secondAttribute="trailing" constant="219" id="bVp-Bm-RMm"/>
-                                    <constraint firstAttribute="bottom" secondItem="wTf-Z7-8Zf" secondAttribute="bottom" constant="207" id="c4N-Qm-oJF"/>
+                                    <constraint firstItem="blk-RZ-djZ" firstAttribute="top" secondItem="wyy-GW-tFX" secondAttribute="bottom" constant="50" id="bn5-cg-bsu"/>
                                     <constraint firstItem="wyy-GW-tFX" firstAttribute="top" secondItem="KoW-Pd-dHY" secondAttribute="bottom" constant="47" id="cKk-EM-guG"/>
-                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="leading" secondItem="wTf-Z7-8Zf" secondAttribute="leading" id="ckM-Og-QPj"/>
+                                    <constraint firstItem="Z0d-YH-gc3" firstAttribute="leading" secondItem="a2q-6S-l3J" secondAttribute="trailing" constant="8" symbolic="YES" id="ero-WS-io0"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="leading" secondItem="Sal-sQ-9FV" secondAttribute="leading" id="fdJ-Ty-15t"/>
+                                    <constraint firstAttribute="bottom" secondItem="wTf-Z7-8Zf" secondAttribute="bottom" constant="239" id="gJi-qX-ax9"/>
                                     <constraint firstItem="jAk-rk-XfC" firstAttribute="leading" secondItem="Y5R-0c-1ZN" secondAttribute="leading" id="gva-Ih-MFY"/>
-                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="centerY" secondItem="blk-RZ-djZ" secondAttribute="centerY" id="h7Z-1Z-lGZ"/>
+                                    <constraint firstItem="KoW-Pd-dHY" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="ich-JL-pX0"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="jAk-rk-XfC" secondAttribute="trailing" constant="8" symbolic="YES" id="kBB-pE-FMm"/>
-                                    <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="RLE-Gq-MLF" secondAttribute="leading" id="m8C-0H-1pg"/>
-                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="centerY" secondItem="Z0d-YH-gc3" secondAttribute="centerY" id="nhZ-a2-UKc"/>
-                                    <constraint firstItem="Z0d-YH-gc3" firstAttribute="top" secondItem="blk-RZ-djZ" secondAttribute="bottom" constant="48" id="nlW-cx-DXN"/>
+                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="leading" secondItem="a2q-6S-l3J" secondAttribute="leading" id="mg9-gU-g4p"/>
+                                    <constraint firstItem="Vxq-gX-w0C" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="mqK-O2-5r0"/>
+                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="nFt-di-h60"/>
+                                    <constraint firstItem="wTf-Z7-8Zf" firstAttribute="top" secondItem="a2q-6S-l3J" secondAttribute="bottom" constant="6" id="nPK-CF-lco"/>
+                                    <constraint firstItem="RLE-Gq-MLF" firstAttribute="leading" secondItem="wTf-Z7-8Zf" secondAttribute="trailing" constant="8" symbolic="YES" id="q4k-2F-U01"/>
                                     <constraint firstItem="zwT-ia-EaD" firstAttribute="centerY" secondItem="wyy-GW-tFX" secondAttribute="centerY" id="qNa-d7-tYi"/>
-                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="top" secondItem="5n3-Oq-j0F" secondAttribute="bottom" constant="8" symbolic="YES" id="rAJ-WF-HaZ"/>
-                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="trailing" secondItem="wTf-Z7-8Zf" secondAttribute="trailing" id="ugX-hP-LUl"/>
+                                    <constraint firstItem="blk-RZ-djZ" firstAttribute="leading" secondItem="vCO-zq-yWE" secondAttribute="trailing" constant="8" symbolic="YES" id="rDP-f6-vBx"/>
+                                    <constraint firstItem="zwT-ia-EaD" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="rPZ-VO-Z0L"/>
+                                    <constraint firstItem="Z0d-YH-gc3" firstAttribute="top" secondItem="blk-RZ-djZ" secondAttribute="bottom" constant="37" id="ssk-yb-CF4"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="centerY" secondItem="Vxq-gX-w0C" secondAttribute="centerY" id="vzp-4z-5Lb"/>
-                                    <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="blk-RZ-djZ" secondAttribute="leading" id="wG5-9H-gkG"/>
-                                    <constraint firstItem="zwT-ia-EaD" firstAttribute="trailing" secondItem="5n3-Oq-j0F" secondAttribute="trailing" id="wWs-ig-yvt"/>
-                                    <constraint firstItem="5n3-Oq-j0F" firstAttribute="trailing" secondItem="vCO-zq-yWE" secondAttribute="trailing" id="x94-eK-bps"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="KoW-Pd-dHY" secondAttribute="leading" id="xMx-hb-1Bw"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="top" secondItem="jAk-rk-XfC" secondAttribute="bottom" constant="8" symbolic="YES" id="yqO-ZB-HVK"/>
                                     <constraint firstItem="KoW-Pd-dHY" firstAttribute="top" secondItem="Vxq-gX-w0C" secondAttribute="bottom" constant="46" id="zbk-mv-aHF"/>
-                                    <constraint firstItem="0rC-X9-Kc3" firstAttribute="top" secondItem="wyy-GW-tFX" secondAttribute="bottom" constant="48" id="zc1-Hx-Xje"/>
+                                    <constraint firstItem="wyy-GW-tFX" firstAttribute="leading" secondItem="blk-RZ-djZ" secondAttribute="leading" id="zov-jc-0iJ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -1401,15 +1435,15 @@ Copyright KUCHUAN Infomation Studio
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="k0Y-u5-B20" kind="show" identifier="toAboutBeeThinking" id="qf0-As-nDr"/>
-                        <segue destination="l3M-8H-BTc" kind="show" identifier="toAboutBeeSeries" id="tbQ-OW-fKM"/>
                         <segue destination="gk7-u7-Ja9" kind="show" identifier="toAgreement" id="fA3-rg-oH7"/>
                         <segue destination="XwK-8B-0pN" kind="show" identifier="toDeleteData" id="7pD-Tm-ajd"/>
                         <segue destination="Mlv-Pg-6m5" kind="show" identifier="toUserSetting" id="Nv4-B4-quk"/>
                         <segue destination="48U-vg-p4V" kind="show" identifier="toDataManegement" id="etR-VR-Ruh"/>
+                        <segue destination="VsQ-bR-zEd" kind="show" identifier="toQAndA" id="zg6-ag-9db"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmk-gn-ffL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="s0i-At-ziG" userLabel="ToAboutBeeThinkingTapIcon">
+                <tapGestureRecognizer id="s0i-At-ziG" userLabel="toAboutBeeThinkingTapIcon">
                     <connections>
                         <action selector="didTapToAboutBeeThinking:" destination="D7z-cp-zCm" id="YFh-1F-dSj"/>
                     </connections>
@@ -1417,16 +1451,6 @@ Copyright KUCHUAN Infomation Studio
                 <tapGestureRecognizer id="8wE-2K-xcp" userLabel="toAboutBeeThinkingTapText">
                     <connections>
                         <action selector="didTextTapToAboutBeeThinking:" destination="D7z-cp-zCm" id="D59-Kx-7Ao"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="Cn2-eQ-vKe" userLabel="toAbooutBeeSeriesTapIcon">
-                    <connections>
-                        <action selector="didTapToAboutBeeSeries:" destination="D7z-cp-zCm" id="Kuo-CJ-gDp"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="etS-qK-0bS" userLabel="toAboutBeeSeriesTapText">
-                    <connections>
-                        <action selector="didTextTapToAboutBeeSeries:" destination="D7z-cp-zCm" id="gZi-qx-1lo"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="8kG-V1-Chk" userLabel="toAgreementTapIcon">
@@ -1469,8 +1493,18 @@ Copyright KUCHUAN Infomation Studio
                         <action selector="didTapTextToDataManagemant:" destination="D7z-cp-zCm" id="UYo-4w-7Tp"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="aLn-un-i2i" userLabel="toQandAIcon">
+                    <connections>
+                        <action selector="didIconTapQandA:" destination="D7z-cp-zCm" id="caw-KN-Sze"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qqZ-ob-HA1" userLabel="toQandAText">
+                    <connections>
+                        <action selector="didTextTapQandA:" destination="D7z-cp-zCm" id="HmG-Mw-94T"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1045" y="-1747"/>
+            <point key="canvasLocation" x="1044.9275362318842" y="-1747.0982142857142"/>
         </scene>
         <!--List View-->
         <scene sceneID="Vds-70-4kg">
@@ -1834,15 +1868,14 @@ Copyright KUCHUAN Infomation Studio
         <image name="icon-4" width="180" height="180"/>
         <image name="icon-5" width="180" height="180"/>
         <image name="icon-7" width="180" height="180"/>
-        <image name="icon-9" width="180" height="180"/>
         <image name="left" width="100" height="100"/>
         <image name="load" width="327" height="125"/>
         <image name="right" width="100" height="100"/>
-        <image name="splash" width="800" height="600"/>
         <image name="undo" width="100" height="100"/>
         <image name="アセット 3" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TgJ-UQ-1I4"/>
+        <segue reference="UIo-qx-i9X"/>
+        <segue reference="3qV-x4-hOv"/>
     </inferredMetricsTieBreakers>
 </document>

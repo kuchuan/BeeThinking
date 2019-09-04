@@ -79,7 +79,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         super.viewDidLoad()
         
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splash")!,iconInitialSize: CGSize(width: 400, height: 400), backgroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha:1.0))
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "open")!,iconInitialSize: CGSize(width: 400, height: 400), backgroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha:1.0))
         
         revealingSplashView.animationType = .popAndZoomOut
         revealingSplashView.delay = 1.0

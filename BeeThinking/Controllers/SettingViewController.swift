@@ -44,13 +44,13 @@ class SettingViewController: UIViewController {
         performSegue(withIdentifier: "toAboutBeeThinking", sender: nil)
     }
     
-    
-    @IBAction func didTextTapToAboutBeeSeries(_ sender: UITapGestureRecognizer) {
-        performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
-    }
-    @IBAction func didTapToAboutBeeSeries(_ sender: UITapGestureRecognizer) {
-        performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
-    }
+//
+//    @IBAction func didTextTapToAboutBeeSeries(_ sender: UITapGestureRecognizer) {
+//        performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
+//    }
+//    @IBAction func didTapToAboutBeeSeries(_ sender: UITapGestureRecognizer) {
+//        performSegue(withIdentifier: "toAboutBeeSeries", sender: nil)
+//    }
     
     
     @IBAction func didTapTextToUserSetting(_ sender: UITapGestureRecognizer) {
@@ -68,6 +68,12 @@ class SettingViewController: UIViewController {
         performSegue(withIdentifier: "toAgreement", sender: nil)
     }
     
+    @IBAction func didTextTapQandA(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toQAndA", sender: nil)
+    }
+    @IBAction func didIconTapQandA(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toQAndA", sender: nil)
+    }
     
     
 }

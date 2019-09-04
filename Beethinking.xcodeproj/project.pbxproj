@@ -11,6 +11,7 @@
 		4852476B231757E30027E683 /* DataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852476A231757E30027E683 /* DataManagementViewController.swift */; };
 		4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */; };
 		4877BEAE22F7AD7B00683CB6 /* HexUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */; };
+		48815460231DFA3400F2A90A /* HoneycombSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881545F231DFA3400F2A90A /* HoneycombSound.swift */; };
 		48939E2422F536640007C462 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48939E2322F536640007C462 /* SCViewController.swift */; };
 		48C6E20E22F9523A002D05B8 /* HexUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6E20D22F9523A002D05B8 /* HexUILabel.swift */; };
 		48CA187522F6D47900072B99 /* IdeaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA187422F6D47900072B99 /* IdeaData.swift */; };
@@ -38,6 +39,7 @@
 		4852476A231757E30027E683 /* DataManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementViewController.swift; sourceTree = "<group>"; };
 		4867BCAA22ED95FD0002CDA9 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		4877BEAD22F7AD7B00683CB6 /* HexUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUIButton.swift; sourceTree = "<group>"; };
+		4881545F231DFA3400F2A90A /* HoneycombSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneycombSound.swift; sourceTree = "<group>"; };
 		48939E2322F536640007C462 /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
 		48C6E20D22F9523A002D05B8 /* HexUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUILabel.swift; sourceTree = "<group>"; };
 		48CA187422F6D47900072B99 /* IdeaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaData.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				48C6E20D22F9523A002D05B8 /* HexUILabel.swift */,
 				48F7B4542310CEBA00287D46 /* CreateIdea.swift */,
 				48F7B4562310D0CF00287D46 /* UpdateIdea.swift */,
+				4881545F231DFA3400F2A90A /* HoneycombSound.swift */,
 			);
 			path = SubClass;
 			sourceTree = "<group>";
@@ -304,7 +307,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48DF70A22312F54900BE2B6D /* AgreementViewController.swift in Sources */,
+				48815460231DFA3400F2A90A /* HoneycombSound.swift in Sources */,
 				48E921CD22D97507007EF7A0 /* ViewController.swift in Sources */,
 				4867BCAB22ED95FD0002CDA9 /* NextViewController.swift in Sources */,
 				48F7B4552310CEBA00287D46 /* CreateIdea.swift in Sources */,
