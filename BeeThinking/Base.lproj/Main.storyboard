@@ -639,10 +639,76 @@ Copyright KUCHUAN Infomation Studio
             </objects>
             <point key="canvasLocation" x="-3301.449275362319" y="-1996.2053571428571"/>
         </scene>
+        <!--PDF-->
+        <scene sceneID="CPa-9h-2dM">
+            <objects>
+                <viewController id="TP1-93-uXp" customClass="PDFViewController" customModule="Beethinking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tdr-dJ-V4J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2s-89-NZC" customClass="p">
+                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWG-gl-Pps" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                        <rect key="frame" x="136" y="319" width="143" height="127"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfLines">
+                                                <integer key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keI-DA-gum">
+                                <rect key="frame" x="177" y="820" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OIP-2T-6yS"/>
+                                    <constraint firstAttribute="width" constant="60" id="V1b-uX-7gA"/>
+                                </constraints>
+                                <state key="normal" title="PDF作成"/>
+                                <connections>
+                                    <action selector="action:" destination="TP1-93-uXp" eventType="touchUpInside" id="9Vu-Qm-nC2"/>
+                                    <action selector="didClickPDF:" destination="TP1-93-uXp" eventType="touchUpInside" id="NC8-Ni-qHV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="keI-DA-gum" firstAttribute="top" secondItem="H2s-89-NZC" secondAttribute="bottom" constant="12" id="FYN-cX-Q0e"/>
+                            <constraint firstItem="H2s-89-NZC" firstAttribute="top" secondItem="VJq-rF-g2T" secondAttribute="top" id="Ozi-XL-bci"/>
+                            <constraint firstItem="H2s-89-NZC" firstAttribute="leading" secondItem="VJq-rF-g2T" secondAttribute="leading" id="X3f-uJ-73h"/>
+                            <constraint firstItem="keI-DA-gum" firstAttribute="centerX" secondItem="H2s-89-NZC" secondAttribute="centerX" id="gtV-Y8-Ogr"/>
+                            <constraint firstItem="VJq-rF-g2T" firstAttribute="bottom" secondItem="keI-DA-gum" secondAttribute="bottom" constant="12" id="jAM-ai-eLx"/>
+                            <constraint firstItem="H2s-89-NZC" firstAttribute="trailing" secondItem="VJq-rF-g2T" secondAttribute="trailing" id="rAa-uq-S2v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VJq-rF-g2T"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PDF" id="ynP-qa-goJ"/>
+                    <connections>
+                        <outlet property="PDFView" destination="H2s-89-NZC" id="zy4-ee-I9f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k95-Y0-iqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1439.1304347826087" y="-2461.6071428571427"/>
+        </scene>
         <!--Q & A-->
         <scene sceneID="1gi-06-ZW4">
             <objects>
-                <viewController id="VsQ-bR-zEd" sceneMemberID="viewController">
+                <viewController id="VsQ-bR-zEd" customClass="QandAViewController" customModule="Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tHx-eC-HWS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1227,11 +1293,15 @@ BeeThinkingのお問い合わせ</string>
                                             <outletCollection property="gestureRecognizers" destination="LZB-EX-8tb" appends="YES" id="vus-7I-Yem"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-sQ-9FV">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-sQ-9FV">
                                         <rect key="frame" x="21" y="144" width="60" height="60"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="oNi-do-fk6"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="YqS-Hy-pvM" appends="YES" id="DN9-OJ-ZzC"/>
+                                        </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-4" translatesAutoresizingMaskIntoConstraints="NO" id="zwT-ia-EaD">
                                         <rect key="frame" x="21" y="212" width="60" height="60"/>
@@ -1303,11 +1373,15 @@ BeeThinkingのお問い合わせ</string>
                                             <outletCollection property="gestureRecognizers" destination="r3y-PR-D7m" appends="YES" id="cWH-X0-IAs"/>
                                         </connections>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蜂の巣ボードをPDFで出力する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoW-Pd-dHY">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蜂の巣ボードをPDFで出力する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoW-Pd-dHY">
                                         <rect key="frame" x="89" y="162" width="226" height="24"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3Lp-Uk-o7J" appends="YES" id="6xq-XJ-JEn"/>
+                                        </connections>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeeThinkingについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyy-GW-tFX">
                                         <rect key="frame" x="89" y="233" width="180" height="18"/>
@@ -1440,6 +1514,7 @@ BeeThinkingのお問い合わせ</string>
                         <segue destination="Mlv-Pg-6m5" kind="show" identifier="toUserSetting" id="Nv4-B4-quk"/>
                         <segue destination="48U-vg-p4V" kind="show" identifier="toDataManegement" id="etR-VR-Ruh"/>
                         <segue destination="VsQ-bR-zEd" kind="show" identifier="toQAndA" id="zg6-ag-9db"/>
+                        <segue destination="TP1-93-uXp" kind="show" identifier="toPDF" id="ZnC-vv-w0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmk-gn-ffL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1501,6 +1576,16 @@ BeeThinkingのお問い合わせ</string>
                 <tapGestureRecognizer id="qqZ-ob-HA1" userLabel="toQandAText">
                     <connections>
                         <action selector="didTextTapQandA:" destination="D7z-cp-zCm" id="HmG-Mw-94T"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="YqS-Hy-pvM" userLabel="toPDFTapIcon">
+                    <connections>
+                        <action selector="didTapIconToPDF:" destination="D7z-cp-zCm" id="wf2-wG-nTW"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3Lp-Uk-o7J" userLabel="toPDFTapText">
+                    <connections>
+                        <action selector="didTapTextToPDF:" destination="D7z-cp-zCm" id="mxS-gY-sDi"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

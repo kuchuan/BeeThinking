@@ -745,4 +745,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 
     }
     
+    
+    func makePDF(_sender: Bool)  {
+        
+    }
+    
 }

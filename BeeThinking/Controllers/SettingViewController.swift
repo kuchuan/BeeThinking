@@ -36,6 +36,15 @@ class SettingViewController: UIViewController {
     }
     
     
+    
+    @IBAction func didTapTextToPDF(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toPDF", sender: nil)
+    }
+    @IBAction func didTapIconToPDF(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toPDF", sender: nil)
+    }
+    
+    
    
     @IBAction func didTextTapToAboutBeeThinking(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toAboutBeeThinking", sender: nil)
@@ -67,6 +76,7 @@ class SettingViewController: UIViewController {
     @IBAction func didTapToAgreement(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toAgreement", sender: nil)
     }
+    
     
     @IBAction func didTextTapQandA(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "toQAndA", sender: nil)
