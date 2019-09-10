@@ -82,6 +82,7 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         let result = ideas[indexPath.row]
         
         cell.textLabel?.text = result.sentence
+        cell.detailTextLabel?.text = countStar(number: result.flickOpacity)
         
         //矢印で削除
         cell.accessoryType = .disclosureIndicator
@@ -103,5 +104,28 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deleteRows(at: [indexPath], with: .fade)
         
     }
+    func countStar(number: Float) -> String{
+        
+        //        var number: Float
+        var star: String
+        
+        switch number {
+        case 0: star = "すべてを選択する"
+        case 0 ..< 0.15: star = "✨"
+        case 0.15 ..< 0.25: star = "⭐️"
+        case 0.25 ..< 0.35: star = "⭐️✨"
+        case 0.35 ..< 0.45: star = "⭐️⭐️"
+        case 0.45 ..< 0.55: star = "⭐️⭐️✨"
+        case 0.55 ..< 0.65: star = "⭐️⭐️⭐️"
+        case 0.65 ..< 0.75: star = "⭐️⭐️⭐️✨"
+        case 0.75 ..< 0.85: star = "⭐️⭐️⭐️⭐️"
+        case 0.85 ..< 0.95: star = "⭐️⭐️⭐️⭐️✨"
+        case 0.95 ..< 1.05: star = "⭐️⭐️⭐️⭐️⭐️"
+        case 1.05: star = "中心課題と周辺課題のみ"
+        default: star = "すべてを選択する"
+        }
+        return star
+    }
     
 }
+

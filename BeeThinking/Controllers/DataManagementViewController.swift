@@ -107,7 +107,7 @@ extension DataManagementViewController: UITableViewDelegate, UITableViewDataSour
         
         tmpGeneralAttributeId = number.attributeId
         
-print("DataMnge",#line,"Gen:tmpGen",generalAttributeId,tmpGeneralAttributeId)
+//print("DataMnge",#line,"Gen:tmpGen",generalAttributeId,tmpGeneralAttributeId)
         
 //        performSegue(withIdentifier: "fromDateManagemntToMain", sender: number)
     }
