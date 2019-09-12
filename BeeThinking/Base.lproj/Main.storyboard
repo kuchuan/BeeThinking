@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" minimumZoomScale="2" maximumZoomScale="2" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-q2-QyW">
-                                <rect key="frame" x="0.0" y="143" width="414" height="599"/>
+                                <rect key="frame" x="0.0" y="187" width="414" height="555"/>
                                 <subviews>
                                     <view opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-9s-fQh" customClass="HexView" customModule="Beethinking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="2000" height="2100"/>
@@ -263,15 +263,18 @@
                                     <constraint firstAttribute="trailing" secondItem="4lk-9s-fQh" secondAttribute="trailing" id="kJi-RV-1Vg"/>
                                     <constraint firstItem="4lk-9s-fQh" firstAttribute="leading" secondItem="SXc-q2-QyW" secondAttribute="leading" id="peE-qf-JuS"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5ja-bw-a6n" appends="YES" id="8ws-Ca-lXp"/>
+                                </connections>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop" translatesAutoresizingMaskIntoConstraints="NO" id="Bv6-0Q-8Md">
-                                <rect key="frame" x="-2324" y="136" width="2738" height="60"/>
+                                <rect key="frame" x="-2324" y="180" width="2738" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9V9-5Q-qhQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-xH-20J">
-                                <rect key="frame" x="92" y="52" width="230" height="55"/>
+                                <rect key="frame" x="92" y="96" width="230" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Nw0-VR-qLc"/>
                                     <constraint firstAttribute="width" constant="230" id="r06-d3-ifK"/>
@@ -281,7 +284,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfm-fE-KzR" userLabel="BeeThinkingButton" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="327" y="150" width="63" height="63"/>
+                                <rect key="frame" x="327" y="194" width="63" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="App-aP-6dP"/>
                                     <constraint firstAttribute="height" constant="63" id="zyi-QR-Vor"/>
@@ -318,7 +321,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたのアイデア広げます" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFt-Ai-W7X">
-                                <rect key="frame" x="115" y="105" width="184" height="20"/>
+                                <rect key="frame" x="115" y="149" width="184" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Sco-Re-VwJ"/>
                                     <constraint firstAttribute="width" constant="184" id="l72-r6-ApD"/>
@@ -328,7 +331,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-YY-hdN" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="26" y="126" width="60" height="90"/>
+                                <rect key="frame" x="26" y="170" width="60" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Eun-pQ-9Dc"/>
                                     <constraint firstAttribute="height" constant="90" id="HXk-LJ-fmZ"/>
@@ -408,8 +411,90 @@
                                     <action selector="inputTextButoon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mQE-rx-kNr"/>
                                 </connections>
                             </button>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bi3-Oq-ShM">
+                                <rect key="frame" x="77" y="-330" width="260" height="260"/>
+                                <subviews>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKo-7f-WFT" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="240" height="240"/>
+                                        <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="CpY-Rb-lLf"/>
+                                            <constraint firstAttribute="width" constant="240" id="v3M-wE-hy4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <size key="titleShadowOffset" width="6" height="6"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhQ-d9-woy" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
+                                        <rect key="frame" x="17.5" y="17.5" width="225" height="225"/>
+                                        <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="NZ0-qp-ZFz"/>
+                                            <constraint firstAttribute="height" constant="225" id="gdy-op-Xqo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCorner">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.99953407049999998" green="0.96078431369999995" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⭐️⭐️⭐️⭐️⭐️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcQ-Mm-136">
+                                        <rect key="frame" x="71" y="43" width="119" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meJ-oO-M83">
+                                        <rect key="frame" x="54" y="62" width="152" height="138"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I9-uk-CLh">
+                                        <rect key="frame" x="80" y="200" width="99" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="2IQ-LQ-nKF"/>
+                                    <constraint firstItem="RhQ-d9-woy" firstAttribute="centerY" secondItem="bi3-Oq-ShM" secondAttribute="centerY" id="3oA-1H-lCe"/>
+                                    <constraint firstAttribute="height" constant="260" id="Nk1-wH-pht"/>
+                                    <constraint firstItem="RhQ-d9-woy" firstAttribute="centerX" secondItem="bi3-Oq-ShM" secondAttribute="centerX" id="SBf-g9-iRO"/>
+                                    <constraint firstItem="yKo-7f-WFT" firstAttribute="centerX" secondItem="bi3-Oq-ShM" secondAttribute="centerX" id="UYi-uu-RkZ"/>
+                                    <constraint firstItem="yKo-7f-WFT" firstAttribute="centerY" secondItem="bi3-Oq-ShM" secondAttribute="centerY" id="boo-ka-ewG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="allView"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="AFd-rg-Xlv" firstAttribute="top" secondItem="vBr-3M-WQm" secondAttribute="bottom" constant="24" id="1T4-wc-OCr"/>
@@ -420,9 +505,11 @@
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EF6-PI-8j6"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NtN-bY-mXc"/>
                             <constraint firstItem="Qpp-1f-pc5" firstAttribute="top" secondItem="vld-7F-rZY" secondAttribute="bottom" constant="24" id="RZe-ro-FVi"/>
+                            <constraint firstItem="bi3-Oq-ShM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-330" id="W5v-aA-aKX"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XGl-ce-Rb1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpp-1f-pc5" secondAttribute="bottom" constant="24" id="Yns-yI-SaX"/>
                             <constraint firstItem="32Y-xH-20J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="duj-ZK-A9d"/>
+                            <constraint firstItem="bi3-Oq-ShM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eEz-Nz-k8m"/>
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="top" secondItem="32Y-xH-20J" secondAttribute="bottom" constant="36" id="eOa-Pj-3Gz"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="top" secondItem="SXc-q2-QyW" secondAttribute="bottom" constant="12" id="f72-Rj-EYT"/>
                             <constraint firstAttribute="trailing" secondItem="Bv6-0Q-8Md" secondAttribute="trailing" id="gnI-lO-rDe"/>
@@ -437,15 +524,17 @@
                             <constraint firstItem="rOR-YY-hdN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="z01-QO-9DG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="5ja-bw-a6n" appends="YES" id="Zx3-4Q-U9j"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="!BeeThinking" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="eZg-8e-4Hn"/>
                     <connections>
                         <outlet property="bottle" destination="rOR-YY-hdN" id="T1o-PY-mEy"/>
                         <outlet property="honeycombView" destination="4lk-9s-fQh" id="k67-0v-jeU"/>
                         <outlet property="inputBox" destination="vld-7F-rZY" id="czu-U7-fEg"/>
+                        <outlet property="movingButton" destination="RhQ-d9-woy" id="PvF-4M-EjC"/>
+                        <outlet property="movingLabel" destination="8I9-uk-CLh" id="Xfu-cp-TSQ"/>
+                        <outlet property="movingTextView" destination="meJ-oO-M83" id="UId-ku-XPO"/>
+                        <outlet property="movingView" destination="bi3-Oq-ShM" id="feh-JT-CZw"/>
+                        <outlet property="movingsStars" destination="VcQ-Mm-136" id="kt9-dg-XuL"/>
                         <outlet property="scrollView" destination="SXc-q2-QyW" id="t6L-hR-KsL"/>
                         <segue destination="1Ts-RU-F89" kind="show" identifier="toList" id="Ut9-j0-ZbG"/>
                         <segue destination="D7z-cp-zCm" kind="show" identifier="toSetting" id="UIo-qx-i9X"/>
@@ -457,7 +546,12 @@
                         <action selector="didPinchHoneycombView:" destination="BYZ-38-t0r" id="wqr-zU-I2q"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="5ja-bw-a6n"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="5ja-bw-a6n">
+                    <connections>
+                        <action selector="didLongPress:" destination="BYZ-38-t0r" id="Xdo-cb-JUf"/>
+                        <outlet property="delegate" destination="4lk-9s-fQh" id="2T5-LQ-yua"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="298.55072463768118" y="31.473214285714285"/>
         </scene>
@@ -470,7 +564,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="768" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-3f-zuR">
-                                <rect key="frame" x="20" y="64" width="374" height="768"/>
+                                <rect key="frame" x="20" y="108" width="374" height="675"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
@@ -478,7 +572,7 @@
                                     <constraint firstAttribute="width" constant="374" id="u83-Ed-4mp"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="y7l-NZ-oZj"/>
-                                <mutableString key="text">■　本サービス利用規約
+                                <string key="text">■　本サービス利用規約
 本利用規約（以下「本規約」といいます）には、くーちょわん情報工房（以下「当社」といいます）の提供する「!BeeThinking」という名称のアップリケーション・ソフトウェア（以下「本ソフトウェア」といいます）及び、それに付随するサービス（以下「本サービス」といい、本ソフトウェアと総称して「本サービス等」といいます）のご利用にあたり、」利用差の皆様に遵守していただかなくてはならない事項及び、当社と利用者の皆様との間の権利義務関係が定められております。本サービス等をご利用になる方は、本規約に同意する前に、必ず全文お読み下さいますようお願い致します。
 
 第1条　本サービス等の利用
@@ -635,7 +729,7 @@ http://www.kuchaun.jp/
 
 Copyright KUCHUAN Infomation Studio
 
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
@@ -665,7 +759,7 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2s-89-NZC" customClass="p">
-                                <rect key="frame" x="0.0" y="44" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="671"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWG-gl-Pps" customClass="HexUIButton" customModule="Beethinking" customModuleProvider="target">
                                         <rect key="frame" x="136" y="319" width="143" height="127"/>
@@ -690,7 +784,7 @@ Copyright KUCHUAN Infomation Studio
                                 </accessibility>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keI-DA-gum">
-                                <rect key="frame" x="177" y="820" width="60" height="30"/>
+                                <rect key="frame" x="177" y="771" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OIP-2T-6yS"/>
                                     <constraint firstAttribute="width" constant="60" id="V1b-uX-7gA"/>
@@ -731,14 +825,14 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-xO-pWB">
-                                <rect key="frame" x="14" y="62" width="70" height="70"/>
+                                <rect key="frame" x="14" y="106" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="nTO-C5-VMj"/>
                                     <constraint firstAttribute="height" constant="70" id="uaA-uQ-cgP"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j8J-tt-S9C">
-                                <rect key="frame" x="88" y="62" width="254" height="83"/>
+                                <rect key="frame" x="88" y="106" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="0RY-BH-WvC"/>
@@ -750,7 +844,7 @@ Copyright KUCHUAN Infomation Studio
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-6e-xms">
-                                <rect key="frame" x="0.0" y="145" width="414" height="751"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="707"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="OLT-03-naQ">
                                         <rect key="frame" x="21" y="8" width="60" height="60"/>
@@ -818,14 +912,14 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-17" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-Ri-EXB">
-                                <rect key="frame" x="20" y="183" width="60" height="60"/>
+                                <rect key="frame" x="20" y="227" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="2YE-cB-crw"/>
                                     <constraint firstAttribute="height" constant="60" id="jfp-Hq-rbg"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-13" translatesAutoresizingMaskIntoConstraints="NO" id="NDu-Py-vRO">
-                                <rect key="frame" x="20" y="409" width="60" height="60"/>
+                                <rect key="frame" x="20" y="453" width="60" height="60"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ip2-Jw-nb1"/>
@@ -836,7 +930,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中央・周辺への自動書き込み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytu-rI-RIO">
-                                <rect key="frame" x="88" y="202.5" width="226" height="21"/>
+                                <rect key="frame" x="88" y="246.5" width="226" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Oe4-0J-Qua"/>
                                     <constraint firstAttribute="width" constant="226" id="eWZ-xg-7Al"/>
@@ -846,7 +940,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="データベースを初期化する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uF-IM-Vtm">
-                                <rect key="frame" x="88" y="428.5" width="208" height="21"/>
+                                <rect key="frame" x="88" y="472.5" width="208" height="21"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wr6-0N-ZTP"/>
@@ -859,7 +953,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txI-Et-BBb">
-                                <rect key="frame" x="182.5" y="235.5" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="279.5" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="G6H-zq-3Lt"/>
                                     <constraint firstAttribute="height" constant="31" id="g5z-km-lGn"/>
@@ -870,14 +964,14 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </switch>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-11" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-EO-EYD">
-                                <rect key="frame" x="20" y="56" width="60" height="60"/>
+                                <rect key="frame" x="20" y="100" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="IqY-ZS-ROs"/>
                                     <constraint firstAttribute="width" constant="60" id="p67-P0-I7v"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-9G-jxF">
-                                <rect key="frame" x="111" y="279" width="192" height="121"/>
+                                <rect key="frame" x="111" y="323" width="192" height="121"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="121" id="Kp6-Ml-67L"/>
                                     <constraint firstAttribute="width" constant="192" id="RfG-2w-Sjz"/>
@@ -891,7 +985,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K8h-aN-dHq">
-                                <rect key="frame" x="182.5" y="129" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="173" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="WIM-0x-kBk"/>
                                     <constraint firstAttribute="height" constant="31" id="ZQA-fS-fA0"/>
@@ -902,7 +996,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起動時に前回のデータを読み込む" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8y-8a-RTe">
-                                <rect key="frame" x="111" y="102" width="169" height="14.5"/>
+                                <rect key="frame" x="111" y="146" width="169" height="14.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="169" id="het-ag-uNe"/>
                                     <constraint firstAttribute="height" constant="14.5" id="lN2-aH-wmu"/>
@@ -912,7 +1006,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初期設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93a-54-H0T">
-                                <rect key="frame" x="88" y="76" width="70" height="20"/>
+                                <rect key="frame" x="88" y="120" width="70" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1082,14 +1176,14 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork-1" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-Si-xn3">
-                                <rect key="frame" x="87" y="68" width="240" height="146"/>
+                                <rect key="frame" x="87" y="112" width="240" height="146"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="146" id="CiY-k9-h8M"/>
                                     <constraint firstAttribute="width" constant="240" id="S8W-tp-kRv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-d2-a5o">
-                                <rect key="frame" x="83.5" y="226" width="247" height="60"/>
+                                <rect key="frame" x="83.5" y="270" width="247" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jTf-ki-nf3"/>
                                 </constraints>
@@ -1098,19 +1192,19 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expand your ideas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-EL-wzr">
-                                <rect key="frame" x="136.5" y="286" width="141" height="21"/>
+                                <rect key="frame" x="136.5" y="330" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
-                                <rect key="frame" x="165.5" y="319" width="83" height="20.5"/>
+                                <rect key="frame" x="165.5" y="363" width="83" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-8N-NPU">
-                                <rect key="frame" x="112" y="484.5" width="190.5" height="33.5"/>
+                                <rect key="frame" x="112" y="528.5" width="190.5" height="33.5"/>
                                 <string key="text">Developed by
  KUCHUAN Infomation Studio</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1118,7 +1212,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-FJ-QrH">
-                                <rect key="frame" x="111.5" y="419.5" width="191" height="41"/>
+                                <rect key="frame" x="111.5" y="463.5" width="191" height="41"/>
                                 <string key="text">"Honeycomb Song"
 『はにかむでうたおう』</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1126,13 +1220,13 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words and Music by : Dean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEt-lh-cDt">
-                                <rect key="frame" x="135.5" y="403.5" width="143" height="14"/>
+                                <rect key="frame" x="135.5" y="447.5" width="143" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BGM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0si-9h-26F">
-                                <rect key="frame" x="188" y="375.5" width="38" height="21"/>
+                                <rect key="frame" x="188" y="419.5" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1175,7 +1269,7 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTv-a4-tcb">
-                                <rect key="frame" x="0.0" y="144" width="414" height="603"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -1206,7 +1300,7 @@ Copyright KUCHUAN Infomation Studio
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load" translatesAutoresizingMaskIntoConstraints="NO" id="06c-i0-fTG">
-                                <rect key="frame" x="135" y="771" width="144" height="55"/>
+                                <rect key="frame" x="135" y="722" width="144" height="55"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Z42-3o-S4x"/>
@@ -1217,14 +1311,14 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="MhZ-n4-La3">
-                                <rect key="frame" x="14" y="62" width="70" height="70"/>
+                                <rect key="frame" x="14" y="106" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="2rZ-Rb-4YL"/>
                                     <constraint firstAttribute="width" constant="70" id="D0Q-nM-kyI"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2u8-be-2FZ">
-                                <rect key="frame" x="88" y="60" width="254" height="80"/>
+                                <rect key="frame" x="88" y="104" width="254" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="A9u-Ux-8nt"/>
@@ -1277,14 +1371,14 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="mAC-7w-B2h">
-                                <rect key="frame" x="14" y="62" width="70" height="70"/>
+                                <rect key="frame" x="14" y="106" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="AcI-8b-Fl2"/>
                                     <constraint firstAttribute="height" constant="70" id="CbR-d4-WKB"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ata-Rc-hhM">
-                                <rect key="frame" x="88" y="62" width="254" height="83"/>
+                                <rect key="frame" x="88" y="106" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="hd3-kS-lAm"/>
@@ -1297,7 +1391,7 @@ Copyright KUCHUAN Infomation Studio
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z3-uD-rPs">
-                                <rect key="frame" x="0.0" y="148" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="192" width="414" height="704"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-rk-XfC">
                                         <rect key="frame" x="21" y="8" width="60" height="60"/>
@@ -1617,28 +1711,28 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-m7-fMD">
-                                <rect key="frame" x="0.0" y="138" width="414" height="614"/>
+                                <rect key="frame" x="0.0" y="182" width="414" height="570"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="9l7-X9-nt3"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="crv-iz-eG5" detailTextLabel="GvO-in-tXh" style="IBUITableViewCellStyleSubtitle" id="Xqj-Mq-Vo4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="CnJ-4h-UG2" detailTextLabel="yy8-8D-pk4" style="IBUITableViewCellStyleSubtitle" id="Xqj-Mq-Vo4">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xqj-Mq-Vo4" id="gQm-2a-n7m">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="crv-iz-eG5">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CnJ-4h-UG2">
                                                     <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GvO-in-tXh">
-                                                    <rect key="frame" x="20" y="25.5" width="33" height="14.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yy8-8D-pk4">
+                                                    <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -1646,18 +1740,19 @@ Copyright KUCHUAN Infomation Studio
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="em1-kZ-aBv">
-                                <rect key="frame" x="18" y="56" width="70" height="70"/>
+                                <rect key="frame" x="18" y="100" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="SqO-Ri-b4N"/>
                                     <constraint firstAttribute="height" constant="70" id="zKO-vM-Oz6"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-ff-XnT">
-                                <rect key="frame" x="92" y="62" width="254" height="60"/>
+                                <rect key="frame" x="92" y="106" width="254" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="AF9-4z-rJU"/>
@@ -1717,7 +1812,7 @@ Copyright KUCHUAN Infomation Studio
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5B-Bc-kz8" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="57" y="159" width="300" height="400"/>
+                                <rect key="frame" x="57" y="203" width="300" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おわり" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gE-Yq-ive">
                                         <rect key="frame" x="20" y="24" width="260" height="32"/>
@@ -1865,14 +1960,14 @@ Copyright KUCHUAN Infomation Studio
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-Lm-uJd">
-                                <rect key="frame" x="18" y="62" width="70" height="70"/>
+                                <rect key="frame" x="18" y="106" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="700-pt-w3j"/>
                                     <constraint firstAttribute="height" constant="70" id="bRA-vz-bWD"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfF-JU-9d3">
-                                <rect key="frame" x="92" y="62" width="254" height="83"/>
+                                <rect key="frame" x="92" y="106" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="84i-tb-Rna"/>
@@ -1995,7 +2090,6 @@ Copyright KUCHUAN Infomation Studio
         <image name="undo" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UIo-qx-i9X"/>
-        <segue reference="3qV-x4-hOv"/>
+        <segue reference="fCG-G3-fe0"/>
     </inferredMetricsTieBreakers>
 </document>

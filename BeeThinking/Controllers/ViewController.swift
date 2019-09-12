@@ -64,6 +64,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     @IBOutlet weak var bottle: UIButton!
     
+    @IBOutlet weak var movingView: UIView!
+    @IBOutlet weak var movingButton: HexUIButton!
+    @IBOutlet weak var movingsStars: UILabel!
+    @IBOutlet weak var movingTextView: UITextView!
+    @IBOutlet weak var movingLabel: UILabel!
+    
+    
+    
     var ideas:[IdeaData] = []
 
     
@@ -72,6 +80,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 //        print("\(#line)リロード")
         reloadHoneycombView()
         self.navigationItem.hidesBackButton = true
+        
+        
     }
 
     
@@ -750,4 +760,47 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
     }
     
+    @IBAction func didLongPress(_ sender: UILongPressGestureRecognizer) {
+        
+        
+        if (sender.state == UILongPressGestureRecognizer.State.began) {
+            print("長押し開始\(honeycombTagNum)")
+            setHoneycombColor()
+            if let button = self.view.viewWithTag(honeycombTagNum) as? HexUIButton {
+                button.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+                button.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+                button.setTitleColor(UIColor.black, for: .normal)
+                
+//                UIView.animate(withDuration: 1.0, delay: 0.0, options: .autoreverse, animations: {
+//                    self.movingView.center.y += 200.0
+//                }, completion: nil)
+                
+                self.movingView.alpha = 0.0
+                self.movingView.center = self.view.center
+                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
+//                    self.movingView.center.x += 330.0
+                    self.movingView.center.y -= 50.0
+                })
+    
+                UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseIn], animations: {
+                    self.movingView.alpha = 1.0
+                })
+                
+                
+            }
+            
+        } else if (sender.state == UILongPressGestureRecognizer.State.ended){
+            print("長押し終了\(honeycombTagNum)")
+            
+                UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                    self.movingView.alpha = 0.0
+                })
+                self.movingView.center.y += 1500.0
+
+        }
+        
+    }
+    
+
 }
+

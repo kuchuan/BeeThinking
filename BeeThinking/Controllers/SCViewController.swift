@@ -81,36 +81,85 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         
         let result = ideas[indexPath.row]
         
-        cell.textLabel?.text = result.sentence
-        cell.detailTextLabel?.text = countStar(number: result.flickOpacity)
+        
+        if (result.tagNumber == 100) || (result.tagNumber % 10 == 0) {
+            cell.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
+        
+        var cellAddText: String = ""
+        var cellSpace: String = ""
+        
+        switch result.tagNumber {
+        case 100:
+            cellSpace = ""
+            cellAddText = "▼中心課題"
+        case 0...6:
+            cellSpace = "　"
+            cellAddText = "　　►周辺課題"
+        case 10:
+            cellSpace = ""
+            cellAddText = "▼周辺課題"
+        case 20:
+            cellSpace = ""
+            cellAddText = "▼周辺課題"
+        case 30:
+            cellSpace = ""
+            cellAddText = "▼周辺課題"
+        case 40:
+            cellSpace = ""
+            cellAddText = "▼周辺課題"
+        case 50:
+            cellSpace = ""
+            cellAddText = "▼周辺課題"
+        case 60:
+            cellSpace = ""
+            cellAddText = "▼周辺課題"
+        default:
+            cellSpace = "　"
+            cellAddText = "　　►アイデア"
+        }
+        
+        
+        cell.textLabel?.text = cellSpace + result.sentence
+        cell.detailTextLabel?.text = cellAddText + countStar(number: result.flickOpacity)
         
         //矢印で削除
-        cell.accessoryType = .disclosureIndicator
+        if result.tagNumber != 100 {
+            cell.accessoryType = .disclosureIndicator
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+        
         //Realmから対象のデータを削除
         let result = ideas[indexPath.row]
-        let realm = try! Realm()
-        try! realm.write {
-            realm.delete(result)
+        
+        if result.tagNumber != 100 {
+            
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(result)
+            }
+            //配列ideasから対象のideaを削除
+            ideas.remove(at: indexPath.row)
+            //画面から対象のideaを削除
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        //配列ideasから対象のideaを削除
-        ideas.remove(at: indexPath.row)
-        //画面から対象のideaを削除
-        tableView.deleteRows(at: [indexPath], with: .fade)
         
     }
+    
+    
     func countStar(number: Float) -> String{
         
         //        var number: Float
         var star: String
         
         switch number {
-        case 0: star = "すべてを選択する"
         case 0 ..< 0.15: star = "✨"
         case 0.15 ..< 0.25: star = "⭐️"
         case 0.25 ..< 0.35: star = "⭐️✨"
@@ -121,8 +170,7 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         case 0.75 ..< 0.85: star = "⭐️⭐️⭐️⭐️"
         case 0.85 ..< 0.95: star = "⭐️⭐️⭐️⭐️✨"
         case 0.95 ..< 1.05: star = "⭐️⭐️⭐️⭐️⭐️"
-        case 1.05: star = "中心課題と周辺課題のみ"
-        default: star = "すべてを選択する"
+        default: star = "⭐️⭐️⭐️⭐️⭐️"
         }
         return star
     }
