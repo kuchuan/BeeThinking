@@ -23,6 +23,9 @@ var initialAutoSetOfDuplicateToggle: Bool = true
 var honeycombTagNum: Int = 100
 var honeycombPreviousTagNum: Int = 100
 
+//movingViewのためのグローバル関数
+var movingTagNum: Any = -1
+
 //同じ中心課題のグループをidで管理
 var generalAttributeId: Int = 0
 
@@ -70,6 +73,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     @IBOutlet weak var movingTextView: UITextView!
     @IBOutlet weak var movingLabel: UILabel!
     
+    @IBOutlet var longPressGestureRecognozer: UILongPressGestureRecognizer!
     
     
     var ideas:[IdeaData] = []
@@ -89,7 +93,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         super.viewDidLoad()
         
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "open")!,iconInitialSize: CGSize(width: 400, height: 400), backgroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha:1.0))
+        
+//        longPressGestureRecognozer.delegate = self as? UIGestureRecognizerDelegate
+//        singleTapGesture.delegate = self
+        
+        
+//---------------------------------------------------------
+//splash
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "open")!,iconInitialSize: CGSize(width: 400, height: 400),
+                                                      backgroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha:1.0))
         
         revealingSplashView.animationType = .popAndZoomOut
         revealingSplashView.delay = 1.0
@@ -318,8 +330,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         //Realmの情報管理用
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-
-
         
     }
 
@@ -327,6 +337,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
+    
 
     //初期データ読み込み
     
@@ -553,6 +564,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         setHoneycombColor()
     }
     
+    @objc func buttonDidTap(_ sender: HexUIButton, event: UIEvent) {
+        print("OK")
+        if let location = event.touches(for: sender)?.first?.location(in: sender) {
+            print(location)
+        }
+    }
     
     
     @IBAction func didClickGoToHoney(_ sender: UIButton) {
@@ -755,52 +772,153 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 
     }
     
-    
+    //PDF作成
     func makePDF(_sender: Bool)  {
         
     }
     
+ 
+    //ロングプレスで詳細が表示されるギミック
     @IBAction func didLongPress(_ sender: UILongPressGestureRecognizer) {
         
+//        print("ボタンの情報: \(sender.accessibilityActivationPoint)")
+//        let press = event
         
-        if (sender.state == UILongPressGestureRecognizer.State.began) {
-            print("長押し開始\(honeycombTagNum)")
-            setHoneycombColor()
-            if let button = self.view.viewWithTag(honeycombTagNum) as? HexUIButton {
-                button.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-                button.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
-                button.setTitleColor(UIColor.black, for: .normal)
-                
-//                UIView.animate(withDuration: 1.0, delay: 0.0, options: .autoreverse, animations: {
-//                    self.movingView.center.y += 200.0
-//                }, completion: nil)
-                
-                self.movingView.alpha = 0.0
-                self.movingView.center = self.view.center
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
-//                    self.movingView.center.x += 330.0
-                    self.movingView.center.y -= 50.0
-                })
-    
-                UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseIn], animations: {
-                    self.movingView.alpha = 1.0
-                })
-                
-                
-            }
+//        let tag = press.view!.tag
+        
+//        print(press as Any)
+        
+        //蜂の巣が広がっていない場合
+        if (honeycombTagNum > 6 && honeycombTagNum < 100) && view.viewWithTag(10)!.isHidden == true {
             
-        } else if (sender.state == UILongPressGestureRecognizer.State.ended){
-            print("長押し終了\(honeycombTagNum)")
+            return
             
-                UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
-                    self.movingView.alpha = 0.0
-                })
-                self.movingView.center.y += 1500.0
+        } else {
+        
+                    if (sender.state == UILongPressGestureRecognizer.State.began) {
+                        
+//                        print("長押し開始\(honeycombTagNum)")
+                        
+                        //長押ししている蜂の巣の色を変える
+                        setHoneycombColor()
+                        if let button = self.view.viewWithTag(honeycombTagNum) as? HexUIButton {
+                            button.buttonColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+                            button.backgroundColor = UIColor.init(red: 118/255, green: 214/255, blue: 255/255, alpha: 0.2)
+                            button.setTitleColor(UIColor.black, for: .normal)
+                            
+                            
+                        var  tmpTagNum = honeycombTagNum
+                            
+                            if tmpTagNum == 0 {
+                                tmpTagNum = 100
+                            }
 
+                            
+                        let realm = try! Realm()
+                        
+                        ideas = realm.objects(IdeaData.self).filter("attributeId == \(generalAttributeId) AND tagNumber >= 0 AND tagNumber <= 100")
+                                                            .filter("tagNumber == \(tmpTagNum)")
+                                                            .sorted(byKeyPath: "tagNumber", ascending: false).reversed()
+                        
+                            if let idea = ideas.first?.flickOpacity {
+                                
+                                var flickOpacity = idea
+                                
+                                flickOpacity = round(flickOpacity * 100) / 100
+                                
+                                var star: String = ""
+                                
+                                switch flickOpacity {
+                                case 0 ..< 0.15: star = "✨"
+                                case 0.15 ..< 0.25: star = "⭐️"
+                                case 0.25 ..< 0.35: star = "⭐️✨"
+                                case 0.35 ..< 0.45: star = "⭐️⭐️"
+                                case 0.45 ..< 0.55: star = "⭐️⭐️✨"
+                                case 0.55 ..< 0.65: star = "⭐️⭐️⭐️"
+                                case 0.65 ..< 0.75: star = "⭐️⭐️⭐️✨"
+                                case 0.75 ..< 0.85: star = "⭐️⭐️⭐️⭐️"
+                                case 0.85 ..< 0.95: star = "⭐️⭐️⭐️⭐️✨"
+                                case 0.95 ..< 1.05: star = "⭐️⭐️⭐️⭐️⭐️"
+                                default: star = "⭐️⭐️⭐️⭐️⭐️"
+                                }
+                                
+                                movingsStars.text = star
+                                
+                            } else {
+                                
+                                return
+                            }
+                            
+                            
+                            if button.currentTitle != nil {
+                                
+                                movingTextView.text = button.currentTitle
+                                
+                                    switch honeycombTagNum {
+                                    case 100:
+                                        movingLabel.text = "\(honeycombTagNum)" + "中心課題"
+                                    case 1...6:
+                                        movingLabel.text = "\(honeycombTagNum)" + "周辺課題"
+                                    case 10,20,30,40,50,60:
+                                        movingLabel.text = "\(honeycombTagNum)" + "周辺課題"
+                                    default:
+                                        movingLabel.text = "\(honeycombTagNum)" + "アイデア"
+                                    }
+                                
+                            
+                            } else {
+                                movingTextView.text = ""
+                                movingsStars.text = ""
+                            }
+                            
+                            self.movingView.alpha = 0.0
+                            self.movingView.center = self.view.center
+                            UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
+                                //指位置によって表示が変わるようにするための準備
+                                let touchLocation = self.longPressGestureRecognozer.location(in: self.view)
+                                let tmpX = (touchLocation.x - self.view.bounds.width / 2 - 0)
+                                let tmpY = (touchLocation.y - self.view.bounds.height / 2 + 0)
+ 
+                                
+//                                print(tmpX,tmpY)
+                                
+                                if self.view.bounds.width > 350 {
+                                    if tmpX > 40.0  {
+                                        self.movingView.center.x += -70
+                                    } else if tmpX < -40.0 {
+                                        self.movingView.center.x += 70
+                                    } else {
+                                        self.movingView.center.x += 0
+                                    }
+                                }
+                                
+                                    if tmpY >= 0.0 {
+                                        self.movingView.center.y += -115
+                                    } else {
+                                        self.movingView.center.y += 115
+                                    }
+
+                            })
+
+                            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseIn], animations: {
+                                self.movingView.alpha = 1.0
+                            })
+                            
+                        }
+                        
+                    } else if (sender.state == UILongPressGestureRecognizer.State.ended){
+//                        print("長押し終了\(honeycombTagNum)")
+                        
+                            UIView.animate(withDuration: 1.0, delay: 0.8, options: [.curveEaseOut], animations: {
+                                self.movingView.alpha = 0.0
+                            })
+                            self.movingView.center.y += 1500.0
+
+                    }
         }
         
     }
     
-
+    
 }
 

@@ -70,6 +70,8 @@ class HexUIButton: UIButton {
         override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
             if !createPolygonPath(numberOfCorner:numberOfCorner).contains(point) {
                 // タッチ領域外
+//                print("touch外")
+//                print("HexUIButton\(#line):前のボタン\(honeycombPreviousTagNum)と今の薄い色のボタン\(honeycombTagNum)")
                 return nil
 
             } else {
@@ -84,7 +86,8 @@ class HexUIButton: UIButton {
 //                    print("HexUIButton\(#line):前のボタン\(honeycombPreviousTagNum)と今の薄い色のボタン\(honeycombTagNum)")
 
                 }
-
+                
+                
                  return super.hitTest(point, with: event)
             }
         }
