@@ -467,7 +467,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     fileprivate func createNewIdea(_ text: String, _ tag: Int) {
         
         let setIdea = CreateIdea()
-        let res = setIdea.createIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
+        _ = setIdea.createIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
 //        print ("VC\(#line)createIdea",res)
 
     }
@@ -476,7 +476,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     fileprivate func updateOldIdea(_ text: String, _ tag: Int) {
         
         let setIdea = UpdateIdea()
-        let res = setIdea.updateIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
+        _ = setIdea.updateIdea(text: text, tag: tag, autoSpredSwich: autoSetOfDuplicate)
 //        print ("VC\(#line)updateIdea",res)
         
     }
@@ -500,6 +500,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     
     @IBAction func didClickToList(_ sender: UIButton) {
+        
+         player.pause()
         
         //Realmに接続
         let realm = try! Realm()
@@ -585,6 +587,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     
     @IBAction func didClickGoToHoney(_ sender: UIButton) {
+        
+        player.pause()
         
         performSegue(withIdentifier: "toSetting", sender: nil)
         
