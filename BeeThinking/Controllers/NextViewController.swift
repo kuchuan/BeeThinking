@@ -183,7 +183,7 @@ class NextViewController: UIViewController {
         } else {
             rangeText = "（選択範囲）" + viewCountStar.text! + "\n"
         }
-        var passge: String = "BeeThinking《 アイデア拡張 》\n" + rangeText
+        var passge: String = "!BeeThinking《 アイデア拡張 》\n" + rangeText
         
         for idea in ideas {
 
@@ -192,14 +192,14 @@ class NextViewController: UIViewController {
             let num = idea.tagNumber
             switch num{
             case 100:
-                sentence = "中心課題:" + idea.sentence
+                sentence = "▼中心課題:" + idea.sentence
             case 1...7:
-                sentence = "- 周辺課題⭐️\(String(rateNumber)):" + idea.sentence
+                sentence = "　　▶周辺課題⭐️\(String(rateNumber)):" + idea.sentence
             default:
                 if idea.tagNumber % 10 != 0 {
-                    sentence = "- （⭐️\(String(rateNumber))）" + idea.sentence
+                    sentence = "　　▶アイデア⭐️\(String(rateNumber)):" + idea.sentence
                 } else {
-                    sentence = "周辺課題:" + idea.sentence
+                    sentence = "▼周辺課題:" + idea.sentence
                 }
             }
             passge = passge + "\n" + sentence

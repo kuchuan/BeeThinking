@@ -62,10 +62,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     @IBOutlet weak var inputBox: UITextField!
     
     @IBOutlet weak var honeycombView: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var bottle: UIButton!
+    @IBOutlet weak var makeHoneycombButton: UIButton!
+    
     
     @IBOutlet weak var movingView: UIView!
     @IBOutlet weak var movingButton: HexUIButton!
@@ -536,7 +537,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
         var arrayStrings: [String] = []
 
-        for i in 0...7  {
+        for i in 1...7  {
             for j in 0...6 {
                 
                 //初期値の設定
@@ -557,19 +558,30 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
                         
                     }
                     //不可視属性の指定を解除
-                   button.isHidden = false
+                    if makeHoneycombButton.currentTitle == "ハチの巣を狭める" {
+                        button.isHidden = true
+                    } else {
+                        button.isHidden = false
+                    }
+                   
+                
                 }
             }
+        }
+        if makeHoneycombButton.currentTitle == "ハチの巣を狭める" {
+            makeHoneycombButton.setTitle("ハチの巣を広げる", for: .normal)
+        } else {
+            makeHoneycombButton.setTitle("ハチの巣を狭める", for: .normal)
         }
         setHoneycombColor()
     }
     
-    @objc func buttonDidTap(_ sender: HexUIButton, event: UIEvent) {
-        print("OK")
-        if let location = event.touches(for: sender)?.first?.location(in: sender) {
-            print(location)
-        }
-    }
+//    @objc func buttonDidTap(_ sender: HexUIButton, event: UIEvent) {
+//        print("OK")
+//        if let location = event.touches(for: sender)?.first?.location(in: sender) {
+//            print(location)
+//        }
+//    }
     
     
     @IBAction func didClickGoToHoney(_ sender: UIButton) {

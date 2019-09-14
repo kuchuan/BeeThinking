@@ -6,13 +6,14 @@ target 'Beethinking' do
   use_frameworks!
 
 	pod 'SCLAlertView'
-	pod "Koloda"
+	pod 'Koloda'
 
 	pod 'IQKeyboardManagerSwift'
 
 	pod 'RevealingSplashView'
 	pod 'RealmSwift'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'CircleMenu'
 
   # Pods for Beethinking
 
