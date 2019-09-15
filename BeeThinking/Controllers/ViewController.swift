@@ -67,6 +67,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     @IBOutlet weak var bottle: UIButton!
     @IBOutlet weak var makeHoneycombButton: UIButton!
     
+    @IBOutlet weak var timeCounter: UILabel!
     
     @IBOutlet weak var movingView: UIView!
     @IBOutlet weak var movingButton: HexUIButton!
@@ -78,6 +79,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
     
     
     var ideas:[IdeaData] = []
+    
+    private var timer: Timer?                           // Timerを保持する変数
+    private(set) var timerTotalDuration: TimeInterval = 0    // 総秒数を保持する変数
 
     
     //画面が表示されるたびに実行
@@ -87,6 +91,45 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         self.navigationItem.hidesBackButton = true
         
         
+    }
+    
+    //---------------------------------------------------------
+    
+    //タイマー
+    func startTimer() {
+        // ⑤ Timer のスケジューリング重複を回避
+        guard timer == nil else { return }
+        
+        // ① Timerのスケジューリングと保持
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(handleTimer(_:)),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    func stopTimer() {
+        // ③ Timer のスケジューリングを破棄
+        timer?.invalidate()
+    }
+    
+    func resetTimer() {
+        // ④ Timer のスケジューリングを破棄し、総秒数を0に戻す
+        stopTimer()
+        timerTotalDuration = 0
+    }
+    
+    @objc func handleTimer(_ timer: Timer) {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.hour, .minute, .second]
+
+    
+    // ② Timer の間隔秒を総秒数に加算する
+    timerTotalDuration += timer.timeInterval
+        timeCounter.text = (formatter.string(from: timerTotalDuration))
     }
 
     
@@ -129,6 +172,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 
 //        print("VC\(#line)初期値：generalAttributeId",generalAttributeId)
 
+//
+        //タイマー
+        startTimer() 
+
+        
 //---------------------------------------------------------
         //再生する音楽ファイルのパス作成
         let audioPath = Bundle.main.path(forResource: "BeeThinking", ofType: "mp3")!

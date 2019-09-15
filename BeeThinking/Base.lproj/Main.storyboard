@@ -494,6 +494,16 @@
                                     <constraint firstItem="yKo-7f-WFT" firstAttribute="centerY" secondItem="bi3-Oq-ShM" secondAttribute="centerY" id="boo-ka-ewG"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-r4-f52">
+                                <rect key="frame" x="318.5" y="173" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="XYW-Ff-w1a"/>
+                                    <constraint firstAttribute="width" constant="80" id="aWL-jk-J42"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -504,6 +514,7 @@
                             <constraint firstItem="SXc-q2-QyW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7x4-lZ-okd"/>
                             <constraint firstItem="32Y-xH-20J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DqY-km-YnW"/>
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EF6-PI-8j6"/>
+                            <constraint firstItem="XPK-r4-f52" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="Kje-Mu-ZGC"/>
                             <constraint firstItem="vld-7F-rZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NtN-bY-mXc"/>
                             <constraint firstItem="Qpp-1f-pc5" firstAttribute="top" secondItem="vld-7F-rZY" secondAttribute="bottom" constant="24" id="RZe-ro-FVi"/>
                             <constraint firstItem="bi3-Oq-ShM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-330" id="W5v-aA-aKX"/>
@@ -519,6 +530,7 @@
                             <constraint firstItem="vBr-3M-WQm" firstAttribute="leading" secondItem="vld-7F-rZY" secondAttribute="trailing" constant="12" id="sP3-Zl-FqC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vBr-3M-WQm" secondAttribute="trailing" constant="24" id="ssY-cJ-dk9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AFd-rg-Xlv" secondAttribute="bottom" constant="24" id="uW5-Oh-P17"/>
+                            <constraint firstItem="Sfm-fE-KzR" firstAttribute="centerX" secondItem="XPK-r4-f52" secondAttribute="centerX" id="us7-vR-alu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sfm-fE-KzR" secondAttribute="trailing" constant="24" id="vut-yo-Bkb"/>
                             <constraint firstItem="rOR-YY-hdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="wBT-UH-uQf"/>
                             <constraint firstItem="aFt-Ai-W7X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="wII-da-Yz6"/>
@@ -539,6 +551,7 @@
                         <outlet property="movingView" destination="bi3-Oq-ShM" id="feh-JT-CZw"/>
                         <outlet property="movingsStars" destination="VcQ-Mm-136" id="kt9-dg-XuL"/>
                         <outlet property="scrollView" destination="SXc-q2-QyW" id="t6L-hR-KsL"/>
+                        <outlet property="timeCounter" destination="XPK-r4-f52" id="cNk-Id-avB"/>
                         <segue destination="1Ts-RU-F89" kind="show" identifier="toList" id="Ut9-j0-ZbG"/>
                         <segue destination="D7z-cp-zCm" kind="show" identifier="toSetting" id="UIo-qx-i9X"/>
                     </connections>
