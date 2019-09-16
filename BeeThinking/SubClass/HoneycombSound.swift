@@ -28,7 +28,7 @@ class HoneycombSound {
         //URLにする必要があるので･･･
         let audioUrl = URL(fileURLWithPath: audioPath)
         
-        //音楽ファイルを元に、プレイユアー作成
+        //音楽ファイルを元に、プレイヤー作成
         //以下だとエラーが出る。Do catchで作ると
         do {
         player = try AVAudioPlayer(contentsOf: audioUrl)

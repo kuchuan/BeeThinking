@@ -537,6 +537,11 @@
                             <constraint firstItem="rOR-YY-hdN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="z01-QO-9DG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XPK-r4-f52"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="!BeeThinking" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="eZg-8e-4Hn"/>
                     <connections>

@@ -61,8 +61,11 @@ class SCViewController: UIViewController {
 //            nextVC.lists = sender as! [String]
 //        }
 //    }
+    
 
 }
+
+
 
 
 
@@ -174,6 +177,8 @@ extension SCViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return star
     }
+    
+    
     
 }
 

@@ -93,13 +93,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
     }
     
-    //---------------------------------------------------------
+//---------------------------------------------------------
     
     //タイマー
     func startTimer() {
         // ⑤ Timer のスケジューリング重複を回避
         guard timer == nil else { return }
-        
+
         // ① Timerのスケジューリングと保持
         timer = Timer.scheduledTimer(
             timeInterval: 1,
@@ -108,6 +108,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
             userInfo: nil,
             repeats: true
         )
+     
+//        //寬さん
+//        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+//            let formatter = DateComponentsFormatter()
+//            formatter.unitsStyle = .positional
+//            formatter.allowedUnits = [.hour, .minute, .second]
+//
+//            // ② Timer の間隔秒を総秒数に加算する
+//            self.timerTotalDuration += timer.timeInterval
+//            self.timeCounter.text = (formatter.string(from: self.timerTotalDuration))
+//        }
+//        //寬さんここまで
+        
     }
     
     func stopTimer() {
@@ -126,12 +139,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         formatter.unitsStyle = .positional
         formatter.allowedUnits = [.hour, .minute, .second]
 
-    
-    // ② Timer の間隔秒を総秒数に加算する
-    timerTotalDuration += timer.timeInterval
+
+        // ② Timer の間隔秒を総秒数に加算する
+        timerTotalDuration += timer.timeInterval
         timeCounter.text = (formatter.string(from: timerTotalDuration))
     }
 
+//---------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -174,7 +188,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
 
 //
         //タイマー
-        startTimer() 
+//        startTimer()
 
         
 //---------------------------------------------------------
