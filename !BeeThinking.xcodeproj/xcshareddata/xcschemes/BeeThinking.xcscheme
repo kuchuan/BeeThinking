@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "48E921C622D97507007EF7A0"
-               BuildableName = "Beethinking.app"
-               BlueprintName = "Beethinking"
-               ReferencedContainer = "container:BeeThinking.xcodeproj">
+               BuildableName = "!Beethinking.app"
+               BlueprintName = "!Beethinking"
+               ReferencedContainer = "container:!BeeThinking.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48E921C622D97507007EF7A0"
-            BuildableName = "Beethinking.app"
-            BlueprintName = "Beethinking"
-            ReferencedContainer = "container:BeeThinking.xcodeproj">
+            BuildableName = "!Beethinking.app"
+            BlueprintName = "!Beethinking"
+            ReferencedContainer = "container:!BeeThinking.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48E921C622D97507007EF7A0"
-            BuildableName = "Beethinking.app"
-            BlueprintName = "Beethinking"
-            ReferencedContainer = "container:BeeThinking.xcodeproj">
+            BuildableName = "!Beethinking.app"
+            BlueprintName = "!Beethinking"
+            ReferencedContainer = "container:!BeeThinking.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "48E921C622D97507007EF7A0"
-            BuildableName = "Beethinking.app"
-            BlueprintName = "Beethinking"
-            ReferencedContainer = "container:BeeThinking.xcodeproj">
+            BuildableName = "!Beethinking.app"
+            BlueprintName = "!Beethinking"
+            ReferencedContainer = "container:!BeeThinking.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

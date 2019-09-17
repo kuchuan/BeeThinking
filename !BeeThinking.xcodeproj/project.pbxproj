@@ -53,7 +53,7 @@
 		48DF709F2312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBeeSeriesViewController.swift; sourceTree = "<group>"; };
 		48DF70A12312F54900BE2B6D /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		48DF70A52313ABAA00BE2B6D /* DeleatDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleatDateViewController.swift; sourceTree = "<group>"; };
-		48E921C722D97507007EF7A0 /* Beethinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beethinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48E921C722D97507007EF7A0 /* !Beethinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "!Beethinking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E921CA22D97507007EF7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E921CC22D97507007EF7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		48E921CF22D97507007EF7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		48E921C822D97507007EF7A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48E921C722D97507007EF7A0 /* Beethinking.app */,
+				48E921C722D97507007EF7A0 /* !Beethinking.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,9 +176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48E921C622D97507007EF7A0 /* Beethinking */ = {
+		48E921C622D97507007EF7A0 /* !Beethinking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48E921D922D97507007EF7A0 /* Build configuration list for PBXNativeTarget "Beethinking" */;
+			buildConfigurationList = 48E921D922D97507007EF7A0 /* Build configuration list for PBXNativeTarget "!Beethinking" */;
 			buildPhases = (
 				483351692316133B0024720E /* Run Script */,
 				4573323ED7DC21E0693DC7EA /* [CP] Check Pods Manifest.lock */,
@@ -191,9 +191,9 @@
 			);
 			dependencies = (
 			);
-			name = Beethinking;
+			name = "!Beethinking";
 			productName = Beethinking;
-			productReference = 48E921C722D97507007EF7A0 /* Beethinking.app */;
+			productReference = 48E921C722D97507007EF7A0 /* !Beethinking.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "BeeThinking" */;
+			buildConfigurationList = 48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "!BeeThinking" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -239,7 +239,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				48E921C622D97507007EF7A0 /* Beethinking */,
+				48E921C622D97507007EF7A0 /* !Beethinking */,
 			);
 		};
 /* End PBXProject section */
@@ -497,7 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.beethinking;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.thinkingmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -519,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.beethinking;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.thinkingmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -530,7 +530,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "BeeThinking" */ = {
+		48E921C222D97507007EF7A0 /* Build configuration list for PBXProject "!BeeThinking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48E921D722D97507007EF7A0 /* Debug */,
@@ -539,7 +539,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48E921D922D97507007EF7A0 /* Build configuration list for PBXNativeTarget "Beethinking" */ = {
+		48E921D922D97507007EF7A0 /* Build configuration list for PBXNativeTarget "!Beethinking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48E921DA22D97507007EF7A0 /* Debug */,
