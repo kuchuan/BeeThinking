@@ -175,9 +175,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, AVAudioPlayerDeleg
         
 //---------------------------------------------------------
         
+        
         let userDefault = UserDefaults.standard
         
-        initialSetGeneralAttributeIdToggle = userDefault.bool(forKey: "initialSetGeneralAttributeIdToggle")
+        userDefault.register(defaults: ["initialAutoSetOfDuplicateToggle": true])
+        userDefault.register(defaults: ["initialSetGeneralAttributeIdValue" : true])
+        
+        initialSetGeneralAttributeIdToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
         initialAutoSetOfDuplicateToggle = userDefault.bool(forKey: "initialAutoSetOfDuplicateToggle")
         
         if initialSetGeneralAttributeIdToggle {
