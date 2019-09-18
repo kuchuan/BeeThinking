@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target '!Beethinking' do
+target 'Beethinking' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -15,6 +15,6 @@ target '!Beethinking' do
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod 'CircleMenu'
 
-  # Pods for !Beethinking
+  # Pods for Beethinking
 
 end
