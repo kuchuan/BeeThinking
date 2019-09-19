@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4813B5102333101B00A36861 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4813B50F2333101B00A36861 /* GoogleService-Info.plist */; };
 		482A0C8C2329DBB5005D62AA /* BeeThinking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 482A0C8B2329DBB5005D62AA /* BeeThinking.mp3 */; };
 		48524769231736430027E683 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48524768231736430027E683 /* UserSettingViewController.swift */; };
 		4852476B231757E30027E683 /* DataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852476A231757E30027E683 /* DataManagementViewController.swift */; };
@@ -30,12 +31,13 @@
 		48E921E022DAB49F007EF7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E921DF22DAB49E007EF7A0 /* Assets.xcassets */; };
 		48F7B4552310CEBA00287D46 /* CreateIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7B4542310CEBA00287D46 /* CreateIdea.swift */; };
 		48F7B4572310D0CF00287D46 /* UpdateIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7B4562310D0CF00287D46 /* UpdateIdea.swift */; };
-		55613BA173CD12D9FB1F7102 /* Pods_Beethinking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C174D659B137CD429773D30 /* Pods_Beethinking.framework */; };
+		F0B721191CDE5A15AB277C7E /* Pods__Beethinking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0821EBA86C543197E7901B46 /* Pods__Beethinking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0821EBA86C543197E7901B46 /* Pods__Beethinking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods__Beethinking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D329216D92BC082284EA0F6 /* Pods-Beethinking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beethinking.debug.xcconfig"; path = "Target Support Files/Pods-Beethinking/Pods-Beethinking.debug.xcconfig"; sourceTree = "<group>"; };
-		3C174D659B137CD429773D30 /* Pods_Beethinking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beethinking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4813B50F2333101B00A36861 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		481CA7FE23119048009BBA57 /* !BeeThinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "!BeeThinking.xcodeproj"; path = "../../Beethinking_with_tin/!BeeThinking.xcodeproj"; sourceTree = "<group>"; };
 		482A0C8B2329DBB5005D62AA /* BeeThinking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BeeThinking.mp3; sourceTree = "<group>"; };
 		48524768231736430027E683 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		48E921DF22DAB49E007EF7A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F7B4542310CEBA00287D46 /* CreateIdea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdea.swift; sourceTree = "<group>"; };
 		48F7B4562310D0CF00287D46 /* UpdateIdea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateIdea.swift; sourceTree = "<group>"; };
+		53CF705B0719A3A4F12B97DD /* Pods-!Beethinking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-!Beethinking.debug.xcconfig"; path = "Target Support Files/Pods-!Beethinking/Pods-!Beethinking.debug.xcconfig"; sourceTree = "<group>"; };
+		EAE278A870E1E305008D8DDE /* Pods-!Beethinking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-!Beethinking.release.xcconfig"; path = "Target Support Files/Pods-!Beethinking/Pods-!Beethinking.release.xcconfig"; sourceTree = "<group>"; };
 		F62E42E6A2016F8A05045BC5 /* Pods-Beethinking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beethinking.release.xcconfig"; path = "Target Support Files/Pods-Beethinking/Pods-Beethinking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55613BA173CD12D9FB1F7102 /* Pods_Beethinking.framework in Frameworks */,
+				F0B721191CDE5A15AB277C7E /* Pods__Beethinking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,8 @@
 			children = (
 				0D329216D92BC082284EA0F6 /* Pods-Beethinking.debug.xcconfig */,
 				F62E42E6A2016F8A05045BC5 /* Pods-Beethinking.release.xcconfig */,
+				53CF705B0719A3A4F12B97DD /* Pods-!Beethinking.debug.xcconfig */,
+				EAE278A870E1E305008D8DDE /* Pods-!Beethinking.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -90,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				481CA7FE23119048009BBA57 /* !BeeThinking.xcodeproj */,
-				3C174D659B137CD429773D30 /* Pods_Beethinking.framework */,
+				0821EBA86C543197E7901B46 /* Pods__Beethinking.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 				48E921CE22D97507007EF7A0 /* Main.storyboard */,
 				48E921DF22DAB49E007EF7A0 /* Assets.xcassets */,
 				48E921D322D97507007EF7A0 /* LaunchScreen.storyboard */,
+				4813B50F2333101B00A36861 /* GoogleService-Info.plist */,
 				48E921D622D97507007EF7A0 /* Info.plist */,
 				482A0C8B2329DBB5005D62AA /* BeeThinking.mp3 */,
 			);
@@ -175,8 +182,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48E921D922D97507007EF7A0 /* Build configuration list for PBXNativeTarget "!Beethinking" */;
 			buildPhases = (
-				483351692316133B0024720E /* Run Script */,
 				4573323ED7DC21E0693DC7EA /* [CP] Check Pods Manifest.lock */,
+				483351692316133B0024720E /* Run Script */,
 				48E921C322D97507007EF7A0 /* Sources */,
 				48E921C422D97507007EF7A0 /* Frameworks */,
 				48E921C522D97507007EF7A0 /* Resources */,
@@ -240,6 +247,7 @@
 			files = (
 				48E921D522D97507007EF7A0 /* LaunchScreen.storyboard in Resources */,
 				48E921E022DAB49F007EF7A0 /* Assets.xcassets in Resources */,
+				4813B5102333101B00A36861 /* GoogleService-Info.plist in Resources */,
 				482A0C8C2329DBB5005D62AA /* BeeThinking.mp3 in Resources */,
 				48E921D022D97507007EF7A0 /* Main.storyboard in Resources */,
 			);
@@ -254,15 +262,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Beethinking/Pods-Beethinking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-!Beethinking/Pods-!Beethinking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Beethinking/Pods-Beethinking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-!Beethinking/Pods-!Beethinking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Beethinking/Pods-Beethinking-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-!Beethinking/Pods-!Beethinking-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4573323ED7DC21E0693DC7EA /* [CP] Check Pods Manifest.lock */ = {
@@ -280,7 +288,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Beethinking-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-!Beethinking-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -474,7 +482,7 @@
 		};
 		48E921DA22D97507007EF7A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D329216D92BC082284EA0F6 /* Pods-Beethinking.debug.xcconfig */;
+			baseConfigurationReference = 53CF705B0719A3A4F12B97DD /* Pods-!Beethinking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -496,7 +504,7 @@
 		};
 		48E921DB22D97507007EF7A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F62E42E6A2016F8A05045BC5 /* Pods-Beethinking.release.xcconfig */;
+			baseConfigurationReference = EAE278A870E1E305008D8DDE /* Pods-!Beethinking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
