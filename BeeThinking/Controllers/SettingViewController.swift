@@ -9,14 +9,26 @@
 import UIKit
 import RealmSwift
 import SCLAlertView
+import GoogleMobileAds
 
 class SettingViewController: UIViewController {
 
+    @IBOutlet weak var bannerViewSettiong: GADBannerView!
+    
+    let admobId = "ca-app-pub-9383562194881432/7452199597"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = false
+        
+        bannerViewSettiong.adUnitID = admobId
+        bannerViewSettiong.rootViewController = self
+        bannerViewSettiong.load(GADRequest())
+        
+        
     }
     
     

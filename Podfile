@@ -16,6 +16,7 @@ target '!Beethinking' do
   	pod 'CircleMenu'
 
 	pod 'Firebase/Analytics'
+  pod 'Google-Mobile-Ads-SDK'
 
   # Pods for !Beethinking
 

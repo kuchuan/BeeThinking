@@ -8,11 +8,16 @@
 
 import UIKit
 import RealmSwift
-
+import GoogleMobileAds
 
 
 
 class SCViewController: UIViewController {
+    
+    @IBOutlet weak var bannerViewSC: GADBannerView!
+    
+    // 広告のID
+    let admobId = "ca-app-pub-9383562194881432/7452199597"
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -41,6 +46,10 @@ class SCViewController: UIViewController {
         tableView.dataSource = self
         
         self.navigationItem.hidesBackButton = false
+        
+        bannerViewSC.adUnitID = admobId
+        bannerViewSC.rootViewController = self
+        bannerViewSC.load(GADRequest())
         
     }
 
