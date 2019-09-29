@@ -780,7 +780,7 @@ Copyright KUCHUAN Infomation Studio
                                 <rect key="frame" x="0.0" y="88" width="414" height="671"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWG-gl-Pps" customClass="HexUIButton" customModule="_Beethinking" customModuleProvider="target">
-                                        <rect key="frame" x="136" y="319" width="143" height="127"/>
+                                        <rect key="frame" x="136" y="319" width="127" height="127"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
@@ -877,10 +877,10 @@ Copyright KUCHUAN Infomation Studio
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://kuchuan-studio.com/beeseries/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOC-Df-XGu">
-                                        <rect key="frame" x="34" y="66" width="244" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://kuchuan-studio.com/beesrease/qanda.html" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOC-Df-XGu">
+                                        <rect key="frame" x="34" y="66" width="335" height="17"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="244" id="XxM-Ll-yOB"/>
+                                            <constraint firstAttribute="width" constant="335" id="XxM-Ll-yOB"/>
                                             <constraint firstAttribute="height" constant="17" id="Yjn-L2-RR1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -919,7 +919,7 @@ Copyright KUCHUAN Infomation Studio
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9la-e6-5YR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3301" y="-1256"/>
+            <point key="canvasLocation" x="-3301.449275362319" y="-1256.25"/>
         </scene>
         <!--ユーザー設定-->
         <scene sceneID="WkH-Hc-2V2">
@@ -1142,12 +1142,26 @@ Copyright KUCHUAN Infomation Studio
                                     <outletCollection property="gestureRecognizers" destination="bQM-Kc-QZM" appends="YES" id="xs1-vQ-fbI"/>
                                 </connections>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe0-Ye-e2u" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="812" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="SdW-QR-leR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.9745773673" green="0.8388739824" blue="0.52542775870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fe0-Ye-e2u" firstAttribute="bottom" secondItem="6eJ-PF-Fbm" secondAttribute="bottom" constant="-24" id="3Lr-fq-Aev"/>
+                            <constraint firstItem="fe0-Ye-e2u" firstAttribute="trailing" secondItem="cRK-1d-EAK" secondAttribute="trailing" id="EUu-Ww-3j0"/>
+                            <constraint firstItem="fe0-Ye-e2u" firstAttribute="centerX" secondItem="6eJ-PF-Fbm" secondAttribute="centerX" id="bea-xn-OKL"/>
+                            <constraint firstItem="fe0-Ye-e2u" firstAttribute="leading" secondItem="cRK-1d-EAK" secondAttribute="leading" id="wa6-2b-IZm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cRK-1d-EAK"/>
                     </view>
                     <navigationItem key="navigationItem" title="新規作成・データ削除" id="fBf-Or-Ia6"/>
                     <connections>
+                        <outlet property="bannarViewDelete" destination="fe0-Ye-e2u" id="CUT-5G-2M6"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="fromDeleteToMain" id="aDw-Il-uWO"/>
                     </connections>
                 </viewController>
@@ -1183,7 +1197,7 @@ Copyright KUCHUAN Infomation Studio
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1439" y="-593"/>
+            <point key="canvasLocation" x="-1439.1304347826087" y="-593.30357142857144"/>
         </scene>
         <!--情報-->
         <scene sceneID="pv4-cb-Yjd">
@@ -1215,7 +1229,7 @@ Copyright KUCHUAN Infomation Studio
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Version 1.0.1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Version 1.1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
                                 <rect key="frame" x="160" y="363" width="94" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1249,8 +1263,8 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sep.18.2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CS-W0-AF4">
-                                <rect key="frame" x="176" y="344" width="65" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sep.30.2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CS-W0-AF4">
+                                <rect key="frame" x="176" y="351" width="66" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
@@ -1654,7 +1668,7 @@ Copyright KUCHUAN Infomation Studio
                     <navigationItem key="navigationItem" title="設定" id="Miy-JE-NEm"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bannerViewSettiong" destination="ABU-1w-kLH" id="LYb-Nv-GMh"/>
+                        <outlet property="bannerViewSeting" destination="ABU-1w-kLH" id="LYb-Nv-GMh"/>
                         <segue destination="k0Y-u5-B20" kind="show" identifier="toAboutBeeThinking" id="qf0-As-nDr"/>
                         <segue destination="gk7-u7-Ja9" kind="show" identifier="toAgreement" id="fA3-rg-oH7"/>
                         <segue destination="XwK-8B-0pN" kind="show" identifier="toDeleteData" id="7pD-Tm-ajd"/>
@@ -1746,22 +1760,22 @@ Copyright KUCHUAN Infomation Studio
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-m7-fMD">
-                                <rect key="frame" x="0.0" y="182" width="414" height="565"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-m7-fMD">
+                                <rect key="frame" x="0.0" y="182" width="414" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="9l7-X9-nt3"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="CnJ-4h-UG2" detailTextLabel="yy8-8D-pk4" style="IBUITableViewCellStyleSubtitle" id="Xqj-Mq-Vo4">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="56"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xqj-Mq-Vo4" id="gQm-2a-n7m">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CnJ-4h-UG2">
-                                                    <rect key="frame" x="20" y="9" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1800,8 +1814,8 @@ Copyright KUCHUAN Infomation Studio
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-cl-kLJ">
-                                <rect key="frame" x="140.5" y="757" width="133" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-cl-kLJ">
+                                <rect key="frame" x="140.5" y="738" width="133" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="133" id="DvF-2I-uGX"/>
                                     <constraint firstAttribute="height" constant="50" id="ZBQ-Fi-9QH"/>
@@ -1812,11 +1826,11 @@ Copyright KUCHUAN Infomation Studio
                                     <action selector="didClickToFlickView:" destination="1Ts-RU-F89" eventType="touchUpInside" id="Oac-MV-8Ah"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBM-UH-HAg" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="825" width="414" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBM-UH-HAg" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="812" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="6cY-Y7-nZZ"/>
+                                    <constraint firstAttribute="height" constant="60" id="wuH-2t-eQZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1835,7 +1849,7 @@ Copyright KUCHUAN Infomation Studio
                             <constraint firstItem="wsx-ff-XnT" firstAttribute="top" secondItem="x6m-ld-NlP" secondAttribute="top" constant="18" id="rFh-Ih-OA1"/>
                             <constraint firstItem="9H2-cl-kLJ" firstAttribute="top" secondItem="Qsn-m7-fMD" secondAttribute="bottom" constant="24" id="rbe-Lf-mpj"/>
                             <constraint firstItem="TBM-UH-HAg" firstAttribute="leading" secondItem="x6m-ld-NlP" secondAttribute="leading" id="yK9-sB-jkv"/>
-                            <constraint firstItem="x6m-ld-NlP" firstAttribute="bottom" secondItem="TBM-UH-HAg" secondAttribute="bottom" constant="-3" id="zHx-Iy-g5W"/>
+                            <constraint firstAttribute="bottom" secondItem="TBM-UH-HAg" secondAttribute="bottom" constant="24" id="zHx-Iy-g5W"/>
                             <constraint firstItem="Qsn-m7-fMD" firstAttribute="leading" secondItem="Pms-fd-ecj" secondAttribute="leading" id="zYA-vL-F9n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x6m-ld-NlP"/>

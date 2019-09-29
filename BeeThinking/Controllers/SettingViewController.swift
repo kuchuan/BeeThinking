@@ -13,7 +13,7 @@ import GoogleMobileAds
 
 class SettingViewController: UIViewController {
 
-    @IBOutlet weak var bannerViewSettiong: GADBannerView!
+    @IBOutlet weak var bannerViewSeting: GADBannerView!
     
     let admobId = "ca-app-pub-9383562194881432/7452199597"
     
@@ -24,9 +24,9 @@ class SettingViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = false
         
-        bannerViewSettiong.adUnitID = admobId
-        bannerViewSettiong.rootViewController = self
-        bannerViewSettiong.load(GADRequest())
+        bannerViewSeting.adUnitID = admobId
+        bannerViewSeting.rootViewController = self
+        bannerViewSeting.load(GADRequest())
         
         
     }

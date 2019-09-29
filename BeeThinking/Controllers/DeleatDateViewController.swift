@@ -10,13 +10,22 @@ import UIKit
 import RealmSwift
 import SCLAlertView
 import AVFoundation
+import GoogleMobileAds
 
 class DeleatDateViewController: UIViewController {
+    
+    @IBOutlet weak var bannarViewDelete: GADBannerView!
+    
+    let admobId = "ca-app-pub-9383562194881432/7452199597"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        bannarViewDelete.adUnitID = admobId
+        bannarViewDelete.rootViewController = self
+        bannarViewDelete.load(GADRequest())
 
     }
     
