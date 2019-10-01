@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4813B5102333101B00A36861 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4813B50F2333101B00A36861 /* GoogleService-Info.plist */; };
 		482A0C8C2329DBB5005D62AA /* BeeThinking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 482A0C8B2329DBB5005D62AA /* BeeThinking.mp3 */; };
 		48524769231736430027E683 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48524768231736430027E683 /* UserSettingViewController.swift */; };
 		4852476B231757E30027E683 /* DataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852476A231757E30027E683 /* DataManagementViewController.swift */; };
@@ -19,6 +18,7 @@
 		48939E2422F536640007C462 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48939E2322F536640007C462 /* SCViewController.swift */; };
 		48C6E20E22F9523A002D05B8 /* HexUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6E20D22F9523A002D05B8 /* HexUILabel.swift */; };
 		48CA187522F6D47900072B99 /* IdeaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA187422F6D47900072B99 /* IdeaData.swift */; };
+		48D3C0DC23433F880050451C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48D3C0DB23433F880050451C /* GoogleService-Info.plist */; };
 		48D53B47231242B900D96903 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D53B46231242B900D96903 /* SettingViewController.swift */; };
 		48DF709C2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF709B2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift */; };
 		48DF70A02312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF709F2312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift */; };
@@ -36,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		0821EBA86C543197E7901B46 /* Pods__Beethinking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods__Beethinking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4813B50F2333101B00A36861 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		481CA7FE23119048009BBA57 /* !BeeThinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "!BeeThinking.xcodeproj"; path = "../../Beethinking_with_tin/!BeeThinking.xcodeproj"; sourceTree = "<group>"; };
 		482A0C8B2329DBB5005D62AA /* BeeThinking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BeeThinking.mp3; sourceTree = "<group>"; };
 		48524768231736430027E683 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		48939E2322F536640007C462 /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
 		48C6E20D22F9523A002D05B8 /* HexUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUILabel.swift; sourceTree = "<group>"; };
 		48CA187422F6D47900072B99 /* IdeaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaData.swift; sourceTree = "<group>"; };
+		48D3C0DB23433F880050451C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48D53B46231242B900D96903 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		48DF709B2312DE1C00BE2B6D /* AboutBeeThinkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBeeThinkingViewController.swift; sourceTree = "<group>"; };
 		48DF709F2312DF3E00BE2B6D /* AboutBeeSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutBeeSeriesViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 				48E921CE22D97507007EF7A0 /* Main.storyboard */,
 				48E921DF22DAB49E007EF7A0 /* Assets.xcassets */,
 				48E921D322D97507007EF7A0 /* LaunchScreen.storyboard */,
-				4813B50F2333101B00A36861 /* GoogleService-Info.plist */,
+				48D3C0DB23433F880050451C /* GoogleService-Info.plist */,
 				48E921D622D97507007EF7A0 /* Info.plist */,
 				482A0C8B2329DBB5005D62AA /* BeeThinking.mp3 */,
 			);
@@ -243,7 +243,7 @@
 			files = (
 				48E921D522D97507007EF7A0 /* LaunchScreen.storyboard in Resources */,
 				48E921E022DAB49F007EF7A0 /* Assets.xcassets in Resources */,
-				4813B5102333101B00A36861 /* GoogleService-Info.plist in Resources */,
+				48D3C0DC23433F880050451C /* GoogleService-Info.plist in Resources */,
 				482A0C8C2329DBB5005D62AA /* BeeThinking.mp3 in Resources */,
 				48E921D022D97507007EF7A0 /* Main.storyboard in Resources */,
 			);
@@ -490,7 +490,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.thinkingmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -513,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.kuchuan.thinkingmethod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

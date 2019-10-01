@@ -16,8 +16,10 @@ class DeleatDateViewController: UIViewController {
     
     @IBOutlet weak var bannarViewDelete: GADBannerView!
     
+    //テスト広告
+//    let admobId = "ca-app-pub-3940256099942544/2934735716"
+    //本番
     let admobId = "ca-app-pub-9383562194881432/7452199597"
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

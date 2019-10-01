@@ -11,13 +11,14 @@ import RealmSwift
 import GoogleMobileAds
 
 
-
 class SCViewController: UIViewController {
     
     @IBOutlet weak var bannerViewSC: GADBannerView!
     
-    // 広告のID
-    let admobId = "ca-app-pub-9383562194881432/7452199597"
+        //テスト広告ID
+//        let admobId = "ca-app-pub-3940256099942544/2934735716"
+        //本番
+        let admobId = "ca-app-pub-9383562194881432/7452199597"
     
     
     @IBOutlet weak var tableView: UITableView!

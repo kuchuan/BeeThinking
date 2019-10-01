@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" minimumZoomScale="2" maximumZoomScale="2" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-q2-QyW">
-                                <rect key="frame" x="0.0" y="187" width="414" height="551"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="585"/>
                                 <subviews>
                                     <view opaque="NO" multipleTouchEnabled="YES" tag="200" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-9s-fQh" customClass="HexView" customModule="_Beethinking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="2000" height="2100"/>
@@ -266,13 +266,13 @@
                                 </connections>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drop" translatesAutoresizingMaskIntoConstraints="NO" id="Bv6-0Q-8Md">
-                                <rect key="frame" x="-2324" y="180" width="2738" height="60"/>
+                                <rect key="frame" x="-2324" y="92" width="2738" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9V9-5Q-qhQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-xH-20J">
-                                <rect key="frame" x="92" y="96" width="230" height="55"/>
+                                <rect key="frame" x="92" y="8" width="230" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Nw0-VR-qLc"/>
                                     <constraint firstAttribute="width" constant="230" id="r06-d3-ifK"/>
@@ -282,7 +282,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfm-fE-KzR" userLabel="BeeThinkingButton" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="327" y="194" width="63" height="63"/>
+                                <rect key="frame" x="327" y="106" width="63" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="App-aP-6dP"/>
                                     <constraint firstAttribute="height" constant="63" id="zyi-QR-Vor"/>
@@ -319,7 +319,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたのアイデア広げます" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFt-Ai-W7X">
-                                <rect key="frame" x="115" y="149" width="184" height="20"/>
+                                <rect key="frame" x="115" y="61" width="184" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Sco-Re-VwJ"/>
                                     <constraint firstAttribute="width" constant="184" id="l72-r6-ApD"/>
@@ -329,7 +329,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOR-YY-hdN" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="26" y="170" width="60" height="90"/>
+                                <rect key="frame" x="26" y="82" width="60" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Eun-pQ-9Dc"/>
                                     <constraint firstAttribute="height" constant="90" id="HXk-LJ-fmZ"/>
@@ -360,12 +360,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="思いついたことを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vld-7F-rZY">
-                                <rect key="frame" x="20" y="750" width="288" height="34"/>
+                                <rect key="frame" x="20" y="696" width="288" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-1f-pc5">
-                                <rect key="frame" x="24" y="808" width="130" height="30"/>
+                                <rect key="frame" x="24" y="754" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Yms-R2-Tw6"/>
@@ -380,7 +380,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="-3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFd-rg-Xlv">
-                                <rect key="frame" x="260" y="808" width="130" height="30"/>
+                                <rect key="frame" x="260" y="754" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FsF-Wq-Sbm"/>
@@ -395,7 +395,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBr-3M-WQm">
-                                <rect key="frame" x="320" y="754" width="70" height="30"/>
+                                <rect key="frame" x="320" y="700" width="70" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Iqw-rQ-PUv"/>
@@ -578,11 +578,11 @@
             <objects>
                 <viewController id="gk7-u7-Ja9" customClass="AgreementViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fgF-Z0-amf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="768" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-3f-zuR">
-                                <rect key="frame" x="20" y="108" width="374" height="675"/>
+                                <rect key="frame" x="20" y="20" width="374" height="758"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
@@ -773,11 +773,11 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="TP1-93-uXp" customClass="PDFViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tdr-dJ-V4J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2s-89-NZC" customClass="p">
-                                <rect key="frame" x="0.0" y="88" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="754"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWG-gl-Pps" customClass="HexUIButton" customModule="_Beethinking" customModuleProvider="target">
                                         <rect key="frame" x="136" y="319" width="127" height="127"/>
@@ -802,7 +802,7 @@ Copyright KUCHUAN Infomation Studio
                                 </accessibility>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keI-DA-gum">
-                                <rect key="frame" x="177" y="771" width="60" height="30"/>
+                                <rect key="frame" x="177" y="766" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OIP-2T-6yS"/>
                                     <constraint firstAttribute="width" constant="60" id="V1b-uX-7gA"/>
@@ -839,18 +839,18 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="VsQ-bR-zEd" customClass="QandAViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tHx-eC-HWS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-xO-pWB">
-                                <rect key="frame" x="14" y="106" width="70" height="70"/>
+                                <rect key="frame" x="14" y="18" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="nTO-C5-VMj"/>
                                     <constraint firstAttribute="height" constant="70" id="uaA-uQ-cgP"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j8J-tt-S9C">
-                                <rect key="frame" x="88" y="106" width="254" height="83"/>
+                                <rect key="frame" x="88" y="18" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="0RY-BH-WvC"/>
@@ -862,7 +862,7 @@ Copyright KUCHUAN Infomation Studio
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-6e-xms">
-                                <rect key="frame" x="0.0" y="189" width="414" height="707"/>
+                                <rect key="frame" x="0.0" y="101" width="414" height="741"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="OLT-03-naQ">
                                         <rect key="frame" x="21" y="8" width="60" height="60"/>
@@ -926,18 +926,18 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="Mlv-Pg-6m5" customClass="UserSettingViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F4D-Il-gNX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-17" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-Ri-EXB">
-                                <rect key="frame" x="20" y="227" width="60" height="60"/>
+                                <rect key="frame" x="20" y="139" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="2YE-cB-crw"/>
                                     <constraint firstAttribute="height" constant="60" id="jfp-Hq-rbg"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-13" translatesAutoresizingMaskIntoConstraints="NO" id="NDu-Py-vRO">
-                                <rect key="frame" x="20" y="453" width="60" height="60"/>
+                                <rect key="frame" x="20" y="365" width="60" height="60"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ip2-Jw-nb1"/>
@@ -948,7 +948,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中央・周辺への自動書き込み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytu-rI-RIO">
-                                <rect key="frame" x="88" y="246.5" width="226" height="21"/>
+                                <rect key="frame" x="88" y="158.5" width="226" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Oe4-0J-Qua"/>
                                     <constraint firstAttribute="width" constant="226" id="eWZ-xg-7Al"/>
@@ -958,7 +958,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="データベースを初期化する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uF-IM-Vtm">
-                                <rect key="frame" x="88" y="472.5" width="208" height="21"/>
+                                <rect key="frame" x="88" y="384.5" width="208" height="21"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wr6-0N-ZTP"/>
@@ -971,7 +971,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txI-Et-BBb">
-                                <rect key="frame" x="182.5" y="279.5" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="191.5" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="G6H-zq-3Lt"/>
                                     <constraint firstAttribute="height" constant="31" id="g5z-km-lGn"/>
@@ -982,14 +982,14 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </switch>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-11" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-EO-EYD">
-                                <rect key="frame" x="20" y="100" width="60" height="60"/>
+                                <rect key="frame" x="20" y="12" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="IqY-ZS-ROs"/>
                                     <constraint firstAttribute="width" constant="60" id="p67-P0-I7v"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-9G-jxF">
-                                <rect key="frame" x="111" y="323" width="192" height="121"/>
+                                <rect key="frame" x="111" y="235" width="192" height="121"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="121" id="Kp6-Ml-67L"/>
                                     <constraint firstAttribute="width" constant="192" id="RfG-2w-Sjz"/>
@@ -1003,7 +1003,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K8h-aN-dHq">
-                                <rect key="frame" x="182.5" y="173" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="85" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="WIM-0x-kBk"/>
                                     <constraint firstAttribute="height" constant="31" id="ZQA-fS-fA0"/>
@@ -1014,7 +1014,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起動時に前回のデータを読み込む" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8y-8a-RTe">
-                                <rect key="frame" x="111" y="146" width="169" height="14.5"/>
+                                <rect key="frame" x="111" y="58" width="169" height="14.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="169" id="het-ag-uNe"/>
                                     <constraint firstAttribute="height" constant="14.5" id="lN2-aH-wmu"/>
@@ -1024,7 +1024,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初期設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93a-54-H0T">
-                                <rect key="frame" x="88" y="120" width="70" height="20"/>
+                                <rect key="frame" x="88" y="32" width="70" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1082,7 +1082,7 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="XwK-8B-0pN" customClass="DeleatDateViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6eJ-PF-Fbm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="TxN-9j-UC7">
@@ -1143,7 +1143,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe0-Ye-e2u" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="812" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="SdW-QR-leR"/>
@@ -1204,18 +1204,18 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="k0Y-u5-B20" customClass="AboutBeeThinkingViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gC9-YK-vba">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork-1" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-Si-xn3">
-                                <rect key="frame" x="87" y="112" width="240" height="146"/>
+                                <rect key="frame" x="87" y="24" width="240" height="146"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="146" id="CiY-k9-h8M"/>
                                     <constraint firstAttribute="width" constant="240" id="S8W-tp-kRv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!BeeThinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-d2-a5o">
-                                <rect key="frame" x="83.5" y="270" width="247" height="60"/>
+                                <rect key="frame" x="83.5" y="182" width="247" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="jTf-ki-nf3"/>
                                 </constraints>
@@ -1224,19 +1224,19 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expand your ideas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO6-EL-wzr">
-                                <rect key="frame" x="136.5" y="330" width="141" height="21"/>
+                                <rect key="frame" x="136.5" y="242" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Version 1.1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
-                                <rect key="frame" x="160" y="363" width="94" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Version 1.1.1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-JW-ukx">
+                                <rect key="frame" x="161.5" y="275" width="91.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-8N-NPU">
-                                <rect key="frame" x="112" y="528.5" width="190.5" height="33.5"/>
+                                <rect key="frame" x="112" y="440.5" width="190.5" height="33.5"/>
                                 <string key="text">Developed by
  KUCHUAN Infomation Studio</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1244,7 +1244,7 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-FJ-QrH">
-                                <rect key="frame" x="111.5" y="463.5" width="191" height="41"/>
+                                <rect key="frame" x="111.5" y="375.5" width="191" height="41"/>
                                 <string key="text">"Honeycomb Song"
 『はにかむでうたおう』</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1252,20 +1252,19 @@ Copyright KUCHUAN Infomation Studio
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words and Music by : Dean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEt-lh-cDt">
-                                <rect key="frame" x="135.5" y="447.5" width="143" height="14"/>
+                                <rect key="frame" x="135.5" y="359.5" width="143" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BGM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0si-9h-26F">
-                                <rect key="frame" x="188" y="419.5" width="38" height="21"/>
+                                <rect key="frame" x="188" y="331.5" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sep.30.2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CS-W0-AF4">
-                                <rect key="frame" x="176" y="351" width="66" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct.1.2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CS-W0-AF4">
+                                <rect key="frame" x="181" y="295" width="56" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1284,6 +1283,8 @@ Copyright KUCHUAN Infomation Studio
                             <constraint firstItem="J7H-Si-xn3" firstAttribute="leading" secondItem="WCQ-W5-JS4" secondAttribute="leading" constant="87" id="eiw-if-Iu4"/>
                             <constraint firstItem="EXc-FJ-QrH" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="g1n-B7-RbN"/>
                             <constraint firstItem="WCQ-W5-JS4" firstAttribute="trailing" secondItem="J7H-Si-xn3" secondAttribute="trailing" constant="87" id="iYf-bd-QXz"/>
+                            <constraint firstItem="0si-9h-26F" firstAttribute="top" secondItem="0CS-W0-AF4" secondAttribute="bottom" constant="22.5" id="nXA-yZ-U7C"/>
+                            <constraint firstItem="0CS-W0-AF4" firstAttribute="leading" secondItem="WCQ-W5-JS4" secondAttribute="leading" constant="181" id="omj-2h-OET"/>
                             <constraint firstItem="pO6-EL-wzr" firstAttribute="centerX" secondItem="gC9-YK-vba" secondAttribute="centerX" id="pPe-1Q-Kk9"/>
                             <constraint firstItem="J7H-Si-xn3" firstAttribute="top" secondItem="WCQ-W5-JS4" secondAttribute="top" constant="24" id="rXb-Mp-4MH"/>
                             <constraint firstItem="8kP-JW-ukx" firstAttribute="top" secondItem="pO6-EL-wzr" secondAttribute="bottom" constant="12" id="sFn-ZI-vmH"/>
@@ -1304,11 +1305,11 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="48U-vg-p4V" customClass="DataManagementViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nwM-tO-4iR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTv-a4-tcb">
-                                <rect key="frame" x="0.0" y="188" width="414" height="510"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -1339,7 +1340,7 @@ Copyright KUCHUAN Infomation Studio
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load" translatesAutoresizingMaskIntoConstraints="NO" id="06c-i0-fTG">
-                                <rect key="frame" x="135" y="722" width="144" height="55"/>
+                                <rect key="frame" x="135" y="717" width="144" height="55"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Z42-3o-S4x"/>
@@ -1350,14 +1351,14 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="MhZ-n4-La3">
-                                <rect key="frame" x="14" y="106" width="70" height="70"/>
+                                <rect key="frame" x="14" y="18" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="2rZ-Rb-4YL"/>
                                     <constraint firstAttribute="width" constant="70" id="D0Q-nM-kyI"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2u8-be-2FZ">
-                                <rect key="frame" x="88" y="104" width="254" height="80"/>
+                                <rect key="frame" x="88" y="16" width="254" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="A9u-Ux-8nt"/>
@@ -1406,18 +1407,18 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="D7z-cp-zCm" customClass="SettingViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ye6-Qa-iBV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="mAC-7w-B2h">
-                                <rect key="frame" x="14" y="106" width="70" height="70"/>
+                                <rect key="frame" x="14" y="18" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="AcI-8b-Fl2"/>
                                     <constraint firstAttribute="height" constant="70" id="CbR-d4-WKB"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ata-Rc-hhM">
-                                <rect key="frame" x="88" y="106" width="254" height="83"/>
+                                <rect key="frame" x="88" y="18" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="hd3-kS-lAm"/>
@@ -1429,22 +1430,34 @@ Copyright KUCHUAN Infomation Studio
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z3-uD-rPs">
-                                <rect key="frame" x="0.0" y="192" width="414" height="621"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z3-uD-rPs">
+                                <rect key="frame" x="0.0" y="104" width="414" height="655"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-rk-XfC">
-                                        <rect key="frame" x="21" y="8" width="60" height="60"/>
-                                        <gestureRecognizers/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-X9-qmY">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="575"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-rk-XfC">
+                                                <rect key="frame" x="21" y="8" width="60" height="60"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="FRt-AP-rJB"/>
+                                                    <constraint firstAttribute="width" constant="60" id="kAh-sH-ktx"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="LZB-EX-8tb" appends="YES" id="vus-7I-Yem"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="FRt-AP-rJB"/>
-                                            <constraint firstAttribute="width" constant="60" id="kAh-sH-ktx"/>
+                                            <constraint firstAttribute="width" constant="333" id="E6M-s4-aiw"/>
+                                            <constraint firstItem="jAk-rk-XfC" firstAttribute="leading" secondItem="0u1-X9-qmY" secondAttribute="leading" constant="21" id="lSD-89-fWB"/>
+                                            <constraint firstItem="jAk-rk-XfC" firstAttribute="top" secondItem="0u1-X9-qmY" secondAttribute="top" constant="8" id="r0o-Jl-7bp"/>
+                                            <constraint firstAttribute="height" constant="575" id="sVq-V2-YdG"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="LZB-EX-8tb" appends="YES" id="vus-7I-Yem"/>
-                                        </connections>
-                                    </imageView>
+                                    </view>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-sQ-9FV">
-                                        <rect key="frame" x="21" y="144" width="60" height="60"/>
+                                        <rect key="frame" x="21" y="146.5" width="60" height="60"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="oNi-do-fk6"/>
@@ -1454,7 +1467,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-4" translatesAutoresizingMaskIntoConstraints="NO" id="zwT-ia-EaD">
-                                        <rect key="frame" x="21" y="212" width="60" height="60"/>
+                                        <rect key="frame" x="21" y="214.5" width="60" height="60"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="I46-Ad-yb0"/>
@@ -1464,7 +1477,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-7" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-zq-yWE">
-                                        <rect key="frame" x="21" y="272" width="60" height="60"/>
+                                        <rect key="frame" x="21" y="274.5" width="60" height="60"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Vez-cu-USE"/>
@@ -1474,14 +1487,14 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-5" translatesAutoresizingMaskIntoConstraints="NO" id="a2q-6S-l3J">
-                                        <rect key="frame" x="21" y="339" width="60" height="59"/>
+                                        <rect key="frame" x="21" y="341.5" width="60" height="63.5"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="8kG-V1-Chk" appends="YES" id="QJa-FN-Xb7"/>
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-10" translatesAutoresizingMaskIntoConstraints="NO" id="wTf-Z7-8Zf">
-                                        <rect key="frame" x="21" y="404" width="60" height="60"/>
+                                        <rect key="frame" x="21" y="411" width="60" height="60"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="dyg-4M-LNV"/>
@@ -1491,7 +1504,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-12" translatesAutoresizingMaskIntoConstraints="NO" id="Y5R-0c-1ZN">
-                                        <rect key="frame" x="21" y="76" width="60" height="60"/>
+                                        <rect key="frame" x="21" y="78.5" width="60" height="60"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="XMu-ah-OR8"/>
@@ -1501,7 +1514,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新規作成・データ削除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-Ut-rbS">
-                                        <rect key="frame" x="89" y="28" width="180" height="20"/>
+                                        <rect key="frame" x="89" y="28" width="180" height="20.5"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="LoV-qV-FG5"/>
@@ -1514,7 +1527,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </label>
                                     <label opaque="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="データ読込・データ管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-gX-w0C">
-                                        <rect key="frame" x="89" y="96" width="180" height="20"/>
+                                        <rect key="frame" x="89" y="96.5" width="180" height="24.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -1524,7 +1537,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蜂の巣ボードをPDFで出力する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoW-Pd-dHY">
-                                        <rect key="frame" x="89" y="162" width="226" height="24"/>
+                                        <rect key="frame" x="89" y="167" width="226" height="19.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -1534,7 +1547,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!BeeThinkingについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyy-GW-tFX">
-                                        <rect key="frame" x="89" y="233" width="180" height="18"/>
+                                        <rect key="frame" x="89" y="233.5" width="180" height="22.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -1544,7 +1557,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blk-RZ-djZ">
-                                        <rect key="frame" x="89" y="301" width="98" height="20"/>
+                                        <rect key="frame" x="89" y="306" width="98" height="20"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="upW-1c-WfC"/>
@@ -1557,7 +1570,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0d-YH-gc3">
-                                        <rect key="frame" x="89" y="358" width="66" height="21"/>
+                                        <rect key="frame" x="89" y="363" width="66" height="21"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Dcs-Kx-WJ3"/>
@@ -1570,7 +1583,7 @@ Copyright KUCHUAN Infomation Studio
                                         </connections>
                                     </label>
                                     <label opaque="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q＆A・お問い合わせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Gq-MLF">
-                                        <rect key="frame" x="89" y="429" width="154" height="20"/>
+                                        <rect key="frame" x="89" y="434" width="154" height="20"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -1583,62 +1596,57 @@ Copyright KUCHUAN Infomation Studio
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Vxq-gX-w0C" firstAttribute="trailing" secondItem="wyy-GW-tFX" secondAttribute="trailing" id="0wL-4N-RTe"/>
-                                    <constraint firstItem="jAk-rk-XfC" firstAttribute="leading" secondItem="9z3-uD-rPs" secondAttribute="leading" constant="21" id="1PW-4h-cZX"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="trailing" secondItem="zwT-ia-EaD" secondAttribute="trailing" id="2fJ-Iv-d8r"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="leading" secondItem="zwT-ia-EaD" secondAttribute="leading" id="2sb-BC-z5D"/>
                                     <constraint firstItem="Vxq-gX-w0C" firstAttribute="top" secondItem="5TH-Ut-rbS" secondAttribute="bottom" constant="48" id="31W-tm-qTe"/>
-                                    <constraint firstItem="jAk-rk-XfC" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="topMargin" id="7sT-gj-hsf"/>
                                     <constraint firstItem="blk-RZ-djZ" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="8iU-Wa-gTc"/>
-                                    <constraint firstItem="wTf-Z7-8Zf" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="9OB-63-cez"/>
-                                    <constraint firstItem="Sal-sQ-9FV" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="Ar4-Zc-nAC"/>
                                     <constraint firstItem="KoW-Pd-dHY" firstAttribute="centerY" secondItem="Sal-sQ-9FV" secondAttribute="centerY" id="CsT-mz-0Hh"/>
+                                    <constraint firstAttribute="trailing" secondItem="KoW-Pd-dHY" secondAttribute="trailing" constant="99" id="DBh-7v-MyD"/>
                                     <constraint firstItem="Z0d-YH-gc3" firstAttribute="leading" secondItem="RLE-Gq-MLF" secondAttribute="leading" id="DCx-xM-u6D"/>
+                                    <constraint firstItem="0u1-X9-qmY" firstAttribute="leading" secondItem="9z3-uD-rPs" secondAttribute="leading" id="DKy-XK-jvn"/>
                                     <constraint firstItem="blk-RZ-djZ" firstAttribute="leading" secondItem="Z0d-YH-gc3" secondAttribute="leading" id="Dpy-eg-Ghh"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="top" constant="28" id="E1s-EV-7FA"/>
                                     <constraint firstItem="Sal-sQ-9FV" firstAttribute="top" secondItem="Y5R-0c-1ZN" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehr-aI-FTS"/>
                                     <constraint firstItem="a2q-6S-l3J" firstAttribute="top" secondItem="vCO-zq-yWE" secondAttribute="bottom" constant="7" id="FSO-wK-R24"/>
-                                    <constraint firstItem="jAk-rk-XfC" firstAttribute="trailing" secondItem="Y5R-0c-1ZN" secondAttribute="trailing" id="Gdc-un-8cu"/>
                                     <constraint firstItem="Z0d-YH-gc3" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="HaY-PH-w24"/>
                                     <constraint firstItem="a2q-6S-l3J" firstAttribute="leading" secondItem="wTf-Z7-8Zf" secondAttribute="leading" id="HrF-ad-XFE"/>
                                     <constraint firstItem="wyy-GW-tFX" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="InU-uX-c1a"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="Vxq-gX-w0C" secondAttribute="leading" id="KjS-5M-C3c"/>
-                                    <constraint firstItem="vCO-zq-yWE" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="Krp-NB-8Oc"/>
+                                    <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="9z3-uD-rPs" secondAttribute="leading" constant="89" id="LHI-Qr-cPu"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="wyy-GW-tFX" secondAttribute="leading" id="LgF-Ko-ESU"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="trailing" secondItem="Sal-sQ-9FV" secondAttribute="trailing" id="MWW-4d-xuL"/>
+                                    <constraint firstItem="Vxq-gX-w0C" firstAttribute="leading" secondItem="Y5R-0c-1ZN" secondAttribute="trailing" constant="8" symbolic="YES" id="MuP-zz-e2R"/>
                                     <constraint firstItem="vCO-zq-yWE" firstAttribute="top" secondItem="zwT-ia-EaD" secondAttribute="bottom" id="Nr1-Pb-Sct"/>
+                                    <constraint firstItem="Y5R-0c-1ZN" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="top" constant="78.5" id="QVK-B6-Rnu"/>
                                     <constraint firstItem="a2q-6S-l3J" firstAttribute="centerY" secondItem="Z0d-YH-gc3" secondAttribute="centerY" id="QVq-Xh-lik"/>
-                                    <constraint firstItem="Y5R-0c-1ZN" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="STs-qo-iRg"/>
                                     <constraint firstItem="zwT-ia-EaD" firstAttribute="top" secondItem="Sal-sQ-9FV" secondAttribute="bottom" constant="8" symbolic="YES" id="UMK-xs-QgT"/>
                                     <constraint firstItem="RLE-Gq-MLF" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="Vj1-XD-nTJ"/>
                                     <constraint firstItem="zwT-ia-EaD" firstAttribute="leading" secondItem="vCO-zq-yWE" secondAttribute="leading" id="W7Y-8I-Jkq"/>
-                                    <constraint firstItem="5TH-Ut-rbS" firstAttribute="centerY" secondItem="jAk-rk-XfC" secondAttribute="centerY" id="ZRz-tE-V9c"/>
                                     <constraint firstItem="RLE-Gq-MLF" firstAttribute="top" secondItem="Z0d-YH-gc3" secondAttribute="bottom" constant="50" id="bTc-DA-akP"/>
-                                    <constraint firstAttribute="trailing" secondItem="jAk-rk-XfC" secondAttribute="trailing" constant="219" id="bVp-Bm-RMm"/>
                                     <constraint firstItem="blk-RZ-djZ" firstAttribute="top" secondItem="wyy-GW-tFX" secondAttribute="bottom" constant="50" id="bn5-cg-bsu"/>
+                                    <constraint firstItem="Y5R-0c-1ZN" firstAttribute="leading" secondItem="9z3-uD-rPs" secondAttribute="leading" constant="21" id="cAi-Dy-6EB"/>
                                     <constraint firstItem="wyy-GW-tFX" firstAttribute="top" secondItem="KoW-Pd-dHY" secondAttribute="bottom" constant="47" id="cKk-EM-guG"/>
                                     <constraint firstItem="Z0d-YH-gc3" firstAttribute="leading" secondItem="a2q-6S-l3J" secondAttribute="trailing" constant="8" symbolic="YES" id="ero-WS-io0"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="leading" secondItem="Sal-sQ-9FV" secondAttribute="leading" id="fdJ-Ty-15t"/>
-                                    <constraint firstItem="jAk-rk-XfC" firstAttribute="leading" secondItem="Y5R-0c-1ZN" secondAttribute="leading" id="gva-Ih-MFY"/>
                                     <constraint firstItem="KoW-Pd-dHY" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="ich-JL-pX0"/>
-                                    <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="jAk-rk-XfC" secondAttribute="trailing" constant="8" symbolic="YES" id="kBB-pE-FMm"/>
                                     <constraint firstItem="vCO-zq-yWE" firstAttribute="leading" secondItem="a2q-6S-l3J" secondAttribute="leading" id="mg9-gU-g4p"/>
                                     <constraint firstItem="Vxq-gX-w0C" firstAttribute="leading" secondItem="5TH-Ut-rbS" secondAttribute="leading" id="mqK-O2-5r0"/>
-                                    <constraint firstItem="a2q-6S-l3J" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="nFt-di-h60"/>
                                     <constraint firstItem="wTf-Z7-8Zf" firstAttribute="top" secondItem="a2q-6S-l3J" secondAttribute="bottom" constant="6" id="nPK-CF-lco"/>
+                                    <constraint firstItem="0u1-X9-qmY" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="top" id="nZf-M8-TTj"/>
+                                    <constraint firstAttribute="bottom" secondItem="0u1-X9-qmY" secondAttribute="bottom" id="nzN-PW-b5L"/>
                                     <constraint firstItem="RLE-Gq-MLF" firstAttribute="leading" secondItem="wTf-Z7-8Zf" secondAttribute="trailing" constant="8" symbolic="YES" id="q4k-2F-U01"/>
                                     <constraint firstItem="zwT-ia-EaD" firstAttribute="centerY" secondItem="wyy-GW-tFX" secondAttribute="centerY" id="qNa-d7-tYi"/>
+                                    <constraint firstItem="0u1-X9-qmY" firstAttribute="leading" secondItem="9z3-uD-rPs" secondAttribute="leading" id="qkr-4M-BBc"/>
                                     <constraint firstItem="blk-RZ-djZ" firstAttribute="leading" secondItem="vCO-zq-yWE" secondAttribute="trailing" constant="8" symbolic="YES" id="rDP-f6-vBx"/>
-                                    <constraint firstItem="zwT-ia-EaD" firstAttribute="centerX" secondItem="jAk-rk-XfC" secondAttribute="centerX" id="rPZ-VO-Z0L"/>
                                     <constraint firstItem="Z0d-YH-gc3" firstAttribute="top" secondItem="blk-RZ-djZ" secondAttribute="bottom" constant="37" id="ssk-yb-CF4"/>
                                     <constraint firstItem="Y5R-0c-1ZN" firstAttribute="centerY" secondItem="Vxq-gX-w0C" secondAttribute="centerY" id="vzp-4z-5Lb"/>
                                     <constraint firstItem="5TH-Ut-rbS" firstAttribute="leading" secondItem="KoW-Pd-dHY" secondAttribute="leading" id="xMx-hb-1Bw"/>
-                                    <constraint firstItem="Y5R-0c-1ZN" firstAttribute="top" secondItem="jAk-rk-XfC" secondAttribute="bottom" constant="8" symbolic="YES" id="yqO-ZB-HVK"/>
                                     <constraint firstItem="KoW-Pd-dHY" firstAttribute="top" secondItem="Vxq-gX-w0C" secondAttribute="bottom" constant="46" id="zbk-mv-aHF"/>
                                     <constraint firstItem="wyy-GW-tFX" firstAttribute="leading" secondItem="blk-RZ-djZ" secondAttribute="leading" id="zov-jc-0iJ"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABU-1w-kLH" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="812" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="nlN-rX-hCN"/>
@@ -1649,17 +1657,16 @@ Copyright KUCHUAN Infomation Studio
                         <constraints>
                             <constraint firstItem="ata-Rc-hhM" firstAttribute="top" secondItem="0jt-Br-755" secondAttribute="top" constant="18" id="3Pz-Hu-gq0"/>
                             <constraint firstItem="9z3-uD-rPs" firstAttribute="centerX" secondItem="Ye6-Qa-iBV" secondAttribute="centerX" id="5BW-jw-O97"/>
-                            <constraint firstAttribute="bottom" secondItem="ABU-1w-kLH" secondAttribute="bottom" constant="24" id="B1y-BO-Ane"/>
+                            <constraint firstAttribute="bottom" secondItem="ABU-1w-kLH" secondAttribute="bottom" constant="24" id="8ZP-HY-h3X"/>
+                            <constraint firstItem="mAC-7w-B2h" firstAttribute="top" secondItem="ata-Rc-hhM" secondAttribute="top" id="AWO-p6-WbS"/>
                             <constraint firstItem="ata-Rc-hhM" firstAttribute="leading" secondItem="mAC-7w-B2h" secondAttribute="trailing" constant="4" id="BOr-47-qmd"/>
-                            <constraint firstItem="mAC-7w-B2h" firstAttribute="top" secondItem="0jt-Br-755" secondAttribute="top" constant="18" id="D8I-aO-Xxn"/>
                             <constraint firstItem="mAC-7w-B2h" firstAttribute="leading" secondItem="0jt-Br-755" secondAttribute="leading" constant="14" id="DET-bD-t9c"/>
                             <constraint firstItem="mAC-7w-B2h" firstAttribute="leading" secondItem="0jt-Br-755" secondAttribute="leading" constant="14" id="SWj-pM-pJK"/>
                             <constraint firstItem="ABU-1w-kLH" firstAttribute="leading" secondItem="Ye6-Qa-iBV" secondAttribute="leading" id="UNL-T7-ogF"/>
                             <constraint firstItem="9z3-uD-rPs" firstAttribute="leading" secondItem="0jt-Br-755" secondAttribute="leading" id="Z3c-HQ-oCE"/>
-                            <constraint firstItem="mAC-7w-B2h" firstAttribute="bottom" secondItem="ata-Rc-hhM" secondAttribute="bottom" constant="-13" id="b8g-4X-nPb"/>
                             <constraint firstAttribute="trailing" secondItem="ABU-1w-kLH" secondAttribute="trailing" id="bBo-Fz-DdP"/>
-                            <constraint firstItem="ABU-1w-kLH" firstAttribute="top" secondItem="9z3-uD-rPs" secondAttribute="bottom" constant="8" id="ndj-yo-JZF"/>
                             <constraint firstItem="ata-Rc-hhM" firstAttribute="leading" secondItem="mAC-7w-B2h" secondAttribute="trailing" constant="4" id="tk8-4H-l6d"/>
+                            <constraint firstItem="9z3-uD-rPs" firstAttribute="bottom" secondItem="0jt-Br-755" secondAttribute="bottom" id="trF-11-lDg"/>
                             <constraint firstItem="ata-Rc-hhM" firstAttribute="leading" secondItem="mAC-7w-B2h" secondAttribute="trailing" constant="4" id="yUu-4c-e7d"/>
                             <constraint firstItem="9z3-uD-rPs" firstAttribute="top" secondItem="ata-Rc-hhM" secondAttribute="bottom" constant="3" id="zD8-iV-PMY"/>
                         </constraints>
@@ -1757,11 +1764,11 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="1Ts-RU-F89" customClass="SCViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pms-fd-ecj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-m7-fMD">
-                                <rect key="frame" x="0.0" y="182" width="414" height="532"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="566"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="9l7-X9-nt3"/>
@@ -1795,14 +1802,14 @@ Copyright KUCHUAN Infomation Studio
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="em1-kZ-aBv">
-                                <rect key="frame" x="18" y="100" width="70" height="70"/>
+                                <rect key="frame" x="18" y="12" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="SqO-Ri-b4N"/>
                                     <constraint firstAttribute="height" constant="70" id="zKO-vM-Oz6"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-ff-XnT">
-                                <rect key="frame" x="92" y="106" width="254" height="60"/>
+                                <rect key="frame" x="92" y="18" width="254" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="AF9-4z-rJU"/>
@@ -1815,7 +1822,7 @@ Copyright KUCHUAN Infomation Studio
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H2-cl-kLJ">
-                                <rect key="frame" x="140.5" y="738" width="133" height="50"/>
+                                <rect key="frame" x="140.5" y="684" width="133" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="133" id="DvF-2I-uGX"/>
                                     <constraint firstAttribute="height" constant="50" id="ZBQ-Fi-9QH"/>
@@ -1827,7 +1834,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBM-UH-HAg" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="812" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="wuH-2t-eQZ"/>
@@ -1870,11 +1877,11 @@ Copyright KUCHUAN Infomation Studio
             <objects>
                 <viewController id="Xb0-e1-RWd" customClass="NextViewController" customModule="_Beethinking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BLt-cw-OhT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5B-Bc-kz8" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="57" y="203" width="300" height="400"/>
+                                <rect key="frame" x="57" y="115" width="300" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おわり" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gE-Yq-ive">
                                         <rect key="frame" x="20" y="24" width="260" height="32"/>
@@ -2022,14 +2029,14 @@ Copyright KUCHUAN Infomation Studio
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeeThinking" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-Lm-uJd">
-                                <rect key="frame" x="18" y="106" width="70" height="70"/>
+                                <rect key="frame" x="18" y="18" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="700-pt-w3j"/>
                                     <constraint firstAttribute="height" constant="70" id="bRA-vz-bWD"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfF-JU-9d3">
-                                <rect key="frame" x="92" y="106" width="254" height="83"/>
+                                <rect key="frame" x="92" y="18" width="254" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="84i-tb-Rna"/>
@@ -2043,7 +2050,7 @@ Copyright KUCHUAN Infomation Studio
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-61-v4s">
-                                <rect key="frame" x="326" y="790" width="60" height="60"/>
+                                <rect key="frame" x="326" y="736" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="R81-Vg-41w"/>
                                     <constraint firstAttribute="height" constant="60" id="j6H-W1-xjL"/>
@@ -2054,7 +2061,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCV-e8-7Xo">
-                                <rect key="frame" x="28" y="790" width="60" height="60"/>
+                                <rect key="frame" x="28" y="736" width="60" height="60"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
@@ -2068,7 +2075,7 @@ Copyright KUCHUAN Infomation Studio
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldF-un-T6r">
-                                <rect key="frame" x="172" y="762" width="70" height="70"/>
+                                <rect key="frame" x="172" y="708" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Uzs-Ug-EdX"/>
                                     <constraint firstAttribute="width" constant="70" id="f5P-Sc-pRg"/>
@@ -2152,6 +2159,6 @@ Copyright KUCHUAN Infomation Studio
         <image name="undo" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fCG-G3-fe0"/>
+        <segue reference="aDw-Il-uWO"/>
     </inferredMetricsTieBreakers>
 </document>

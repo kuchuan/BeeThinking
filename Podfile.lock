@@ -1,5 +1,8 @@
 PODS:
   - CircleMenu (4.1.0)
+  - Firebase/AdMob (6.9.0):
+    - Firebase/CoreOnly
+    - Google-Mobile-Ads-SDK (~> 7.49)
   - Firebase/Analytics (6.9.0):
     - Firebase/Core
   - Firebase/Core (6.9.0):
@@ -61,7 +64,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.0):
     - GoogleUtilities/Logger
-  - IQKeyboardManagerSwift (6.5.0)
+  - IQKeyboardManagerSwift (6.5.1)
   - Koloda (5.0):
     - pop (~> 1.0)
   - nanopb (0.3.901):
@@ -70,17 +73,18 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - pop (1.0.12)
-  - Realm (3.18.0):
-    - Realm/Headers (= 3.18.0)
-  - Realm/Headers (3.18.0)
-  - RealmSwift (3.18.0):
-    - Realm (= 3.18.0)
+  - Realm (3.19.0):
+    - Realm/Headers (= 3.19.0)
+  - Realm/Headers (3.19.0)
+  - RealmSwift (3.19.0):
+    - Realm (= 3.19.0)
   - RevealingSplashView (0.6.0)
   - SCLAlertView (0.8)
   - Spring (1.0.6)
 
 DEPENDENCIES:
   - CircleMenu
+  - Firebase/AdMob
   - Firebase/Analytics
   - Google-Mobile-Ads-SDK
   - IQKeyboardManagerSwift
@@ -135,16 +139,16 @@ SPEC CHECKSUMS:
   GoogleDataTransport: c8617c00e4f3eb9418e42ac0e8ac5241a9d555dd
   GoogleDataTransportCCTSupport: 9f352523e8785a71f6754f51eeff09f49ec19268
   GoogleUtilities: 9c2c544202301110b29f7974a82e77fdcf12bf51
-  IQKeyboardManagerSwift: 6cd19976c6e871907c4ed9127c2d3affdd4defc2
+  IQKeyboardManagerSwift: 9ac7524fad9f9fe9a3b98c927e7772471ca546d2
   Koloda: 75302d21882cc3e274c1561b1155805ea5919dab
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
-  RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
+  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
+  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
 
-PODFILE CHECKSUM: 16f13202814dfaa5a710fb192d1699c3a6e8bf44
+PODFILE CHECKSUM: 25d97fe6385afa8536707e3ba6822bf2bc96c9aa
 
 COCOAPODS: 1.7.5

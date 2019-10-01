@@ -19,9 +19,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>259</string>
+	<string>377</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-9383562194881432~4795064906</string>
+	<key>GADIsAdManagerApp</key>
+	<true/>
 	<key>LSApplicationCategoryType</key>
 	<string>GADApplicationIdentifier</string>
 	<key>LSRequiresIPhoneOS</key>
