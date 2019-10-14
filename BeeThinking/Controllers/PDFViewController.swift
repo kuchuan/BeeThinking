@@ -9,12 +9,21 @@
 import UIKit
 //import PDFKit
 import Accounts
+import GoogleMobileAds
 
 class PDFViewController: UIViewController {
     
 //    @IBOutlet weak var PDFView: PDFView!
     @IBOutlet var myText:UITextView!
     @IBOutlet var actionButton:UIBarButtonItem!
+    
+    @IBOutlet weak var bannerViewPDF: GADBannerView!
+    
+            //テスト広告ID
+    //        let admobId = "ca-app-pub-3940256099942544/2934735716"
+            //本番
+            let admobId = "ca-app-pub-9383562194881432/7452199597"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +46,10 @@ class PDFViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+        bannerViewPDF.adUnitID = admobId
+        bannerViewPDF.rootViewController = self
+        bannerViewPDF.load(GADRequest())
     }
 }
 
